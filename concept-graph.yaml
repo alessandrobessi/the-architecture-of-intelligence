@@ -151,7 +151,7 @@ concepts:
     misconception_ids: []
     key_takeaway: book/part-1-information/05-meaning-as-geometry.md#8-key-takeaway
 
-  # ---------- Level 3 (planned — Part II, unwritten) ----------
+  # ---------- Level 3 (written — Part II) ----------
   - id: prediction
     name: Prediction
     level: 3
@@ -321,7 +321,7 @@ concepts:
     name: Vector databases
     level: 6
     prerequisites: [embeddings, similarity, retrieval]
-    introduced_in: 18
+    introduced_in: 17
     written: false
     misconception_ids: []
     key_takeaway: null
@@ -330,7 +330,7 @@ concepts:
     name: Retrieval-Augmented Generation (RAG)
     level: 6
     prerequisites: [retrieval, vector-databases, context-windows, inference]
-    introduced_in: 17
+    introduced_in: 18
     written: false
     misconception_ids: []
     key_takeaway: null
@@ -417,7 +417,7 @@ concepts:
     name: Evaluation
     level: 8
     prerequisites: [hallucinations, training]
-    introduced_in: 27
+    introduced_in: 26
     written: false
     misconception_ids: []
     key_takeaway: null
@@ -453,7 +453,7 @@ concepts:
     name: AI engineering
     level: 8
     prerequisites: [evaluation, observability, retrieval, ai-agents]
-    introduced_in: 26
+    introduced_in: 27
     written: false
     misconception_ids: []
     key_takeaway: null

@@ -38,7 +38,7 @@ yet written.
 
 6. [Predicting the Next Token](part-2-prediction/06-predicting-the-next-token.md)
    — *Now that a computer can represent meaning as a location in space, how can it use that to predict what comes next?*
-7. [Why Statistics Are Not Enough](part-2-prediction/07-why-statistics-are-not-enough.md)
+7. [Why Counting Is Not Enough](part-2-prediction/07-why-counting-is-not-enough.md)
    — *Why not just count how often one word follows another in a giant table, instead of building something as complicated as a neural network?*
 8. [Neural Networks Without Mathematics](part-2-prediction/08-neural-networks-without-mathematics.md)
    — *What is a neural network, actually — without the math?*
@@ -58,8 +58,8 @@ yet written.
 ## Part IV — Building Useful AI *(not yet written)*
 
 16. Context Windows and Memory
-17. Retrieval-Augmented Generation
-18. Vector Databases
+17. Semantic Retrieval and Vector Databases
+18. Retrieval-Augmented Generation
 19. Fine-Tuning and Alignment
 20. Quantization and Efficient Models
 
@@ -78,8 +78,8 @@ chapter — so the chapter stays true even after the standard changes.
 
 ## Part VI — The Future *(not yet written)*
 
-26. AI Engineering
-27. Evaluating AI Systems
+26. Evaluating AI Systems
+27. AI Engineering and Observability
 28. Security and Safety
 29. Where AI Is Going
 30. How to Keep Learning

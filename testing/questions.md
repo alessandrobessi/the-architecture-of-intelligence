@@ -1,9 +1,15 @@
 # Reader-Testing Question Bank — Chapters 1–10
 
-See `README.md` in this directory for how to run a session and score
-these. Misconception-resistance prompts are paired with the `ID` from
-`misconceptions.md` so a scoring gap can be traced directly back to a
-specific chapter passage.
+See `README.md` in this directory for how to run a session, the scoring
+rubric, and the pre-test step. Misconception-resistance prompts are paired
+with the `ID` from `misconceptions.md` so a scoring gap can be traced
+directly back to a specific chapter passage.
+
+Misconception-resistance prompts are phrased as **scenarios**, not
+yes/no questions — "is X true?" can be answered correctly by guessing the
+social cue instead of understanding the mechanism. "Someone claims X, how
+do you respond?" forces the reader to produce the actual explanation, which
+is what gets scored (see README.md's 0/1/2 rubric).
 
 ## Chapter 1 — Why AI Suddenly Changed
 
@@ -12,11 +18,12 @@ specific chapter passage.
 - **Transfer:** "A headline claims a new AI breakthrough happened because
   of 'a completely new kind of chip.' What would you want to know before
   deciding whether that explains it?"
-- **Misconception resistance** (`ai-consciousness-overnight`): "Do you
-  think the AI became conscious, or started truly understanding language,
-  overnight?"
-- **Misconception resistance** (`ai-vs-bigger-chatbot`): "Is a modern
-  chatbot just a bigger version of an old 2016 customer-service bot?"
+- **Misconception resistance** (`ai-consciousness-overnight`): "A colleague
+  says ChatGPT's 2022 release proves machines suddenly became conscious.
+  How would you respond, and what alternative explanation would you give?"
+- **Misconception resistance** (`ai-vs-bigger-chatbot`): "A friend says
+  'modern chatbots are just bigger versions of the 2016 customer-service
+  bots.' Do you agree? Explain the actual difference."
 
 ## Chapter 2 — What Is Information?
 
@@ -25,13 +32,14 @@ specific chapter passage.
 - **Transfer:** "A friend says a 100-page report gave them 'a lot of
   information.' Is that necessarily true?"
 - **Misconception resistance** (`computation-implies-understanding`):
-  "Does a computer that processes your message understand what it means?"
-  Follow-up: "Is a thermostat deciding to turn on the heat any different,
-  in kind, from a computer processing your message?" (Correct answer: no —
-  same kind of mechanical decision, just far more elaborate rules stacked
-  on top.)
-- **Misconception resistance** (`more-data-equals-more-information`):
-  "Does more data always mean more information?"
+  "Someone says 'the model must understand what my message means —
+  otherwise how could it respond so well?' How would you explain what's
+  actually happening?" Follow-up: "Is a thermostat deciding to turn on the
+  heat any different, in kind, from a computer processing your message?"
+- **Misconception resistance** (`more-data-equals-more-information`): "A
+  colleague says a 100-page quarterly report contains 'a lot of
+  information' just because of its length. Do you agree? Explain why or
+  why not."
 - **Transfer (chapter's own thought experiment):** "Which carries more
   information — 'it will rain sometime this century' or 'it will rain
   tomorrow at 3pm'?" (Correct answer: the second, shorter sentence — it
@@ -46,10 +54,12 @@ specific chapter passage.
   word?"
 - **Transfer:** "Why might an AI company charge a different price for the
   exact same sentence written in English versus another language?"
-- **Misconception resistance** (`model-reads-letter-by-letter`): "Does the
-  model read text one letter at a time, like sounding out a word?"
-- **Misconception resistance** (`token-always-one-word`): "Is a token
-  always exactly one whole word?"
+- **Misconception resistance** (`model-reads-letter-by-letter`): "Someone
+  claims a language model reads text 'one letter at a time, like sounding
+  out a word.' Is that accurate? Explain what actually happens."
+- **Misconception resistance** (`token-always-one-word`): "A colleague
+  says 'a token is basically just a word.' Explain why that's not quite
+  right."
 - **Transfer (chapter's own thought experiment):** "How do you think a
   tokenizer would handle the word 'quokka' — real, but rare?" (Correct
   answer: broken into two or three familiar sub-word pieces, not rejected
@@ -62,11 +72,12 @@ specific chapter passage.
 - **Comprehension:** "Why can a short sentence carry a lot of meaning?"
 - **Transfer:** "Here's an old telegram: 'ARRIVE TUES STOP.' Explain why
   the missing words don't hurt understanding."
-- **Misconception resistance** (`compression-loses-meaning`): "Does
-  compressing language always lose meaning, the way a blurry photo loses
-  detail?"
-- **Misconception resistance** (`context-is-just-topic`): "Is 'context'
-  just the general topic of a conversation?"
+- **Misconception resistance** (`compression-loses-meaning`): "Someone
+  says compressing language 'always loses some meaning, like a blurry
+  photo loses detail.' Do you agree? Explain."
+- **Misconception resistance** (`context-is-just-topic`): "A friend says
+  'context just means what the conversation is generally about.' Is that
+  the full picture? Explain."
 
 ## Chapter 5 — Meaning as Geometry
 
@@ -79,21 +90,21 @@ specific chapter passage.
   *meaning*. If the reader says "sandwich," they're reasoning about
   meaning-as-agreement, not meaning-as-use — flag as a live
   misconception-resistance failure even though it's phrased as transfer.)
-- **Misconception resistance** (`embeddings-store-definitions`): "Does the
-  model store a dictionary definition for each word?"
-- **Misconception resistance** (`embedding-is-permanent-meaning`): "Is a
-  word's embedding exactly the same no matter what sentence it appears
-  in?"
+- **Misconception resistance** (`embeddings-store-definitions`): "Someone
+  says 'the model must have something like a dictionary stored inside it,
+  since it clearly knows what words mean.' How would you respond?"
+- **Misconception resistance** (`embedding-is-permanent-meaning`): "A
+  colleague says 'the embedding for a word is fixed — it's the same
+  wherever the word shows up.' Is that accurate? Explain."
 
 ## Chapter 6 — Predicting the Next Token
 
 - **Comprehension:** "How does a model decide what word to write next?"
-- **Transfer:** "Does the model plan out its whole answer before it starts
-  writing the first word?"
-- **Misconception resistance** (`model-plans-whole-sentence`): same
-  question as transfer, above — score both from one answer.
-- **Misconception resistance** (`prediction-is-lookup`): "Is the model
-  looking up your exact question in a giant table of memorized answers?"
+- **Misconception resistance** (`model-plans-whole-sentence`,
+  `prediction-is-lookup`): "Someone tells you: 'the model must plan out
+  its whole answer in advance, since the response is so coherent — and
+  besides, it's probably just looking up something similar it read
+  before.' Address both claims."
 - **Transfer (chapter's own thought experiment):** "Given 'The opposite of
   hot is ___,' rank 'cold,' 'freezing,' and 'a banana' by how likely each
   one is to come next." (Correct answer: cold first by a wide margin,
@@ -102,54 +113,55 @@ specific chapter passage.
   same operation the model performs computationally over its whole
   vocabulary.)
 
-## Chapter 7 — Why Statistics Are Not Enough
+## Chapter 7 — Why Counting Is Not Enough
 
 - **Comprehension:** "Why doesn't a simple word-counting table work as
   well as a neural network?"
-- **Transfer:** "If we collected 100x more text for a counting table,
-  would that fix the problem?"
-- **Misconception resistance** (`bigger-counting-table-works`): same
-  question as transfer, above.
-- **Misconception resistance** (`ai-is-bigger-counting-table`): "Is modern
-  AI just a much bigger version of this same counting approach?"
+- **Misconception resistance** (`bigger-counting-table-works`,
+  `ai-is-bigger-counting-table`): "A colleague says 'if we just collected
+  100x more text, a simple counting-based approach would eventually work
+  as well as a neural network — it's basically the same idea, just
+  bigger.' How would you respond?"
 
 ## Chapter 8 — Neural Networks Without Mathematics
 
 - **Comprehension:** "What is a neural network, in your own words?"
-- **Transfer:** "Is a modern AI model literally simulating a human brain?"
-- **Misconception resistance** (`nn-simulates-brain`): same question as
-  transfer, above.
-- **Misconception resistance** (`more-parameters-more-understanding`): "If
-  Model A has ten times more parameters than Model B, is Model A
-  automatically better?"
-- **New probe (post-review addition):** "Is a language model literally
-  just a long stack of identical layers, all doing the same thing?" —
-  correct answer should reference the chapter's added boundary paragraph
-  distinguishing this generic network from the transformer (Part III).
+- **Misconception resistance** (`nn-simulates-brain`): "Someone says 'a
+  neural network is basically a simulation of a human brain.' Explain
+  what's accurate and what's misleading about that claim."
+- **Misconception resistance** (`more-parameters-more-understanding`): "A
+  colleague says 'Model A has ten times more parameters than Model B, so
+  Model A must be better.' Is that a safe conclusion? Explain."
+- **New probe (post-review addition):** "Someone says 'this is basically
+  how ChatGPT is built — just a big stack of these identical layers.'
+  What would you tell them?" — correct answer should reference the
+  chapter's boundary paragraph distinguishing this generic network from
+  the transformer (Part III).
 
 ## Chapter 9 — Learning From Examples
 
 - **Comprehension:** "How does a neural network learn the right values for
   its parameters?"
-- **Transfer:** "If a model's loss keeps going down during training, does
-  that mean it's getting smarter in every sense?"
-- **Misconception resistance** (`training-is-memorization`): "Does
-  training just make the model memorize its training examples, like a
-  stored database?"
-- **Misconception resistance** (`lower-loss-is-more-intelligence`): same
-  question as transfer, above.
+- **Misconception resistance** (`training-is-memorization`): "A friend
+  says 'training a model on the internet just means it memorizes all that
+  text, like a giant database.' How would you respond?"
+- **Misconception resistance** (`lower-loss-is-more-intelligence`): "A
+  colleague says 'if the training loss keeps going down, the model must
+  be getting smarter in every sense.' Explain why that's not quite right."
 
 ## Chapter 10 — Scaling Laws
 
 - **Comprehension:** "What's a scaling law, in your own words?"
-- **Transfer:** "Is a bigger AI model always the better choice for a given
-  task?"
-- **Misconception resistance** (`scaling-laws-unlimited`): "Can you just
-  keep scaling a model up forever with no limit?"
-- **Misconception resistance** (`bigger-model-always-better`): same
-  question as transfer, above.
-- **New probe (post-review addition):** "When people say the loss-vs-compute
-  chart is 'a straight line,' does that mean loss drops by the same fixed
-  amount every time you double the compute?" — correct answer should
-  reflect that both axes are scaled in multiples of ten, not that loss
-  falls linearly on an ordinary chart.
+- **Misconception resistance** (`scaling-laws-unlimited`): "Someone says
+  'these scaling laws mean you can just keep scaling models up forever
+  and they'll keep getting better with no limit.' Explain what's wrong
+  with that."
+- **Misconception resistance** (`bigger-model-always-better`): "A
+  colleague says 'we should always use the biggest available model for
+  every task, since bigger is better.' Do you agree? Explain."
+- **New probe (post-review addition):** "Someone says 'the loss-vs-compute
+  chart being a straight line means loss drops by the same fixed amount
+  every time you double the compute.' Is that right? Explain what the
+  chart actually shows." — correct answer should reflect that both axes
+  are scaled in multiples of ten, not that loss falls linearly on an
+  ordinary chart.

@@ -1,4 +1,4 @@
-# References — Chapter 7: Why Statistics Are Not Enough
+# References — Chapter 7: Why Counting Is Not Enough
 
 - The Mark V. Shaney story (§2) is a well-known piece of Usenet history
   (early-to-mid 1980s); flagged here as a claim that should eventually get

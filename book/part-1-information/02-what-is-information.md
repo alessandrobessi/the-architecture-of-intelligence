@@ -100,19 +100,24 @@ carries more information despite being the shorter sentence — length was
 never the variable that mattered.
 
 Computation, in the formal sense established by Alan Turing and Alonzo
-Church in the 1930s, is any process that transforms an input symbol
-sequence into an output symbol sequence by mechanically following a fixed
-set of rules, one deterministic step at a time. Crucially, this definition
-never requires the process to "understand" the symbols — it only requires
-that the rule-following be mechanical and well-defined. This is the
-theoretical foundation that lets us say, honestly, that a computer
-"computes" without needing to claim it comprehends.
+Church in the 1930s, is the mechanical transformation of represented
+information according to precisely defined operations. Crucially, this
+definition never requires the process to "understand" the symbols — it
+only requires that the operations be mechanical and well-defined. That's
+compatible with those operations incorporating randomness or probability
+along the way (rolling a die is a perfectly mechanical operation too) —
+mechanical just means "follows its rules without needing comprehension,"
+not "always produces the exact same output from the exact same input."
+This is the theoretical foundation that lets us say, honestly, that a
+computer "computes" without needing to claim it comprehends.
 
 Modern AI systems, as you'll see over the rest of this book, are built
 entirely on top of this foundation: they treat language as sequences of
 symbols, and they are fundamentally probability machines — at every step,
-estimating how likely each possible next symbol is, given everything they've
-seen so far.
+estimating how likely each possible next symbol is, given everything
+they've seen so far, and often making a deliberately randomized choice
+among the likely candidates rather than always picking the single most
+probable one (a mechanism Chapter 14 covers in detail).
 
 ## 6. Common Misconceptions
 

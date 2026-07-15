@@ -44,8 +44,9 @@ Now change just one of those three weights, keeping the same three
 inputs. The unit produces a different output than before — same inputs,
 different weighting, different result. This single change is precisely
 what training (Chapter 9) does, billions of times over, across billions of
-such units: nudging weights so that the network's outputs get steadily
-closer to what's actually wanted.
+adjustable connections and parameters spread across the whole network:
+nudging weights so that the network's outputs get steadily closer to
+what's actually wanted.
 
 ## 4. Core Intuition
 

@@ -71,16 +71,23 @@ back to smaller, familiar pieces.
 
 ## 5. Technical Explanation
 
-The dominant approach, used by essentially every major language model
-today, is a family of algorithms broadly called subword tokenization (the
-best-known variant is called Byte-Pair Encoding, or BPE). The process
-works, conceptually, like this: start with individual characters as the
-smallest possible units. Scan a huge amount of text and find the pair of
-units that appears together most frequently. Merge that pair into a single
-new unit. Repeat this merging process tens of thousands of times. The
-result is a fixed vocabulary where extremely common sequences ("ing," "the,"
-common whole words) have been merged all the way up into single tokens,
-while rare sequences remain split into smaller pieces.
+Most modern language models use some form of subword or byte-level
+tokenization — a family of approaches that all solve the same basic
+problem (build a fixed vocabulary of reusable chunks between "character"
+and "whole word") in somewhat different ways. The most widely used
+variant is Byte-Pair Encoding (BPE), which works, conceptually, like this:
+start with individual characters as the smallest possible units. Scan a
+huge amount of text and find the pair of units that appears together most
+frequently. Merge that pair into a single new unit. Repeat this merging
+process tens of thousands of times. The result is a fixed vocabulary
+where extremely common sequences ("ing," "the," common whole words) have
+been merged all the way up into single tokens, while rare sequences
+remain split into smaller pieces. Other approaches — such as unigram
+tokenization, used by the SentencePiece library — build a similar kind of
+vocabulary by a different statistical method, and some systems tokenize
+directly from raw bytes rather than characters; the design goal and the
+end result are the same across all of them, even though the merging
+procedure differs.
 
 Every token in this final vocabulary is assigned a numerical ID — since,
 per Chapter 2, computation ultimately requires everything to be represented
@@ -130,7 +137,7 @@ internal letters to the model in an obvious way.
 
 - Characters are the smallest text units; words are a familiar but computationally slippery unit; tokens are the actual chunks a model uses.
 - Tokenization builds a fixed vocabulary (tens of thousands of tokens) where common sequences become single tokens and rare ones stay split into pieces.
-- Byte-Pair Encoding (BPE) is the dominant algorithm: repeatedly merge the most frequent adjacent pair of units to build up the vocabulary.
+- Byte-Pair Encoding (BPE) is the most widely used approach: repeatedly merge the most frequent adjacent pair of units to build up the vocabulary. Other approaches (e.g. unigram tokenization) solve the same problem differently.
 - Every token is assigned a numeric ID; a model's actual input is a sequence of these IDs, never raw letters or words.
 - This design guarantees any input text can be represented, even words the model has never seen whole.
 - Token-based billing and letter-counting failures both trace back directly to this chapter's ideas.

@@ -1,4 +1,4 @@
-# Chapter 7 — Why Statistics Are Not Enough
+# Chapter 7 — Why Counting Is Not Enough
 
 > **Part:** Prediction · **Concept Level:** motivational (no new formal concept — motivates Level 3's neural networks) · **Prerequisites:** Chapter 6 (prediction)
 > **New concepts introduced:** none (informally previews why counting-based methods fail; formal treatment of neural networks starts Chapter 8)

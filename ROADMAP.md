@@ -42,11 +42,15 @@ the second implementation.
 ## Milestone 3 — Editorial validation of Part I + II
 
 - [ ] Lightweight citation pass on empirical/historical claims (`references/`)
-- [ ] External reader test: 5+ target readers (non-technical professionals),
-  following the structured protocol and question bank in `testing/` —
-  comprehension, transfer, misconception resistance, retention, and
+- [ ] Track A — Pedagogy: 5+ non-technical target readers, following the
+  structured protocol in `testing/` — pre-test, comprehension, transfer,
+  misconception resistance (scenario-based, scored 0-2), retention, and
   reading-experience notes, per chapter, per reader. Requires actually
   recruiting readers; the protocol itself is ready to run.
+- [ ] Track B — Technical correctness: 1-2 ML practitioners review the
+  chapter text directly (not the question bank) for factual/technical
+  issues. Already partially substituted by external review rounds (see
+  `CHANGELOG.md`); a dedicated practitioner pass is still open.
 - [ ] Cross-theme, cross-chapter consistency pass on analogies and voice
 
 ## Milestone 4 — Parts III–VI

@@ -36,9 +36,13 @@ sliver. "a" gets an almost-vanishing amount, since it's grammatically
 implausible there. "Banana" gets a probability so close to zero it might
 as well not exist as an option.
 
-None of these numbers are memorized facts retrieved from storage — they're
-computed fresh, from the geometry of Chapter 5, every single time the
-model processes this sequence.
+These numbers aren't retrieved from a table of complete, stored answers.
+They're computed from the current sequence using the model's learned
+parameters (Chapters 8–9) — the geometry of Chapter 5 is where that
+computation starts, not the whole of it. Some specific facts or phrasings
+can end up memorized during training, a nuance Chapter 9 returns to — but
+the computation itself is still performed fresh over the current
+sequence every time, not looked up whole.
 
 ## 4. Core Intuition
 
@@ -88,13 +92,13 @@ models try to work around it.
 ## 6. Common Misconceptions
 
 > **Misconception:** "The model plans out the entire sentence in advance, then writes it down."
-> **Why it's wrong:** Generation is autoregressive — each token is predicted one at a time, using only what's been generated so far, with no access to a pre-formed plan of the whole response.
-> **Correct intuition:** Coherence emerges from consistently good next-token predictions, not from an upfront outline the model is secretly following.
-> **Analogy:** A jazz musician improvising a solo doesn't have the whole solo pre-written — each note is chosen in light of everything played so far, and the result can still sound coherent.
+> **Why it's wrong:** The basic generation mechanism doesn't begin with a hidden, fully-written draft sitting somewhere and being read off token by token — each token is predicted using only what's been generated so far. A model can still produce something that looks like a plan (an outline, "step 1, step 2...") — but if it does, that plan is itself just earlier tokens, generated the same way as everything else, not consulted from some separate pre-formed source.
+> **Correct intuition:** Coherence emerges from consistently good next-token predictions; any "plan" the model appears to follow had to be developed through the visible context, not fetched from an upfront outline written before the first token.
+> **Analogy:** A jazz musician improvising a solo doesn't have the whole solo pre-written — each note is chosen in light of everything played so far, and the result can still sound coherent, even if the musician settles into a recognizable pattern partway through.
 
 > **Misconception:** "Predicting the next token means looking up the answer in a giant table of memorized sentences."
 > **Why it's wrong:** The model computes a fresh probability distribution from the current context every time; it isn't matching against a stored table of full sentences (Chapter 7 explains in detail why a table-based approach doesn't work at this scale).
-> **Correct intuition:** Prediction is a computation performed over the geometry of Chapter 5, not a lookup.
+> **Correct intuition:** Prediction is a computation performed by the model's learned parameters over the current context — starting from the geometry of Chapter 5, not ending there — rather than a lookup.
 > **Analogy:** A weather forecaster doesn't look up "what happened on a day exactly like this one" in a logbook — they compute a forecast from current conditions using a general-purpose model of the atmosphere.
 
 ## 7. Practical Implications
@@ -115,8 +119,8 @@ can matter disproportionately to how the rest of the response unfolds.
 
 - Prediction means assigning a probability to every token in the vocabulary, given everything before it.
 - Text generation is autoregressive: predict, choose, append, repeat — one token at a time.
-- Predictions draw on the geometry of embeddings (Chapter 5), letting the model generalize rather than merely recall.
-- No step has access to a pre-formed plan of the entire response — coherence is emergent, not scripted in advance.
+- Predictions are computed from the current context using the model's learned parameters, starting from the geometry of embeddings (Chapter 5) — not retrieved from a table of stored answers, though specific facts can still be memorized (Chapter 9).
+- No step has access to a hidden, pre-formed plan written before the first token — any plan the model follows had to be developed through the visible context, the same way as everything else.
 - This explains why models can contradict themselves mid-response, and why "thinking step by step" tends to help on harder problems.
 
 ## 10. Further Reading

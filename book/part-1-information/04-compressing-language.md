@@ -79,9 +79,13 @@ sequence: symbols or sequences that occur frequently (and are therefore
 predictable) are assigned short representations, while rare, unpredictable
 ones are assigned longer representations — this is precisely the same
 principle behind Morse code's letter lengths in Chapter 2, and behind the
-subword-merging tokenizer in Chapter 3. In fact, tokenization is itself a
-form of compression: common multi-character sequences get compressed into
-a single token, exploiting exactly this redundancy.
+subword-merging tokenizer in Chapter 3. Tokenization exploits this same
+redundancy in a compression-like way: common multi-character sequences
+get represented as single reusable tokens, cutting down the number of
+steps the model has to process — though a tokenizer isn't a complete
+information-theoretic compression scheme on its own; the vocabulary size,
+token-ID encoding, and sequence length all still matter for how much a
+given text actually shrinks.
 
 Context, formally, is the span of surrounding tokens a system considers
 when interpreting or predicting a given token. A model doesn't process

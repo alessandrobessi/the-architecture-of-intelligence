@@ -131,13 +131,19 @@ initial position, not its final, in-context one.
 
 ## 7. Practical Implications
 
-This is the mechanism behind "semantic search," where a search engine finds
-results that match your *meaning* rather than your exact words — because
-your query and a relevant document end up with nearby embeddings even if
+The same geometric idea extends beyond single tokens. Specialized
+embedding models can turn an entire sentence, query, or document passage
+into one vector representing its overall content — built from the same
+"nearby means similar" principle, just applied to a whole piece of text
+at once rather than one word at a time. This is the mechanism behind
+"semantic search," where a search engine compares your query's
+passage-level vector against a document's passage-level vector and finds
+results that match your *meaning* rather than your exact words, even when
 they share no words in common. It's also the foundation underneath vector
-databases and retrieval-augmented generation, both covered in Part IV — in
-both cases, "find relevant information" is implemented, underneath, as
-"find nearby points in this space."
+databases and retrieval-augmented generation, both covered in Part IV —
+in all three cases, "find relevant information" is implemented,
+underneath, as "find nearby points in this space," just at the passage
+level rather than the single-token level this chapter has focused on.
 
 ## 8. Key Takeaway
 
@@ -151,7 +157,7 @@ both cases, "find relevant information" is implemented, underneath, as
 - Similarity between words is measured by geometric closeness between their embeddings.
 - Semantic geometry means relationships (like "capital of") correspond to consistent directions in this space, not just proximity.
 - Common misconception: the model does not store definitions — it stores locations, learned from context of use.
-- This geometric representation of meaning underlies semantic search, vector databases, and retrieval-augmented generation, covered later in the book.
+- The same geometric idea extends from single tokens to whole sentences or documents, via specialized embedding models — this passage-level version underlies semantic search, vector databases, and retrieval-augmented generation, covered later in the book.
 
 ## 10. Further Reading
 

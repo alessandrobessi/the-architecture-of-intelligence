@@ -215,7 +215,7 @@ Every answer should naturally create the next question.
 ## Part II --- Prediction
 
 6.  Predicting the Next Token
-7.  Why Statistics Are Not Enough
+7.  Why Counting Is Not Enough
 8.  Neural Networks Without Mathematics
 9.  Learning From Examples
 10. Scaling Laws
@@ -231,8 +231,8 @@ Every answer should naturally create the next question.
 ## Part IV --- Building Useful AI
 
 16. Context Windows and Memory
-17. Retrieval-Augmented Generation
-18. Vector Databases
+17. Semantic Retrieval and Vector Databases
+18. Retrieval-Augmented Generation
 19. Fine-Tuning and Alignment
 20. Quantization and Efficient Models
 
@@ -253,8 +253,8 @@ chapter --- so the chapter stays true even after the standard changes.
 
 ## Part VI --- The Future
 
-26. AI Engineering
-27. Evaluating AI Systems
+26. Evaluating AI Systems
+27. AI Engineering and Observability
 28. Security and Safety
 29. Where AI Is Going
 30. How to Keep Learning
