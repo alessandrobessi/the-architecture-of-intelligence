@@ -32,12 +32,10 @@ researchers expected to find.
 <svg viewBox="0 0 600 300" width="100%" xmlns="http://www.w3.org/2000/svg">
   <rect width="100%" height="100%" fill="#FBF9F6"/>
   <text x="300" y="30" text-anchor="middle" font-family="Helvetica, Arial, sans-serif" font-size="15" font-weight="bold" fill="#1B1B2F">Loss Falls Predictably as Scale Grows</text>
-
   <line x1="60" y1="250" x2="560" y2="250" stroke="#1B1B2F" stroke-width="1"/>
   <line x1="60" y1="60" x2="60" y2="250" stroke="#1B1B2F" stroke-width="1"/>
   <text x="300" y="275" text-anchor="middle" font-family="Helvetica, Arial, sans-serif" font-size="12" fill="#1B1B2F">compute used to train (×10 each step)</text>
   <text x="30" y="150" text-anchor="middle" font-family="Helvetica, Arial, sans-serif" font-size="12" fill="#1B1B2F" transform="rotate(-90 30 150)">loss (×10 each step, lower = better)</text>
-
   <path d="M 80 80 L 220 130 L 360 175 L 500 210" fill="none" stroke="#EE964B" stroke-width="2"/>
   <circle cx="80" cy="80" r="5" fill="#EE964B"/>
   <circle cx="220" cy="130" r="5" fill="#EE964B"/>
@@ -126,22 +124,16 @@ announcements oversell.
 <svg viewBox="0 0 800 500" width="100%" xmlns="http://www.w3.org/2000/svg">
   <rect width="100%" height="100%" fill="#FBF9F6"/>
   <text x="400" y="40" text-anchor="middle" font-family="Helvetica, Arial, sans-serif" font-size="20" font-weight="bold" fill="#1B1B2F">Three Ingredients, Scaled Together</text>
-
   <rect x="60" y="90" width="180" height="70" rx="8" fill="#3D5A80" stroke="#1B1B2F" stroke-width="2"/>
   <text x="150" y="130" text-anchor="middle" font-family="Helvetica, Arial, sans-serif" font-size="14" fill="#FBF9F6">Data</text>
-
   <rect x="310" y="90" width="180" height="70" rx="8" fill="#EE964B" stroke="#1B1B2F" stroke-width="2"/>
   <text x="400" y="130" text-anchor="middle" font-family="Helvetica, Arial, sans-serif" font-size="14" fill="#1B1B2F">Parameters</text>
-
   <rect x="560" y="90" width="180" height="70" rx="8" fill="#457B9D" stroke="#1B1B2F" stroke-width="2"/>
   <text x="650" y="130" text-anchor="middle" font-family="Helvetica, Arial, sans-serif" font-size="14" fill="#FBF9F6">Compute</text>
-
   <text x="400" y="200" text-anchor="middle" font-family="Helvetica, Arial, sans-serif" font-size="13" fill="#98A6B3">scaled together, in the right ratio</text>
-
   <line x1="150" y1="160" x2="380" y2="240" stroke="#98A6B3" stroke-width="2"/>
   <line x1="400" y1="160" x2="400" y2="240" stroke="#98A6B3" stroke-width="2"/>
   <line x1="650" y1="160" x2="420" y2="240" stroke="#98A6B3" stroke-width="2"/>
-
   <path d="M 150 350 L 300 320 L 450 300 L 650 280" fill="none" stroke="#2A9D8F" stroke-width="2"/>
   <circle cx="150" cy="350" r="5" fill="#2A9D8F"/>
   <circle cx="300" cy="320" r="5" fill="#2A9D8F"/>

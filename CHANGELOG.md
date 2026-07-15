@@ -38,3 +38,14 @@
   protocol and per-chapter question bank (comprehension, transfer,
   misconception resistance, retention), covering Milestone 3 of
   `ROADMAP.md`.
+- **Fixed a rendering bug affecting every diagram in the manuscript.**
+  Every embedded `<svg>` contained internal blank lines (used to visually
+  separate element groups while authoring). GitHub's Markdown parser treats
+  `<svg>` as a generic HTML block that ends at the first blank line — so
+  every diagram was silently truncated mid-markup, with the remainder
+  (including the closing `</svg>` tag) rendered as literal garbled text
+  instead of a diagram. Stripped all internal blank lines from all 20
+  diagrams across chapters 1–10; added `scripts/check_svg_bounds.py` and a
+  hard rule in `style-guide.md` §3.0 to catch this and a related bug
+  (`<text>` labels overflowing their `viewBox`, found and fixed in
+  Chapters 1 and 4) before it recurs.

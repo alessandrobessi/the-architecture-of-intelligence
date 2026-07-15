@@ -62,6 +62,7 @@ and status, and [`ROADMAP.md`](ROADMAP.md) for project-level milestones.
 | [`assets/icons/`](assets/icons/) | Canonical hand-drawn icon snippets (token, embedding point, etc.) copied and adapted into each chapter's inline diagrams. |
 | [`references/`](references/) | Lightweight per-chapter citation trail for empirical/historical claims, plus a master `bibliography.md`. |
 | [`testing/`](testing/) | The reader-validation protocol: methodology, scoring rubric, and a per-chapter question bank (comprehension, transfer, misconception resistance, retention). Ready to run, pending recruiting actual test readers. |
+| [`scripts/check_svg_bounds.py`](scripts/check_svg_bounds.py) | Run before committing any diagram change: flags embedded SVGs broken by an internal blank line (see `style-guide.md` §3.0 — this has already broken every diagram in the manuscript once) and estimates `<text>` elements that overflow their `viewBox`. |
 
 ## Editorial status and contributions
 

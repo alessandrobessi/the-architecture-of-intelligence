@@ -32,7 +32,6 @@ of times, but billions.
 <svg viewBox="0 0 600 300" width="100%" xmlns="http://www.w3.org/2000/svg">
   <rect width="100%" height="100%" fill="#FBF9F6"/>
   <text x="300" y="30" text-anchor="middle" font-family="Helvetica, Arial, sans-serif" font-size="15" font-weight="bold" fill="#1B1B2F">Miss, Measure, Adjust, Repeat</text>
-
   <circle cx="100" cy="150" r="10" fill="#D7263D"/>
   <text x="100" y="180" text-anchor="middle" font-family="Helvetica, Arial, sans-serif" font-size="11" fill="#1B1B2F">big miss</text>
   <circle cx="220" cy="130" r="8" fill="#EE964B"/>
@@ -42,7 +41,6 @@ of times, but billions.
   <circle cx="460" cy="108" r="4" fill="#2A9D8F"/>
   <text x="460" y="138" text-anchor="middle" font-family="Helvetica, Arial, sans-serif" font-size="11" fill="#1B1B2F">very close</text>
   <path d="M 100 150 Q 160 100 220 130 Q 280 90 340 115 Q 400 95 460 108" fill="none" stroke="#98A6B3" stroke-width="1" stroke-dasharray="3 3"/>
-
   <text x="300" y="230" text-anchor="middle" font-family="Helvetica, Arial, sans-serif" font-size="12" fill="#98A6B3">each nudge is small, but repeated billions of times, it converges</text>
 </svg>
 
@@ -125,26 +123,19 @@ and again.
     </marker>
   </defs>
   <text x="400" y="40" text-anchor="middle" font-family="Helvetica, Arial, sans-serif" font-size="20" font-weight="bold" fill="#1B1B2F">The Training Loop</text>
-
   <rect x="60" y="100" width="160" height="70" rx="8" fill="#3D5A80" stroke="#1B1B2F" stroke-width="2"/>
   <text x="140" y="140" text-anchor="middle" font-family="Helvetica, Arial, sans-serif" font-size="13" fill="#FBF9F6">Show example,</text>
   <text x="140" y="158" text-anchor="middle" font-family="Helvetica, Arial, sans-serif" font-size="13" fill="#FBF9F6">predict next token</text>
-
   <line x1="220" y1="135" x2="300" y2="135" stroke="#98A6B3" stroke-width="2" marker-end="url(#ch09-fig2-arrowhead)"/>
-
   <rect x="310" y="100" width="160" height="70" rx="8" fill="#EE964B" stroke="#1B1B2F" stroke-width="2"/>
   <text x="390" y="140" text-anchor="middle" font-family="Helvetica, Arial, sans-serif" font-size="13" fill="#1B1B2F">Compare to real</text>
   <text x="390" y="158" text-anchor="middle" font-family="Helvetica, Arial, sans-serif" font-size="13" fill="#1B1B2F">next token: Loss</text>
-
   <line x1="470" y1="135" x2="550" y2="135" stroke="#98A6B3" stroke-width="2" marker-end="url(#ch09-fig2-arrowhead)"/>
-
   <rect x="560" y="100" width="180" height="70" rx="8" fill="#457B9D" stroke="#1B1B2F" stroke-width="2"/>
   <text x="650" y="140" text-anchor="middle" font-family="Helvetica, Arial, sans-serif" font-size="13" fill="#FBF9F6">Nudge every</text>
   <text x="650" y="158" text-anchor="middle" font-family="Helvetica, Arial, sans-serif" font-size="13" fill="#FBF9F6">parameter, a little</text>
-
   <path d="M 650 170 C 650 280, 140 280, 140 170" fill="none" stroke="#98A6B3" stroke-width="2" marker-end="url(#ch09-fig2-arrowhead)"/>
   <text x="400" y="300" text-anchor="middle" font-family="Helvetica, Arial, sans-serif" font-size="13" fill="#98A6B3">repeated billions of times, across enormous datasets</text>
-
   <rect x="250" y="360" width="300" height="90" rx="8" fill="#F9DC5C" fill-opacity="0.3" stroke="#1B1B2F" stroke-width="2"/>
   <text x="400" y="400" text-anchor="middle" font-family="Helvetica, Arial, sans-serif" font-size="16" font-weight="bold" fill="#1B1B2F">Learning</text>
   <text x="400" y="425" text-anchor="middle" font-family="Helvetica, Arial, sans-serif" font-size="12" fill="#1B1B2F">= the pattern that emerges from this loop</text>

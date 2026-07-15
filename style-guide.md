@@ -55,6 +55,41 @@ files transcluded — GitHub markdown renders inline `<svg>` directly but does
 not support cross-file `<use xlink:href>`). Treat `assets/icons/*.svg` as
 reference snippets to copy and adapt by hand, not as includes.
 
+### 3.0 No blank lines inside an `<svg>...</svg>` block — ever
+
+This is a hard rule, not a style preference, and it has already broken
+every diagram in the manuscript once (see `CHANGELOG.md`). The reason:
+`<svg>` is not one of GitHub-flavored Markdown's recognized block-level
+HTML tags (`div`, `p`, `table`, etc.). It's parsed as a generic
+"tag-alone-on-its-line" HTML block, and *that* kind of block — like every
+HTML block type in the CommonMark spec — ends at the first blank line.
+Break an `<svg>` across a blank line (e.g. to visually separate element
+groups while authoring) and the parser stops treating everything after
+that blank line as raw HTML. The rest of the SVG, including the closing
+`</svg>` tag, renders as literal, garbled text on the page instead of a
+diagram.
+
+Concretely: never put a blank line between any two elements inside an
+`<svg>` block. Use a one-line HTML comment (`<!-- like this -->`) if you
+want to visually separate groups of elements while authoring — comments
+don't break the block, blank lines do.
+
+Before committing any new or edited diagram, run the checker:
+
+```
+python3 scripts/check_svg_bounds.py .
+```
+
+It does two things: (1) flags any embedded `<svg>` that still contains an
+internal blank line (the bug above), and (2) heuristically estimates
+whether any `<text>` element's rendered width would run past its
+`viewBox`'s edge (a second, unrelated failure mode — text positioned
+assuming a short label that turns out to be longer, e.g. "compute" vs.
+"architecture (2017)" sharing one x-position). The width estimate is a
+rough character-count heuristic, not real font metrics, and it does not
+account for `transform="rotate(...)"` — treat its output as "check this by
+hand," not as ground truth, especially for rotated labels.
+
 ### 3.1 Canvas
 
 Every SVG's **first child** must be an explicit background rect, so the

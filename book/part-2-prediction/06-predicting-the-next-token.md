@@ -31,9 +31,7 @@ until a stopping point is reached.
 <svg viewBox="0 0 600 300" width="100%" xmlns="http://www.w3.org/2000/svg">
   <rect width="100%" height="100%" fill="#FBF9F6"/>
   <text x="300" y="30" text-anchor="middle" font-family="Helvetica, Arial, sans-serif" font-size="15" font-weight="bold" fill="#1B1B2F">Ranking Candidates for the Next Token</text>
-
   <text x="30" y="65" font-family="Helvetica, Arial, sans-serif" font-size="14" fill="#1B1B2F">"The capital of France is"</text>
-
   <g font-family="Helvetica, Arial, sans-serif" font-size="13" fill="#1B1B2F">
     <text x="30" y="110">Paris</text>
     <rect x="90" y="97" width="260" height="16" fill="#3D5A80"/>
@@ -118,7 +116,6 @@ can matter disproportionately to how the rest of the response unfolds.
     </marker>
   </defs>
   <text x="400" y="40" text-anchor="middle" font-family="Helvetica, Arial, sans-serif" font-size="20" font-weight="bold" fill="#1B1B2F">Predict, Append, Repeat</text>
-
   <g font-family="Helvetica, Arial, sans-serif" font-size="13" fill="#FBF9F6">
     <rect x="60" y="100" width="60" height="40" rx="8" fill="#3D5A80"/><text x="90" y="125" text-anchor="middle">The</text>
     <rect x="126" y="100" width="70" height="40" rx="8" fill="#3D5A80"/><text x="161" y="125" text-anchor="middle">capital</text>
@@ -126,19 +123,14 @@ can matter disproportionately to how the rest of the response unfolds.
     <rect x="258" y="100" width="70" height="40" rx="8" fill="#3D5A80"/><text x="293" y="125" text-anchor="middle">France</text>
     <rect x="334" y="100" width="40" height="40" rx="8" fill="#3D5A80"/><text x="354" y="125" text-anchor="middle">is</text>
   </g>
-
   <line x1="354" y1="145" x2="354" y2="185" stroke="#98A6B3" stroke-width="2" marker-end="url(#ch06-fig1-arrowhead)"/>
-
   <rect x="220" y="195" width="270" height="70" rx="8" fill="#EE964B" stroke="#1B1B2F" stroke-width="2"/>
   <text x="355" y="225" text-anchor="middle" font-family="Helvetica, Arial, sans-serif" font-size="14" fill="#1B1B2F">predict distribution over</text>
   <text x="355" y="245" text-anchor="middle" font-family="Helvetica, Arial, sans-serif" font-size="14" fill="#1B1B2F">every possible next token</text>
-
   <line x1="355" y1="265" x2="355" y2="300" stroke="#98A6B3" stroke-width="2" marker-end="url(#ch06-fig1-arrowhead)"/>
-
   <rect x="480" y="310" width="80" height="40" rx="8" fill="#3D5A80" stroke="#1B1B2F" stroke-width="2"/>
   <text x="520" y="335" text-anchor="middle" font-family="Helvetica, Arial, sans-serif" font-size="13" fill="#FBF9F6">Paris</text>
   <text x="520" y="370" text-anchor="middle" font-family="Helvetica, Arial, sans-serif" font-size="11" fill="#98A6B3">highest probability, chosen</text>
-
   <path d="M 560 330 C 650 330, 700 200, 550 145" fill="none" stroke="#98A6B3" stroke-width="2" stroke-dasharray="4 3" marker-end="url(#ch06-fig1-arrowhead)"/>
   <text x="660" y="240" text-anchor="middle" font-family="Helvetica, Arial, sans-serif" font-size="12" fill="#98A6B3">appended, fed back in as new context</text>
 </svg>
