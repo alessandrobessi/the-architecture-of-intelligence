@@ -51,6 +51,14 @@ one more token of context than before. A whole essay is built this way,
 one narrow decision at a time, each decision informed by everything decided
 before it.
 
+**Try it yourself:** given "The opposite of hot is ___," rank in your head
+which continuation feels most likely before reading on — "cold,"
+"freezing," or "a banana"? Almost everyone ranks "cold" first, "freezing"
+a distant second, and "a banana" at essentially zero. That instant ranking
+you just did is exactly the kind of judgment a model makes at every single
+step — just spread across its entire vocabulary instead of three options,
+and computed freshly rather than felt intuitively.
+
 ## 5. Technical Explanation
 
 Formally, a language model computes a probability distribution over its

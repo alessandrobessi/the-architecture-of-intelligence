@@ -53,6 +53,12 @@ word "bank" itself tells you which meaning is intended — only the tokens
 around it do. Context is what turns an ambiguous token into a specific
 meaning.
 
+A second example makes the same point from a different angle: "this
+concert was sick" and "this flu is making me sick" use the identical word
+to mean nearly opposite things — one enthusiastic praise, one literal
+illness. No dictionary entry for "sick" resolves that on its own; only
+"concert" versus "flu," sitting a few tokens away, does.
+
 These two ideas are deeply connected: a system that is good at predicting
 what comes next, given context, is automatically good at compression —
 because "predictable" and "compressible" are the same property viewed from

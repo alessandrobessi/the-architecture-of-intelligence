@@ -26,8 +26,19 @@ specific chapter passage.
   information.' Is that necessarily true?"
 - **Misconception resistance** (`computation-implies-understanding`):
   "Does a computer that processes your message understand what it means?"
+  Follow-up: "Is a thermostat deciding to turn on the heat any different,
+  in kind, from a computer processing your message?" (Correct answer: no —
+  same kind of mechanical decision, just far more elaborate rules stacked
+  on top.)
 - **Misconception resistance** (`more-data-equals-more-information`):
   "Does more data always mean more information?"
+- **Transfer (chapter's own thought experiment):** "Which carries more
+  information — 'it will rain sometime this century' or 'it will rain
+  tomorrow at 3pm'?" (Correct answer: the second, shorter sentence — it
+  commits to something far less probable, so it reduces more uncertainty.
+  If the reader picks the first because it's a "bigger claim" or focuses
+  on sentence length, that's the more-data-equals-more-information
+  misconception surfacing under a new label.)
 
 ## Chapter 3 — Characters, Words and Tokens
 
@@ -39,6 +50,12 @@ specific chapter passage.
   model read text one letter at a time, like sounding out a word?"
 - **Misconception resistance** (`token-always-one-word`): "Is a token
   always exactly one whole word?"
+- **Transfer (chapter's own thought experiment):** "How do you think a
+  tokenizer would handle the word 'quokka' — real, but rare?" (Correct
+  answer: broken into two or three familiar sub-word pieces, not rejected
+  and not necessarily a single dedicated token. If the reader assumes the
+  model would simply fail or substitute a placeholder, that's the
+  token-always-one-word misconception surfacing under a new label.)
 
 ## Chapter 4 — Compressing Language
 
@@ -77,6 +94,13 @@ specific chapter passage.
   question as transfer, above — score both from one answer.
 - **Misconception resistance** (`prediction-is-lookup`): "Is the model
   looking up your exact question in a giant table of memorized answers?"
+- **Transfer (chapter's own thought experiment):** "Given 'The opposite of
+  hot is ___,' rank 'cold,' 'freezing,' and 'a banana' by how likely each
+  one is to come next." (Correct answer: cold first by a wide margin,
+  freezing a distant second, banana essentially zero — the point is that
+  the reader can do this ranking instantly and intuitively, which is the
+  same operation the model performs computationally over its whole
+  vocabulary.)
 
 ## Chapter 7 — Why Statistics Are Not Enough
 

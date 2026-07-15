@@ -2,6 +2,25 @@
 
 ## 2026-07-15
 
+- Added a second reinforcing example or analogy to every concept across
+  all 10 written chapters, so ideas get more than one grounding before
+  moving on (per direct feedback that chapters felt compressed): a
+  counterfactual thought experiment (Ch. 1, "swap out one of the three
+  ingredients"), a thermostat analogy + a reader "try it yourself" for
+  information-vs-length (Ch. 2), a rare-word tokenization example (Ch. 3,
+  "quokka"), a slang-based context example (Ch. 4, "sick"), a second
+  semantic-geometry relationship (Ch. 5, gender offset), a reader
+  prediction-ranking exercise (Ch. 6, "opposite of hot"), a concrete sense
+  of combinatorial scale (Ch. 7), a hiring-committee analogy (Ch. 8), a
+  recipe-adjusting-by-taste analogy (Ch. 9), and a fertilizer/diminishing-
+  returns analogy (Ch. 10). All logged in `style-guide.md`'s Analogy
+  Registry; the three new reader-facing "try it yourself" prompts (Ch. 2,
+  3, 6) were also added to `testing/questions.md` so the reader-validation
+  protocol stays in sync with the manuscript.
+- Fixed Chapter 3, §10 (Further Reading): removed a reference to "the
+  companion website for this book," which doesn't exist yet (an unstarted
+  item in `ROADMAP.md`'s Milestone 5) — replaced with a pointer to real,
+  already-existing tokenizer visualizer tools.
 - Initial commit: project infrastructure (style guide, chapter template,
   glossary, misconception graph, concept dependency tracker, icon set) and
   the full Part I manuscript (chapters 1–5, "Information").

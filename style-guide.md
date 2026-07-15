@@ -219,6 +219,15 @@ table before writing a new analogy — if the concept already has one, reuse it.
 | Factory floor of simple, adjustable valves | Neural networks / parameters | Ch. 8 | Deliberately not the brain analogy — keeps a clean mechanical intuition free of biological over-claiming. |
 | Learning free throws via miss-and-adjust feedback | Loss / training / learning | Ch. 9 | Reuse for fine-tuning (Ch. 19), which is the same loop applied after initial training. |
 | Marathon training's diminishing returns | Scaling laws (predictable but diminishing) | Ch. 10 | Reuse if quantization/efficient-inference (Ch. 20) needs a "more isn't always the answer" callback. |
+| Counterfactual: swap one of three ingredients out | "All three ingredients are necessary, none sufficient alone" | Ch. 1 | A reusable move, not just an analogy — pair a concept's real example with "what if only two of the N factors were present?" |
+| Thermostat mechanically deciding without awareness | Computation without understanding | Ch. 2 | Second grounding alongside the vending-machine misconception analogy — simpler and more universally familiar. |
+| Rain forecast: vague-long-term vs. specific-near-term | Information as uncertainty reduction, not length | Ch. 2 | Reader-facing "try it yourself," not just expository — reuse this move (see counterfactual note above) for other counterintuitive quantities later in the book. |
+| Rare/invented word ("quokka") tokenized into familiar pieces | Tokenization's graceful fallback on unfamiliar input | Ch. 3 | Reuse for any future chapter discussing out-of-vocabulary or rare-input handling (e.g. multimodal tokenization, Ch. 24). |
+| Slang double meaning ("sick" = great vs. ill) | Context disambiguation | Ch. 4 | Second grounding alongside bank/river — deliberately a different generation/register of language. |
+| Gender offset (king→queen, actor→actress) | Semantic geometry / consistent relationship directions | Ch. 5 | Second grounding alongside capital-of — keep both equally hedged as "illustrative, not universal." |
+| Hiring committee weighing the same facts differently | Neural network units / weighted combination | Ch. 8 | Second grounding alongside the valve factory — a social/business framing for readers who find the mechanical one less intuitive. |
+| Adjusting a recipe by taste | Training loop (predict, measure error, nudge, repeat) | Ch. 9 | Second grounding alongside free throws — reuse for fine-tuning (Ch. 19) alongside the free-throw analogy. |
+| Fertilizer and crop yield (diminishing returns) | Scaling laws | Ch. 10 | Second grounding alongside marathon training — an economics framing likely to land well with the book's manager/consultant readers. |
 
 (Table grows chapter by chapter; append immediately after finishing a chapter
 that introduces a new analogy — see §2.)

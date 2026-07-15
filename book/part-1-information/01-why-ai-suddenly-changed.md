@@ -70,6 +70,18 @@ became available together — and the resulting systems crossed a threshold
 where their output stopped looking like "autocomplete" and started looking
 like understanding.
 
+A quick thought experiment makes this concrete. Take 2022's internet-scale
+data and 2022's compute, but pair them with a pre-2017 architecture instead
+of the transformer — this isn't hypothetical, since exactly that comparison
+has been run. The older architectures plateau well short of what
+transformers achieve on the same data and compute, because they process a
+sentence largely one piece at a time instead of weighing an entire passage
+at once. Now run it the other way: take the transformer architecture, but
+feed it only 1990s-scale data and compute. You get a toy, not a chatbot.
+Two out of three ingredients, in either direction, isn't enough — which is
+exactly why "just add more data" or "just use a bigger chip" announcements,
+on their own, tend to overpromise.
+
 ## 5. Technical Explanation
 
 Precisely: modern AI language systems are trained using *self-supervised

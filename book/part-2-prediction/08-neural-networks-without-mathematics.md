@@ -48,6 +48,16 @@ input weighted by its own adjustable importance — and passes a single
 resulting number onward to the next layer of units. Individually, a unit's
 job is almost trivially simple.
 
+A different angle on the same idea: imagine a hiring committee where every
+member weighs the same facts about a candidate — years of experience, a
+portfolio, an interview impression — but each member privately assigns
+different importance to each factor. One member's vote leans heavily on
+the portfolio; another's mostly on the interview. The committee's final
+decision emerges from combining all of these individually-weighted
+judgments, even though no single member's opinion is "the" answer on its
+own. A neural network's units work the same way, just with numbers instead
+of people, and millions of "members" instead of a handful.
+
 Those adjustable importances are called **parameters** (also called
 weights): a number attached to every connection in the network, controlling
 how much that particular input matters to that particular unit. A modern

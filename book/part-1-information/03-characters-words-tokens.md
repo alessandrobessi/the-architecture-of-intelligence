@@ -78,6 +78,15 @@ into a sequence of these numerical IDs, which is the actual input a model
 receives — the model never sees letters or words as such, only this
 sequence of numbers.
 
+**Try it yourself:** how do you think a tokenizer would handle "quokka" — a
+real word, but rare enough that most vocabularies never earned it a
+dedicated token? Most likely as two or three familiar pieces ("quok" +
+"ka," or similar), the same way it would handle a name it's never
+encountered, like an uncommon surname, or a product name invented last
+week. This is the design working as intended: the tokenizer never fails
+outright on something unfamiliar, it just falls back to smaller, more
+common pieces it already has tokens for.
+
 ## 6. Common Misconceptions
 
 > **Misconception:** "The model reads text one letter at a time, like sounding out a word."

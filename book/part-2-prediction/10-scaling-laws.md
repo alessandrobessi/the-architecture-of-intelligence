@@ -53,6 +53,14 @@ support ends up undertrained relative to its own size — bigger, but not
 correspondingly better, because it never saw enough examples to make good
 use of all those parameters.
 
+This diminishing-returns shape is much older than machine learning.
+Economists have described exactly this curve for centuries: adding
+fertilizer to a field increases crop yield sharply at first, then less and
+less with each additional bag, until at some point adding more stops
+helping at all. Scaling a language model follows the same general pattern
+that shows up whenever you keep adding more of one input to a process that
+has other, non-scaling constraints in the background.
+
 ## 5. Technical Explanation
 
 Scaling laws describe loss decreasing roughly as a power-law function of

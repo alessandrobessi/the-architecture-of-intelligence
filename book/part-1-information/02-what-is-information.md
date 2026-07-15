@@ -50,7 +50,12 @@ it's simply the agreed-upon stand-in for it.
 **Computation** is the mechanical manipulation of symbols according to
 fixed rules, with no need for whatever is doing the manipulating to
 understand what the symbols mean. A telegraph relay flips a switch based on
-pulses; it has no idea it's spelling a word.
+pulses; it has no idea it's spelling a word. A thermostat makes the same
+point even more plainly: it reads a temperature, compares it to a setpoint,
+and mechanically decides whether to turn the heat on — reliably, correctly,
+thousands of times — without anything resembling an awareness of what
+"cold" feels like. A computer processing language is doing the same kind of
+thing, just with vastly more elaborate rules stacked on top of each other.
 
 **Information** is not the same thing as data. A message carries
 information only to the extent that it *reduces your uncertainty* about
@@ -78,6 +83,13 @@ information. This is why "the sun rose this morning" tells you almost
 nothing, while "there was a solar eclipse this morning" tells you a great
 deal — the second event is far less probable, so learning it happened
 reduces far more of your uncertainty.
+
+**Try it yourself, before reading on:** which carries more information —
+"it will rain sometime this century" or "it will rain tomorrow at 3pm"? The
+second is much shorter, but it commits to something far less probable if
+you were just guessing, so it reduces far more of your uncertainty. It
+carries more information despite being the shorter sentence — length was
+never the variable that mattered.
 
 Computation, in the formal sense established by Alan Turing and Alonzo
 Church in the 1930s, is any process that transforms an input symbol

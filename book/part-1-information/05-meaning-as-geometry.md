@@ -84,7 +84,11 @@ consistent directions in the space — the geometric offset from a country's
 embedding to its capital's embedding lands close to the same offset for
 several other country/capital pairs. This is what "semantic geometry"
 means: meaning-relationships can become measurable geometric structure, not
-just proximity. Treat the country/capital example as one clean, memorable
+just proximity. The same pattern tends to show up in other relationships
+too: the direction that turns "king" into "queen" tends to land close to
+the direction that turns "actor" into "actress," or "man" into "woman" — a
+consistent male-to-female offset that shows up across many unrelated word
+pairs, not just royalty. Treat both of these as one clean, memorable
 illustration of the general principle, not a universal law — real embedding
 spaces are messier than this, the pattern holds more cleanly for some
 relationships than others, and it varies from model to model.

@@ -66,6 +66,14 @@ Mark V. Shaney's two-word window) avoids this explosion but pays for it
 with a very short memory — it genuinely cannot use information from
 earlier in a sentence or paragraph.
 
+To feel the scale of this: English has tens of thousands of common words,
+so counting every possible three-word sequence already means tracking
+billions of distinct combinations. Push to five- or ten-word sequences —
+still a short paragraph — and the count of possibilities climbs so high
+that even the entire indexed internet doesn't contain enough text to have
+seen more than a sliver of them. A counting table's coverage gets thinner,
+not thicker, the longer the context it tries to consider.
+
 The second problem is a failure to generalize. A counting-based model has
 no internal representation of similarity between words — "cat" and
 "kitten" are, to it, as unrelated as "cat" and "spreadsheet." This is

@@ -57,6 +57,16 @@ nudged, over billions of examples, in whatever direction reduces error.
 Nobody designs the patterns the network ends up using; they emerge because
 they happen to reduce loss more reliably than the alternatives.
 
+A second grounding, from a completely different domain: adjusting a recipe
+by taste rather than a fixed formula. You taste the soup (measure the
+error), decide it needs a bit more salt and a little less acid (the
+direction and rough size of the adjustment), make the change, and taste
+again. Repeat enough times, across enough soups, and you converge on
+something that reliably tastes right — without ever writing down "the"
+formula for correctness in advance. Training a neural network is this same
+taste-adjust-repeat loop, automated and run billions of times instead of a
+few dozen.
+
 ## 5. Technical Explanation
 
 For language models, a single training example is simple: take a real
