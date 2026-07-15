@@ -54,29 +54,29 @@ after any change to the YAML and commit both files together.
 
 | Concept | Status | Chapter | Prerequisites | Misconceptions | Key Takeaway |
 |---|---|---|---|---|---|
-| Attention | ☐ planned | Ch. 11 | embeddings, context, similarity | 0 | — |
-| Positional encoding | ☐ planned | Ch. 11 | attention | 0 | — |
-| Transformer blocks | ☐ planned | Ch. 12 | attention, positional-encoding, neural-networks | 0 | — |
-| Inference | ☐ planned | Ch. 14 | transformer-blocks | 0 | — |
-| Sampling | ☐ planned | Ch. 14 | inference, probability-intuition | 0 | — |
+| Attention | ✅ written | Ch. 11 | embeddings, context, similarity | 1 | [link](book/part-3-the-transformer/11-the-attention-revolution.md#8-key-takeaway) |
+| Positional encoding | ✅ written | Ch. 11 | attention | 1 | [link](book/part-3-the-transformer/11-the-attention-revolution.md#8-key-takeaway) |
+| Transformer blocks | ✅ written | Ch. 12 | attention, positional-encoding, neural-networks | 2 | [link](book/part-3-the-transformer/12-building-a-transformer.md#8-key-takeaway) |
+| Inference | ✅ written | Ch. 14 | transformer-blocks | 1 | [link](book/part-3-the-transformer/14-inference-and-text-generation.md#8-key-takeaway) |
+| Sampling | ✅ written | Ch. 14 | inference, probability-intuition | 1 | [link](book/part-3-the-transformer/14-inference-and-text-generation.md#8-key-takeaway) |
 
 ## Level 5 — Hallucinations, Fine-tuning, Alignment, Context windows, Memory
 
 | Concept | Status | Chapter | Prerequisites | Misconceptions | Key Takeaway |
 |---|---|---|---|---|---|
-| Hallucinations | ☐ planned | Ch. 15 | inference, sampling, training | 0 | — |
-| Fine-tuning | ☐ planned | Ch. 19 | training, parameters | 0 | — |
-| Alignment | ☐ planned | Ch. 19 | fine-tuning | 0 | — |
-| Context windows | ☐ planned | Ch. 16 | context, inference | 0 | — |
-| Memory | ☐ planned | Ch. 16 | context-windows | 0 | — |
+| Hallucinations | ✅ written | Ch. 15 | inference, sampling, training | 2 | [link](book/part-3-the-transformer/15-why-models-hallucinate.md#8-key-takeaway) |
+| Fine-tuning | ✅ written | Ch. 19 | training, parameters | 1 | [link](book/part-4-building-useful-ai/19-fine-tuning-and-alignment.md#8-key-takeaway) |
+| Alignment | ✅ written | Ch. 19 | fine-tuning | 1 | [link](book/part-4-building-useful-ai/19-fine-tuning-and-alignment.md#8-key-takeaway) |
+| Context windows | ✅ written | Ch. 16 | context, inference | 1 | [link](book/part-4-building-useful-ai/16-context-windows-and-memory.md#8-key-takeaway) |
+| Memory | ✅ written | Ch. 16 | context-windows | 1 | [link](book/part-4-building-useful-ai/16-context-windows-and-memory.md#8-key-takeaway) |
 
 ## Level 6 — Retrieval, Vector databases, RAG, Tool calling, MCP, AI agents
 
 | Concept | Status | Chapter | Prerequisites | Misconceptions | Key Takeaway |
 |---|---|---|---|---|---|
-| Retrieval | ☐ planned | Ch. 17 | similarity, context-windows | 0 | — |
-| Vector databases | ☐ planned | Ch. 17 | embeddings, similarity, retrieval | 0 | — |
-| Retrieval-Augmented Generation (RAG) | ☐ planned | Ch. 18 | retrieval, vector-databases, context-windows, inference | 0 | — |
+| Retrieval | ✅ written | Ch. 17 | similarity, context-windows | 1 | [link](book/part-4-building-useful-ai/17-semantic-retrieval-and-vector-databases.md#8-key-takeaway) |
+| Vector databases | ✅ written | Ch. 17 | embeddings, similarity, retrieval | 1 | [link](book/part-4-building-useful-ai/17-semantic-retrieval-and-vector-databases.md#8-key-takeaway) |
+| Retrieval-Augmented Generation (RAG) | ✅ written | Ch. 18 | retrieval, vector-databases, context-windows, inference | 2 | [link](book/part-4-building-useful-ai/18-retrieval-augmented-generation.md#8-key-takeaway) |
 | Tool calling | ☐ planned | Ch. 21 | inference, context-windows | 0 | — |
 | Model Context Protocol (MCP) | ☐ planned | Ch. 21 | tool-calling | 0 | — |
 | AI agents | ☐ planned | Ch. 22 | tool-calling, memory, inference | 0 | — |
@@ -88,8 +88,8 @@ after any change to the YAML and commit both files together.
 | Reasoning models | ☐ planned | Ch. 23 | inference, sampling, training | 0 | — |
 | Multimodality | ☐ planned | Ch. 24 | tokens, embeddings, transformer-blocks | 0 | — |
 | Mixture of Experts | ☐ planned | Ch. 25 | transformer-blocks, parameters | 0 | — |
-| Quantization | ☐ planned | Ch. 20 | parameters | 0 | — |
-| Efficient inference | ☐ planned | Ch. 20 | inference, quantization | 0 | — |
+| Quantization | ✅ written | Ch. 20 | parameters | 1 | [link](book/part-4-building-useful-ai/20-quantization-and-efficient-models.md#8-key-takeaway) |
+| Efficient inference | ✅ written | Ch. 20 | inference, quantization | 1 | [link](book/part-4-building-useful-ai/20-quantization-and-efficient-models.md#8-key-takeaway) |
 
 ## Level 8 — Evaluation, Observability, Security, Safety, AI engineering
 

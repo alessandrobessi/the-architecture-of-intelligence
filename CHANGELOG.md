@@ -2,6 +2,44 @@
 
 ## 2026-07-15
 
+- Fourth review round, addressed directly:
+  - Fixed Ch.6's "Chapter 24" -> "Chapter 23" reasoning-models
+    cross-reference (verified as a real bug before fixing), plus softened
+    "geometric neighborhood of a token" and "genuinely undetermined."
+  - Reworded Ch.5's Key Takeaway and added a scope note distinguishing
+    classic word-level embeddings from modern token/passage embeddings.
+  - Fixed a stale concept-graph.yaml comment (Level 6 mislabeled "Part V"
+    after retrieval/vector-databases moved to Part IV).
+  - concept-graph.md is now GENERATED from concept-graph.yaml
+    (`scripts/generate_concept_graph_md.py`), surfacing prerequisites,
+    misconception counts, and key-takeaway links per concept instead of a
+    bare checkbox — it can no longer drift out of sync by hand-editing.
+  - Added `scripts/validate_cross_references.py`, catching exactly the
+    "Chapter 24 vs 23" bug class; iterated through several false-positive
+    rounds (whole-sentence matching, then paragraph-scoped, then
+    nearest-match with list/paragraph boundary awareness) before landing
+    on a version clean against the real manuscript that still catches the
+    original bug when synthetically reintroduced.
+  - Added `requirements.txt` (PyYAML) and `.github/workflows/validate.yml`,
+    running all three validators plus a check that `concept-graph.md` is
+    actually regenerated and committed alongside any YAML change.
+  - Verified several other review claims (a duplicate Ch.7 file, stale
+    README/blueprint links, missing pre-test) against the live repo and
+    found them false — already fixed in earlier commits; the review was
+    reading a stale/cached copy.
+- **Added Part III — The Transformer (chapters 11–15)** and **Part IV —
+  Building Useful AI (chapters 16–20)**, at the same depth and structure
+  as Parts I–II: attention, transformer blocks, the pretraining-to-chatbot
+  gap, inference/sampling, hallucination, context windows/memory,
+  semantic retrieval/vector databases, RAG, fine-tuning/alignment, and
+  quantization/efficient inference. All 10 chapters verified: 11 sections
+  each, narrative handoffs intact end to end from Chapter 10 through
+  Chapter 20, all three validators clean. Updated glossary, misconception
+  graph, concept-graph.yaml (written status, key-takeaways, misconception
+  IDs), the style-guide analogy registry (including two deliberately
+  linked analogy pairs: the exam analogy spanning Ch.14/18, and the
+  medical-school/residency analogy spanning Ch.13/19), both READMEs,
+  ROADMAP.md, and `references/chapter-11.md` through `chapter-20.md`.
 - Third review round: verified each claim against the live repository
   rather than assuming the review was current. Most of the "urgent" items
   (a duplicate Chapter 7 file, stale links/titles in `book/README.md` and

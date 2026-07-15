@@ -16,8 +16,8 @@ Supporting project files: [`../style-guide.md`](../style-guide.md) (voice,
 analogy registry), [`../glossary.md`](../glossary.md),
 [`../misconceptions.md`](../misconceptions.md), [`../concept-graph.md`](../concept-graph.md).
 
-**Status:** Parts I and II are complete. Parts III–VI are planned but not
-yet written.
+**Status:** Parts I–IV are complete. Parts V–VI are planned but not yet
+written.
 
 ---
 
@@ -47,21 +47,31 @@ yet written.
 10. [Scaling Laws](part-2-prediction/10-scaling-laws.md)
     — *Is there a predictable relationship between how big a model is and how good it becomes — and does scaling ever stop paying off?*
 
-## Part III — The Transformer *(not yet written)*
+## Part III — The Transformer
 
-11. The Attention Revolution
-12. Building a Transformer
-13. From Transformer to ChatGPT
-14. Inference and Text Generation
-15. Why Models Hallucinate
+11. [The Attention Revolution](part-3-the-transformer/11-the-attention-revolution.md)
+    — *How does a model decide which earlier words matter most when predicting the next one?*
+12. [Building a Transformer](part-3-the-transformer/12-building-a-transformer.md)
+    — *Once a model can weigh relevance across an entire passage, how do you actually assemble that mechanism into a full working system?*
+13. [From Transformer to ChatGPT](part-3-the-transformer/13-from-transformer-to-chatgpt.md)
+    — *The transformer architecture existed since 2017 — why did it take years before something like ChatGPT appeared?*
+14. [Inference and Text Generation](part-3-the-transformer/14-inference-and-text-generation.md)
+    — *Once a model has all this training baked in, what actually happens, step by step, when it generates a response to your prompt?*
+15. [Why Models Hallucinate](part-3-the-transformer/15-why-models-hallucinate.md)
+    — *If the model is just sampling plausible-sounding tokens, what happens when "plausible-sounding" and "actually true" come apart?*
 
-## Part IV — Building Useful AI *(not yet written)*
+## Part IV — Building Useful AI
 
-16. Context Windows and Memory
-17. Semantic Retrieval and Vector Databases
-18. Retrieval-Augmented Generation
-19. Fine-Tuning and Alignment
-20. Quantization and Efficient Models
+16. [Context Windows and Memory](part-4-building-useful-ai/16-context-windows-and-memory.md)
+    — *If a model's own trained-in knowledge can run out or go stale, how can it be given a bigger, more reliable memory to draw from?*
+17. [Semantic Retrieval and Vector Databases](part-4-building-useful-ai/17-semantic-retrieval-and-vector-databases.md)
+    — *If a context window can't hold everything, how can a model still pull in specific relevant information exactly when it's needed?*
+18. [Retrieval-Augmented Generation](part-4-building-useful-ai/18-retrieval-augmented-generation.md)
+    — *Once relevant documents can be retrieved this way, how does a model actually combine that with its own generation process to produce a grounded answer?*
+19. [Fine-Tuning and Alignment](part-4-building-useful-ai/19-fine-tuning-and-alignment.md)
+    — *How does additional training after pretraining actually work, and how does a model get pointed toward being safe and aligned with what people actually want?*
+20. [Quantization and Efficient Models](part-4-building-useful-ai/20-quantization-and-efficient-models.md)
+    — *Can a trained model be made to run cheaper and faster, without retraining it from scratch or changing what it fundamentally knows?*
 
 ## Part V — AI Systems *(not yet written)*
 

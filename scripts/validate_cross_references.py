@@ -40,12 +40,35 @@ KEYWORD_TO_CONCEPT = {
 }
 
 CHAPTER_RE = re.compile(r"Chapter\s+(\d+)")
-# Prose in this manuscript is hard-wrapped at ~80 columns *within* a
-# paragraph, so "same line" is too narrow a scope -- but a markdown list
-# item should never bleed into its neighbor even with no blank line
-# between them. Split on blank lines (paragraph breaks) OR the start of a
-# new "- " list item, whichever comes first.
-BLOCK_SPLIT_RE = re.compile(r"\n\s*\n|\n(?=-\s)")
+# Maximum character distance between a keyword occurrence and a "Chapter N"
+# mention for the two to count as referring to each other. A synthesis
+# chapter (e.g. RAG, which legitimately cites several earlier chapters for
+# several different concepts in one paragraph) means whole-paragraph
+# matching produces false positives -- only the *nearest* chapter mention
+# to a given keyword occurrence is a claim about that keyword's concept.
+MAX_DISTANCE = 70
+
+# Manually verified false positives: the keyword and chapter number are
+# genuinely close together (same sentence), but the chapter number cites a
+# *different* concept discussed in that same breath, not a claim about
+# where the keyword's own concept lives. Re-verify each entry by hand if
+# the surrounding prose ever changes; don't add to this list to silence a
+# finding you haven't actually read.
+ALLOWLIST = {
+    # "Fine-tuning reuses Chapter 9's training loop..." -- Chapter 9 is
+    # correctly cited for *training*, not as fine-tuning's home chapter.
+    ("13-from-transformer-to-chatgpt.md", "fine-tun", 9),
+    # "...embeddings (Chapter 5), attention and refinement through
+    # transformer blocks (Chapters 11-12)..." -- Chapter 5 is correctly
+    # cited for embeddings, immediately before the transformer-blocks
+    # keyword, not a claim about transformer-blocks' own home chapter.
+    ("14-inference-and-text-generation.md", "transformer block", 5),
+    # "RAG changes nothing about the model's parameters (Chapter 8). It's
+    # entirely a matter of what gets placed in the context window..." --
+    # Chapter 8 is correctly cited for parameters, immediately before the
+    # context-window keyword, not a claim about context-windows' home.
+    ("18-retrieval-augmented-generation.md", "context window", 8),
+}
 
 
 def load_chapter_by_concept():
@@ -67,37 +90,68 @@ def check_file(path, chapter_by_concept):
     # chapters and isn't a forward-reference claim about the current
     # chapter's own concepts.
     body = text.split("\n---\n", 1)[-1] if "\n---\n" in text else text
+    # A markdown list item should never be treated as adjacent to its
+    # neighbor, even with no blank line between them (two Further Reading
+    # bullets sit right next to each other, on entirely different topics).
+    # Mark those boundaries with a sentinel *before* collapsing whitespace,
+    # so "nearest" can refuse to cross one even though the raw character
+    # distance might otherwise look small.
+    boundary_marked = re.sub(r"\n\s*\n|\n(?=-\s)", "\x00", body)
+    # Prose here is also hard-wrapped at ~80 columns *within* a paragraph,
+    # so a keyword phrase can straddle a line break ("reasoning\nmodels").
+    # Normalize remaining whitespace so that doesn't hide it, and so
+    # character distances are measured in rendered space, not
+    # raw-line-wrapped space. The sentinel is not whitespace, so it survives.
+    normalized = re.sub(r"\s+", " ", boundary_marked)
+    lowered = normalized.lower()
 
-    for block in BLOCK_SPLIT_RE.split(body):
-        # Prose here is hard-wrapped at ~80 columns, so a keyword phrase
-        # can straddle a line break ("reasoning\nmodels"). Normalize
-        # internal whitespace before matching so that doesn't hide it.
-        normalized_block = re.sub(r"\s+", " ", block)
-        chapter_matches = list(CHAPTER_RE.finditer(normalized_block))
-        if not chapter_matches:
+    chapter_matches = list(CHAPTER_RE.finditer(normalized))
+    if not chapter_matches:
+        return errors
+
+    for keyword, concept_id in KEYWORD_TO_CONCEPT.items():
+        expected = chapter_by_concept.get(concept_id)
+        if expected is None or expected == this_chapter:
+            # No assignment to check against, or we're already inside this
+            # concept's own home chapter, where a nearby "Chapter N" is
+            # necessarily citing something else in the same paragraph, not
+            # making a claim about where this concept itself lives.
             continue
-        lowered_block = normalized_block.lower()
-        for keyword, concept_id in KEYWORD_TO_CONCEPT.items():
-            if keyword not in lowered_block:
+        for kw_match in re.finditer(re.escape(keyword), lowered):
+            # Only consider chapter mentions in the same segment (no list-
+            # item/paragraph boundary sentinel between them), and among
+            # those, only the nearest one -- not just any mention anywhere
+            # in the same segment.
+            candidates = [
+                m
+                for m in chapter_matches
+                if "\x00" not in normalized[min(m.start(), kw_match.start()) : max(m.end(), kw_match.end())]
+            ]
+            if not candidates:
                 continue
-            expected = chapter_by_concept.get(concept_id)
-            if expected is None:
+            nearest = min(
+                candidates,
+                key=lambda m: min(
+                    abs(m.start() - kw_match.end()), abs(kw_match.start() - m.end())
+                ),
+            )
+            distance = min(
+                abs(nearest.start() - kw_match.end()), abs(kw_match.start() - nearest.end())
+            )
+            if distance > MAX_DISTANCE:
                 continue
-            if expected == this_chapter:
-                # We're already inside this concept's own home chapter --
-                # any nearby "Chapter N" mention is citing something else
-                # discussed in the same paragraph, not making a claim
-                # about where this concept itself lives.
-                continue
-            for ch_match in chapter_matches:
-                referenced = int(ch_match.group(1))
-                if referenced != expected:
-                    snippet = block.strip().replace("\n", " ")[:160]
-                    errors.append(
-                        f"{path}: mentions '{keyword}' near 'Chapter {referenced}', "
-                        f"but concept-graph.yaml assigns {concept_id} to Chapter {expected} "
-                        f"-- \"{snippet}\""
-                    )
+            referenced = int(nearest.group(1))
+            if referenced != expected:
+                if (path.name, keyword, referenced) in ALLOWLIST:
+                    continue
+                start = max(0, min(kw_match.start(), nearest.start()) - 20)
+                end = min(len(normalized), max(kw_match.end(), nearest.end()) + 20)
+                snippet = normalized[start:end].replace("\x00", " ").strip()
+                errors.append(
+                    f"{path}: mentions '{keyword}' near 'Chapter {referenced}', "
+                    f"but concept-graph.yaml assigns {concept_id} to Chapter {expected} "
+                    f"-- \"{snippet}\""
+                )
     return errors
 
 

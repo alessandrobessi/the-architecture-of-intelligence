@@ -34,3 +34,34 @@ the real explanation lives in the chapter itself.
 | Scaling law | The empirical, forecastable relationship between training data/parameters/compute and resulting loss. | Ch. 10 |
 | Undertrained (relative to parameter count) | A model with more parameters than its training data can make good use of. | Ch. 10 |
 | Irreducible loss | The small remaining part of loss that scale alone doesn't remove; the power-law scaling description applies to the part that does shrink. | Ch. 10 |
+| Attention | A mechanism letting a model weigh every other token's relevance when interpreting or predicting from a given token. | Ch. 11 |
+| Positional encoding | A position-dependent tag attached to each token so attention can tell where tokens sit, not just which are present. | Ch. 11 |
+| Query/key/value | The three per-token quantities attention compares and combines: what a token seeks, what it offers, and what it contributes if selected. | Ch. 11 |
+| Transformer block | A combination of an attention step and an individual feed-forward refinement step, stacked repeatedly to form a transformer. | Ch. 12 |
+| Feed-forward step | The part of a transformer block that refines each token's representation individually, via a simple neural network (Ch. 8). | Ch. 12 |
+| Residual connection | Adding a block's refinement on top of its input rather than replacing it, preserving information across many stacked layers. | Ch. 12 |
+| Normalization | A bookkeeping step keeping numeric scale consistent across stacked transformer blocks. | Ch. 12 |
+| Pretraining | The large-scale, generic next-token-prediction training phase, as formally contrasted with fine-tuning. | Ch. 13 |
+| Base model | A pretrained model with no further behavioral shaping applied. | Ch. 13 |
+| Chat/instruct model | A pretrained model further shaped by fine-tuning and human feedback toward helpful, direct behavior. | Ch. 13 |
+| RLHF (preview) | Reinforcement Learning from Human Feedback — training a reward model from human preferences, then adjusting the language model against it. | Ch. 13 |
+| Inference | Running a trained model with fixed, frozen parameters to produce output. | Ch. 14 |
+| Sampling | The method used to choose one actual token from a model's predicted probability distribution at each generation step. | Ch. 14 |
+| Temperature | A control adjusting how narrowly or broadly sampling draws from the predicted distribution. | Ch. 14 |
+| Top-k / nucleus sampling | Sampling techniques that restrict token choice to the most plausible candidates, avoiding implausible tokens by chance. | Ch. 14 |
+| Hallucination | Fluent, confident, plausible-sounding output that is factually wrong or fabricated, without intent to deceive. | Ch. 15 |
+| Context window | The maximum number of tokens a model can consider at once; everything beyond it isn't visible to the model. | Ch. 16 |
+| Memory (system-design sense) | Strategies for managing what stays available within a fixed context window as a conversation grows. | Ch. 16 |
+| Retrieval | Finding relevant documents or passages using semantic similarity rather than exact keyword matching. | Ch. 17 |
+| Vector database | A specialized storage system for huge numbers of embeddings, built for fast nearest-neighbor search. | Ch. 17 |
+| Chunking | Splitting documents into passages before embedding them for retrieval. | Ch. 17 |
+| Nearest-neighbor search | Finding the stored embeddings closest to a query's embedding in a vector space. | Ch. 17 |
+| Retrieval-Augmented Generation (RAG) | Retrieving relevant passages and inserting them into the context window before generating an answer. | Ch. 18 |
+| Fine-tuning (formal) | Continuing training on a smaller, curated dataset after pretraining, using the same mechanism as Ch. 9, aimed at a narrower goal. | Ch. 19 |
+| Alignment | The goal of making a model's behavior match what people actually want, not just what's statistically plausible. | Ch. 19 |
+| Supervised fine-tuning | Fine-tuning directly on curated example input/output pairs showing desired behavior. | Ch. 19 |
+| RLHF (formal) | Training a reward model from human preference comparisons, then adjusting the language model against that reward model. | Ch. 19 |
+| Reward model | A model trained to predict which of two candidate responses a human would prefer. | Ch. 19 |
+| Quantization | Reducing the numerical precision of a model's stored parameters to shrink memory and compute needs. | Ch. 20 |
+| Efficient inference | The broader set of techniques (including quantization) for making inference faster and cheaper without retraining. | Ch. 20 |
+| Caching (inference) | Reusing previously computed results across similar or repeated requests instead of recomputing them. | Ch. 20 |

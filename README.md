@@ -44,12 +44,12 @@ to it, in
 
 ## Status
 
-**Parts I and II (chapters 1–10, "Information" and "Prediction") are
-written.** The book builds understanding through stories, worked examples,
-careful analogies, and precise technical explanation. Parts III–VI exist
-only as a planned table of contents. See [`book/README.md`](book/README.md)
-for the full chapter-by-chapter index and status, and
-[`ROADMAP.md`](ROADMAP.md) for project-level milestones.
+**Parts I–IV (chapters 1–20 — Information, Prediction, The Transformer,
+and Building Useful AI) are written.** The book builds understanding
+through stories, worked examples, careful analogies, and precise technical
+explanation. Parts V–VI exist only as a planned table of contents. See
+[`book/README.md`](book/README.md) for the full chapter-by-chapter index
+and status, and [`ROADMAP.md`](ROADMAP.md) for project-level milestones.
 
 ## How the project is organized
 

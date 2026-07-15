@@ -215,125 +215,125 @@ concepts:
     misconception_ids: [scaling-laws-unlimited, bigger-model-always-better]
     key_takeaway: book/part-2-prediction/10-scaling-laws.md#8-key-takeaway
 
-  # ---------- Level 4 (planned — Part III, unwritten) ----------
+  # ---------- Level 4 (written — Part III) ----------
   - id: attention
     name: Attention
     level: 4
     prerequisites: [embeddings, context, similarity]
     introduced_in: 11
-    written: false
-    misconception_ids: []
-    key_takeaway: null
+    written: true
+    misconception_ids: [attention-reads-sequentially]
+    key_takeaway: book/part-3-the-transformer/11-the-attention-revolution.md#8-key-takeaway
 
   - id: positional-encoding
     name: Positional encoding
     level: 4
     prerequisites: [attention]
     introduced_in: 11
-    written: false
-    misconception_ids: []
-    key_takeaway: null
+    written: true
+    misconception_ids: [positional-encoding-teaches-grammar]
+    key_takeaway: book/part-3-the-transformer/11-the-attention-revolution.md#8-key-takeaway
 
   - id: transformer-blocks
     name: Transformer blocks
     level: 4
     prerequisites: [attention, positional-encoding, neural-networks]
     introduced_in: 12
-    written: false
-    misconception_ids: []
-    key_takeaway: null
+    written: true
+    misconception_ids: [every-transformer-layer-same, more-layers-just-slower]
+    key_takeaway: book/part-3-the-transformer/12-building-a-transformer.md#8-key-takeaway
 
   - id: inference
     name: Inference
     level: 4
     prerequisites: [transformer-blocks]
     introduced_in: 14
-    written: false
-    misconception_ids: []
-    key_takeaway: null
+    written: true
+    misconception_ids: [model-learns-during-conversation]
+    key_takeaway: book/part-3-the-transformer/14-inference-and-text-generation.md#8-key-takeaway
 
   - id: sampling
     name: Sampling
     level: 4
     prerequisites: [inference, probability-intuition]
     introduced_in: 14
-    written: false
-    misconception_ids: []
-    key_takeaway: null
+    written: true
+    misconception_ids: [same-prompt-same-answer-always]
+    key_takeaway: book/part-3-the-transformer/14-inference-and-text-generation.md#8-key-takeaway
 
-  # ---------- Level 5 (planned — Part IV, unwritten) ----------
+  # ---------- Level 5 (spans Part III ch15 and Part IV ch16/19, written) ----------
   - id: hallucinations
     name: Hallucinations
     level: 5
     prerequisites: [inference, sampling, training]
     introduced_in: 15
-    written: false
-    misconception_ids: []
-    key_takeaway: null
+    written: true
+    misconception_ids: [hallucination-is-rare-bug, model-knows-its-making-things-up]
+    key_takeaway: book/part-3-the-transformer/15-why-models-hallucinate.md#8-key-takeaway
 
   - id: fine-tuning
     name: Fine-tuning
     level: 5
     prerequisites: [training, parameters]
     introduced_in: 19
-    written: false
-    misconception_ids: []
-    key_takeaway: null
+    written: true
+    misconception_ids: [finetuning-pretraining-fundamentally-different]
+    key_takeaway: book/part-4-building-useful-ai/19-fine-tuning-and-alignment.md#8-key-takeaway
 
   - id: alignment
     name: Alignment
     level: 5
     prerequisites: [fine-tuning]
     introduced_in: 19
-    written: false
-    misconception_ids: []
-    key_takeaway: null
+    written: true
+    misconception_ids: [aligned-model-genuinely-understands-values]
+    key_takeaway: book/part-4-building-useful-ai/19-fine-tuning-and-alignment.md#8-key-takeaway
 
   - id: context-windows
     name: Context windows
     level: 5
     prerequisites: [context, inference]
     introduced_in: 16
-    written: false
-    misconception_ids: []
-    key_takeaway: null
+    written: true
+    misconception_ids: [context-window-is-trained-knowledge]
+    key_takeaway: book/part-4-building-useful-ai/16-context-windows-and-memory.md#8-key-takeaway
 
   - id: memory
     name: Memory
     level: 5
     prerequisites: [context-windows]
     introduced_in: 16
-    written: false
-    misconception_ids: []
-    key_takeaway: null
+    written: true
+    misconception_ids: [model-remembers-fuzzily-like-person]
+    key_takeaway: book/part-4-building-useful-ai/16-context-windows-and-memory.md#8-key-takeaway
 
-  # ---------- Level 6 (planned — spans Part IV (ch17-18) and Part V (ch21-22), unwritten) ----------
+  # ---------- Level 6 (retrieval/vector-databases/rag written in Part IV; tool-calling/mcp/ai-agents planned for Part V) ----------
   - id: retrieval
     name: Retrieval
     level: 6
     prerequisites: [similarity, context-windows]
     introduced_in: 17
-    written: false
-    misconception_ids: []
-    key_takeaway: null
+    written: true
+    misconception_ids: [retrieval-is-smarter-keyword-search]
+    key_takeaway: book/part-4-building-useful-ai/17-semantic-retrieval-and-vector-databases.md#8-key-takeaway
 
   - id: vector-databases
     name: Vector databases
     level: 6
     prerequisites: [embeddings, similarity, retrieval]
     introduced_in: 17
-    written: false
-    misconception_ids: []
-    key_takeaway: null
+    written: true
+    misconception_ids: [vector-db-is-regular-db-with-search]
+    key_takeaway: book/part-4-building-useful-ai/17-semantic-retrieval-and-vector-databases.md#8-key-takeaway
 
   - id: rag
     name: Retrieval-Augmented Generation (RAG)
     level: 6
     prerequisites: [retrieval, vector-databases, context-windows, inference]
     introduced_in: 18
-    written: false
-    misconception_ids: []
-    key_takeaway: null
+    written: true
+    misconception_ids: [rag-means-retrained-on-documents, rag-eliminates-hallucination-entirely]
+    key_takeaway: book/part-4-building-useful-ai/18-retrieval-augmented-generation.md#8-key-takeaway
 
   - id: tool-calling
     name: Tool calling
@@ -366,7 +366,7 @@ concepts:
     misconception_ids: []
     key_takeaway: null
 
-  # ---------- Level 7 (planned — spans Part IV/V, unwritten) ----------
+  # ---------- Level 7 (quantization/efficient-inference written in Part IV; reasoning/multimodality/MoE planned for Part V) ----------
   - id: reasoning-models
     name: Reasoning models
     level: 7
@@ -399,18 +399,18 @@ concepts:
     level: 7
     prerequisites: [parameters]
     introduced_in: 20
-    written: false
-    misconception_ids: []
-    key_takeaway: null
+    written: true
+    misconception_ids: [quantization-makes-model-dumber]
+    key_takeaway: book/part-4-building-useful-ai/20-quantization-and-efficient-models.md#8-key-takeaway
 
   - id: efficient-inference
     name: Efficient inference
     level: 7
     prerequisites: [inference, quantization]
     introduced_in: 20
-    written: false
-    misconception_ids: []
-    key_takeaway: null
+    written: true
+    misconception_ids: [efficient-model-is-different-smaller-model]
+    key_takeaway: book/part-4-building-useful-ai/20-quantization-and-efficient-models.md#8-key-takeaway
 
   # ---------- Level 8 (planned — Part VI, unwritten) ----------
   - id: evaluation

@@ -39,9 +39,17 @@ the second implementation.
   amended `blueprint.md` (new subtitle, "No Diagrams" section, updated
   Core Design Principles) so the reversal is documented, not silent.
 
-## Milestone 3 — Editorial validation of Part I + II
+## Milestone 3 — Editorial validation of Parts I–IV
 
 - [ ] Lightweight citation pass on empirical/historical claims (`references/`)
+  — several Ch. 11–20 reference files flag specific claims still needing a
+  citation (Winograd schema attribution, the Ch. 15 legal-citation
+  incident, nucleus sampling, ANN indexing, quantization techniques).
+- [ ] `testing/questions.md` currently only covers Chapters 1–10 (Parts
+  I–II). Extending the same protocol (comprehension, transfer,
+  scenario-based misconception resistance, retention) to Chapters 11–20
+  is a real, tracked gap, not an oversight — do this before Track A
+  testing runs on Parts III–IV.
 - [ ] Track A — Pedagogy: 5+ non-technical target readers, following the
   structured protocol in `testing/` — pre-test, comprehension, transfer,
   misconception resistance (scenario-based, scored 0-2), retention, and
@@ -55,8 +63,8 @@ the second implementation.
 
 ## Milestone 4 — Parts III–VI
 
-- [ ] Part III — The Transformer (11–15)
-- [ ] Part IV — Building Useful AI (16–20)
+- [x] Part III — The Transformer (11–15)
+- [x] Part IV — Building Useful AI (16–20)
 - [ ] Part V — AI Systems (21–25, durable-question framing per blueprint's
       current TOC — see note on Chapter 21/MCP)
 - [ ] Part VI — The Future (26–30)

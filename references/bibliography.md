@@ -19,3 +19,5 @@ driver," "emergent abilities").
 | `kaplan2020scaling` | J. Kaplan et al., "Scaling Laws for Neural Language Models," *arXiv:2001.08361*, 2020. | Original characterization of scaling laws (Ch. 10) |
 | `hoffmann2022chinchilla` | J. Hoffmann et al., "Training Compute-Optimal Large Language Models" (the "Chinchilla" paper), *arXiv:2203.15556*, 2022. | Data/parameter balance and undertraining (Ch. 10) |
 | `rumelhart1986backprop` | D. Rumelhart, G. Hinton, R. Williams, "Learning Representations by Back-Propagating Errors," *Nature*, 1986. | Gradient descent / backpropagation, the parameter-adjustment procedure described conceptually in Ch. 9 |
+| `ouyang2022instructgpt` | L. Ouyang et al., "Training Language Models to Follow Instructions with Human Feedback" (the "InstructGPT" paper), *arXiv:2203.02155*, 2022. | Fine-tuning and RLHF (Ch. 13 preview, formally Ch. 19) |
+| `lewis2020rag` | P. Lewis et al., "Retrieval-Augmented Generation for Knowledge-Intensive NLP Tasks," *arXiv:2005.11401*, 2020. | The RAG technique and name (Ch. 18) |

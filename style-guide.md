@@ -97,6 +97,17 @@ table before writing a new analogy — if the concept already has one, reuse it.
 | Hiring committee weighing the same facts differently | Neural network units / weighted combination | Ch. 8 | Second grounding alongside the valve factory — a social/business framing for readers who find the mechanical one less intuitive. |
 | Adjusting a recipe by taste | Training loop (predict, measure error, nudge, repeat) | Ch. 9 | Second grounding alongside free throws — reuse for fine-tuning (Ch. 19) alongside the free-throw analogy. |
 | Fertilizer and crop yield (diminishing returns) | Scaling laws | Ch. 10 | Second grounding alongside marathon training — an economics framing likely to land well with the book's manager/consultant readers. |
+| Winograd sentence pair ("too big" / "too small" flips what "it" refers to) | Attention (selective, weighted relevance) | Ch. 11 | A real, well-known linguistic example; concrete and self-contained. |
+| Conductor attending to a whole ensemble at once | Attention is parallel weighing, not sequential reading | Ch. 11 | Reuse if a later chapter needs a "whole-picture-at-once" framing distinct from reading metaphors. |
+| Manuscript passed through many rounds of editing | Transformer blocks (stacked refinement) | Ch. 12 | Ties naturally to Ch. 9's "loop, industrialized" language — refinement happening repeatedly, each round building on the last. |
+| Quiz-list continuation vs. direct answer | Pretraining vs. fine-tuned/aligned behavior | Ch. 13 | Concrete, testable example distinguishing base-model behavior from chat-model behavior. |
+| Medical school (pretraining) → residency (fine-tuning) | Fine-tuning as continued training on a narrower goal | Ch. 13, reused Ch. 19 | Deliberately reused across both chapters — same domain, same point, two different depths of treatment. |
+| Exam analogy: studying (training) vs. sitting the exam (inference) | Training vs. inference (fixed, frozen parameters) | Ch. 14 | Reuse this exact domain for Ch. 18's "open-book exam" (RAG) — a deliberate, connected pair of analogies across two chapters. |
+| Open-book exam (reference pages handed over at the last minute) | RAG (retrieved passages inserted into context) | Ch. 18 | Explicitly built on Ch. 14's exam analogy — don't treat as a fresh, unrelated analogy. |
+| Real 2023 case of fabricated legal citations | Hallucination | Ch. 15 | A true, documented incident — treat as a real-world citation, not an invented example; verify details before reuse. |
+| Sticky notes / limited desk space | Context window (fixed-size, oldest gets dropped) | Ch. 16 | Reuse if a later chapter needs a "fixed capacity, oldest displaced" framing. |
+| Librarian organizing books by meaning, not title | Retrieval / semantic search | Ch. 17 | Directly extends Ch. 5's cities-on-a-map analogy to passage-level embeddings — not a fresh analogy, a continuation of it. |
+| RAW photo vs. JPEG | Quantization (coarser precision, barely noticeable loss) | Ch. 20 | Reuse if a later chapter needs a "practical precision vs. fidelity" tradeoff framing. |
 
 (Table grows chapter by chapter; append immediately after finishing a chapter
 that introduces a new analogy — see §2.)
