@@ -29,13 +29,18 @@ that direction consistently represents the same relationship: capital-of.
 
 This is exactly the trick computers use to represent the meaning of words.
 
-## 3. Visual Explanation
+## 3. Worked Example
 
-<p align="center">
-  <img src="../../assets/diagrams/ch05-fig1-cities-by-similarity.svg" alt="Cities Placed by Similarity, Not Geography" width="640"/>
-</p>
-
-*Takeaway: closeness on this map means "similar," and the map's axes have nothing to do with physical geography.*
+Picture placing six words on this map: "cat," "kitten," "dog," "puppy,"
+"car," "truck." Because "cat" and "kitten" show up in almost identical
+surrounding contexts — petting, feeding, a litter box, meowing — they land
+close together. "Dog" and "puppy" form their own tight cluster for the
+same reason. And because animal-vocabulary and vehicle-vocabulary
+essentially never share surrounding context, the entire animal cluster
+sits far away from the entire vehicle cluster — even though nothing in the
+process ever explicitly told the system "animals are different from
+vehicles." That separation is entirely a byproduct of how differently the
+two groups of words are actually used in real text.
 
 ## 4. Core Intuition
 
@@ -134,13 +139,9 @@ databases and retrieval-augmented generation, both covered in Part IV — in
 both cases, "find relevant information" is implemented, underneath, as
 "find nearby points in this space."
 
-## 8. Canonical Mental-Model Diagram
+## 8. Key Takeaway
 
-<p align="center">
-  <img src="../../assets/diagrams/ch05-fig2-words-become-points.svg" alt="Words Become Points in Space" width="640"/>
-</p>
-
-**Takeaway: embeddings place words as points in a high-dimensional space, where nearby points mean similar usage and consistent directions capture consistent relationships.**
+**Embeddings place words as points in a high-dimensional space, where nearby points mean similar usage and consistent directions capture consistent relationships.**
 
 ## 9. One-Page Summary
 

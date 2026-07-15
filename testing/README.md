@@ -34,8 +34,8 @@ Five dimensions, scored 0–2 unless noted (0 = no, 1 = partial, 2 = yes):
 4. **Retention** — ask the comprehension question again, unprompted, one
    week later, with no re-reading in between.
 5. **Reading experience** — not scored; a free-text note on *where*
-   attention visibly dropped (a specific paragraph, a diagram that didn't
-   parse, a term used before its explanation landed).
+   attention visibly dropped (a specific paragraph, an example that didn't
+   land, a term used before its explanation arrived).
 
 `questions.md` has the exact comprehension/transfer/misconception prompts
 for all 10 written chapters (1–10), pulled directly from each chapter's own
@@ -86,8 +86,9 @@ doesn't exist):
   it: the misconception block isn't landing — consider moving it earlier,
   or strengthening the analogy.
 - Low **retention** despite good same-day comprehension: the chapter may be
-  memorable in the moment but not sticky — often fixed by a sharper
-  canonical diagram or a punchier one-sentence takeaway (template §8).
+  memorable in the moment but not sticky — often fixed by a punchier,
+  more specific key-takeaway sentence (template §8) or a sharper worked
+  example (template §3).
 - Recurring "lost/bored" reports at the same *point* across multiple
   readers, independent of chapter: a structural problem (pacing, template
   rigidity) rather than a content problem in that one chapter — cross-check

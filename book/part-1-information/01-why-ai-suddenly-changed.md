@@ -30,20 +30,32 @@ particular system's ability to handle *language you hadn't rehearsed*, on
 *any topic*, without being explicitly programmed for it. That shift, from
 narrow and scripted to broad and improvised, is what this book is about.
 
-## 3. Visual Explanation
+## 3. Worked Example
 
-Progress in AI did not arrive as a single breakthrough. It arrived as three
-long-running trends quietly crossing a threshold at the same time.
+A quick thought experiment makes the "why now" question concrete. Take
+2022's internet-scale data and 2022's compute, but pair them with a
+pre-2017 architecture instead of the transformer — this isn't hypothetical,
+since exactly that comparison has been run. The older architectures
+plateau well short of what transformers achieve on the same data and
+compute, because they process a sentence largely one piece at a time
+instead of weighing an entire passage at once.
 
-<p align="center">
-  <img src="../../assets/diagrams/ch01-fig1-three-ingredients-timeline.svg" alt="Three long-running trends (data, compute, architecture) crossing a threshold at the same time" width="640"/>
-</p>
+Now run the experiment the other way. Take the transformer architecture,
+but feed it only 1990s-scale data and compute. You get a toy, not a
+chatbot — there simply isn't enough raw material for the architecture to
+learn from, and not enough computation available to process it even if
+there were.
 
-*Takeaway: none of the three trends was new — what mattered was that all three crossed a usability threshold at the same time.*
+Two out of three ingredients, in either direction, isn't enough. This is
+exactly why "just add more data" or "just use a bigger chip" announcements,
+taken in isolation, tend to overpromise: each one is describing a single
+ingredient, and a single ingredient was never the story.
 
 ## 4. Core Intuition
 
-Three ingredients had to converge, and each one alone was not enough.
+Progress in AI did not arrive as a single breakthrough. It arrived as
+three long-running trends quietly crossing a threshold at the same time —
+and each one, alone, was not enough.
 
 **Data.** The internet had, by the 2010s, produced an almost unimaginable
 quantity of written text — articles, books, forums, code, conversation.
@@ -69,18 +81,6 @@ data has nothing to learn from. What changed, suddenly, was that all three
 became available together — and the resulting systems crossed a threshold
 where their output stopped looking like "autocomplete" and started looking
 like understanding.
-
-A quick thought experiment makes this concrete. Take 2022's internet-scale
-data and 2022's compute, but pair them with a pre-2017 architecture instead
-of the transformer — this isn't hypothetical, since exactly that comparison
-has been run. The older architectures plateau well short of what
-transformers achieve on the same data and compute, because they process a
-sentence largely one piece at a time instead of weighing an entire passage
-at once. Now run it the other way: take the transformer architecture, but
-feed it only 1990s-scale data and compute. You get a toy, not a chatbot.
-Two out of three ingredients, in either direction, isn't enough — which is
-exactly why "just add more data" or "just use a bigger chip" announcements,
-on their own, tend to overpromise.
 
 ## 5. Technical Explanation
 
@@ -134,13 +134,9 @@ improvement is. Recognizing this distinction is the first step toward
 telling a genuine advance apart from a marketing headline — a skill this
 book aims to give you throughout.
 
-## 8. Canonical Mental-Model Diagram
+## 8. Key Takeaway
 
-<p align="center">
-  <img src="../../assets/diagrams/ch01-fig2-three-ingredients-canonical.svg" alt="Three Ingredients, One Threshold" width="640"/>
-</p>
-
-**Takeaway: modern AI is what you get when internet-scale data, parallel compute, and the transformer architecture arrive together — not a single sudden invention.**
+**Modern AI is what you get when internet-scale data, parallel compute, and the transformer architecture arrive together — not a single sudden invention.**
 
 ## 9. One-Page Summary
 

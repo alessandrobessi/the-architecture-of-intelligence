@@ -31,13 +31,21 @@ states (a voltage is present, or it isn't). Everything a computer "reads,"
 of those two states — exactly like Morse's dots and dashes, just with far
 more layers stacked on top.
 
-## 3. Visual Explanation
+## 3. Worked Example
 
-<p align="center">
-  <img src="../../assets/diagrams/ch02-fig1-morse-code-symbols.svg" alt="A Letter Is Just an Agreed-Upon Pattern" width="640"/>
-</p>
+Trace what Morse's code does to one specific word: "FLEE." F is a
+moderately common letter (dot-dot-dash-dot). L is common too
+(dot-dash-dot-dot). E — the single most common letter in English — gets
+the shortest possible code, one dot. The second E repeats that same single
+dot. Spelled out, "FLEE" becomes: dot-dot-dash-dot, dot-dash-dot-dot, dot,
+dot.
 
-*Takeaway: any symbol can be represented by any physical pattern, as long as sender and receiver agree on the mapping.*
+Notice what just happened: the word has four letters, but the two E's
+together take no longer to transmit than the single L does. That isn't an
+accident of this particular word. It's the direct, designed consequence of
+E being the most probable letter in English and therefore carrying the
+least information every time it shows up — exactly the relationship the
+rest of this chapter makes precise.
 
 ## 4. Core Intuition
 
@@ -127,13 +135,9 @@ topic in Chapter 15). Recognizing that these are precise, quantifiable
 ideas, not vague metaphors, will make those explanations click into place
 rather than feeling hand-wavy.
 
-## 8. Canonical Mental-Model Diagram
+## 8. Key Takeaway
 
-<p align="center">
-  <img src="../../assets/diagrams/ch02-fig2-symbol-to-information.svg" alt="From Symbol to Information" width="640"/>
-</p>
-
-**Takeaway: information is not the symbols themselves or the act of processing them — it's the reduction in uncertainty that a probable or improbable symbol carries.**
+**Information is not the symbols themselves or the act of processing them — it's the reduction in uncertainty that a probable or improbable symbol carries.**
 
 ## 9. One-Page Summary
 

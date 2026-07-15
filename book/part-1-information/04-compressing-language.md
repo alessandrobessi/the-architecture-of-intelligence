@@ -27,13 +27,21 @@ message shorter for its own sake. It's about identifying which parts of a
 message are predictable — and therefore cheap to omit or shrink — and which
 parts genuinely carry new information and must be preserved in full.
 
-## 3. Visual Explanation
+## 3. Worked Example
 
-<p align="center">
-  <img src="../../assets/diagrams/ch04-fig1-predictable-words-compress.svg" alt="Predictable Words Compress Away" width="640"/>
-</p>
+Text messages compress the same way telegrams did. "I will be right back"
+becomes "brb" — four words vanish ("I," "will," "be," "right") because any
+reader can reconstruct them instantly from context and convention, while
+the core content survives, compressed into a single letter because the
+whole phrase is so predictable that even *that* much information is
+redundant.
 
-*Takeaway: compressing a message means removing what the reader can predict, not removing meaning.*
+Now compare a message where the same trick would fail: "brb, the store
+called about a recall on the blue sedan we bought." Nobody compresses
+"recall on the blue sedan" the same way "I will be right back" got
+compressed to "brb" — because that clause is exactly the part the reader
+has no way to predict in advance. The predictable half of the sentence
+still shrinks; the unpredictable half doesn't, and can't.
 
 ## 4. Core Intuition
 
@@ -107,13 +115,9 @@ giving an AI system too little surrounding context produces vague or wrong
 answers — it isn't being lazy, it genuinely lacks the disambiguating
 material a human would have used.
 
-## 8. Canonical Mental-Model Diagram
+## 8. Key Takeaway
 
-<p align="center">
-  <img src="../../assets/diagrams/ch04-fig2-context-resolves-meaning.svg" alt="Context Resolves Meaning" width="640"/>
-</p>
-
-**Takeaway: context is the highlighted span of surrounding tokens a model uses to resolve ambiguity — and the same predictability that resolves meaning is what makes language compressible.**
+**Context is the span of surrounding tokens a model uses to resolve ambiguity — and the same predictability that resolves meaning is what makes language compressible.**
 
 ## 9. One-Page Summary
 

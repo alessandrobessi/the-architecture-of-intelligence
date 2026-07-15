@@ -7,7 +7,7 @@ labels: pedagogy
 
 **Chapter and section:**
 
-**What confused you, specifically** (the sentence, term, or diagram, if you
+**What confused you, specifically** (the sentence, term, or example, if you
 can point to it):
 
 **What you think was missing** — a prerequisite concept, a slower buildup,

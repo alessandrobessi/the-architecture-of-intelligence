@@ -1,14 +1,19 @@
 # The Architecture of Intelligence
 
-*A Visual Guide to Modern AI Systems*
+*A Conceptual Guide to Modern AI Systems*
 
 This is the manuscript, organized by Part and Chapter following the concept
 dependency graph in [`../blueprint.md`](../blueprint.md). Chapters are
 numbered globally (01–30) and must be read in order — each chapter's
 vocabulary is a prerequisite for the next.
 
-Supporting project files: [`../style-guide.md`](../style-guide.md) (palette,
-SVG conventions, icon vocabulary, analogy registry), [`../glossary.md`](../glossary.md),
+The manuscript teaches entirely through prose — no diagrams. Every chapter
+pairs an opening story with a second, fully-written worked example, and
+ends on one bolded, memorable key-takeaway sentence instead of an
+illustration (see `../blueprint.md`'s "No Diagrams" section for why).
+
+Supporting project files: [`../style-guide.md`](../style-guide.md) (voice,
+analogy registry), [`../glossary.md`](../glossary.md),
 [`../misconceptions.md`](../misconceptions.md), [`../concept-graph.md`](../concept-graph.md).
 
 **Status:** Parts I and II are complete. Parts III–VI are planned but not

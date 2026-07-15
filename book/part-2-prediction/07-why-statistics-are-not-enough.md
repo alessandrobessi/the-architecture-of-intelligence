@@ -27,13 +27,19 @@ words. It had no way to remember what the sentence had been about ten words
 earlier, and no way to handle a combination of words it hadn't seen during
 counting. This is the ceiling every purely count-based approach runs into.
 
-## 3. Visual Explanation
+## 3. Worked Example
 
-<p align="center">
-  <img src="../../assets/diagrams/ch07-fig1-counting-table-runs-out.svg" alt="A Counting Table Runs Out of Cells" width="640"/>
-</p>
+Imagine the counting table has seen "the cat sat" 412 times, so it
+confidently predicts what comes next. Now ask it about "the kitten
+pirouetted" — a sentence that means almost the same thing, just with two
+words swapped for close synonyms. If the table has seen that exact phrase
+zero times, it has nothing to say: no count, no prediction, no fallback.
 
-*Takeaway: a table can only report what it has already seen — it has no way to generalize to something similar-but-new.*
+It cannot notice that "kitten" behaves like "cat" or that "pirouetted"
+behaves like "sat" in this context, because it has no representation of
+word similarity at all — only exact-match history. A sentence that means
+almost the same thing produces a completely different, and completely
+empty, lookup.
 
 ## 4. Core Intuition
 
@@ -107,13 +113,9 @@ reading about any AI approach: ask whether it can generalize to genuinely
 new inputs, or whether it's fundamentally just matching against what it's
 already seen.
 
-## 8. Canonical Mental-Model Diagram
+## 8. Key Takeaway
 
-<p align="center">
-  <img src="../../assets/diagrams/ch07-fig2-counting-vs-generalizing.svg" alt="Counting vs. Generalizing" width="640"/>
-</p>
-
-**Takeaway: a counting table can only report what it's already seen; a system built on geometric similarity can generalize to what it hasn't.**
+**A counting table can only report what it's already seen; a system built on geometric similarity can generalize to what it hasn't.**
 
 ## 9. One-Page Summary
 

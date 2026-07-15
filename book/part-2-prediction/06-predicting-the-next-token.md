@@ -26,13 +26,19 @@ isn't planned in advance and then written down. It's built one token at a
 time, the same small act — "what's the most likely next piece?" — repeated
 until a stopping point is reached.
 
-## 3. Visual Explanation
+## 3. Worked Example
 
-<p align="center">
-  <img src="../../assets/diagrams/ch06-fig1-ranking-next-token.svg" alt="Ranking Candidates for the Next Token" width="640"/>
-</p>
+Take the sequence "The capital of France is ___." A model ranks every
+token in its vocabulary by how likely it is to fill that blank. "Paris"
+gets an overwhelming share of the probability — call it the vast
+majority. "Lyon" (a real French city, just not the capital) gets a
+sliver. "a" gets an almost-vanishing amount, since it's grammatically
+implausible there. "Banana" gets a probability so close to zero it might
+as well not exist as an option.
 
-*Takeaway: at each step, every possible next token gets a probability — most are near zero, and a handful are plausible.*
+None of these numbers are memorized facts retrieved from storage — they're
+computed fresh, from the geometry of Chapter 5, every single time the
+model processes this sequence.
 
 ## 4. Core Intuition
 
@@ -101,13 +107,9 @@ problems (it gives the model intermediate tokens to condition on before
 committing to a final answer), and why the very first token of a response
 can matter disproportionately to how the rest of the response unfolds.
 
-## 8. Canonical Mental-Model Diagram
+## 8. Key Takeaway
 
-<p align="center">
-  <img src="../../assets/diagrams/ch06-fig2-predict-append-repeat.svg" alt="Predict, Append, Repeat" width="640"/>
-</p>
-
-**Takeaway: text is generated one token at a time — predict a distribution, choose a token, append it, and predict again with the longer sequence as new context.**
+**Text is generated one token at a time — predict a distribution, choose a token, append it, and predict again with the longer sequence as new context.**
 
 ## 9. One-Page Summary
 

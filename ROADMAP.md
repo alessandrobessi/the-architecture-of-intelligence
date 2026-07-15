@@ -5,10 +5,10 @@ chapter-by-chapter manuscript status, see `book/README.md`.
 
 ## Milestone 1 — Infrastructure + Part I pilot (done)
 
-- [x] Style guide: palette, SVG conventions, icon vocabulary, analogy registry
+- [x] Style guide: voice, analogy registry
 - [x] Chapter template (11-element editorial checklist)
 - [x] Glossary, misconception graph, concept dependency tracker
-- [x] Part I — Information (chapters 1–5), full prose + canonical diagrams
+- [x] Part I — Information (chapters 1–5), full prose
 - [x] Root README, LICENSE, CONTRIBUTING, project scaffolding
 
 ## Milestone 2 — Part II: Prediction (done)
@@ -16,18 +16,28 @@ chapter-by-chapter manuscript status, see `book/README.md`.
 - [x] Chapters 6–10 (Predicting the Next Token → Scaling Laws)
 - [x] Tracking files updated per chapter, not batched
 
-## Milestone 2.5 — Diagram architecture correction (done)
+## Milestone 2.5 — Diagrams tried, then dropped entirely (done)
 
-- [x] Discovered that inline `<svg>` never rendered on GitHub at all (its
-  HTML sanitizer strips raw `<svg>` content wherever it appears directly in
-  rendered Markdown) — this invalidated the original "inline SVG for
-  native GitHub rendering" premise.
-- [x] Extracted all 20 diagrams (chapters 1–10) to standalone files under
-  `assets/diagrams/`, referenced via `<img>`. Verified by local rendering.
-- [x] Updated `style-guide.md`, `templates/chapter-template.md`, and
-  `scripts/check_svg_bounds.py` so every future chapter follows the
-  corrected pattern, with a regression guard against inline `<svg>`
-  creeping back into `book/**/*.md`.
+The manuscript went through two diagram architectures in sequence — inline
+`<svg>` in Markdown (broke silently: GitHub's sanitizer strips raw `<svg>`
+wherever it's embedded directly in rendered Markdown), then standalone SVG
+files under `assets/diagrams/` referenced via `<img>` (worked, verified by
+local rendering). Diagrams were then judged not to be pulling their weight
+— they mostly re-illustrated what the prose already said, and the
+production overhead (two rebuilt SVG systems) was disproportionate to
+their teaching value — and the objective was dropped entirely, not just
+the second implementation.
+
+- [x] Removed all 20 diagrams and the `assets/diagrams/`, `assets/icons/`,
+  and `scripts/check_svg_bounds.py` supporting infrastructure.
+- [x] Restructured the chapter template: the diagram-shaped sections
+  ("Visual Explanation," "Canonical Mental-Model Diagram") became
+  text-only sections ("Worked Example," "Key Takeaway") that do the same
+  job — a second concrete grounding, and one memorable closing sentence —
+  with words instead of an illustration.
+- [x] Rewrote all 10 written chapters (1–10) to the new structure, and
+  amended `blueprint.md` (new subtitle, "No Diagrams" section, updated
+  Core Design Principles) so the reversal is documented, not silent.
 
 ## Milestone 3 — Editorial validation of Part I + II
 
@@ -51,22 +61,25 @@ chapter-by-chapter manuscript status, see `book/README.md`.
 
 Per blueprint.md's "Vision" and "Living Companion" sections — not started:
 
-- [ ] Interactive companion website (tokenization explorer, embedding
-      playground, attention/transformer animations, RAG simulator, agent
-      execution visualizer, quizzes)
-- [ ] Editable SVG diagram library as a documented, cataloged asset —
-      `assets/diagrams/` already holds every diagram as a standalone,
-      editable file (see Milestone 2.5 below); what's missing is an index/
-      catalog and any tooling beyond hand-editing
+- [ ] Interactive companion website (quizzes, updated references, a
+      searchable glossary, a text-based concept explorer) — deliberately
+      text/interaction-based, not visualization-based, consistent with the
+      manuscript dropping diagrams
 - [ ] Teaching material / video course
 
 ## Explicitly deferred, not forgotten
 
-- A build pipeline (Pandoc/Typst/Quarto → PDF/EPUB/web) — the manuscript
-  now stores diagrams as standalone files under `assets/diagrams/`
-  referenced via `<img>`, which happens to make a future build pipeline
-  easier (no HTML-to-extract from Markdown), but one still isn't being
-  taken on now.
+- A build pipeline (Pandoc/Typst/Quarto → PDF/EPUB/web) — not being taken
+  on now; the manuscript is plain Markdown/prose, which if anything makes
+  this easier whenever it's picked up.
 - Professional publishing conversations — blueprint.md names "a
   professionally published book" as the primary artifact; no publisher
   process has started.
+
+## Explicitly reversed, not deferred
+
+- Diagrams as a teaching device. This isn't a "later" item — it was tried
+  twice (Milestone 2.5) and dropped as a deliberate editorial decision. Do
+  not reintroduce diagrams, an icon vocabulary, or a "visual language"
+  system without revisiting `blueprint.md`'s "No Diagrams" section
+  explicitly.

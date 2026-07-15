@@ -2,6 +2,24 @@
 
 ## 2026-07-15
 
+- **Dropped diagrams as a teaching device entirely** (a deliberate
+  reversal, not a deferral — see `blueprint.md`'s new "No Diagrams"
+  section). Subtitle changed from "A Visual Guide to Modern AI Systems" to
+  "A Conceptual Guide to Modern AI Systems." The chapter template's
+  diagram-shaped sections ("Visual Explanation," "Canonical Mental-Model
+  Diagram") became text-only sections ("Worked Example" — a second,
+  fully-written concrete example — and "Key Takeaway" — one bolded
+  sentence) that do the same job with words instead of an illustration.
+  Rewrote all 10 written chapters to the new structure. Deleted
+  `assets/diagrams/` (20 SVGs), `assets/icons/` (6 SVGs), and
+  `scripts/check_svg_bounds.py` — all fully recoverable from git history.
+  Amended `blueprint.md`'s Vision, Core Design Principles, Misconception
+  Graph example, Standard Chapter Template, and Living Companion sections;
+  removed its "Visual Language" section outright. Rewrote
+  `style-guide.md` and `templates/chapter-template.md` to match. Renamed
+  `concept-graph.yaml`'s `diagram` field to `key_takeaway`, pointing at
+  each chapter's §8 anchor instead of a now-deleted diagram file. Updated
+  both READMEs and `ROADMAP.md` accordingly.
 - Added a second reinforcing example or analogy to every concept across
   all 10 written chapters, so ideas get more than one grounding before
   moving on (per direct feedback that chapters felt compressed): a

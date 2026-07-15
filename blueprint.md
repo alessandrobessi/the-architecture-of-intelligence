@@ -1,6 +1,6 @@
 # The Architecture of Intelligence
 
-## A Visual Guide to Modern AI Systems
+## A Conceptual Guide to Modern AI Systems
 
 > **Mission**
 >
@@ -20,12 +20,9 @@ whose long-term ecosystem includes:
 
 -   A professionally published book
 -   An interactive companion website
--   An editable SVG diagram library
 -   A concept dependency graph
 -   A misconception graph
 -   A living glossary
--   Interactive visualizations
--   Companion animations
 -   Conceptual exercises
 -   Teaching material
 -   A video course
@@ -94,12 +91,14 @@ Inspired by **SICP**
 2.  One important question per chapter.
 3.  One genuinely new idea per page.
 4.  Stories before abstractions.
-5.  Diagrams before equations.
+5.  Multiple concrete examples before generalizing a rule --- an idea
+    isn't done until it's been turned around and looked at from a second
+    angle, not just stated once.
 6.  Technical rigor without implementation details.
 7.  Reuse analogies consistently.
 8.  Every explanation should pass the "Feynman test".
 9.  Every chapter ends with:
-    -   one canonical mental-model diagram
+    -   one memorable, one-sentence key takeaway
     -   "The next obvious question..." leading naturally into the
         following chapter.
 
@@ -169,7 +168,6 @@ Every important concept includes:
 -   common misconception
 -   correct intuition
 -   analogy
--   visual metaphor
 -   technical explanation
 -   practical implications
 
@@ -182,8 +180,6 @@ Misconception: "The model stores dictionary definitions."
 Correct intuition: "The model learns locations in a geometric space."
 
 Analogy: Cities on a map.
-
-Visual: Words become points in space.
 
 ------------------------------------------------------------------------
 
@@ -272,21 +268,24 @@ reader-facing headings. Every chapter must substantively cover all eleven
 elements before it is considered complete --- but a chapter's actual prose
 may blend, reorder, or dissolve these elements into its own rhythm rather
 than exposing eleven literal section breaks. A chapter may open with a
-thought experiment instead of a story, build around one extended diagram
-instead of several, or weave a misconception into the surrounding prose
-instead of setting it apart in its own block. The obligation is
-completeness; the presentation is free.
+thought experiment instead of a story, build its worked example directly
+into the surrounding prose instead of setting it apart, or weave a
+misconception into the surrounding prose instead of setting it apart in
+its own block. The obligation is completeness; the presentation is free.
 
 The eleven elements every chapter must cover:
 
 1.  Opening question
 2.  Real-world story
-3.  Visual explanation
+3.  Worked example --- a second, fully-written-out concrete example that
+    reinforces the same idea from a different angle than the opening
+    story (never a diagram; see "No Diagrams" below)
 4.  Core intuition
 5.  Technical explanation
 6.  Common misconceptions
 7.  Practical implications
-8.  Canonical mental-model diagram
+8.  Key takeaway --- one bolded, memorable sentence that crystallizes the
+    chapter's single most important idea
 9.  One-page summary
 10. Further reading
 11. "The next obvious question..."
@@ -299,42 +298,29 @@ draft.
 
 ------------------------------------------------------------------------
 
-# Visual Language
+# No Diagrams
 
-The diagrams are part of the teaching method---not decoration.
+Earlier drafts of this project treated illustration as a primary teaching
+device --- a "canonical mental-model diagram" per chapter, a fixed visual
+language, an eventual editable SVG library. In practice, across Parts I
+and II, the diagrams did not earn their place: they mostly re-illustrated
+what the prose already said, added production overhead (a whole SVG
+authoring/rendering system, twice rebuilt after platform rendering
+failures) disproportionate to their teaching value, and the effort spent
+on them competed directly with the effort available for prose depth.
 
-## Core vocabulary
+This project now teaches entirely through prose: stories, worked examples,
+analogies, and precise technical explanation. Every concept gets **at
+least two** concrete groundings (the real-world story plus the worked
+example, at minimum) instead of one narrative plus one picture. Where a
+chapter previously ended on a diagram, it now ends on one sharply-written
+sentence (the "key takeaway" in the template above) that does the same
+job --- giving the reader one crystallized image to carry forward --- with
+words instead of an illustration.
 
--   Tokens → rounded rectangles
--   Embeddings → colored points
--   Attention → weighted arrows
--   Transformer → stacked blocks
--   Context → highlighted sequence
--   Memory → notebook
--   Retrieval → library
--   Tool → wrench
--   Agent → planning loop
--   Vector database → constellation
--   External world → white canvas
-
-## Illustration types
-
--   Concept diagrams
--   Progressive builds
--   Before/after comparisons
--   Zoom-in sequences
--   Timelines
--   Misconception callouts
-
-## Rules
-
--   One visual idea per figure.
--   Fixed iconography.
--   Fixed color palette.
--   SVG-first.
--   Every illustration editable.
--   Every complex figure has a one-sentence takeaway.
--   Readers should recognize concepts from shapes before labels.
+This is a deliberate reversal, not a deferral. Do not reintroduce diagrams,
+an icon vocabulary, or a "visual language" system without revisiting this
+decision explicitly.
 
 ------------------------------------------------------------------------
 
@@ -344,15 +330,11 @@ The website extends---not duplicates---the book.
 
 Features:
 
--   Interactive attention visualizations
--   Embedding playground
--   Tokenization explorer
--   Transformer animations
--   RAG simulator
--   Agent execution visualizer
 -   Quizzes
 -   Updated references
--   Downloadable diagrams
+-   A searchable glossary
+-   A text-based concept explorer (browse/search the concept dependency
+    graph directly, per level and per prerequisite)
 
 ------------------------------------------------------------------------
 

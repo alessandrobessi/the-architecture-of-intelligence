@@ -27,13 +27,20 @@ model ten or a hundred times larger will be, before ever training it.
 Predictability at this scale, in a field this young, was not something
 researchers expected to find.
 
-## 3. Visual Explanation
+## 3. Worked Example
 
-<p align="center">
-  <img src="../../assets/diagrams/ch10-fig1-loss-falls-predictably.svg" alt="Loss Falls Predictably as Scale Grows" width="640"/>
-</p>
+Train four models of increasing size — say, roughly ten times more
+compute each time — and plot their loss. The jump from the smallest to
+the second model might cut loss by a certain proportion; the jump from
+the second to the third cuts it by a similar proportion; and so on down
+the line.
 
-*Takeaway: mark both axes off in multiples of ten (not fixed steps) and loss falls in a close-to-straight line as scale grows — a genuinely predictable pattern, but only visible once you've transformed the chart this way.*
+Researchers use exactly this consistency to forecast forward: if the
+pattern holds across three data points, a fourth, far larger and far more
+expensive model can be predicted before it's ever trained. This is
+precisely how AI labs decide whether a massive training run is likely to
+be worth its cost before committing hundreds of millions of dollars to
+find out.
 
 ## 4. Core Intuition
 
@@ -65,12 +72,12 @@ has other, non-scaling constraints in the background.
 
 Scaling laws describe loss decreasing roughly as a power-law function of
 compute, parameters, and data — meaning each additional order of magnitude
-of scale buys a real, but shrinking, improvement in loss. A straight line
-on the chart in §3 is what a power-law relationship looks like once
-*both* axes are stretched into equal ratios (marked off ×10, ×100, ×1000,
-rather than +10, +20, +30) — it's a way of revealing that underlying
-relationship, not a claim that loss falls in a straight line on an
-ordinary chart. Researchers also typically separate loss into a part that
+of scale buys a real, but shrinking, improvement in loss. The near-straight
+line described in the opening story is what a power-law relationship looks
+like once *both* axes are stretched into equal ratios (marked off ×10,
+×100, ×1000, rather than +10, +20, +30) — it's a way of revealing that
+underlying relationship, not a claim that loss falls in a straight line on
+an ordinary chart. Researchers also typically separate loss into a part that
 keeps shrinking with scale and a small remaining part that scale alone
 doesn't remove (sometimes called irreducible loss) — the power-law
 description applies to the shrinking part.
@@ -116,13 +123,9 @@ about some other, separately-earned capability? The two are related but
 not identical, and conflating them is one of the more common ways AI
 announcements oversell.
 
-## 8. Canonical Mental-Model Diagram
+## 8. Key Takeaway
 
-<p align="center">
-  <img src="../../assets/diagrams/ch10-fig2-three-ingredients-scaled.svg" alt="Three Ingredients, Scaled Together" width="640"/>
-</p>
-
-**Takeaway: scaling laws let researchers predict a large model's loss from smaller experiments — a real, reliable, but diminishing-returns pattern, not an unlimited or unconditional guarantee.**
+**Scaling laws let researchers predict a large model's loss from smaller experiments — a real, reliable, but diminishing-returns pattern, not an unlimited or unconditional guarantee.**
 
 ## 9. One-Page Summary
 

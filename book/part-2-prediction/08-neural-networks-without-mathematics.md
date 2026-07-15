@@ -31,13 +31,21 @@ in any single valve's behavior.
 A neural network works on exactly this principle, just with numbers
 instead of water.
 
-## 3. Visual Explanation
+## 3. Worked Example
 
-<p align="center">
-  <img src="../../assets/diagrams/ch08-fig1-one-simple-unit.svg" alt="One Simple Unit" width="640"/>
-</p>
+Picture one single unit with three incoming connections, weighted "high
+importance," "medium importance," and "barely matters." Feed it three
+different input signals. The unit doesn't treat them equally — it leans
+heavily on the high-importance input, moderately on the medium one, and
+almost ignores the third, then combines all three into one outgoing
+signal.
 
-*Takeaway: one unit does almost nothing on its own — its power comes from being one of millions, each with its own adjustable weights.*
+Now change just one of those three weights, keeping the same three
+inputs. The unit produces a different output than before — same inputs,
+different weighting, different result. This single change is precisely
+what training (Chapter 9) does, billions of times over, across billions of
+such units: nudging weights so that the network's outputs get steadily
+closer to what's actually wanted.
 
 ## 4. Core Intuition
 
@@ -95,7 +103,7 @@ previous layer — is a real, foundational design, and everything said about
 it here (parameters, layers, learned rather than hand-coded behavior)
 remains true of every neural network in this book, including language
 models. But a modern language model is not simply a long stack of
-identical layers like the one pictured here. Its layers are organized into
+identical layers like the one described here. Its layers are organized into
 a more specialized arrangement — the transformer — with dedicated
 machinery for weighing which earlier tokens matter most to which later
 ones. That arrangement is the subject of Part III. Treat this chapter as
@@ -125,13 +133,9 @@ of those billions of numbers, but no individual number tells you, on its
 own, what the network "knows" — the knowledge is distributed across the
 whole pattern, not localized in any single readable place.
 
-## 8. Canonical Mental-Model Diagram
+## 8. Key Takeaway
 
-<p align="center">
-  <img src="../../assets/diagrams/ch08-fig2-layers-of-weighted-units.svg" alt="Layers of Simple, Weighted Units" width="640"/>
-</p>
-
-**Takeaway: a neural network is layers of simple units connected by adjustable weights — its entire capability lives in the pattern of those weights, not in any single unit.**
+**A neural network is layers of simple units connected by adjustable weights — its entire capability lives in the pattern of those weights, not in any single unit.**
 
 ## 9. One-Page Summary
 

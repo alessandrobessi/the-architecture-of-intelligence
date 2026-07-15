@@ -27,13 +27,20 @@ the error precisely, nudge every adjustable parameter a tiny bit in the
 direction that would have reduced that error, and repeat — not thousands
 of times, but billions.
 
-## 3. Visual Explanation
+## 3. Worked Example
 
-<p align="center">
-  <img src="../../assets/diagrams/ch09-fig1-miss-measure-adjust-repeat.svg" alt="Miss, Measure, Adjust, Repeat" width="640"/>
-</p>
+Imagine training on the same single example five times in a row. First
+pass: the model's prediction is wildly off; loss is high; every parameter
+gets a relatively large nudge. Second pass, same example: the prediction
+is a little closer; loss is lower; the nudges shrink accordingly. By the
+fifth pass, the model's prediction on this specific example is nearly
+exact, and further nudges from it are tiny.
 
-*Takeaway: no single correction is dramatic — the pattern only emerges from an enormous number of small nudges.*
+Now multiply this by billions of different examples, each contributing
+its own small pull in its own direction. The net result is a set of
+parameters that works reasonably well across all of them at once — not
+perfectly tuned to any single example, but reliably good on the whole
+enormous collection.
 
 ## 4. Core Intuition
 
@@ -112,13 +119,9 @@ a large model requires so much computation: billions of parameters, each
 needing its own small adjustment, repeated across enormous datasets, again
 and again.
 
-## 8. Canonical Mental-Model Diagram
+## 8. Key Takeaway
 
-<p align="center">
-  <img src="../../assets/diagrams/ch09-fig2-training-loop.svg" alt="The Training Loop" width="640"/>
-</p>
-
-**Takeaway: training is a loop — predict, measure loss, nudge every parameter — repeated billions of times; learning is the name for whatever pattern emerges from it.**
+**Training is a loop — predict, measure loss, nudge every parameter — repeated billions of times; learning is the name for whatever pattern emerges from it.**
 
 ## 9. One-Page Summary
 

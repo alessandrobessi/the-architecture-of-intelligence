@@ -28,13 +28,25 @@ invent new words constantly, people misspell things, and a system that only
 knows a fixed list of whole words breaks the instant it meets one that isn't
 on the list.
 
-## 3. Visual Explanation
+## 3. Worked Example
 
-<p align="center">
-  <img src="../../assets/diagrams/ch03-fig1-three-ways-to-chop.svg" alt="Three Ways to Chop "unbelievable"" width="640"/>
-</p>
+Take the word "unbelievable" and split it three different ways, to see
+exactly what's at stake in each choice.
 
-*Takeaway: the same word can be split at three different grain sizes — subword tokens are the middle ground modern models actually use.*
+As individual characters: u-n-b-e-l-i-e-v-a-b-l-e — twelve separate
+pieces, each one carrying almost no meaning on its own.
+
+As a single whole word: one token, "unbelievable" — but this only works
+at all if that exact word was common enough, during vocabulary-building,
+to earn its own dedicated slot. Most words in any language never clear
+that bar.
+
+As subword tokens, the middle ground every modern tokenizer actually
+uses: "un" + "believ" + "able" — three pieces, each one a common,
+reusable fragment that shows up across hundreds of other words too
+("unhappy," "believing," "comfortable"). The vocabulary never needed a
+separate entry for "unbelievable" itself; it just needed these three
+smaller, far more frequently reused pieces.
 
 ## 4. Core Intuition
 
@@ -110,13 +122,9 @@ letter-by-letter, and it can stumble — because it isn't actually seeing
 individual letters, it's seeing tokens, and a token doesn't expose its own
 internal letters to the model in an obvious way.
 
-## 8. Canonical Mental-Model Diagram
+## 8. Key Takeaway
 
-<p align="center">
-  <img src="../../assets/diagrams/ch03-fig2-text-tokens-numbers.svg" alt="Text → Tokens → Numbers" width="640"/>
-</p>
-
-**Takeaway: a language model never sees letters or words — it sees a sequence of token IDs produced by tokenization, some whole words and some fragments.**
+**A language model never sees letters or words — it sees a sequence of token IDs produced by tokenization, some whole words and some fragments.**
 
 ## 9. One-Page Summary
 

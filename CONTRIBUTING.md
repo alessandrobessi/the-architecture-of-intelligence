@@ -15,8 +15,7 @@ The most valuable contribution right now is careful reading.
   book's whole premise is that every concept has an explicit prerequisite
   chain (see `concept-graph.md`); a confusion report that traces back to a
   missing prerequisite is exactly the signal this project needs.
-- **Broken links or rendering issues**, especially inline SVG diagrams that
-  don't render correctly in your browser/theme.
+- **Broken internal links** between chapters or to project files.
 
 ## What's not being accepted right now
 

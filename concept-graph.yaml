@@ -5,7 +5,7 @@
 #
 # Fields:
 #   id                 stable slug, referenced by nothing else yet but
-#                      intended for future cross-linking (diagrams, issues)
+#                      intended for future cross-linking (issues, etc.)
 #   name               display name, matches blueprint.md's concept graph
 #   level              0-8, per blueprint.md's Concept Dependency Graph
 #   prerequisites      concept ids that must be introduced first. Encodes
@@ -16,7 +16,9 @@
 #                      concept is first formally taught
 #   written            true if that chapter's prose currently exists
 #   misconception_ids  keys into misconceptions.md's ID column
-#   diagram            where the concept's canonical/reference visual lives
+#   key_takeaway       anchor into the concept's chapter §8 (Key Takeaway) —
+#                      this project does not use diagrams; see blueprint.md's
+#                      "No Diagrams" section
 
 concepts:
 
@@ -28,7 +30,7 @@ concepts:
     introduced_in: 2
     written: true
     misconception_ids: [more-data-equals-more-information]
-    diagram: book/part-1-information/02-what-is-information.md#8-canonical-mental-model-diagram
+    key_takeaway: book/part-1-information/02-what-is-information.md#8-key-takeaway
 
   - id: symbols
     name: Symbols
@@ -37,7 +39,7 @@ concepts:
     introduced_in: 2
     written: true
     misconception_ids: []
-    diagram: book/part-1-information/02-what-is-information.md#3-visual-explanation
+    key_takeaway: book/part-1-information/02-what-is-information.md#3-worked-example
 
   - id: computation
     name: Computation
@@ -46,7 +48,7 @@ concepts:
     introduced_in: 2
     written: true
     misconception_ids: [computation-implies-understanding]
-    diagram: book/part-1-information/02-what-is-information.md#8-canonical-mental-model-diagram
+    key_takeaway: book/part-1-information/02-what-is-information.md#8-key-takeaway
 
   - id: probability-intuition
     name: Probability (intuition)
@@ -55,7 +57,7 @@ concepts:
     introduced_in: 2
     written: true
     misconception_ids: []
-    diagram: book/part-1-information/02-what-is-information.md#8-canonical-mental-model-diagram
+    key_takeaway: book/part-1-information/02-what-is-information.md#8-key-takeaway
 
   # ---------- Level 1 ----------
   - id: characters
@@ -65,7 +67,7 @@ concepts:
     introduced_in: 3
     written: true
     misconception_ids: []
-    diagram: book/part-1-information/03-characters-words-tokens.md#3-visual-explanation
+    key_takeaway: book/part-1-information/03-characters-words-tokens.md#3-worked-example
 
   - id: words
     name: Words
@@ -74,7 +76,7 @@ concepts:
     introduced_in: 3
     written: true
     misconception_ids: []
-    diagram: book/part-1-information/03-characters-words-tokens.md#3-visual-explanation
+    key_takeaway: book/part-1-information/03-characters-words-tokens.md#3-worked-example
 
   - id: tokens
     name: Tokens
@@ -83,7 +85,7 @@ concepts:
     introduced_in: 3
     written: true
     misconception_ids: [token-always-one-word]
-    diagram: book/part-1-information/03-characters-words-tokens.md#8-canonical-mental-model-diagram
+    key_takeaway: book/part-1-information/03-characters-words-tokens.md#8-key-takeaway
 
   - id: tokenization
     name: Tokenization
@@ -92,7 +94,7 @@ concepts:
     introduced_in: 3
     written: true
     misconception_ids: [model-reads-letter-by-letter]
-    diagram: book/part-1-information/03-characters-words-tokens.md#8-canonical-mental-model-diagram
+    key_takeaway: book/part-1-information/03-characters-words-tokens.md#8-key-takeaway
 
   - id: compression
     name: Compression
@@ -101,7 +103,7 @@ concepts:
     introduced_in: 4
     written: true
     misconception_ids: [compression-loses-meaning]
-    diagram: book/part-1-information/04-compressing-language.md#8-canonical-mental-model-diagram
+    key_takeaway: book/part-1-information/04-compressing-language.md#8-key-takeaway
 
   - id: context
     name: Context
@@ -110,7 +112,7 @@ concepts:
     introduced_in: 4
     written: true
     misconception_ids: [context-is-just-topic]
-    diagram: book/part-1-information/04-compressing-language.md#8-canonical-mental-model-diagram
+    key_takeaway: book/part-1-information/04-compressing-language.md#8-key-takeaway
 
   # ---------- Level 2 ----------
   - id: embeddings
@@ -120,7 +122,7 @@ concepts:
     introduced_in: 5
     written: true
     misconception_ids: [embeddings-store-definitions, embedding-is-permanent-meaning]
-    diagram: book/part-1-information/05-meaning-as-geometry.md#8-canonical-mental-model-diagram
+    key_takeaway: book/part-1-information/05-meaning-as-geometry.md#8-key-takeaway
 
   - id: vector-spaces
     name: Vector spaces
@@ -129,7 +131,7 @@ concepts:
     introduced_in: 5
     written: true
     misconception_ids: []
-    diagram: book/part-1-information/05-meaning-as-geometry.md#3-visual-explanation
+    key_takeaway: book/part-1-information/05-meaning-as-geometry.md#3-worked-example
 
   - id: similarity
     name: Similarity
@@ -138,7 +140,7 @@ concepts:
     introduced_in: 5
     written: true
     misconception_ids: [similarity-means-synonym]
-    diagram: book/part-1-information/05-meaning-as-geometry.md#8-canonical-mental-model-diagram
+    key_takeaway: book/part-1-information/05-meaning-as-geometry.md#8-key-takeaway
 
   - id: semantic-geometry
     name: Semantic geometry
@@ -147,7 +149,7 @@ concepts:
     introduced_in: 5
     written: true
     misconception_ids: []
-    diagram: book/part-1-information/05-meaning-as-geometry.md#8-canonical-mental-model-diagram
+    key_takeaway: book/part-1-information/05-meaning-as-geometry.md#8-key-takeaway
 
   # ---------- Level 3 (planned — Part II, unwritten) ----------
   - id: prediction
@@ -157,7 +159,7 @@ concepts:
     introduced_in: 6
     written: true
     misconception_ids: [model-plans-whole-sentence, prediction-is-lookup]
-    diagram: book/part-2-prediction/06-predicting-the-next-token.md#8-canonical-mental-model-diagram
+    key_takeaway: book/part-2-prediction/06-predicting-the-next-token.md#8-key-takeaway
 
   - id: neural-networks
     name: Neural networks
@@ -166,7 +168,7 @@ concepts:
     introduced_in: 8
     written: true
     misconception_ids: [nn-simulates-brain, more-parameters-more-understanding]
-    diagram: book/part-2-prediction/08-neural-networks-without-mathematics.md#8-canonical-mental-model-diagram
+    key_takeaway: book/part-2-prediction/08-neural-networks-without-mathematics.md#8-key-takeaway
 
   - id: parameters
     name: Parameters
@@ -175,7 +177,7 @@ concepts:
     introduced_in: 8
     written: true
     misconception_ids: [more-parameters-more-understanding]
-    diagram: book/part-2-prediction/08-neural-networks-without-mathematics.md#8-canonical-mental-model-diagram
+    key_takeaway: book/part-2-prediction/08-neural-networks-without-mathematics.md#8-key-takeaway
 
   - id: learning
     name: Learning
@@ -184,7 +186,7 @@ concepts:
     introduced_in: 9
     written: true
     misconception_ids: [training-is-memorization]
-    diagram: book/part-2-prediction/09-learning-from-examples.md#8-canonical-mental-model-diagram
+    key_takeaway: book/part-2-prediction/09-learning-from-examples.md#8-key-takeaway
 
   - id: training
     name: Training
@@ -193,7 +195,7 @@ concepts:
     introduced_in: 9
     written: true
     misconception_ids: [training-is-memorization]
-    diagram: book/part-2-prediction/09-learning-from-examples.md#8-canonical-mental-model-diagram
+    key_takeaway: book/part-2-prediction/09-learning-from-examples.md#8-key-takeaway
 
   - id: loss
     name: Loss
@@ -202,7 +204,7 @@ concepts:
     introduced_in: 9
     written: true
     misconception_ids: [lower-loss-is-more-intelligence]
-    diagram: book/part-2-prediction/09-learning-from-examples.md#8-canonical-mental-model-diagram
+    key_takeaway: book/part-2-prediction/09-learning-from-examples.md#8-key-takeaway
 
   - id: scaling-laws
     name: Scaling laws
@@ -211,7 +213,7 @@ concepts:
     introduced_in: 10
     written: true
     misconception_ids: [scaling-laws-unlimited, bigger-model-always-better]
-    diagram: book/part-2-prediction/10-scaling-laws.md#8-canonical-mental-model-diagram
+    key_takeaway: book/part-2-prediction/10-scaling-laws.md#8-key-takeaway
 
   # ---------- Level 4 (planned — Part III, unwritten) ----------
   - id: attention
@@ -221,7 +223,7 @@ concepts:
     introduced_in: 11
     written: false
     misconception_ids: []
-    diagram: null
+    key_takeaway: null
 
   - id: positional-encoding
     name: Positional encoding
@@ -230,7 +232,7 @@ concepts:
     introduced_in: 11
     written: false
     misconception_ids: []
-    diagram: null
+    key_takeaway: null
 
   - id: transformer-blocks
     name: Transformer blocks
@@ -239,7 +241,7 @@ concepts:
     introduced_in: 12
     written: false
     misconception_ids: []
-    diagram: null
+    key_takeaway: null
 
   - id: inference
     name: Inference
@@ -248,7 +250,7 @@ concepts:
     introduced_in: 14
     written: false
     misconception_ids: []
-    diagram: null
+    key_takeaway: null
 
   - id: sampling
     name: Sampling
@@ -257,7 +259,7 @@ concepts:
     introduced_in: 14
     written: false
     misconception_ids: []
-    diagram: null
+    key_takeaway: null
 
   # ---------- Level 5 (planned — Part IV, unwritten) ----------
   - id: hallucinations
@@ -267,7 +269,7 @@ concepts:
     introduced_in: 15
     written: false
     misconception_ids: []
-    diagram: null
+    key_takeaway: null
 
   - id: fine-tuning
     name: Fine-tuning
@@ -276,7 +278,7 @@ concepts:
     introduced_in: 19
     written: false
     misconception_ids: []
-    diagram: null
+    key_takeaway: null
 
   - id: alignment
     name: Alignment
@@ -285,7 +287,7 @@ concepts:
     introduced_in: 19
     written: false
     misconception_ids: []
-    diagram: null
+    key_takeaway: null
 
   - id: context-windows
     name: Context windows
@@ -294,7 +296,7 @@ concepts:
     introduced_in: 16
     written: false
     misconception_ids: []
-    diagram: null
+    key_takeaway: null
 
   - id: memory
     name: Memory
@@ -303,7 +305,7 @@ concepts:
     introduced_in: 16
     written: false
     misconception_ids: []
-    diagram: null
+    key_takeaway: null
 
   # ---------- Level 6 (planned — Part V, unwritten) ----------
   - id: retrieval
@@ -313,7 +315,7 @@ concepts:
     introduced_in: 17
     written: false
     misconception_ids: []
-    diagram: null
+    key_takeaway: null
 
   - id: vector-databases
     name: Vector databases
@@ -322,7 +324,7 @@ concepts:
     introduced_in: 18
     written: false
     misconception_ids: []
-    diagram: null
+    key_takeaway: null
 
   - id: rag
     name: Retrieval-Augmented Generation (RAG)
@@ -331,7 +333,7 @@ concepts:
     introduced_in: 17
     written: false
     misconception_ids: []
-    diagram: null
+    key_takeaway: null
 
   - id: tool-calling
     name: Tool calling
@@ -340,7 +342,7 @@ concepts:
     introduced_in: 21
     written: false
     misconception_ids: []
-    diagram: null
+    key_takeaway: null
 
   - id: mcp
     name: Model Context Protocol (MCP)
@@ -349,7 +351,7 @@ concepts:
     introduced_in: 21
     written: false
     misconception_ids: []
-    diagram: null
+    key_takeaway: null
     note: >
       Taught inside Chapter 21 ("How Models Reach Into the World") as
       today's concrete standard, not given its own chapter — see
@@ -362,7 +364,7 @@ concepts:
     introduced_in: 22
     written: false
     misconception_ids: []
-    diagram: null
+    key_takeaway: null
 
   # ---------- Level 7 (planned — spans Part IV/V, unwritten) ----------
   - id: reasoning-models
@@ -372,7 +374,7 @@ concepts:
     introduced_in: 23
     written: false
     misconception_ids: []
-    diagram: null
+    key_takeaway: null
 
   - id: multimodality
     name: Multimodality
@@ -381,7 +383,7 @@ concepts:
     introduced_in: 24
     written: false
     misconception_ids: []
-    diagram: null
+    key_takeaway: null
 
   - id: mixture-of-experts
     name: Mixture of Experts
@@ -390,7 +392,7 @@ concepts:
     introduced_in: 25
     written: false
     misconception_ids: []
-    diagram: null
+    key_takeaway: null
 
   - id: quantization
     name: Quantization
@@ -399,7 +401,7 @@ concepts:
     introduced_in: 20
     written: false
     misconception_ids: []
-    diagram: null
+    key_takeaway: null
 
   - id: efficient-inference
     name: Efficient inference
@@ -408,7 +410,7 @@ concepts:
     introduced_in: 20
     written: false
     misconception_ids: []
-    diagram: null
+    key_takeaway: null
 
   # ---------- Level 8 (planned — Part VI, unwritten) ----------
   - id: evaluation
@@ -418,7 +420,7 @@ concepts:
     introduced_in: 27
     written: false
     misconception_ids: []
-    diagram: null
+    key_takeaway: null
 
   - id: observability
     name: Observability
@@ -427,7 +429,7 @@ concepts:
     introduced_in: 27
     written: false
     misconception_ids: []
-    diagram: null
+    key_takeaway: null
 
   - id: security
     name: Security
@@ -436,7 +438,7 @@ concepts:
     introduced_in: 28
     written: false
     misconception_ids: []
-    diagram: null
+    key_takeaway: null
 
   - id: safety
     name: Safety
@@ -445,7 +447,7 @@ concepts:
     introduced_in: 28
     written: false
     misconception_ids: []
-    diagram: null
+    key_takeaway: null
 
   - id: ai-engineering
     name: AI engineering
@@ -454,4 +456,4 @@ concepts:
     introduced_in: 26
     written: false
     misconception_ids: []
-    diagram: null
+    key_takeaway: null
