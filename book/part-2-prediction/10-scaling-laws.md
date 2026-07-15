@@ -15,15 +15,16 @@ Chapter 1 described three ingredients converging: more data, more compute,
 and a new architecture. What it didn't explain is something researchers
 found genuinely surprising once they started deliberately training models
 of many different sizes and comparing results: if you plot a model's loss
-against the amount of compute used to train it, on a chart where each step
-represents multiplying by ten rather than adding a fixed amount, the result
-isn't a jagged, unpredictable scatter. It's close to a straight line.
+against the amount of compute used to train it — with *both* axes marked
+off in multiples of ten rather than in fixed steps — the result isn't a
+jagged, unpredictable scatter. It's close to a straight line.
 
-That's a remarkable thing to discover about something as messy as language.
-It means you can train a series of small, cheap models, plot their results,
-and extrapolate the line forward to predict — with real accuracy — how
-good a model ten or a hundred times larger will be, before ever training
-it. Predictability at this scale, in a field this young, was not something
+That's a remarkable thing to discover about something as messy as
+language. It means you can train a series of small, cheap models, plot
+their results, and extrapolate the line forward to forecast — with useful
+accuracy, within a given model family and training setup — how good a
+model ten or a hundred times larger will be, before ever training it.
+Predictability at this scale, in a field this young, was not something
 researchers expected to find.
 
 ## 3. Visual Explanation
@@ -35,7 +36,7 @@ researchers expected to find.
   <line x1="60" y1="250" x2="560" y2="250" stroke="#1B1B2F" stroke-width="1"/>
   <line x1="60" y1="60" x2="60" y2="250" stroke="#1B1B2F" stroke-width="1"/>
   <text x="300" y="275" text-anchor="middle" font-family="Helvetica, Arial, sans-serif" font-size="12" fill="#1B1B2F">compute used to train (×10 each step)</text>
-  <text x="30" y="150" text-anchor="middle" font-family="Helvetica, Arial, sans-serif" font-size="12" fill="#1B1B2F" transform="rotate(-90 30 150)">loss (lower = better)</text>
+  <text x="30" y="150" text-anchor="middle" font-family="Helvetica, Arial, sans-serif" font-size="12" fill="#1B1B2F" transform="rotate(-90 30 150)">loss (×10 each step, lower = better)</text>
 
   <path d="M 80 80 L 220 130 L 360 175 L 500 210" fill="none" stroke="#EE964B" stroke-width="2"/>
   <circle cx="80" cy="80" r="5" fill="#EE964B"/>
@@ -45,7 +46,7 @@ researchers expected to find.
   <text x="500" y="230" text-anchor="middle" font-family="Helvetica, Arial, sans-serif" font-size="11" fill="#98A6B3">predicted from the earlier points</text>
 </svg>
 
-*Takeaway: on this kind of chart, loss falls in a close-to-straight line as scale grows by factors of ten — a genuinely predictable pattern.*
+*Takeaway: mark both axes off in multiples of ten (not fixed steps) and loss falls in a close-to-straight line as scale grows — a genuinely predictable pattern, but only visible once you've transformed the chart this way.*
 
 ## 4. Core Intuition
 
@@ -69,8 +70,17 @@ use of all those parameters.
 
 Scaling laws describe loss decreasing roughly as a power-law function of
 compute, parameters, and data — meaning each additional order of magnitude
-of scale buys a real, but shrinking, improvement in loss. This
-relationship was first characterized clearly around 2020, and refined in
+of scale buys a real, but shrinking, improvement in loss. A straight line
+on the chart in §3 is what a power-law relationship looks like once
+*both* axes are stretched into equal ratios (marked off ×10, ×100, ×1000,
+rather than +10, +20, +30) — it's a way of revealing that underlying
+relationship, not a claim that loss falls in a straight line on an
+ordinary chart. Researchers also typically separate loss into a part that
+keeps shrinking with scale and a small remaining part that scale alone
+doesn't remove (sometimes called irreducible loss) — the power-law
+description applies to the shrinking part.
+
+This relationship was first characterized clearly around 2020, and refined in
 2022 by research (widely known by the name of the model that demonstrated
 it, "Chinchilla") showing that many earlier large models had been
 undertrained: they had more parameters than their training data justified,
@@ -145,7 +155,8 @@ announcements oversell.
 
 ## 9. One-Page Summary
 
-- Scaling laws are an empirical finding: loss falls in a smooth, forecastable way as data, parameters, and compute increase together.
+- Scaling laws are an empirical finding: loss falls in a smooth, forecastable way as data, parameters, and compute increase together — visible as a straight line once both axes are stretched into equal ratios (×10, ×100, ×1000), which is what reveals the underlying power-law relationship.
+- A small remaining part of loss ("irreducible loss") doesn't shrink with scale alone — the power-law description applies to the part that does.
 - This predictability lets researchers extrapolate from small, cheap experiments to justify training much larger, more expensive models.
 - Data and parameters must be scaled together in the right ratio — a model can be undertrained if it has more parameters than its data justifies.
 - Returns diminish with scale, and practical ceilings exist: available high-quality data, compute cost, and energy.
@@ -161,6 +172,6 @@ announcements oversell.
 
 ---
 
-**Glossary terms added this chapter:** Scaling law, Undertrained (relative to parameter count) → append to `/glossary.md`
+**Glossary terms added this chapter:** Scaling law, Undertrained (relative to parameter count), Irreducible loss → append to `/glossary.md`
 **Misconceptions logged this chapter:** "scaling laws mean unlimited scaling"; "bigger model is automatically the better choice" → append to `/misconceptions.md`
 **Concept-graph entries checked off:** Level 3 — Scaling laws, at Ch. 10 (closes Level 3 / Part II)

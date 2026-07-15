@@ -33,3 +33,4 @@ the real explanation lives in the chapter itself.
 | Learning | The useful patterns that emerge from repeated training, not designed directly by anyone. | Ch. 9 |
 | Scaling law | The empirical, forecastable relationship between training data/parameters/compute and resulting loss. | Ch. 10 |
 | Undertrained (relative to parameter count) | A model with more parameters than its training data can make good use of. | Ch. 10 |
+| Irreducible loss | The small remaining part of loss that scale alone doesn't remove; the power-law scaling description applies to the part that does shrink. | Ch. 10 |

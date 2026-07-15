@@ -27,8 +27,16 @@ the analogy registry (§5).
 
 ## 2. Chapter Mechanics
 
-- Every chapter follows `templates/chapter-template.md` verbatim — all 11
-  sections, in order, none skipped.
+- Every chapter must substantively cover all 11 elements of
+  `templates/chapter-template.md` — completeness is mandatory, but per
+  blueprint.md's amended "Standard Chapter Template" section, the
+  reader-facing presentation is not. During this drafting phase, every
+  chapter still uses the 11 headers verbatim, in order, because that makes
+  completeness trivial to verify chapter by chapter (see the verification
+  steps in this project's plan history). Loosening the visible headers
+  into freer prose is a deliberate later editorial pass, not something to
+  improvise chapter by chapter now — doing it piecemeal would make the
+  11-point completeness check unreliable across 30 chapters.
 - Every chapter answers exactly one question from the Narrative Graph
   (blueprint.md, "Narrative Graph" section) and ends by provoking the next.
   §11 of chapter N and §1 of chapter N+1 must express the same question.

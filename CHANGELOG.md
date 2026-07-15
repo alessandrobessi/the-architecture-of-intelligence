@@ -24,3 +24,17 @@
   than a universal law.
 - Added `concept-graph.yaml` as the machine-readable source of truth behind
   `concept-graph.md`.
+- Added Part II manuscript (chapters 6–10, "Prediction"), with matching
+  glossary/misconception/concept-graph/reference updates.
+- Second review round: Chapter 8 now draws an explicit boundary between the
+  generic layered network it describes and the transformer architecture
+  Part III builds on top of it. Chapter 10 clarifies that the scaling-law
+  "straight line" requires both axes scaled in equal ratios (not literal
+  linear loss decay) and introduces "irreducible loss." Chapter 5 gained a
+  "try it yourself" thought experiment (hot/cold/sandwich) reinforcing the
+  similarity-vs-synonymy misconception. `style-guide.md`'s chapter-mechanics
+  section was reworded to stop contradicting blueprint.md's amended
+  template language. Added `testing/` — a ready-to-run reader-validation
+  protocol and per-chapter question bank (comprehension, transfer,
+  misconception resistance, retention), covering Milestone 3 of
+  `ROADMAP.md`.

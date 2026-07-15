@@ -96,6 +96,19 @@ predictions. This is the crucial shift from earlier, hand-coded software:
 nobody writes down what each parameter should be; the values emerge from
 a repeated correction process operating over enormous amounts of data.
 
+One boundary is worth drawing precisely. The plain layered network
+described in this chapter — every unit connected to every unit in the
+previous layer — is a real, foundational design, and everything said about
+it here (parameters, layers, learned rather than hand-coded behavior)
+remains true of every neural network in this book, including language
+models. But a modern language model is not simply a long stack of
+identical layers like the one pictured here. Its layers are organized into
+a more specialized arrangement — the transformer — with dedicated
+machinery for weighing which earlier tokens matter most to which later
+ones. That arrangement is the subject of Part III. Treat this chapter as
+the load-bearing foundation the transformer is built on top of, not as a
+literal blueprint of one.
+
 ## 6. Common Misconceptions
 
 > **Misconception:** "A neural network is basically a simulation of a human brain."

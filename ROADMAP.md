@@ -19,9 +19,11 @@ chapter-by-chapter manuscript status, see `book/README.md`.
 ## Milestone 3 — Editorial validation of Part I + II
 
 - [ ] Lightweight citation pass on empirical/historical claims (`references/`)
-- [ ] External reader test: 5+ target readers (non-technical professionals)
-  read Part I and are asked to explain tokens, information, compression,
-  context, and embeddings unaided — revise based on actual misunderstandings
+- [ ] External reader test: 5+ target readers (non-technical professionals),
+  following the structured protocol and question bank in `testing/` —
+  comprehension, transfer, misconception resistance, retention, and
+  reading-experience notes, per chapter, per reader. Requires actually
+  recruiting readers; the protocol itself is ready to run.
 - [ ] Cross-theme, cross-chapter consistency pass on analogies and voice
 
 ## Milestone 4 — Parts III–VI

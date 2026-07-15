@@ -61,6 +61,7 @@ and status, and [`ROADMAP.md`](ROADMAP.md) for project-level milestones.
 | [`concept-graph.md`](concept-graph.md) / [`concept-graph.yaml`](concept-graph.yaml) | Checklist tracker over the blueprint's 9-level concept dependency graph — a concept may never appear in prose before its own level is checked off. The `.yaml` is the machine-readable source of truth (explicit per-concept prerequisites, introduced-in chapter, linked misconceptions); the `.md` is its human-readable mirror. |
 | [`assets/icons/`](assets/icons/) | Canonical hand-drawn icon snippets (token, embedding point, etc.) copied and adapted into each chapter's inline diagrams. |
 | [`references/`](references/) | Lightweight per-chapter citation trail for empirical/historical claims, plus a master `bibliography.md`. |
+| [`testing/`](testing/) | The reader-validation protocol: methodology, scoring rubric, and a per-chapter question bank (comprehension, transfer, misconception resistance, retention). Ready to run, pending recruiting actual test readers. |
 
 ## Editorial status and contributions
 
