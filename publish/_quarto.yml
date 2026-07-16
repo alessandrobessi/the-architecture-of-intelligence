@@ -9,6 +9,7 @@ book:
   chapters:
     - index.qmd
     - preface.qmd
+    - about-the-author.qmd
     - part: "Part I — Information"
       chapters:
         - chapters/part-1-information/01-why-ai-suddenly-changed.md
@@ -51,7 +52,6 @@ book:
         - chapters/part-6-ai-in-the-real-world/28-security-and-safety.md
         - chapters/part-6-ai-in-the-real-world/29-how-to-judge-what-comes-next.md
         - chapters/part-6-ai-in-the-real-world/30-how-to-keep-learning.md
-    - about-the-author.qmd
 
 format:
   html:
