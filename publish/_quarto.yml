@@ -1,0 +1,64 @@
+project:
+  type: book
+
+book:
+  title: "The Architecture of Intelligence"
+  subtitle: "A Mental Model for Modern AI Systems"
+  author: "Alessandro Bessi"
+  date: today
+  chapters:
+    - index.qmd
+    - preface.qmd
+    - part: "Part I — Information"
+      chapters:
+        - chapters/part-1-information/01-why-ai-suddenly-changed.md
+        - chapters/part-1-information/02-what-is-information.md
+        - chapters/part-1-information/03-characters-words-tokens.md
+        - chapters/part-1-information/04-compressing-language.md
+        - chapters/part-1-information/05-meaning-as-geometry.md
+    - part: "Part II — Prediction"
+      chapters:
+        - chapters/part-2-prediction/06-predicting-the-next-token.md
+        - chapters/part-2-prediction/07-why-counting-is-not-enough.md
+        - chapters/part-2-prediction/08-neural-networks-without-mathematics.md
+        - chapters/part-2-prediction/09-learning-from-examples.md
+        - chapters/part-2-prediction/10-scaling-laws.md
+    - part: "Part III — The Transformer"
+      chapters:
+        - chapters/part-3-the-transformer/11-the-attention-revolution.md
+        - chapters/part-3-the-transformer/12-building-a-transformer.md
+        - chapters/part-3-the-transformer/13-from-transformer-to-chatgpt.md
+        - chapters/part-3-the-transformer/14-inference-and-text-generation.md
+        - chapters/part-3-the-transformer/15-why-models-hallucinate.md
+    - part: "Part IV — Building Useful AI"
+      chapters:
+        - chapters/part-4-building-useful-ai/16-context-windows-and-memory.md
+        - chapters/part-4-building-useful-ai/17-semantic-retrieval-and-vector-databases.md
+        - chapters/part-4-building-useful-ai/18-retrieval-augmented-generation.md
+        - chapters/part-4-building-useful-ai/19-fine-tuning-and-alignment.md
+        - chapters/part-4-building-useful-ai/20-quantization-and-efficient-models.md
+    - part: "Part V — AI Systems"
+      chapters:
+        - chapters/part-5-ai-systems/21-how-models-reach-into-the-world.md
+        - chapters/part-5-ai-systems/22-from-single-calls-to-agents.md
+        - chapters/part-5-ai-systems/23-thinking-longer-not-just-faster.md
+        - chapters/part-5-ai-systems/24-one-model-many-senses.md
+        - chapters/part-5-ai-systems/25-many-experts-one-model.md
+    - part: "Part VI — The Future"
+      chapters:
+        - chapters/part-6-the-future/26-evaluating-ai-systems.md
+        - chapters/part-6-the-future/27-ai-engineering-and-observability.md
+        - chapters/part-6-the-future/28-security-and-safety.md
+        - chapters/part-6-the-future/29-where-ai-is-going.md
+        - chapters/part-6-the-future/30-how-to-keep-learning.md
+
+format:
+  html:
+    theme: cosmo
+    toc: true
+    number-sections: false
+  typst:
+    toc: true
+    number-sections: false
+  epub:
+    toc: true

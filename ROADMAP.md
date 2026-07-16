@@ -75,7 +75,22 @@ the second implementation.
       current TOC — see note on Chapter 21/MCP)
 - [x] Part VI — The Future (26–30)
 
-## Milestone 5 — Beyond the manuscript
+## Milestone 5 — Local publication pipeline (done)
+
+- [x] Quarto book project (`publish/`) rendering the manuscript to HTML,
+      EPUB, and PDF (via the Typst engine) from a single `quarto render`.
+      `scripts/prepare_manuscript_for_publish.py` strips each chapter's
+      authoring scaffolding (front-matter metadata, footer bookkeeping)
+      into a gitignored `publish/chapters/` build directory — `book/*.md`
+      itself is untouched. Minimal title page and a preface adapted from
+      `README.md`.
+- [ ] Deciding whether to dissolve the visible 11-section headers into
+      flowing prose before a real release — deliberately not done here;
+      see `style-guide.md` §2. The pipeline renders the headers as they
+      currently are.
+- [ ] A real cover; currently a text-only title page.
+
+## Milestone 6 — Beyond the manuscript
 
 Per blueprint.md's "Vision" and "Living Companion" sections — not started:
 
@@ -87,12 +102,11 @@ Per blueprint.md's "Vision" and "Living Companion" sections — not started:
 
 ## Explicitly deferred, not forgotten
 
-- A build pipeline (Pandoc/Typst/Quarto → PDF/EPUB/web) — not being taken
-  on now; the manuscript is plain Markdown/prose, which if anything makes
-  this easier whenever it's picked up.
 - Professional publishing conversations — blueprint.md names "a
   professionally published book" as the primary artifact; no publisher
-  process has started.
+  process has started. The local build pipeline (Milestone 5) produces a
+  personal-use PDF/EPUB/site only — `LICENSE` is still an all-rights-
+  reserved placeholder, so nothing here grants redistribution rights.
 
 ## Explicitly reversed, not deferred
 

@@ -1,0 +1,30 @@
+# Preface {.unnumbered}
+
+## Who this is for
+
+Managers, consultants, product leaders, founders, sales professionals,
+executives, students, and lifelong learners — anyone who wants to read
+an AI engineering blog or product announcement and actually evaluate it,
+rather than just trust or dismiss it.
+
+## What you'll come away with
+
+By the end, you should be able to explain how large language models
+generate text; why they hallucinate; what tokens, embeddings, attention,
+retrieval-augmented generation, vector databases, tool calling, the
+Model Context Protocol, and AI agents actually are; and — most
+importantly — tell a genuine advance apart from a marketing headline.
+
+## How the book is built
+
+Every chapter builds understanding through a real-world story, a second
+worked example from a different angle, and a precise technical
+explanation — then ends with one bolded, memorable sentence that
+distills its core idea. Chapters are meant to be read in order: each
+one's vocabulary is a prerequisite for the next, following an explicit
+concept dependency graph rather than a loose topic list.
+
+The book teaches entirely through prose, deliberately. Earlier drafts
+tried diagrams; they were dropped as a considered choice, not an
+oversight — see the chapters themselves for why words carried the weight
+better here.
