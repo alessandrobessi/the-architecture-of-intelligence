@@ -28,7 +28,7 @@ originally written to clarify my own thinking and to help colleagues and
 non-technical stakeholders actually understand the systems we were
 building. Organizing those notes into a coherent, chapter-by-chapter
 manuscript was done in collaboration with Claude (Anthropic), which did
-the writing itself, with ChatGPT (OpenAI) used for editorial review
+the writing itself, and ChatGPT (OpenAI) used for editorial review
 along the way.
 
 ## Who this is for
