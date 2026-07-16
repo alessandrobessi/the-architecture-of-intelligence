@@ -1,4 +1,4 @@
-# Chapter 11 — The Attention Revolution
+# The Attention Revolution
 
 **Part:** The Transformer
 

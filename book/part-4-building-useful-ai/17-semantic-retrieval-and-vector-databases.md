@@ -1,4 +1,4 @@
-# Chapter 17 — Semantic Retrieval and Vector Databases
+# Semantic Retrieval and Vector Databases
 
 **Part:** Building Useful AI
 

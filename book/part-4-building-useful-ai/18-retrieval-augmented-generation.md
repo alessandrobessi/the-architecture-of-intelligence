@@ -1,4 +1,4 @@
-# Chapter 18 — Retrieval-Augmented Generation
+# Retrieval-Augmented Generation
 
 **Part:** Building Useful AI
 

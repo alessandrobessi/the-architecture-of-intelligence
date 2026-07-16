@@ -1,4 +1,4 @@
-# Chapter 2 — What Is Information?
+# What Is Information?
 
 **Part:** Information
 

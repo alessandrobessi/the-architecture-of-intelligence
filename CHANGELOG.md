@@ -2,6 +2,39 @@
 
 ## 2026-07-16
 
+- **Replaced the cover artwork** (`publish/assets/cover.png` /
+  `cover-epub.png`) with new user-supplied art. Doing so surfaced a real
+  bug the previous cover had been silently hiding: the standalone cover
+  page's `#page(...)` call in `publish/typst-show.typ` ran *before*
+  `#show: book.with(...)`, so at that point in the document only
+  `page.typ`'s own default paper size ("us-letter") was in effect —
+  `book()`'s "a4" default (its own hardcoded value, never overridden by
+  this project) only takes hold once `book.with()` actually runs, a few
+  lines later. The cover was rendering on a US Letter page while every
+  page after it was A4 — invisible with the previous artwork's generous
+  margins, but visibly cropped (a crown icon and "THE" cut off at the
+  top) the moment new art was placed closer to the edges. Fixed by
+  setting `paper: "a4"` explicitly on the cover's own `#page(...)` call.
+  Verified via each page's actual PDF mediabox (0 was 612×792pt / Letter,
+  now 595×842pt / A4 matching every other page) and by rendering the
+  cover to an image and inspecting it directly, not just checking config.
+  Iterated on the artwork itself a couple more times after the fix; each
+  pass re-verified the same way (mediabox + rendered image), all clean.
+
+- Updated `templates/chapter-template.md` again: dropped the "Chapter N — "
+  prefix from the H1 itself (`# Chapter N — Title` → `# Title`).
+  Mechanically applied to all 30 chapters. Updated
+  `scripts/validate_manuscript_index.py`'s title-matching regex to match
+  (it previously required and stripped the "Chapter N — " prefix before
+  comparing against `book/README.md`'s link text, which already only
+  ever contained the plain title). Side effect: this was the other half
+  of the double-numbering artifact from the previous entry — PDF running
+  headers and the front-matter TOC previously showed "Chapter 1. Chapter
+  1 — Why AI Suddenly Changed" (Typst's own auto "Chapter N." plus the
+  literal title prefix); now correctly "Chapter 1. Why AI Suddenly
+  Changed". Verified by rendering and inspecting the actual PDF pages,
+  the front-matter TOC, and the HTML sidebar — all clean.
+
 - **Removed paragraph first-line indent from the PDF.** `@preview/orange-
   book`'s `book()` defaults to `first-line-indent: true`, indenting every
   paragraph after the first in a block — Quarto's own copy of

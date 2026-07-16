@@ -1,4 +1,4 @@
-# Chapter 14 — Inference and Text Generation
+# Inference and Text Generation
 
 **Part:** The Transformer
 

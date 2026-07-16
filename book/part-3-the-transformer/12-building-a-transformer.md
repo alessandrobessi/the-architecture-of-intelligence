@@ -1,4 +1,4 @@
-# Chapter 12 — Building a Transformer
+# Building a Transformer
 
 **Part:** The Transformer
 

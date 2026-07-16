@@ -1,4 +1,4 @@
-# Chapter 24 — One Model, Many Senses
+# One Model, Many Senses
 
 **Part:** AI Systems
 

@@ -1,4 +1,4 @@
-# Chapter 20 — Quantization and Efficient Models
+# Quantization and Efficient Models
 
 **Part:** Building Useful AI
 

@@ -1,4 +1,4 @@
-# Chapter 16 — Context Windows and Memory
+# Context Windows and Memory
 
 **Part:** Building Useful AI
 

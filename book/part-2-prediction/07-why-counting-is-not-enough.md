@@ -1,4 +1,4 @@
-# Chapter 7 — Why Counting Is Not Enough
+# Why Counting Is Not Enough
 
 **Part:** Prediction
 

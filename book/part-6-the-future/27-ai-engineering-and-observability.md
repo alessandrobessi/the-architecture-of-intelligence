@@ -1,4 +1,4 @@
-# Chapter 27 — AI Engineering and Observability
+# AI Engineering and Observability
 
 **Part:** The Future
 

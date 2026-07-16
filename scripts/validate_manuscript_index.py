@@ -46,9 +46,9 @@ def check_readme_links():
             errors.append(f"book/README.md links to '{path}' which does not exist")
             continue
         chapter_text = target.read_text()
-        h1_match = re.search(r"^# Chapter \d+\s*[—-]\s*(.+)$", chapter_text, re.MULTILINE)
+        h1_match = re.search(r"^# (.+)$", chapter_text, re.MULTILINE)
         if not h1_match:
-            errors.append(f"{path}: no '# Chapter N — Title' heading found")
+            errors.append(f"{path}: no '# Title' heading found")
             continue
         actual_title = h1_match.group(1).strip()
         if actual_title != title.strip():

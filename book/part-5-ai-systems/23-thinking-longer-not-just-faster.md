@@ -1,4 +1,4 @@
-# Chapter 23 — Thinking Longer, Not Just Faster
+# Thinking Longer, Not Just Faster
 
 **Part:** AI Systems
 

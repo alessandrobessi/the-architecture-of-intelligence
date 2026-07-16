@@ -1,4 +1,4 @@
-# Chapter 21 — How Models Reach Into the World
+# How Models Reach Into the World
 
 **Part:** AI Systems
 

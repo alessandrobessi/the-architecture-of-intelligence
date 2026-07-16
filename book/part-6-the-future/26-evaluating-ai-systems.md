@@ -1,4 +1,4 @@
-# Chapter 26 — Evaluating AI Systems
+# Evaluating AI Systems
 
 **Part:** The Future
 

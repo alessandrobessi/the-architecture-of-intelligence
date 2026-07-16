@@ -1,4 +1,4 @@
-# Chapter 6 — Predicting the Next Token
+# Predicting the Next Token
 
 **Part:** Prediction
 

@@ -1,4 +1,4 @@
-# Chapter N — [Chapter Title]
+# [Chapter Title]
 
 **Part:** [Part Name]
 

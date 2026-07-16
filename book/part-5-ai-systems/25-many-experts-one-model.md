@@ -1,4 +1,4 @@
-# Chapter 25 — Many Experts, One Model
+# Many Experts, One Model
 
 **Part:** AI Systems
 

@@ -1,4 +1,4 @@
-# Chapter 29 — Where AI Is Going
+# Where AI Is Going
 
 **Part:** The Future
 

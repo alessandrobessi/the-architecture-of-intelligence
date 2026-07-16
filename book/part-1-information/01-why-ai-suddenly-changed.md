@@ -1,4 +1,4 @@
-# Chapter 1 — Why AI Suddenly Changed
+# Why AI Suddenly Changed
 
 **Part:** Information
 

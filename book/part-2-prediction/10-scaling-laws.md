@@ -1,4 +1,4 @@
-# Chapter 10 — Scaling Laws
+# Scaling Laws
 
 **Part:** Prediction
 

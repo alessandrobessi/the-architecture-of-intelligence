@@ -1,4 +1,4 @@
-# Chapter 5 — Meaning as Geometry
+# Meaning as Geometry
 
 **Part:** Information
 

@@ -1,4 +1,4 @@
-# Chapter 28 — Security and Safety
+# Security and Safety
 
 **Part:** The Future
 

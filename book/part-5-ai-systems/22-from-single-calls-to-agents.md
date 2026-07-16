@@ -1,4 +1,4 @@
-# Chapter 22 — From Single Calls to Agents
+# From Single Calls to Agents
 
 **Part:** AI Systems
 

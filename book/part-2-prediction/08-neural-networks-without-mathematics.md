@@ -1,4 +1,4 @@
-# Chapter 8 — Neural Networks Without Mathematics
+# Neural Networks Without Mathematics
 
 **Part:** Prediction
 

@@ -1,4 +1,4 @@
-# Chapter 30 — How to Keep Learning
+# How to Keep Learning
 
 **Part:** The Future
 

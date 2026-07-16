@@ -1,4 +1,4 @@
-# Chapter 13 — From Transformer to ChatGPT
+# From Transformer to ChatGPT
 
 **Part:** The Transformer
 

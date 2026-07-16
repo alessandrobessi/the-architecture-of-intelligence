@@ -1,4 +1,4 @@
-# Chapter 15 — Why Models Hallucinate
+# Why Models Hallucinate
 
 **Part:** The Transformer
 

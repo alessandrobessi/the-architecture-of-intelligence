@@ -1,4 +1,4 @@
-# Chapter 3 — Characters, Words and Tokens
+# Characters, Words and Tokens
 
 **Part:** Information
 

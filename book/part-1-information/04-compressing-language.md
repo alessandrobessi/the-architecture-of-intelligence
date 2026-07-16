@@ -1,4 +1,4 @@
-# Chapter 4 — Compressing Language
+# Compressing Language
 
 **Part:** Information
 

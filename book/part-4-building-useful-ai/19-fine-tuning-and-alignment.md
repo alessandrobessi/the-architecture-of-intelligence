@@ -1,4 +1,4 @@
-# Chapter 19 — Fine-Tuning and Alignment
+# Fine-Tuning and Alignment
 
 **Part:** Building Useful AI
 

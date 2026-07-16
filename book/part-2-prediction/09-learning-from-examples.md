@@ -1,4 +1,4 @@
-# Chapter 9 — Learning From Examples
+# Learning From Examples
 
 **Part:** Prediction
 

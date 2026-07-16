@@ -8,7 +8,15 @@
 // `cover:` parameter either: it unconditionally overlays a title/
 // subtitle/author text block on top of the image, duplicating text
 // already designed into this cover artwork (see CHANGELOG).
-#page(margin: 0pt)[
+//
+// paper: "a4" is explicit and required, not cosmetic: at this point in
+// the document, page.typ's own #set page(...) (default "us-letter") is
+// the only page rule in effect — book()'s "a4" default (its own
+// hardcoded paper-size, never overridden by this project) only takes
+// over once #show: book.with(...) below actually runs. Without this,
+// the cover silently renders on a US Letter page while every page after
+// it is A4, visibly cropping any artwork that isn't heavily margined.
+#page(margin: 0pt, paper: "a4")[
   #image("assets/cover.png", width: 100%, height: 100%)
 ]
 #pagebreak()
