@@ -50,6 +50,7 @@ book:
         - chapters/part-6-ai-in-the-real-world/28-security-and-safety.md
         - chapters/part-6-ai-in-the-real-world/29-how-to-judge-what-comes-next.md
         - chapters/part-6-ai-in-the-real-world/30-how-to-keep-learning.md
+    - about-the-author.qmd
 
 format:
   html:
