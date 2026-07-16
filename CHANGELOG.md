@@ -2,6 +2,49 @@
 
 ## 2026-07-16
 
+- **Dissolved the 11-section chapter template into flowing prose across
+  all 30 chapters.** Every chapter previously used the same 11 literal
+  `##`/`###` headers verbatim (`Opening Question`, `Real-World Story`,
+  `Worked Example`, `Core Intuition`, `Technical Explanation`, `Common
+  Misconceptions`, `Practical Implications`, `Key Takeaway`, `One-Page
+  Summary`, `Further Reading`, `The Next Obvious Question`) — a
+  deliberate drafting scaffold (`style-guide.md` §2, `ROADMAP.md`
+  Milestone 5) that external review of the published book called out as
+  reading "like a course manual." All 30 chapters are now continuous
+  prose: a chapter opens and closes on an unheaded, italicized question
+  (still required to express the same idea as the adjacent chapter's
+  matching question); misconceptions are woven into the narrative at the
+  point a reader is most likely to actually hold them, keeping the
+  analogy and dropping the quoted-heading/bold-label scaffolding; the
+  key takeaway stays a bolded, standalone sentence; and the one-page
+  summary and further-reading pointers survive as light bulleted closers
+  under bold lead-ins (`**In short:**`, `**Go further:**`) instead of
+  headers. `templates/chapter-template.md`, `blueprint.md`'s "Standard
+  Chapter Template" section, `style-guide.md` §2, and `ROADMAP.md`
+  Milestone 5 all updated to describe this as the shipped convention.
+  Two chapters (1 and 24) were rewritten by hand first as a style pilot
+  and rendered/reviewed before the remaining 28 were rewritten in
+  parallel, batched by Part, each pass constrained to never touch front
+  matter or the footer bookkeeping block, never drop or alter a
+  `(Chapter N)` cross-reference or any factual claim, and to rewrite any
+  `§N` internal section self-reference (several existed in Chapter 29)
+  into plain prose. Required one small technical follow-on:
+  `concept-graph.yaml`'s 50 `key_takeaway` entries previously pointed at
+  `file.md#key-takeaway` / `file.md#worked-example` heading anchors,
+  which no longer exist once headers are gone — changed to point at the
+  chapter file only (matching how every other cross-reference in the
+  repo already works), and simplified `scripts/validate_concept_graph.py`
+  to match (removed the now-dead GitHub-heading-slug matching code).
+  Verified via: a repo-wide grep confirming zero remaining `^##` chapter
+  headers and zero `§N` references anywhere in `book/`; a structural
+  check that all 30 files still have exactly one front-matter rule, one
+  footer rule, and the footer marker intact; all three validator scripts
+  passing; a full read-through of a representative sample of chapters
+  spanning every Part; and a full Quarto render (HTML/EPUB/PDF) with
+  visual inspection of multiple rendered PDF pages, confirming clean
+  prose formatting, correctly rendered bold/italic conventions, and the
+  chapter-to-chapter closing/opening question match preserved at Part
+  boundaries.
 - **Fixed a duplicate-title bug on the rendered landing page.** `index.qmd`
   previously had both an H1 (`# The Architecture of Intelligence
   {.unnumbered}`) and, immediately below it, an H3 restating the
