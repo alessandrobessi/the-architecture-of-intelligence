@@ -2,6 +2,47 @@
 
 ## 2026-07-16
 
+- **Narrow follow-up pass on Chapters 21, 22, 23, 24, and 26, driven by a
+  second external review of commit `d85135c`.** Verified the review's
+  claims against the actual text first (confirmed the Ch.24 worked
+  example genuinely conflates CLIP's whole-image/whole-caption
+  contrastive alignment with patch-level attention, that Ch.21's "a live
+  stock price isn't sitting in any document" contradicts Ch.18's own
+  "retrieval doesn't require a static corpus" line, and that Ch.23
+  presented one reasoning-model training recipe as universal) before
+  fixing:
+  - **Ch.24**: rewrote the worked example into two explicit, honest
+    stages — CLIP-style whole-image/whole-caption alignment (useful for
+    search/retrieval, but not word-by-word interaction), then a
+    separately-trained projector (trained via ordinary next-token
+    prediction on instruction-following examples, not the contrastive
+    objective) that actually lets patches and words attend to each other.
+    Softened "each modality needs its own dedicated encoder" to
+    "encoder, tokenizer, or codec" to accommodate unified-fusion systems.
+    Softened the claim that all three bridging patterns use matched-pair
+    contrastive training. Added `liu2023llava` citation.
+  - **Ch.23**: softened the reasoning-model training paragraph from one
+    presented recipe (RL on whole reasoning-plus-answer trajectories) to
+    "many current models," naming supervised demonstrations, process-level
+    feedback, and distillation as real alternatives. Reworded the apples
+    example to avoid asserting the model has a specific hidden
+    intermediate computation.
+  - **Ch.21**: fixed the RAG-vs-tool-calling boundary — retrieval can
+    reach live sources too (per Ch.18's own definition); the real
+    distinction is that tool calling is the broader interface, with
+    retrieval as one kind of tool call alongside computation and
+    side-effecting actions. Softened "any MCP-compatible application can
+    connect to any MCP-compatible server without bespoke glue code" to
+    acknowledge real deployments still need configuration, auth, and
+    permissions.
+  - **Ch.22**: "nothing about the model changes" → "nothing about the
+    model *has to* change," acknowledging real agent systems sometimes
+    use a specifically fine-tuned model as an optional refinement.
+  - **Ch.26**: "tends to track real-world usefulness more faithfully" →
+    "can track... more faithfully," since human evaluation's quality
+    depends on task, rubric, and rater consistency.
+  - All three validators pass clean.
+
 - **Consolidation pass on Chapters 21–28 and 30, driven by an external
   technical review of commit `8af666c`.** Verified the review's concrete,
   checkable claims against the actual text before acting (a real

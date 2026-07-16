@@ -35,6 +35,7 @@ driver," "emergent abilities").
 | `dosovitskiy2020vit` | A. Dosovitskiy et al., "An Image is Worth 16x16 Words: Transformers for Image Recognition at Scale," *arXiv:2010.11929*, 2020. | Patch-based image tokenization (Vision Transformer / ViT) (Ch. 24) |
 | `radford2021clip` | A. Radford et al., "Learning Transferable Visual Models From Natural Language Supervision" (CLIP), *arXiv:2103.00020*, 2021. | Contrastive image-text alignment into a shared embedding space (Ch. 24) |
 | `alayrac2022flamingo` | J. Alayrac et al., "Flamingo: a Visual Language Model for Few-Shot Learning," *NeurIPS*, 2022 (`arXiv:2204.14198`). | Cross-attention-bridge multimodal architecture (Ch. 24) |
+| `liu2023llava` | H. Liu et al., "Visual Instruction Tuning" (LLaVA), *NeurIPS*, 2023 (`arXiv:2304.08485`). | Encoder-plus-projector multimodal architecture (Ch. 24) |
 | `chameleon2024` | Chameleon Team, "Chameleon: Mixed-Modal Early-Fusion Foundation Models," *arXiv:2405.09818*, 2024. | Unified early-fusion-token multimodal architecture (Ch. 24) |
 | `shazeer2017moe` | N. Shazeer et al., "Outrageously Large Neural Networks: The Sparsely-Gated Mixture-of-Experts Layer," *arXiv:1701.06538*, 2017. | Original sparsely-gated Mixture-of-Experts formulation (Ch. 25) |
 | `fedus2021switch` | W. Fedus, B. Zoph, N. Shazeer, "Switch Transformers: Scaling to Trillion Parameter Models with Simple and Efficient Sparsity," *arXiv:2101.03961*, 2021. | Simplified single-expert-per-token routing at scale (Ch. 25) |

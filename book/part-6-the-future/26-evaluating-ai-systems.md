@@ -87,11 +87,11 @@ broader capability the benchmark was originally built to stand in for.
 **Human evaluation** — people directly rating or comparing model outputs
 — is the same basic mechanism Chapter 19 already introduced for training
 (human feedback, RLHF), now applied to measurement instead of adjustment.
-It tends to track real-world usefulness more faithfully than an automated
-benchmark, precisely because a person is judging the actual thing you
-care about rather than a fixed proxy for it — but it's slow, expensive to
-run at scale, and subject to its own inconsistency and bias between
-different raters.
+It can track real-world usefulness more faithfully than an automated
+benchmark, since a person is judging the actual thing you care about
+rather than a fixed proxy for it — but that depends heavily on the task,
+the rubric, and rater expertise and consistency, and it's slow and
+expensive to run at scale besides.
 
 **LLM-as-judge** evaluation uses a separate model — often a larger or
 otherwise trusted one — to score or compare outputs against a rubric,

@@ -29,10 +29,15 @@ floor herself. She didn't need to know how the price-lookup system worked
 internally. She just knew *that* such a request was possible, exactly how
 to phrase it, and that a reliable answer would come back in a form she
 could immediately use. Chapter 18 already covered a version of this — RAG
-hands a model retrieved passages from an existing document collection. But
-a live stock price isn't sitting in any document, and "look up the current
-price" isn't a search over static text; it's a request for a system to go
-*do something* — right now — and report back what happened.
+adds retrieved information into a model's context before it generates a
+response, and that retrieval step can itself reach live sources, not
+only a fixed document collection. What's different here isn't retrieval
+versus something else; it's that tool calling is the more general
+interface underneath. Retrieval can be implemented as one specific kind
+of tool call, but tools aren't limited to fetching information back —
+they can run exact computation, or take an action with a real side
+effect, like sending a message or updating a record, that has no
+equivalent in simply retrieving a passage.
 
 ## 3. Worked Example
 
@@ -114,9 +119,13 @@ external resources (documents, records, live data) and reusable prompt
 templates, to describe themselves to a model-serving application and be
 invoked or retrieved by it — tool calling in this chapter's sense is the
 part of MCP most relevant here, but the protocol's scope is broader than
-tool schemas alone. Any MCP-compatible application can connect to any
-MCP-compatible server without bespoke, one-off glue code for that
-specific pairing. MCP doesn't change what tool calling fundamentally is,
+tool schemas alone. MCP removes the need to invent a custom message protocol for every
+pairing — an MCP-compatible application can speak to any MCP-compatible
+server using the same protocol, rather than a one-off integration built
+specifically for that pairing — though a real deployment still needs its
+own configuration, authentication, and permission handling on top; the
+protocol standardizes the conversation, not everything around it. MCP
+doesn't change what tool calling fundamentally is,
 and it isn't the only way to implement tool calling — it's one
 increasingly adopted open standard for *how the connection itself gets
 standardized*, which is why this chapter teaches it as a concrete instance
@@ -153,7 +162,7 @@ of the durable idea, not as a separate mechanism.
 
 ## 7. Practical Implications
 
-This is what sits underneath the labels "function calling," "tools," "plugins," and "connectors" across different AI products — different names for the same underlying pattern this chapter just walked through. It's also the direct answer to something Chapters 16 and 18 already raised: a model's trained knowledge has a fixed cutoff and its context window is finite, but tool calling isn't limited to retrieving existing text the way RAG is — it can trigger a live lookup, a calculation, or an action with a real-world effect (sending a message, updating a record) at the exact moment it's needed. And because the available tools are always an explicit, predefined catalog, evaluating any AI product that claims to "use tools" or "connect via MCP" comes down to one practical question: exactly which tools were exposed to it, and by whom — not some open-ended claim about what the model can reach.
+This is what sits underneath the labels "function calling," "tools," "plugins," and "connectors" across different AI products — different names for the same underlying pattern this chapter just walked through. It's also the direct answer to something Chapters 16 and 18 already raised: a model's trained knowledge has a fixed cutoff, and while RAG can reach live sources too, tool calling is the broader interface — retrieval is one kind of tool call, alongside exact computation and actions with a real-world effect (sending a message, updating a record) that don't reduce to fetching a passage at all. And because the available tools are always an explicit, predefined catalog, evaluating any AI product that claims to "use tools" or "connect via MCP" comes down to one practical question: exactly which tools were exposed to it, and by whom — not some open-ended claim about what the model can reach.
 
 ## 8. Key Takeaway
 
@@ -164,7 +173,7 @@ This is what sits underneath the labels "function calling," "tools," "plugins," 
 - Tool calling is a model producing a structured request (a tool name plus arguments) instead of, or alongside, ordinary prose — using the same generation mechanism as always.
 - The model never executes anything itself. A surrounding orchestration layer parses the request, runs the real function, and inserts the result back into the context window as new text.
 - Available tools form a fixed, predefined catalog described to the model in advance as a tool schema — the model cannot request a tool that was never exposed to it.
-- Tool calling can trigger live lookups, calculations, or real-world actions, not just retrieval of existing text — a broader category than RAG (Chapter 18), which only retrieves.
+- Tool calling is the broader interface: retrieval (Chapter 18) is one kind of tool call, alongside exact computation and real-world actions that don't reduce to fetching a passage at all.
 - The Model Context Protocol (MCP) standardizes how tools/data sources describe themselves and connect to model-serving applications, replacing custom, one-off integration code per pairing — it doesn't add any new reasoning capability.
 - Producing well-formed, correctly-targeted tool requests is itself a trained behavior (Chapter 19), not a free guarantee of the architecture.
 

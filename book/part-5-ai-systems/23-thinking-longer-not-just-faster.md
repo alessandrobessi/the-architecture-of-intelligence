@@ -38,13 +38,14 @@ Monday, then one quarter of what's left on Tuesday. How many apples
 remain?"
 
 Asked to answer in one uninterrupted burst, a model predicting token by
-token (Chapter 6) has to get every intermediate quantity right silently,
-in its own internal computation, before writing down a single final
-number — and on a problem with more than one dependent step, that raises
-the odds of a slip going unnoticed. Asked instead to work through it step
-by step, the model might generate something like: "Monday: 120 ÷ 3 = 40
-sold, so 80 remain. Tuesday: 80 ÷ 4 = 20 sold, so 60 remain." Then it
-states the final answer: 60.
+token (Chapter 6) has to reach the final number without ever making an
+intermediate result — like "80 apples remain after Monday" — available
+as reusable context for later tokens; whatever internal computation gets
+it there stays invisible and unchecked, and on a problem with more than
+one dependent step, that raises the odds of a slip going unnoticed. Asked
+instead to work through it step by step, the model might generate
+something like: "Monday: 120 ÷ 3 = 40 sold, so 80 remain. Tuesday: 80 ÷ 4
+= 20 sold, so 60 remain." Then it states the final answer: 60.
 
 Nothing about the model's underlying mechanism changed between these two
 attempts. What changed is that the second attempt made "80 apples remain
@@ -85,15 +86,20 @@ accuracy improvement in ordinary models simply by asking them, in the
 prompt, to reason step by step before answering.
 
 Reasoning models take a further step past relying on a prompt asking
-nicely. Building on Chapter 19's fine-tuning and reinforcement-learning
-machinery, they're trained against a correctness signal applied to the
-whole reasoning-plus-answer trajectory: sequences of reasoning that lead
-to a correct final answer are reinforced, so the model learns, from many
-practice problems, how to use extra reasoning tokens productively rather
-than merely verbosely. This is also why these models can use noticeably
-more tokens on a hard problem and far fewer on an easy one — reasoning
-length becomes something the model itself adjusts based on the problem,
-not a fixed amount fixed by a prompt template.
+nicely, though the exact training recipe varies by model and isn't
+always publicly disclosed. Many current reasoning-optimized models are
+trained, building on Chapter 19's fine-tuning and reinforcement-learning
+machinery, with an outcome-based signal that reinforces reasoning-plus-
+answer trajectories leading to a correct final answer — sometimes
+combined with supervised examples of good reasoning, feedback on
+intermediate steps rather than only the final answer, or distillation
+from a stronger model's own reasoning. Whatever the specific mix, the
+model learns, from many practice problems, how to use extra reasoning
+tokens productively rather than merely verbosely. This is also why these
+models can use noticeably more tokens on a hard problem and far fewer on
+an easy one — reasoning length becomes something the model itself
+adjusts based on the problem, not a fixed amount fixed by a prompt
+template.
 
 Written, trained reasoning isn't the only shape test-time compute takes.
 A system can instead generate several independent candidate answers to

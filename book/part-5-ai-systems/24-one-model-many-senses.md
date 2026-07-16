@@ -36,28 +36,35 @@ more than one way.
 
 ## 3. Worked Example
 
-Here's one concrete way to build that bridge — not the only way, but a
-common and easy-to-follow one. Recall Chapter 5's map: words get
-positioned as points in a high-dimensional space, where nearby points
-reflect similar meaning or use. Now take a photo of a golden retriever
-running on a beach, and the caption "a golden retriever running on a
-beach." Cut the photo into a grid of small square patches — like slicing
-it into postage stamps — and convert each patch into a vector using a
-learned encoder, landing it somewhere in a space built the same way
-Chapter 5's word-embedding space was built. Do the same for the
-caption's words, using the encoding this book has covered since Chapter
-5.
+Here's one concrete way a bridge like this gets built — not the only
+way, but a common and easy-to-follow one, in two stages. Recall Chapter
+5's map: words get positioned as points in a high-dimensional space,
+where nearby points reflect similar meaning or use. Now take a photo of
+a golden retriever running on a beach, and the caption "a golden
+retriever running on a beach." An image encoder converts the *whole
+photo* into a single vector; a matching text encoder converts the
+*whole caption* into a single vector, both landing in a space built the
+same way Chapter 5's word-embedding space was built.
 
-Trained on enormous numbers of matched photo/caption pairs like this one,
-the model learns to pull a genuinely matching pair's embeddings toward
-each other and push mismatched pairs — this same photo paired with an
-unrelated caption about a city skyline — apart. The result: the image's
-patch embeddings and the caption's word embeddings end up as neighboring
-points on essentially the same map from Chapter 5, not two separate,
-unrelated coordinate systems that happen to sit side by side. As §5
-covers, this is one instance of a broader pattern — other real systems
-bridge image and text differently, without ever placing patches directly
-alongside words on one shared map.
+Trained on enormous numbers of matched photo/caption pairs like this
+one, the two encoders learn to pull a genuinely matching pair's
+whole-image and whole-caption vectors toward each other, and push
+mismatched pairs — this same photo paired with an unrelated caption
+about a city skyline — apart. The result: a photo and its true caption
+land as neighboring points on essentially the same map from Chapter 5.
+Notice what this alone does and doesn't buy you: it's enough to tell
+whether a photo and a caption match, which is genuinely useful for
+search and retrieval, but nothing here has taught any individual word to
+attend to any individual patch of the photo — the alignment happened at
+the level of the whole image and the whole caption, not piece by piece.
+
+Getting to word-by-word, patch-by-patch interaction — letting a language
+model's attention actually work over the image the way it works over
+text — takes a second stage, covered in §5 as the encoder-plus-projector
+pattern: reusing an encoder like this one, but now keeping its
+finer-grained, per-patch features instead of collapsing them into one
+vector, and training a separate small network to translate those patch
+features into the language model's own token space.
 
 ## 4. Core Intuition
 
@@ -82,15 +89,19 @@ engineering varies system to system.
 
 **Encoder plus projector.** A separate, often independently pretrained
 encoder converts an image or audio clip into a set of feature vectors —
-this is what §3's worked example walked through, with patches encoded
-via a learned image encoder trained the way that section described, so
-its output space is already organized around meaningful similarity, the
-way Chapter 5's word embeddings are. A small additional network, the
-**projector**, then translates those feature vectors into the same
-numeric space the language model's own token embeddings live in. Once
-translated, the language model's existing attention mechanism (Chapter
-11) can treat them like any other token in the sequence — it doesn't
-need to know they originated as pixels rather than words.
+one per patch, rather than one pooled vector for the whole image. That
+encoder is often one whose overall sense of similarity was shaped the
+way §3's worked example described, but producing per-patch features and
+translating them for a language model is a distinct second stage, not
+the same step. A small additional network, the **projector**, is trained
+— typically alongside the language model itself, on instruction-following
+examples, using the same next-token-prediction objective from Chapters 6
+and 9 rather than §3's contrastive matching objective — to translate
+those patch features into the same numeric space the language model's
+own token embeddings live in. Once translated, the language model's
+existing attention mechanism (Chapter 11) can treat them like any other
+token in the sequence — it doesn't need to know they originated as
+pixels rather than words.
 
 **Cross-attention bridge.** Instead of translating image features into
 the main token sequence at all, some systems give the language model
@@ -112,13 +123,20 @@ beginning.
 
 Whichever pattern a system uses, getting a non-text modality's
 representation to land somewhere the language model can actually use is
-a trained outcome, not a given. This commonly involves training on
-enormous numbers of matched pairs — an image with its caption, audio
-with its transcript — using an objective that pulls a true match's
-representations together and pushes mismatches apart, exactly like §3's
-worked example. This extends Chapter 9's core predict/measure-error/adjust
-loop to a cross-modal matching goal; it is not a fundamentally different
-learning procedure, just a different target for the same mechanism.
+a trained outcome, not a given — though the specific training objective
+differs by pattern. An encoder's initial sense of similarity is often
+shaped by training on enormous numbers of matched pairs — an image with
+its caption, audio with its transcript — using an objective that pulls a
+true match's representations together and pushes mismatches apart,
+exactly like §3's worked example; this extends Chapter 9's core
+predict/measure-error/adjust loop to a cross-modal matching goal. But
+the bridge itself — a projector, a cross-attention layer, or a unified
+system's joint training — is commonly trained a different way: on
+instruction-following or next-token-prediction examples (Chapters 6, 9,
+19), the same core mechanism as ordinary language-model training, just
+now including non-text tokens or features in what it learns to predict
+from. Both are extensions of the same underlying training loop; they
+just target different things.
 
 Everything above covers a model making sense of a non-text *input* —
 turning an image or sound into something the model can reason about and
@@ -137,7 +155,7 @@ system actually supports.
 ### Misconception
 *"A multimodal model is really two separate models — one for vision, one for language — glued together, only exchanging a final summary."*
 
-**Why it's wrong:** Each modality does typically need its own dedicated encoder to perform the initial conversion into features — that step genuinely is modality-specific. But depending on the pattern (§5), what happens next isn't two independently-reasoning systems handing off a finished conclusion: an encoder-plus-projector or unified-token system feeds the converted representation directly into the same reasoning process as the text; a cross-attention system keeps a dedicated channel to the other modality but trains it jointly with the language model, consulting it step by step rather than reading one final report.
+**Why it's wrong:** Each modality does usually need some dedicated input representation process — an encoder, tokenizer, or codec — to perform the initial conversion into features, and that step genuinely is modality-specific. But depending on the pattern (§5), what happens next isn't two independently-reasoning systems handing off a finished conclusion: an encoder-plus-projector or unified-token system feeds the converted representation directly into the same reasoning process as the text; a cross-attention system keeps a dedicated channel to the other modality but trains it jointly with the language model, consulting it step by step rather than reading one final report.
 
 **Correct intuition:** The specialization lives in how a modality is first converted or connected — not in running two fully separate, independently-trained systems that only talk to each other through a finished summary.
 
@@ -164,9 +182,9 @@ system actually supports.
 ### Misconception
 *"Since a model can already process images, it can handle any new kind of input automatically, with no additional training."*
 
-**Why it's wrong:** Supporting a new modality requires training that modality's encoder to actually land in the shared representation space, using the matched-pair training process described in §5. Nothing about the transformer's core attention mechanism automatically extends to a modality it has never been trained to embed properly.
+**Why it's wrong:** Supporting a new modality requires training that modality's own input representation process and bridge to actually connect to the language model, using the kind of training process described in §5. Nothing about the transformer's core attention mechanism automatically extends to a modality it has never been trained to handle properly.
 
-**Correct intuition:** Each new modality is a genuine engineering and training addition — a new encoder, trained on matched examples — not a capability that falls out of the architecture for free.
+**Correct intuition:** Each new modality is a genuine engineering and training addition — a new encoder or tokenizer, and a new or retrained bridge — not a capability that falls out of the architecture for free.
 
 **Analogy:** Learning to recognize a friend's face doesn't automatically teach you to recognize their voice on the phone — that's a separate skill, even though both eventually feed into the same understanding of who you're talking to.
 
@@ -182,8 +200,8 @@ This is why multimodal AI products list specific supported input types — image
 
 - Multimodality is a model's ability to make sense of — and, with additional components, produce — more than one kind of data: text, images, audio.
 - There's no single universal architecture: three broad real patterns are encoder-plus-projector, a cross-attention bridge, and unified early-fusion tokens (§5).
-- The worked example (patches encoded, then processed by the same attention as text) is one concrete instance of one pattern, not the definition of multimodality itself.
-- Getting a non-text modality's representation to land somewhere the language model can use is a trained outcome in any pattern, commonly via matched-pair training (image/caption, audio/transcript) — an extension of Chapter 9's core training loop.
+- The worked example (whole-image/whole-caption contrastive alignment, then a separately-trained projector for patch-level attention) illustrates one concrete pattern in two distinct stages, not the definition of multimodality itself.
+- An encoder's initial sense of similarity is often shaped by matched-pair training (image/caption, audio/transcript); the bridge that connects it to the language model is commonly trained a different way, via ordinary next-token prediction on instruction-following examples — both are trained outcomes, just with different objectives.
 - Understanding a modality (input) and generating it (output) are related but distinct problems; output generation typically needs an additional decoder or generative component this chapter doesn't cover in depth.
 - "Seeing" or "hearing," for a model, means "converted or connected into a representation it can reason over" — not visual or auditory experience.
 - Supporting a new modality requires real additional training in any pattern; it isn't a free extension of the existing architecture.
@@ -191,7 +209,8 @@ This is why multimodal AI products list specific supported input types — image
 
 ## 10. Further Reading
 
-- Search for "CLIP" or "contrastive image-text pretraining" for the alignment technique behind §3's worked example and the encoder-plus-projector pattern.
+- Search for "CLIP" or "contrastive image-text pretraining" for the whole-image/whole-caption alignment technique behind §3's worked example's first stage.
+- Search for "LLaVA" or "visual instruction tuning" for a concrete encoder-plus-projector system — the second stage of §3's worked example and §5's first pattern.
 - Search for "vision transformer" or "ViT" for more on patch-based image tokenization, used in more than one of §5's patterns.
 - Search for "Flamingo" for a concrete cross-attention-bridge system, and "Chameleon" or "early fusion multimodal" for a concrete unified-token system — both described conceptually in §5.
 

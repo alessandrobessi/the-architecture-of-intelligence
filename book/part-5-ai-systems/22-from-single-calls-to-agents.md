@@ -63,8 +63,12 @@ decide the single next action, which may be another tool call (Chapter
 → repeat — continuing until the loop's stopping condition is met, whether
 that's the model itself judging the goal satisfied, a separate verifier
 or controller making that call, or an external limit stopping things
-regardless. Nothing about the model changes between "a model making one
-tool call" and "a model acting as an agent." What changes is that the
+regardless. Nothing about the model *has to* change between "a model
+making one tool call" and "a model acting as an agent" — the same model
+can do both. (Real agent systems sometimes do use a model specifically
+fine-tuned for this kind of extended, tool-using behavior, but that's an
+optional refinement, not a requirement of the mechanism itself.) What
+changes at minimum is that the
 deciding-what-to-do-next step, normally done once, now happens
 repeatedly, each time conditioned on everything that's happened so far in
 that loop. (The word "agent" is used more loosely elsewhere — sometimes
