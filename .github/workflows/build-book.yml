@@ -4,6 +4,17 @@ on:
   push:
     branches: [main]
 
+permissions:
+  contents: write
+  pages: write
+  id-token: write
+
+# Only one Pages deployment at a time; let an in-flight one finish rather
+# than cancelling it mid-deploy.
+concurrency:
+  group: "pages"
+  cancel-in-progress: false
+
 jobs:
   build:
     runs-on: ubuntu-latest
@@ -23,8 +34,36 @@ jobs:
         working-directory: publish
         run: quarto render
 
-      - uses: actions/upload-artifact@v4
+      - name: Upload site for Pages deployment
+        uses: actions/upload-pages-artifact@v3
         with:
-          name: the-architecture-of-intelligence-book
-          path: publish/_book/
-          retention-days: 30
+          path: publish/_book
+
+      # A single rolling release, overwritten on every push, rather than a
+      # new release per push — the manuscript is still under active
+      # editing, not versioned.
+      - name: Publish PDF/EPUB to a rolling release
+        uses: softprops/action-gh-release@v2
+        with:
+          tag_name: latest-build
+          name: "Latest build"
+          body: >-
+            Automatically rebuilt from ${{ github.sha }} on every push to
+            main. Read the book online via GitHub Pages (see repo
+            "About"); the files here are PDF and EPUB downloads of the
+            same build.
+          prerelease: true
+          files: |
+            publish/_book/*.pdf
+            publish/_book/*.epub
+
+  deploy-pages:
+    needs: build
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4

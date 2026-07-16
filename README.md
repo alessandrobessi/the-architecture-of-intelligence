@@ -68,7 +68,15 @@ This is a first complete draft, not a finished, fully-validated book — see
 | [`scripts/validate_concept_graph.py`](scripts/validate_concept_graph.py) / [`scripts/validate_manuscript_index.py`](scripts/validate_manuscript_index.py) | Run before committing changes to the concept graph or the chapter index: checks prerequisite ordering, dependency cycles, misconception-id references, and — separately — that `book/README.md`'s links and titles actually match the manuscript files on disk. |
 | [`publish/`](publish/) | A local Quarto book project rendering the manuscript to HTML, EPUB, and PDF. See "Building the book" below. |
 
-## Building the book
+## Reading the built book
+
+**[Read it online](https://alessandrobessi.github.io/the-architecture-of-intelligence/)**
+— rebuilt automatically on every push to `main`. A PDF and EPUB of the
+same build are attached to the repo's
+[latest release](../../releases/tag/latest-build), also updated on every
+push.
+
+## Building the book locally
 
 Requires [Quarto](https://quarto.org) and [Typst](https://typst.app)
 (`brew install --cask quarto && brew install typst`). From the repo
@@ -81,8 +89,9 @@ cd publish && quarto render
 
 Output lands in `publish/_book/` (an HTML site, an EPUB, and a PDF).
 Nothing under `publish/chapters/` or `publish/_book/` is committed —
-both are regenerated from `book/` on every run. This is a local build
-for personal use; see "License" below before sharing any output further.
+both are regenerated from `book/` on every run. This is a first complete
+draft, not a professionally edited one — see "License" below before
+sharing any output further.
 
 ## Editorial status and contributions
 
