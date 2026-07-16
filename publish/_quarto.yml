@@ -5,6 +5,7 @@ book:
   title: "The Architecture of Intelligence"
   subtitle: "A Mental Model for Modern AI Systems"
   author: "Alessandro Bessi"
+  cover-image: assets/cover.png
   chapters:
     - index.qmd
     - preface.qmd
