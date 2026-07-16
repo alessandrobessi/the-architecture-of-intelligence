@@ -8,11 +8,10 @@ tool use, agents, reasoning models — written for curious, intelligent
 readers with **no math, no programming, and no prior ML background**.
 
 Most explanations of AI are either marketing ("it's magic") or academic
-(equations first, intuition never). This project is inspired by what
-*Structure and Interpretation of Computer Programs*
-did for computer science and what the *Feynman Lectures* did for
-physics: building one durable mental model, incrementally, that keeps
-working as the technology changes.
+(equations first, intuition never). This project builds one cumulative
+mental model, incrementally, rather than presenting AI as a list of
+disconnected techniques and product names — one that keeps working as
+the technology changes.
 
 ## Who this is for
 

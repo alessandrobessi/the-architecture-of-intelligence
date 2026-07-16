@@ -45,6 +45,18 @@
   prose formatting, correctly rendered bold/italic conventions, and the
   chapter-to-chapter closing/opening question match preserved at Part
   boundaries.
+- **Reverted the prose-dissolution pass above, back to the templated-header
+  structure.** All 30 chapter bodies, `concept-graph.yaml`'s anchor
+  scheme, `scripts/validate_concept_graph.py`, `templates/chapter-
+  template.md`, `blueprint.md`, and `style-guide.md` restored to their
+  pre-dissolution state. Also fixed a real inconsistency surfaced during
+  the revert: `book/part-6-the-future/` was still named for Part VI's
+  old title ("The Future") after the Part had already been renamed to
+  "AI in the Real World" — only the display name had been updated, never
+  the directory. Renamed to `book/part-6-ai-in-the-real-world/` and every
+  reference updated to match. Verified via all three validator scripts
+  and a full Quarto render confirming the rebuilt PDF matched `book/`
+  exactly.
 - **Fixed a duplicate-title bug on the rendered landing page.** `index.qmd`
   previously had both an H1 (`# The Architecture of Intelligence
   {.unnumbered}`) and, immediately below it, an H3 restating the

@@ -27,9 +27,10 @@ whose long-term ecosystem includes:
 -   Teaching material
 -   A video course
 
-The ambition is to become for AI what **SICP** became for computer
-science and what **The Feynman Lectures** became for physics: a timeless
-resource that teaches readers how to think rather than what to memorize.
+The ambition is to build one cumulative mental model of modern AI,
+incrementally, rather than presenting it as a list of disconnected
+techniques and product names — a resource that teaches readers how to
+think about the field rather than what to memorize about today's tools.
 
 ------------------------------------------------------------------------
 
