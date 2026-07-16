@@ -102,38 +102,29 @@ covered in Chapters 6 through 10.
 ### Misconception
 *"If a system passed its evaluation suite before launch, it's been fully verified and doesn't need further monitoring."*
 
-#### Why it's wrong
-Offline evaluation only tests a fixed, necessarily limited set of cases. Real production traffic routinely surfaces failure patterns — edge cases, downstream outages, unusual input combinations — that no evaluation set anticipated, which is exactly why observability is a separate, ongoing practice, not a redundant afterthought to evaluation.
+**Why it's wrong:** Offline evaluation only tests a fixed, necessarily limited set of cases. Real production traffic routinely surfaces failure patterns — edge cases, downstream outages, unusual input combinations — that no evaluation set anticipated, which is exactly why observability is a separate, ongoing practice, not a redundant afterthought to evaluation.
 
-#### Correct intuition:
-A passing evaluation score verifies the system against the cases someone thought to test in advance; observability is what tells you whether it's still working on the cases nobody thought to test.
+**Correct intuition:** A passing evaluation score verifies the system against the cases someone thought to test in advance; observability is what tells you whether it's still working on the cases nobody thought to test.
 
-#### Analogy:
-The pre-flight checklist verifies the aircraft is fit to fly — it says nothing about the weather the plane will actually fly through six hours later.
+**Analogy:** The pre-flight checklist verifies the aircraft is fit to fly — it says nothing about the weather the plane will actually fly through six hours later.
 
 ### Misconception
 *"AI engineering means training or fine-tuning models."*
 
-#### Why it's wrong
-Most people working under this title never train a foundation model from scratch — an expensive, specialized undertaking covered in Chapters 9 and 10. The actual day-to-day work is building and operating the surrounding system — retrieval, tool calling, agents, evaluation, monitoring — around an existing, already-pretrained model.
+**Why it's wrong:** Most people working under this title never train a foundation model from scratch — an expensive, specialized undertaking covered in Chapters 9 and 10. The actual day-to-day work is building and operating the surrounding system — retrieval, tool calling, agents, evaluation, monitoring — around an existing, already-pretrained model.
 
-#### Correct intuition:
-AI engineering is a systems-and-integration discipline built around a model, not the discipline of producing the model itself.
+**Correct intuition:** AI engineering is a systems-and-integration discipline built around a model, not the discipline of producing the model itself.
 
-#### Analogy:
-Building and maintaining an airline's flight operations is a different job from designing the aircraft's engine — both matter, but they draw on entirely different skills.
+**Analogy:** Building and maintaining an airline's flight operations is a different job from designing the aircraft's engine — both matter, but they draw on entirely different skills.
 
 ### Misconception
 *"A single error or customer complaint means the whole system is broken and needs to be pulled."*
 
-#### Why it's wrong
-Observability's whole point is distinguishing an isolated, one-off failure from a systemic pattern — a specific downstream outage affecting a narrow subset of requests, as in the worked example, looks very different in aggregated metrics and traces than a genuine, widespread failure does.
+**Why it's wrong:** Observability's whole point is distinguishing an isolated, one-off failure from a systemic pattern — a specific downstream outage affecting a narrow subset of requests, as in the worked example, looks very different in aggregated metrics and traces than a genuine, widespread failure does.
 
-#### Correct intuition:
-Aggregated metrics and tracing across many requests are what let a team tell an isolated incident apart from a systemic problem — a reaction to any single anecdote in isolation can't make that distinction.
+**Correct intuition:** Aggregated metrics and tracing across many requests are what let a team tell an isolated incident apart from a systemic problem — a reaction to any single anecdote in isolation can't make that distinction.
 
-#### Analogy:
-One passenger reporting a bumpy patch of air isn't the same signal as the instruments showing a genuine, sustained loss of altitude — a pilot needs the instruments to know which one she's actually dealing with.
+**Analogy:** One passenger reporting a bumpy patch of air isn't the same signal as the instruments showing a genuine, sustained loss of altitude — a pilot needs the instruments to know which one she's actually dealing with.
 
 ## 7. Practical Implications
 

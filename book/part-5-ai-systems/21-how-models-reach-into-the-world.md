@@ -119,38 +119,29 @@ of the durable idea, not as a separate mechanism.
 ### Misconception
 *"When a model 'uses a tool,' it's directly running code or reaching out onto the internet itself."*
 
-#### Why it's wrong
-The model only ever produces text — in this case, a specifically structured piece of text naming a tool and its arguments. It has no independent ability to execute anything; a separate system outside the model parses that text and performs the actual action.
+**Why it's wrong:** The model only ever produces text — in this case, a specifically structured piece of text naming a tool and its arguments. It has no independent ability to execute anything; a separate system outside the model parses that text and performs the actual action.
 
-#### Correct intuition:
-The model requests; surrounding software executes. Those are two different systems with two different jobs, even though the finished conversation makes the boundary invisible.
+**Correct intuition:** The model requests; surrounding software executes. Those are two different systems with two different jobs, even though the finished conversation makes the boundary invisible.
 
-#### Analogy:
-The financial analyst doesn't walk onto the trading floor herself — she sends a precise request and waits for someone else to come back with the answer.
+**Analogy:** The financial analyst doesn't walk onto the trading floor herself — she sends a precise request and waits for someone else to come back with the answer.
 
 ### Misconception
 *"Tool calling means the model can use whatever tool it decides it needs, on its own initiative."*
 
-#### Why it's wrong
-A model can only request tools that were explicitly described to it in advance, in a tool schema listing exactly what's available and what arguments each one takes. It cannot invent access to a capability nobody exposed to it, regardless of how useful or plausible the request would sound.
+**Why it's wrong:** A model can only request tools that were explicitly described to it in advance, in a tool schema listing exactly what's available and what arguments each one takes. It cannot invent access to a capability nobody exposed to it, regardless of how useful or plausible the request would sound.
 
-#### Correct intuition:
-Available tools are a fixed, predefined catalog set up by whoever built the surrounding system — not an open-ended set the model can expand on its own.
+**Correct intuition:** Available tools are a fixed, predefined catalog set up by whoever built the surrounding system — not an open-ended set the model can expand on its own.
 
-#### Analogy:
-The analyst's colleague can look up a stock price because that specific request line exists — he can't suddenly also approve a wire transfer just because the analyst phrases a request for one.
+**Analogy:** The analyst's colleague can look up a stock price because that specific request line exists — he can't suddenly also approve a wire transfer just because the analyst phrases a request for one.
 
 ### Misconception
 *"MCP is a fundamentally smarter or more capable kind of AI, not just a connection standard."*
 
-#### Why it's wrong
-MCP adds no new reasoning ability to a model at all. It standardizes how a tool or data source describes itself and how a model-serving application connects to it — the same tool-calling mechanism as before, now usable across many tools and providers without custom integration code for every single pairing.
+**Why it's wrong:** MCP adds no new reasoning ability to a model at all. It standardizes how a tool or data source describes itself and how a model-serving application connects to it — the same tool-calling mechanism as before, now usable across many tools and providers without custom integration code for every single pairing.
 
-#### Correct intuition:
-MCP is a shared plug shape, not a new kind of appliance — it changes how easily things connect, not what a model can fundamentally do once connected.
+**Correct intuition:** MCP is a shared plug shape, not a new kind of appliance — it changes how easily things connect, not what a model can fundamentally do once connected.
 
-#### Analogy:
-A standardized electrical outlet doesn't make any appliance more powerful — it just means any compliant appliance can plug into any compliant socket without a custom adapter built for that one pairing.
+**Analogy:** A standardized electrical outlet doesn't make any appliance more powerful — it just means any compliant appliance can plug into any compliant socket without a custom adapter built for that one pairing.
 
 ## 7. Practical Implications
 

@@ -2,6 +2,15 @@
 
 ## 2026-07-16
 
+- Updated `templates/chapter-template.md`'s "Common Misconceptions" block
+  again: kept `### Misconception` / italic claim, but reverted the
+  `#### Why it's wrong` / `#### Correct intuition:` / `#### Analogy:`
+  sub-headings back to bold-paragraph style (`**Why it's wrong:** ...`).
+  Mechanically reformatted all 30 written chapters to match, content
+  unchanged; verified no chapter lost the blank line before "## 7.
+  Practical Implications" this time (the bug from the previous reformat
+  pass), and all three validator scripts pass clean.
+
 - **Removed the formal reader-validation system (`testing/`) as a project
   workstream.** The structured protocol — pre-test, comprehension,
   transfer, scenario-based misconception resistance scored 0–2, one-week

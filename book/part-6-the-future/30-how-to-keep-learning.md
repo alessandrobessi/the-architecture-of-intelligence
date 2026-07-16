@@ -96,38 +96,29 @@ is precisely what Parts I through III were built to be.
 ### Misconception
 *"Now that I've finished this book, I know everything I need to know about AI."*
 
-#### Why it's wrong
-This book built a durable mental model, not an exhaustive or final inventory of every technique. Chapter 29 was explicit that new, specific developments will keep appearing — genuine fluency means continuing to extend the model onto them, not treating the model as a closed, completed reference.
+**Why it's wrong:** This book built a durable mental model, not an exhaustive or final inventory of every technique. Chapter 29 was explicit that new, specific developments will keep appearing — genuine fluency means continuing to extend the model onto them, not treating the model as a closed, completed reference.
 
-#### Correct intuition:
-Finishing this book means having the structure to keep learning efficiently, not having nothing left to learn.
+**Correct intuition:** Finishing this book means having the structure to keep learning efficiently, not having nothing left to learn.
 
-#### Analogy:
-Learning to read fluently doesn't mean you've read every book that will ever be written — it means every new book is now accessible to you without needing someone to read it to you first.
+**Analogy:** Learning to read fluently doesn't mean you've read every book that will ever be written — it means every new book is now accessible to you without needing someone to read it to you first.
 
 ### Misconception
 *"Keeping up with AI means consuming as much news and commentary as possible, as fast as possible."*
 
-#### Why it's wrong
-Chapter 26 already established that a lot of what circulates is secondhand, unverified, or actively optimized to look impressive rather than to be accurate. Depth on primary sources, filtered through Chapter 29's five questions, produces more real understanding than a high volume of unfiltered secondhand takes.
+**Why it's wrong:** Chapter 26 already established that a lot of what circulates is secondhand, unverified, or actively optimized to look impressive rather than to be accurate. Depth on primary sources, filtered through Chapter 29's five questions, produces more real understanding than a high volume of unfiltered secondhand takes.
 
-#### Correct intuition:
-A few primary sources read carefully, evaluated with the habits this book built, beat a large volume of commentary read passively.
+**Correct intuition:** A few primary sources read carefully, evaluated with the habits this book built, beat a large volume of commentary read passively.
 
-#### Analogy:
-Reading one careful, technical writeup closely teaches more than skimming twenty breathless headlines about the same announcement.
+**Analogy:** Reading one careful, technical writeup closely teaches more than skimming twenty breathless headlines about the same announcement.
 
 ### Misconception
 *"Because I'm not a programmer or ML researcher, I still can't meaningfully engage with primary technical sources like blog posts or papers."*
 
-#### Why it's wrong
-This book taught tokens, embeddings, attention, training, retrieval, agents, and more, without requiring mathematics or programming at any point, precisely so this specific misconception would stop being true for its reader by the final chapter.
+**Why it's wrong:** This book taught tokens, embeddings, attention, training, retrieval, agents, and more, without requiring mathematics or programming at any point, precisely so this specific misconception would stop being true for its reader by the final chapter.
 
-#### Correct intuition:
-Following the reasoning in a technical blog post or paper's plain-language sections was exactly what this book's no-jargon, mechanism-first approach was built to make possible — and finishing twenty-nine technical chapters without either math or code is itself the demonstration that it worked.
+**Correct intuition:** Following the reasoning in a technical blog post or paper's plain-language sections was exactly what this book's no-jargon, mechanism-first approach was built to make possible — and finishing twenty-nine technical chapters without either math or code is itself the demonstration that it worked.
 
-#### Analogy:
-Learning to read sheet music doesn't require becoming a professional composer — it requires learning what the symbols mean, which is precisely the kind of thing this book spent thirty chapters doing for AI's own vocabulary.
+**Analogy:** Learning to read sheet music doesn't require becoming a professional composer — it requires learning what the symbols mean, which is precisely the kind of thing this book spent thirty chapters doing for AI's own vocabulary.
 
 ## 7. Practical Implications
 

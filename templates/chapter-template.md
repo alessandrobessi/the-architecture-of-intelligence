@@ -39,14 +39,11 @@ happens, and land on the same insight the story already pointed at, now doubly g
 ### Misconception
 *[...]*
 
-#### Why it's wrong
-[...]
+**Why it's wrong:** [...]
 
-#### Correct intuition:
-[...]
+**Correct intuition:** [...]
 
-#### Analogy:
-[...]
+**Analogy:** [...]
 
 [Repeat block for each misconception covered. Mirror each as one row in misconceptions.md.]
 

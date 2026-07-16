@@ -103,38 +103,29 @@ consequences beyond a wrong answer.
 ### Misconception
 *"Prompt injection is basically the same as a classic software bug like SQL injection, and gets fixed the same definitive way."*
 
-#### Why it's wrong
-SQL injection has a fully reliable, mechanical fix — parameterized queries cleanly separate code from data as two different things at the language level. Prompt injection's underlying instruction-versus-content distinction is fuzzier, because one model processes both in the exact same medium (natural-language tokens) using the exact same mechanism, and no current fix provides that same airtight, structural guarantee.
+**Why it's wrong:** SQL injection has a fully reliable, mechanical fix — parameterized queries cleanly separate code from data as two different things at the language level. Prompt injection's underlying instruction-versus-content distinction is fuzzier, because one model processes both in the exact same medium (natural-language tokens) using the exact same mechanism, and no current fix provides that same airtight, structural guarantee.
 
-#### Correct intuition:
-Prompt injection is a genuine, actively-researched risk to be reduced and layered against with multiple defenses — not a solved problem with one definitive patch, the way SQL injection now effectively is.
+**Correct intuition:** Prompt injection is a genuine, actively-researched risk to be reduced and layered against with multiple defenses — not a solved problem with one definitive patch, the way SQL injection now effectively is.
 
-#### Analogy:
-Separating a form's data field from its instructions is straightforward when they're written in two different languages; it's much harder when both arrive as the same kind of plain English sentence.
+**Analogy:** Separating a form's data field from its instructions is straightforward when they're written in two different languages; it's much harder when both arrive as the same kind of plain English sentence.
 
 ### Misconception
 *"Only obviously suspicious-looking inputs can cause a prompt injection."*
 
-#### Why it's wrong
-Because there's no reliable built-in way to distinguish instruction-like content from ordinary content, an injected instruction can be hidden in innocuous-looking text — invisible formatting, a normal-seeming email, a webpage's metadata — specifically to avoid drawing attention, not just delivered in an obviously suspicious message.
+**Why it's wrong:** Because there's no reliable built-in way to distinguish instruction-like content from ordinary content, an injected instruction can be hidden in innocuous-looking text — invisible formatting, a normal-seeming email, a webpage's metadata — specifically to avoid drawing attention, not just delivered in an obviously suspicious message.
 
-#### Correct intuition:
-An injection attempt is judged by whether it successfully redirects behavior, not by how suspicious it looks to a human skimming it — the two aren't the same thing.
+**Correct intuition:** An injection attempt is judged by whether it successfully redirects behavior, not by how suspicious it looks to a human skimming it — the two aren't the same thing.
 
-#### Analogy:
-The malicious line in the executive's mail didn't look like a threat — it looked like an ordinary note, which was exactly the point.
+**Analogy:** The malicious line in the executive's mail didn't look like a threat — it looked like an ordinary note, which was exactly the point.
 
 ### Misconception
 *"Alignment training alone makes a system safe, regardless of what tools or agency it has."*
 
-#### Why it's wrong
-Alignment training (Chapter 19) shapes tendencies in a model's outputs; it doesn't guarantee behavior under adversarial pressure or unanticipated situations. Once a system has tools and agency (Chapters 21–22), safety also depends on system-level safeguards — approval gates, permission boundaries, monitoring — sitting outside the model itself.
+**Why it's wrong:** Alignment training (Chapter 19) shapes tendencies in a model's outputs; it doesn't guarantee behavior under adversarial pressure or unanticipated situations. Once a system has tools and agency (Chapters 21–22), safety also depends on system-level safeguards — approval gates, permission boundaries, monitoring — sitting outside the model itself.
 
-#### Correct intuition:
-A well-aligned model is necessary but not sufficient for a safe tool-using system; the surrounding system's own constraints carry real weight too.
+**Correct intuition:** A well-aligned model is necessary but not sufficient for a safe tool-using system; the surrounding system's own constraints carry real weight too.
 
-#### Analogy:
-A well-trained employee still works within limits — spending approvals, access controls — precisely because good training alone isn't treated as a sufficient safeguard on its own, even for a trustworthy person.
+**Analogy:** A well-trained employee still works within limits — spending approvals, access controls — precisely because good training alone isn't treated as a sufficient safeguard on its own, even for a trustworthy person.
 
 ## 7. Practical Implications
 

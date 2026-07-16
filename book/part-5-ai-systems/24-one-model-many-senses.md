@@ -102,38 +102,29 @@ shared reasoning machinery.
 ### Misconception
 *"A multimodal model is really two separate models — one for vision, one for language — glued together."*
 
-#### Why it's wrong
-Each modality does need its own dedicated encoder to perform the initial conversion into embeddings — that specific step genuinely is modality-specific. But once converted, the same shared transformer machinery and the same attention mechanism process every modality's embeddings together, in one unified reasoning process — not two separate systems that only exchange a final summary.
+**Why it's wrong:** Each modality does need its own dedicated encoder to perform the initial conversion into embeddings — that specific step genuinely is modality-specific. But once converted, the same shared transformer machinery and the same attention mechanism process every modality's embeddings together, in one unified reasoning process — not two separate systems that only exchange a final summary.
 
-#### Correct intuition:
-The specialization lives entirely in the initial conversion step; everything downstream of it is one shared mechanism working over a common representation, not two independent models bolted together at the end.
+**Correct intuition:** The specialization lives entirely in the initial conversion step; everything downstream of it is one shared mechanism working over a common representation, not two independent models bolted together at the end.
 
-#### Analogy:
-The local doesn't run a separate "photo brain" and "language brain" that trade notes — he converts what he's shown, photo or words, into the same understanding of which street is meant, then reasons from that one shared understanding.
+**Analogy:** The local doesn't run a separate "photo brain" and "language brain" that trade notes — he converts what he's shown, photo or words, into the same understanding of which street is meant, then reasons from that one shared understanding.
 
 ### Misconception
 *"A model that processes images 'sees' the way a human visually perceives the world."*
 
-#### Why it's wrong
-The model has no visual experience or perception. It converts pixel patches into embeddings using the same kind of learned, pattern-based mapping used for text, and reasons over those embeddings the same statistical way it reasons over word embeddings.
+**Why it's wrong:** The model has no visual experience or perception. It converts pixel patches into embeddings using the same kind of learned, pattern-based mapping used for text, and reasons over those embeddings the same statistical way it reasons over word embeddings.
 
-#### Correct intuition:
-"Seeing," for a model, means "converted into the shared representation space this chapter describes" — a mechanical conversion and comparison process, not a claim about visual experience.
+**Correct intuition:** "Seeing," for a model, means "converted into the shared representation space this chapter describes" — a mechanical conversion and comparison process, not a claim about visual experience.
 
-#### Analogy:
-The local recognizing the street in a photo isn't the same kind of event as him standing on that street and perceiving it directly — one is a comparison of representations, the other is lived experience.
+**Analogy:** The local recognizing the street in a photo isn't the same kind of event as him standing on that street and perceiving it directly — one is a comparison of representations, the other is lived experience.
 
 ### Misconception
 *"Since a model can already process images, it can handle any new kind of input automatically, with no additional training."*
 
-#### Why it's wrong
-Supporting a new modality requires training that modality's encoder to actually land in the shared representation space, using the matched-pair training process described in §5. Nothing about the transformer's core attention mechanism automatically extends to a modality it has never been trained to embed properly.
+**Why it's wrong:** Supporting a new modality requires training that modality's encoder to actually land in the shared representation space, using the matched-pair training process described in §5. Nothing about the transformer's core attention mechanism automatically extends to a modality it has never been trained to embed properly.
 
-#### Correct intuition:
-Each new modality is a genuine engineering and training addition — a new encoder, trained on matched examples — not a capability that falls out of the architecture for free.
+**Correct intuition:** Each new modality is a genuine engineering and training addition — a new encoder, trained on matched examples — not a capability that falls out of the architecture for free.
 
-#### Analogy:
-Learning to recognize a friend's face doesn't automatically teach you to recognize their voice on the phone — that's a separate skill, even though both eventually feed into the same understanding of who you're talking to.
+**Analogy:** Learning to recognize a friend's face doesn't automatically teach you to recognize their voice on the phone — that's a separate skill, even though both eventually feed into the same understanding of who you're talking to.
 
 ## 7. Practical Implications
 

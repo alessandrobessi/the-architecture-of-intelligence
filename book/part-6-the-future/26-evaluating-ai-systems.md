@@ -103,38 +103,29 @@ not a substitute for the thing it's approximating.
 ### Misconception
 *"A high benchmark score means a model is definitely better at real-world use of that skill."*
 
-#### Why it's wrong
-Contamination and Goodhart's-law-style overfitting to a benchmark's specific format can both inflate a score without any corresponding improvement in the broader, real-world capability the benchmark was meant to approximate.
+**Why it's wrong:** Contamination and Goodhart's-law-style overfitting to a benchmark's specific format can both inflate a score without any corresponding improvement in the broader, real-world capability the benchmark was meant to approximate.
 
-#### Correct intuition:
-A benchmark score is a proxy for a capability, not the capability itself — worth checking for contamination and format-specific overfitting before treating a comparison as settled.
+**Correct intuition:** A benchmark score is a proxy for a capability, not the capability itself — worth checking for contamination and format-specific overfitting before treating a comparison as settled.
 
-#### Analogy:
-The hiring manager's quiz score stopped meaning "good programmer" the moment candidates started optimizing for the quiz specifically, even though the number on the screen looked exactly the same as before.
+**Analogy:** The hiring manager's quiz score stopped meaning "good programmer" the moment candidates started optimizing for the quiz specifically, even though the number on the screen looked exactly the same as before.
 
 ### Misconception
 *"Using an LLM to judge another LLM's outputs is just as trustworthy as having a human expert review it directly."*
 
-#### Why it's wrong
-A judge model can hallucinate a confident-sounding justification for a wrong verdict, the same generation mechanism covered in Chapter 15, and can be specifically gamed by outputs styled to appeal to its particular known preferences rather than genuinely being better.
+**Why it's wrong:** A judge model can hallucinate a confident-sounding justification for a wrong verdict, the same generation mechanism covered in Chapter 15, and can be specifically gamed by outputs styled to appeal to its particular known preferences rather than genuinely being better.
 
-#### Correct intuition:
-LLM-as-judge is a useful, cheap proxy that often correlates with human judgment at scale — valuable in combination with human evaluation and diverse benchmarks, not a guaranteed, interchangeable substitute for either.
+**Correct intuition:** LLM-as-judge is a useful, cheap proxy that often correlates with human judgment at scale — valuable in combination with human evaluation and diverse benchmarks, not a guaranteed, interchangeable substitute for either.
 
-#### Analogy:
-A trusted colleague's quick read of a report is genuinely useful and often right — but it isn't the same guarantee as a full independent audit, and treating it as one invites exactly the errors an audit exists to catch.
+**Analogy:** A trusted colleague's quick read of a report is genuinely useful and often right — but it isn't the same guarantee as a full independent audit, and treating it as one invites exactly the errors an audit exists to catch.
 
 ### Misconception
 *"If a new model version scores higher on the overall benchmark, it's strictly better at everything the old model was good at."*
 
-#### Why it's wrong
-An aggregate score averages across many different sub-skills. A genuine regression on one specific capability can be entirely masked by improvement on others, even while the single headline number goes up.
+**Why it's wrong:** An aggregate score averages across many different sub-skills. A genuine regression on one specific capability can be entirely masked by improvement on others, even while the single headline number goes up.
 
-#### Correct intuition:
-One aggregate score can hide capability-specific regressions — meaningful evaluation tracks performance across many distinct skills, not just a single combined figure.
+**Correct intuition:** One aggregate score can hide capability-specific regressions — meaningful evaluation tracks performance across many distinct skills, not just a single combined figure.
 
-#### Analogy:
-A student's overall exam average can rise even while their specific grasp of one topic quietly gets worse, if they improved enough elsewhere to cover for it.
+**Analogy:** A student's overall exam average can rise even while their specific grasp of one topic quietly gets worse, if they improved enough elsewhere to cover for it.
 
 ## 7. Practical Implications
 

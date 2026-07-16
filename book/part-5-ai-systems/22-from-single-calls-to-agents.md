@@ -103,38 +103,29 @@ context it was given.
 ### Misconception
 *"An agent is a fundamentally different, more advanced kind of AI model."*
 
-#### Why it's wrong
-An agent uses the exact same underlying model and the exact same generation and tool-calling mechanism from Chapters 6, 14, and 21. "Agent" describes the surrounding loop that repeatedly calls the model and feeds results back in — not a new kind of model or a new architecture.
+**Why it's wrong:** An agent uses the exact same underlying model and the exact same generation and tool-calling mechanism from Chapters 6, 14, and 21. "Agent" describes the surrounding loop that repeatedly calls the model and feeds results back in — not a new kind of model or a new architecture.
 
-#### Correct intuition:
-The same model can act as a single-turn assistant in one product and as part of an agent loop in another — the difference is entirely in the surrounding system, not in the model itself.
+**Correct intuition:** The same model can act as a single-turn assistant in one product and as part of an agent loop in another — the difference is entirely in the surrounding system, not in the model itself.
 
-#### Analogy:
-The new employee and a colleague who only answers one question and stops could be equally capable people — the difference is whether the surrounding situation calls for one exchange or a self-directed sequence of them.
+**Analogy:** The new employee and a colleague who only answers one question and stops could be equally capable people — the difference is whether the surrounding situation calls for one exchange or a self-directed sequence of them.
 
 ### Misconception
 *"An agent has genuine autonomy or goals of its own, independent of what it was asked to do."*
 
-#### Why it's wrong
-At each step, the model is still doing exactly what it always does: predicting the most useful next output given everything currently in its context — including the original task. It has no persistent desires that outlive that context, and nothing resembling a goal it holds onto between separate sessions.
+**Why it's wrong:** At each step, the model is still doing exactly what it always does: predicting the most useful next output given everything currently in its context — including the original task. It has no persistent desires that outlive that context, and nothing resembling a goal it holds onto between separate sessions.
 
-#### Correct intuition:
-"Autonomous" describes the loop making its own sequential decisions without a human re-prompting between steps — not independent will or self-generated objectives that exist apart from the task it was given.
+**Correct intuition:** "Autonomous" describes the loop making its own sequential decisions without a human re-prompting between steps — not independent will or self-generated objectives that exist apart from the task it was given.
 
-#### Analogy:
-The new employee's initiative is bounded by the manager's actual request — she isn't pursuing a personal agenda, just working out, unsupervised, how to satisfy the one goal she was actually given.
+**Analogy:** The new employee's initiative is bounded by the manager's actual request — she isn't pursuing a personal agenda, just working out, unsupervised, how to satisfy the one goal she was actually given.
 
 ### Misconception
 *"Because an agent can check its own work across multiple steps, it's reliably more accurate than a single response."*
 
-#### Why it's wrong
-Looping doesn't change how any individual step is generated — each one is still produced the same fallible way covered in Chapter 15, and a wrong turn early in the loop can compound across later steps just as easily as it can get corrected.
+**Why it's wrong:** Looping doesn't change how any individual step is generated — each one is still produced the same fallible way covered in Chapter 15, and a wrong turn early in the loop can compound across later steps just as easily as it can get corrected.
 
-#### Correct intuition:
-More steps mean more opportunities to catch and fix a mistake, but also more opportunities to introduce or compound one — which is exactly why real systems add external limits and, often, human checkpoints rather than trusting the loop to self-correct indefinitely.
+**Correct intuition:** More steps mean more opportunities to catch and fix a mistake, but also more opportunities to introduce or compound one — which is exactly why real systems add external limits and, often, human checkpoints rather than trusting the loop to self-correct indefinitely.
 
-#### Analogy:
-Giving the new employee more time to keep working unsupervised can lead to a better report — or to her confidently going further down the wrong path, unless someone checks in before it goes too far.
+**Analogy:** Giving the new employee more time to keep working unsupervised can lead to a better report — or to her confidently going further down the wrong path, unless someone checks in before it goes too far.
 
 ## 7. Practical Implications
 
