@@ -1,6 +1,6 @@
-# Where AI Is Going
+# How to Judge What Comes Next
 
-**Part:** The Future
+**Part:** AI in the Real World
 
 **Concept Level:** motivational (no new formal concept — synthesizes Chapters 1–28 into a durable evaluation framework)
 

@@ -98,15 +98,17 @@ encoder is often one whose overall sense of similarity was shaped the
 way §3's worked example described, but producing per-patch features and
 translating them for a language model is a distinct second stage, not
 the same step. A small additional network, the **projector**, is trained
-to translate those patch features into the same numeric space the
-language model's own token embeddings live in — commonly in more than
+to translate those patch features into the representation format the
+language model's own token embeddings already use — commonly in more than
 one stage: an initial pass often trains just the projector, with the
 encoder and language model held frozen, purely to align the translated
 features to the language model's existing space; a later pass then
 fine-tunes on instruction-following examples, sometimes updating parts
 of the language model too. Either stage reuses the same next-token-
 prediction objective from Chapters 6 and 9, not §3's contrastive
-matching objective. Once translated, the language model's
+matching objective — this is the LLaVA-style recipe specifically, one
+concrete way to train a projector bridge, not the only one possible.
+Once translated, the language model's
 existing attention mechanism (Chapter 11) can treat them like any other
 token in the sequence — it doesn't need to know they originated as
 pixels rather than words.

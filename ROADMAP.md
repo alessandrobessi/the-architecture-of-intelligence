@@ -73,7 +73,7 @@ the second implementation.
 - [x] Part IV — Building Useful AI (16–20)
 - [x] Part V — AI Systems (21–25, durable-question framing per blueprint's
       current TOC — see note on Chapter 21/MCP)
-- [x] Part VI — The Future (26–30)
+- [x] Part VI — AI in the Real World (26–30)
 
 ## Milestone 5 — Local publication pipeline (done)
 

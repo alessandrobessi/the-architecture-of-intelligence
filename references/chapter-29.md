@@ -1,4 +1,4 @@
-# References — Chapter 29: Where AI Is Going
+# References — Chapter 29: How to Judge What Comes Next
 
 - No direct citations; this is a synthesis chapter building an evaluation
   framework from concepts already cited in Chapters 1–28's own reference

@@ -251,12 +251,12 @@ chapter --- so the chapter stays true even after the standard changes.
 24. One Model, Many Senses (multimodal models)
 25. Many Experts, One Model (Mixture of Experts)
 
-## Part VI --- The Future
+## Part VI --- AI in the Real World
 
 26. Evaluating AI Systems
 27. AI Engineering and Observability
 28. Security and Safety
-29. Where AI Is Going
+29. How to Judge What Comes Next
 30. How to Keep Learning
 
 ------------------------------------------------------------------------

@@ -135,7 +135,7 @@ of the durable idea, not as a separate mechanism.
 
 ### *"When a model 'uses a tool,' it's directly running code or reaching out onto the internet itself."*
 
-**Why it's wrong:** The model only ever produces text — in this case, a specifically structured piece of text naming a tool and its arguments. It has no independent ability to execute anything; a separate system outside the model parses that text and performs the actual action.
+**Why it's wrong:** The model only ever produces generated tokens — in this case, a specifically structured piece of output naming a tool and its arguments. It does not execute the requested operation itself; a separate system outside the model parses that output and performs the actual action.
 
 **Correct intuition:** The model requests; surrounding software executes. Those are two different systems with two different jobs, even though the finished conversation makes the boundary invisible.
 

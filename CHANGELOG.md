@@ -2,6 +2,79 @@
 
 ## 2026-07-16
 
+- **Fixed a duplicate-title bug on the rendered landing page.** `index.qmd`
+  previously had both an H1 (`# The Architecture of Intelligence
+  {.unnumbered}`) and, immediately below it, an H3 restating the
+  subtitle — Quarto's book title page already renders the title and
+  subtitle from `_quarto.yml`, so the landing page showed the title
+  twice. Replaced with a `# Welcome {.unnumbered}` page that states the
+  book's scope and teaching approach instead of repeating the title.
+  Softened the SICP/Feynman comparison from "tries to do what... did" to
+  "is inspired by what... did" (also matched in the root `README.md`),
+  since the stronger claim overstated what a first draft has
+  demonstrated. Verified by rendering and inspecting the actual HTML
+  landing page and PDF title/second pages.
+- **Removed the misleading `date: today` from `publish/_quarto.yml`.**
+  Quarto's default templates render a book's `date` field as "Published
+  <date>" — for a project that says in the same paragraph "this is a
+  first complete draft, not a finished, professionally edited book,"
+  auto-stamping every build with today's date under a "Published" label
+  was actively misleading. Removed the field entirely; verified via
+  rendered HTML/PDF that no date line appears.
+- **Rewrote the preface's closing paragraph.** It previously explained,
+  to readers, the project's internal history of trying and then dropping
+  diagrams — authoring-process trivia with no payoff for someone reading
+  the finished book. Replaced with a paragraph that states the actual
+  reader-facing consequence (every concept gets multiple concrete
+  groundings, entirely in prose) without the backstory.
+- **Expanded the preface into a fuller introduction**, per user request.
+  Added a "Why this book" opening section (the gap between using AI
+  systems fluently and understanding them, and why the usual
+  magic-vs.-equations explanations don't close it) and a "How to read
+  it" closing section (chapters build on each other via the concept
+  dependency graph, not a topic list meant to be sampled). Also fixed an
+  accidental duplicated paragraph left over from an earlier edit to "How
+  the book is built." Verified by rendering the PDF and inspecting the
+  preface page directly — renders cleanly on one page.
+- **Hardened `scripts/prepare_manuscript_for_publish.py` against
+  fragile assumptions.** The previous version located the front-matter/
+  footer boundaries by counting `---` occurrences positionally, which
+  would silently miscount if a chapter ever used `---` as an in-prose
+  rule. Rewrote to anchor on the footer's own distinctive bookkeeping
+  text (`**Glossary terms added this chapter:**`) instead of a position
+  count, and to fail loudly (`ValueError`) if either boundary marker
+  isn't found, rather than silently producing a malformed chapter.
+  Verified via a regression test: byte-identical output against the old
+  logic for all 30 chapters before trusting the rewrite.
+- **Renamed Part VI** from "The Future" to "AI in the Real World," and
+  **Chapter 29** from "Where AI Is Going" to "How to Judge What Comes
+  Next" (file renamed `29-where-ai-is-going.md` →
+  `29-how-to-judge-what-comes-next.md`), per reviewer feedback (raised
+  twice across two review rounds) that both names read as speculative
+  futurism when the actual content is a durable evaluation framework
+  applied to present-day systems. Propagated across `blueprint.md`,
+  `ROADMAP.md`, `book/README.md`, `README.md`, `publish/_quarto.yml`,
+  and `references/chapter-29.md`. Verified via full-repo grep for the
+  old names (only historical CHANGELOG entries remain, correctly left
+  as-is) and by rendering the PDF/HTML and confirming the new names
+  appear on the Part VI divider page, the chapter running header, and
+  the front-matter TOC.
+- Applied three previously-declined, then reconsidered, wording tweaks
+  from a second review round: Chapter 21's misconception now says the
+  model "only ever produces generated tokens" rather than "text," and
+  states it "does not execute the requested operation itself" rather
+  than "has no independent ability to execute anything" (more precise
+  about what a tool call actually is without adding a new jargon
+  category). Chapter 23 now attributes the outcome-based-RL training
+  recipe to "some publicly documented reasoning-optimized models" rather
+  than "many current" ones, matching the adjacent caveat that training
+  recipes aren't always publicly disclosed. Chapter 24 now describes the
+  projector's target as "the representation format the language model's
+  own token embeddings already use" rather than "the same numeric
+  space," and explicitly qualifies the next-token-prediction training
+  recipe as "the LLaVA-style recipe specifically... not the only one
+  possible" rather than presenting it as the universal approach.
+  Verified via the three manuscript validators and a full render.
 - **Replaced the cover artwork** (`publish/assets/cover.png` /
   `cover-epub.png`) with new user-supplied art. Doing so surfaced a real
   bug the previous cover had been silently hiding: the standalone cover

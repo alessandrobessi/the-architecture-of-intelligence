@@ -90,7 +90,7 @@ chapter — so the chapter stays true even after the standard changes.
 25. [Many Experts, One Model](part-5-ai-systems/25-many-experts-one-model.md)
     — *Is there a way to build an enormous model without paying the full computational cost of using all of it on every request?*
 
-## Part VI — The Future
+## Part VI — AI in the Real World
 
 26. [Evaluating AI Systems](part-6-the-future/26-evaluating-ai-systems.md)
     — *How does anyone actually know, in a rigorous way, whether a given AI system is good?*
@@ -98,7 +98,7 @@ chapter — so the chapter stays true even after the standard changes.
     — *Once a system is live, handling real, unpredictable user requests, how do you know it's still working correctly?*
 28. [Security and Safety](part-6-the-future/28-security-and-safety.md)
     — *What happens when someone is deliberately trying to make the system fail, leak information, or behave in ways it wasn't meant to?*
-29. [Where AI Is Going](part-6-the-future/29-where-ai-is-going.md)
+29. [How to Judge What Comes Next](part-6-the-future/29-how-to-judge-what-comes-next.md)
     — *Given everything covered so far, where does this technology actually go from here?*
 30. [How to Keep Learning](part-6-the-future/30-how-to-keep-learning.md)
     — *Now that this mental model exists, how does a reader actually keep it current as the field keeps moving?*

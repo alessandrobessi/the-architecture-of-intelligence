@@ -1,5 +1,25 @@
 # Preface {.unnumbered}
 
+## Why this book
+
+AI has moved from research labs into everyday products faster than most
+people's understanding of it has kept up. That leaves a gap: you can use
+these systems fluently — prompt them, integrate them, make decisions
+about them — while still not having a working model of what's actually
+happening underneath. That gap is uncomfortable for anyone whose job
+depends on judging what these systems can and can't do.
+
+The usual explanations don't close it. One kind treats the model as
+magic — a black box that "just knows things" — which leaves you with no
+way to predict when it will fail. The other kind starts from equations
+and implementation details, which is precise but assumes the exact
+background most readers don't have and don't need. This book tries for
+a third path: build a durable mental model — tokens, embeddings,
+attention, training, retrieval, tool use, reasoning — using nothing but
+prose, worked examples, and precise language, so that the understanding
+still holds up after the specific models and products in use today are
+replaced by whatever comes next.
+
 ## Who this is for
 
 Managers, consultants, product leaders, founders, sales professionals,
@@ -19,12 +39,17 @@ importantly — tell a genuine advance apart from a marketing headline.
 
 Every chapter builds understanding through a real-world story, a second
 worked example from a different angle, and a precise technical
-explanation — then ends with one bolded, memorable sentence that
-distills its core idea. Chapters are meant to be read in order: each
-one's vocabulary is a prerequisite for the next, following an explicit
-concept dependency graph rather than a loose topic list.
+explanation, addresses the misconceptions that trip readers up, and
+ends with one bolded, memorable sentence that distills its core idea.
+Each chapter approaches its central idea from more than one direction
+before moving on, entirely through prose and carefully reused analogies
+— no diagrams to lean on instead of understanding the mechanism itself.
 
-The book teaches entirely through prose, deliberately. Earlier drafts
-tried diagrams; they were dropped as a considered choice, not an
-oversight — see the chapters themselves for why words carried the weight
-better here.
+## How to read it
+
+Chapters are meant to be read in order, not sampled topically. Each
+chapter's vocabulary is a prerequisite for the next, following an
+explicit concept dependency graph rather than a loose topic list — by
+the time a term like "attention" or "fine-tuning" is used without
+explanation, it's because an earlier chapter already built it from
+scratch.

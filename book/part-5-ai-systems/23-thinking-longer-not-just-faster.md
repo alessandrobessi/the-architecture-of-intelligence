@@ -87,8 +87,8 @@ prompt, to reason step by step before answering.
 
 Reasoning models take a further step past relying on a prompt asking
 nicely, though the exact training recipe varies by model and isn't
-always publicly disclosed. Many current reasoning-optimized models are
-trained, building on Chapter 19's fine-tuning and reinforcement-learning
+always publicly disclosed. Some publicly documented reasoning-optimized
+models are trained, building on Chapter 19's fine-tuning and reinforcement-learning
 machinery, with an outcome-based signal that reinforces reasoning-plus-
 answer trajectories leading to a correct final answer — sometimes
 combined with supervised examples of good reasoning, feedback on

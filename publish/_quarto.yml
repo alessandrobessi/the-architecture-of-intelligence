@@ -5,7 +5,6 @@ book:
   title: "The Architecture of Intelligence"
   subtitle: "A Mental Model for Modern AI Systems"
   author: "Alessandro Bessi"
-  date: today
   chapters:
     - index.qmd
     - preface.qmd
@@ -44,12 +43,12 @@ book:
         - chapters/part-5-ai-systems/23-thinking-longer-not-just-faster.md
         - chapters/part-5-ai-systems/24-one-model-many-senses.md
         - chapters/part-5-ai-systems/25-many-experts-one-model.md
-    - part: "Part VI — The Future"
+    - part: "Part VI — AI in the Real World"
       chapters:
         - chapters/part-6-the-future/26-evaluating-ai-systems.md
         - chapters/part-6-the-future/27-ai-engineering-and-observability.md
         - chapters/part-6-the-future/28-security-and-safety.md
-        - chapters/part-6-the-future/29-where-ai-is-going.md
+        - chapters/part-6-the-future/29-how-to-judge-what-comes-next.md
         - chapters/part-6-the-future/30-how-to-keep-learning.md
 
 format:

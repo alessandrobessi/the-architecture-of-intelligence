@@ -8,10 +8,10 @@ tool use, agents, reasoning models — written for curious, intelligent
 readers with **no math, no programming, and no prior ML background**.
 
 Most explanations of AI are either marketing ("it's magic") or academic
-(equations first, intuition never). This project tries to do what
+(equations first, intuition never). This project is inspired by what
 *Structure and Interpretation of Computer Programs*
 did for computer science and what the *Feynman Lectures* did for
-physics: build one durable mental model, incrementally, that keeps
+physics: building one durable mental model, incrementally, that keeps
 working as the technology changes.
 
 ## Who this is for
@@ -46,7 +46,7 @@ to it, in
 
 **The full manuscript, Parts I–VI (chapters 1–30), is written** —
 Information, Prediction, The Transformer, Building Useful AI, AI Systems,
-and The Future. The book builds understanding through stories, worked
+and AI in the Real World. The book builds understanding through stories, worked
 examples, careful analogies, and precise technical explanation. See
 [`book/README.md`](book/README.md) for the full chapter-by-chapter index
 and status, and [`ROADMAP.md`](ROADMAP.md) for project-level milestones.

@@ -1,6 +1,6 @@
 # How to Keep Learning
 
-**Part:** The Future
+**Part:** AI in the Real World
 
 **Concept Level:** motivational (no new formal concept — closes the manuscript by turning Chapters 1–29 into an ongoing practice)
 
