@@ -21,20 +21,25 @@ send one thing — pulses of electricity, short or long, present or absent.
 No ink, no paper, no pictures. Yet somehow entire messages, in any language,
 had to cross that wire.
 
-His solution was to agree, in advance, on a code: each letter of the
-alphabet would be represented by a specific pattern of short and long
-pulses ("dots" and "dashes"). "E," the most common letter in English, got
-the shortest possible code: a single dot. "Q," a rare letter, got a long,
+The solution, refined over the following decades into what's now called
+International Morse Code, was to agree, in advance, on a code: each letter
+of the alphabet is represented by a specific pattern of short and long
+pulses ("dots" and "dashes"), with common letters assigned shorter
+patterns than rare ones. "E," the most common letter in English, gets
+the shortest possible code: a single dot. "Q," a rare letter, gets a long,
 four-pulse code. Neither the dot nor the wire "means" anything by itself.
 The meaning exists only because sender and receiver agreed, beforehand, on
 what each pattern would stand for.
 
 This is the entire trick behind every computer that has ever existed. A
-computer's circuits can only really do one thing: be in one of two physical
-states (a voltage is present, or it isn't). Everything a computer "reads,"
-"writes," or "knows" is built, layer by layer, out of agreed-upon patterns
-of those two states — exactly like Morse's dots and dashes, just with far
-more layers stacked on top.
+computer's circuits are built to be treated as if they can only do one
+thing: be in one of two logical states (a voltage above a threshold counts
+as "on," below it counts as "off") — a deliberate engineering choice, not
+a hard physical limit, since the underlying electronics are actually
+continuous. Everything a computer "reads," "writes," or "knows" is built,
+layer by layer, out of agreed-upon patterns of those two logical states —
+exactly like Morse's dots and dashes, just with far more layers stacked on
+top.
 
 ## Worked Example
 
@@ -72,7 +77,11 @@ thing, just with vastly more elaborate rules stacked on top of each other.
 
 **Information** is not the same thing as data. A message carries
 information only to the extent that it *reduces your uncertainty* about
-something. If you already knew exactly what a message was going to say,
+something — how surprising that specific message is, not how much
+uncertainty shrinks on average across every message you might have
+gotten instead (a related but distinct idea this book won't need to
+separate out further). If you already knew exactly what a message was
+going to say,
 receiving it tells you nothing new — it carries almost no information, no
 matter how many words it contains. A message you couldn't have predicted at
 all carries a lot of information.
@@ -82,9 +91,9 @@ should I be." Common, predictable things (the letter "E" showing up in
 English text) have high probability and carry little information each time
 they appear. Rare, unpredictable things (the letter "Q") have low
 probability and carry more information when they do appear. This is
-precisely why Morse gave "E" the shortest code and "Q" the longest: he was,
-without using this language, matching code length to how much information
-each letter actually carried.
+precisely why the code gives "E" the shortest pattern and "Q" the
+longest: shorter patterns for common letters means matching code length
+to how much information each letter actually carries.
 
 ## Technical Explanation
 

@@ -49,16 +49,21 @@ precision, usually takes more than rounding every weight the same
 careless way; it takes choosing the rounding carefully, often guided by a
 sample of real data, so the approximation lands where the network can
 actually afford it. Done well, the result uses a fraction of the memory
-and computation to store and run, while leaving overall behavior nearly
-as accurate as before.
+to store — and, on hardware built to exploit the lower precision, a
+fraction of the computation to run too — while leaving overall behavior
+nearly as accurate as before.
 
 ## Core Intuition
 
 **Quantization** is reducing the numerical precision used to store a
 model's parameters (Chapter 8) — from a high-precision representation
-down to a much coarser one — shrinking the model's memory footprint and
-the computation needed to use it, in exchange for a small, usually
-tolerable amount of accuracy loss.
+down to a much coarser one — shrinking the model's memory footprint, and
+often the computation needed to use it too, in exchange for a small,
+usually tolerable amount of accuracy loss. The memory savings are close
+to unconditional; the compute speedup is not — it depends on the
+deployment hardware and software actually supporting the lower-precision
+format, and without that support the speed benefit doesn't automatically
+show up.
 
 **Efficient inference** is the broader category of techniques, including
 quantization, aimed at making inference (Chapter 14) faster and cheaper
@@ -139,7 +144,7 @@ not optional.
 
 ## What to Remember
 
-- Quantization approximates a model's stored parameters at lower numerical precision, shrinking memory and compute needs — the values change, but the architecture and (as closely as possible) the behavior are preserved.
+- Quantization approximates a model's stored parameters at lower numerical precision, shrinking memory footprint reliably and compute needs when the hardware/software supports the lower-precision format — the values change, but the architecture and (as closely as possible) the behavior are preserved.
 - This works partly because network behavior lives in the overall pattern of parameters (Chapter 8), not any single weight's exact value; the best methods also calibrate rounding against real data rather than relying purely on independent errors washing out.
 - Very aggressive quantization is a real tradeoff and can noticeably degrade quality; moderate quantization usually isn't noticeable.
 - The KV cache — reusing each token's already-computed key and value instead of recomputing the whole sequence's attention at every step — is the central efficient-inference technique for autoregressive generation.
@@ -149,7 +154,7 @@ not optional.
 ## Further Reading
 
 - Search for "post-training quantization," "GPTQ," and "4-bit/8-bit inference" for concrete, current examples of calibrated quantization techniques described in this chapter.
-- Search for "KV cache" and "prefix caching" for more on the central inference-efficiency technique described in §5.
+- Search for "KV cache" and "prefix caching" for more on the central inference-efficiency technique described in the Technical Explanation above.
 
 ## The Next Obvious Question
 

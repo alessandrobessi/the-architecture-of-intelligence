@@ -43,8 +43,9 @@ read — "it," "trophy," "suitcase," and every earlier word — and weighs
 "trophy" and "it" heavily, since they're exactly what "big" is
 describing. Then a feed-forward step — a small neural network, exactly
 like Chapter 8's layered network, applied to each token individually —
-further processes that freshly-weighted representation, refining it a
-bit further based on patterns it learned during training.
+further processes that freshly-weighted representation, bending and
+reshaping it rather than merely rescaling it, refining it a bit further
+based on patterns it learned during training.
 
 That refined representation, now attached to the position of "big," enters
 a second round: attention runs again, this time drawing on the
@@ -61,7 +62,10 @@ A **transformer block** combines two sub-steps, applied one after the
 other: an attention step (Chapter 11), where every token gathers relevant
 information from itself and every earlier token, and a feed-forward step,
 where a simple neural network (Chapter 8) further transforms each token's
-representation individually, independent of the others. A transformer is
+representation individually and independently of the others — bending
+and reshaping it, not just scaling it up or down, which is what actually
+lets stacking many of these blocks build increasingly elaborate
+representations instead of collapsing into one equivalent step. A transformer is
 what you get by stacking many of these blocks — modern models use dozens
 — each one refining the output of the block before it, the same way each
 editor in the story refined the previous editor's draft.
@@ -86,7 +90,10 @@ information from earlier blocks from simply vanishing as it passes
 through many rounds of processing. Second, a normalization step keeps the
 scale of the numbers flowing through the network consistent from block to
 block, preventing values from growing or shrinking out of control over
-dozens of repeated rounds — bookkeeping, not a conceptual addition.
+dozens of repeated rounds. This isn't just bookkeeping: exactly where a
+normalization step sits relative to the rest of a block is itself a real
+design choice, and getting it wrong is a common reason a very deep
+transformer becomes difficult or unstable to train at all.
 
 The final token representations, after passing through every block, feed
 directly into the next-token prediction step from Chapter 6 — the same

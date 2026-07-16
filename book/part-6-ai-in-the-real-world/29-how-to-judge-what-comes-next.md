@@ -54,6 +54,14 @@ vague story about a model "getting smarter" — it's a precise, checkable
 answer, and it's the same shape of answer this chapter argues is worth
 demanding of whatever comes next.
 
+That technical account explains what made the underlying capability
+possible — it doesn't fully explain why this particular model, at this
+particular moment, became the household name it did. A free, easy-to-use
+chat interface (as opposed to the API-only access most people had to
+earlier models of similar capability) and market timing plausibly shaped
+that specific impact too, on top of the technical mechanism this book is
+built to explain.
+
 ## Core Intuition
 
 The specific tools, benchmarks, and product names covered in this book
@@ -84,9 +92,9 @@ between a fixed training cutoff and current information (Chapters 17–18).
 Tool schemas and an orchestration layer closed the gap between generating
 text and taking a real action (Chapter 21). A loop closed the gap between
 one action and a multi-step goal (Chapter 22). Reinforcement learning on
-reasoning trajectories closed the gap between a single guess and a
-reliable multi-step answer (Chapter 23). Matched-pair training closed the
-gap between text-only and multiple modalities (Chapter 24). Sparse
+reasoning trajectories narrowed the gap between a single guess and a
+reliable multi-step answer (Chapter 23). Matched-pair training narrowed
+the gap between text-only and multiple modalities (Chapter 24). Sparse
 routing closed the gap between total capacity and per-token compute cost
 (Chapter 25).
 

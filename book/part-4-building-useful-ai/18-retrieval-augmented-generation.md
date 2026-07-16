@@ -62,13 +62,25 @@ external information, whatever mechanism finds that information.
 
 ## Technical Explanation
 
-In the simplest and most common deployment pattern, RAG requires no
+Worth knowing if you read the original research: the term "RAG" was
+first used for a more specific architecture, where the retriever and the
+generator were trained together as one system. What this chapter
+describes — retrieving passages and simply inserting them into an
+already-trained model's context window, no training involved — is a
+broader, later usage of the same term, one that became the common,
+everyday pattern once models developed strong long-context reading
+ability. That broader usage is what "RAG" means in most engineering
+conversation today, and it's this chapter's focus, but it's worth
+knowing the name originally pointed at something narrower.
+
+In the simplest and most common deployment pattern today, RAG requires no
 update to the model's parameters (Chapter 8) at query time — it's
 entirely a matter of what gets placed in the context window before
 generation happens, performed fresh at every single query. (More elaborate
 RAG systems sometimes go further and separately fine-tune the retriever or
-the generator itself, but that's an enhancement on top of the core
-pattern, not a requirement of it.) This is precisely why the simplest form
+the generator itself — closer to the original, jointly-trained sense of
+the term — but that's an addition on top of the pattern described here,
+not a requirement of it.) This is precisely why the simplest form
 of RAG can incorporate information
 published after a model's training cutoff, or private and proprietary
 documents the model never trained on at all — none of that requires
@@ -129,7 +141,7 @@ Chapter 15 together equip you to spot.
 
 ## Further Reading
 
-- Search for "retrieval-augmented generation" (the term originates from a 2020 research paper) for the formal technical source behind this chapter.
+- Search for "retrieval-augmented generation" (the term originates from a 2020 research paper describing the original, jointly-trained architecture) to see how the term's meaning has broadened since to also cover the training-free, context-window pattern this chapter focuses on.
 
 ## The Next Obvious Question
 

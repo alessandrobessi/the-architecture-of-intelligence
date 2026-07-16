@@ -50,13 +50,27 @@ still shrinks; the unpredictable half doesn't, and can't.
 
 ## Core Intuition
 
-**Compression** is the process of representing information using fewer
-symbols by exploiting redundancy — the parts of a message that are
+**Compression** is the general idea of representing information using
+fewer symbols by exploiting redundancy — the parts of a message that are
 predictable given what's already been said or what's commonly known. This
 directly follows from Chapter 2's idea of information as "surprise":
-predictable content carries little information, so it can be represented
-very cheaply (or dropped) without losing much; unpredictable content
-carries a lot of information and must be preserved.
+predictable content carries little information, so it takes few symbols
+to represent; unpredictable content carries a lot of information and
+needs more.
+
+That general idea shows up in two different, easily confused forms.
+A **lossless code** — like Morse's single dot for "E" — never actually
+throws anything away: every letter is still there, just represented with
+fewer pulses when it's common, and the original message can always be
+reconstructed exactly. Ellipsis like "brb" works differently: words are
+genuinely *omitted*, not just shortened, and recovering them depends on
+the reader correctly guessing what was left out from shared context and
+convention — a real gamble, not a guarantee, which is exactly why the
+"recall on the blue sedan" half of the earlier example can't be
+compressed the same way. Both are compression in the loose, everyday
+sense of "exploiting predictability to say more with less," but only the
+first is compression in the strict, fully-recoverable sense the rest of
+this chapter's technical discussion depends on.
 
 **Context** is the surrounding material that makes a piece of language
 predictable — or that resolves which of several possible meanings a word
@@ -72,10 +86,13 @@ to mean nearly opposite things — one enthusiastic praise, one literal
 illness. No dictionary entry for "sick" resolves that on its own; only
 "concert" versus "flu," sitting a few tokens away, does.
 
-These two ideas are deeply connected: a system that is good at predicting
-what comes next, given context, is automatically good at compression —
-because "predictable" and "compressible" are the same property viewed from
-two different angles.
+These two ideas are deeply connected, in the strict, lossless sense above:
+a system that assigns accurate probabilities to what comes next, given
+context, can in principle use those probabilities to build a reversible
+code that represents likely continuations with fewer symbols, on average,
+than unlikely ones — "predictable" and "compressible" are the same
+property viewed from two different angles, under a shared probability
+model, not a claim that predictable content can simply be deleted.
 
 ## Technical Explanation
 
@@ -92,6 +109,16 @@ information-theoretic compression scheme on its own; the vocabulary size,
 token-ID encoding, and sequence length all still matter for how much a
 given text actually shrinks.
 
+This same logic is what lets a good language model act as a compressor in
+the strict sense too, not just a metaphorical one: since it assigns a
+probability to every possible next token, that probability can be turned
+into a reversible code — an approach called arithmetic coding — that
+represents likely continuations in fewer bits than unlikely ones, on
+average. The better the model's predictions, the shorter the resulting
+code. That's the precise version of "prediction and compression are the
+same thing": a claim about codes built from probabilities, not a claim
+that a system is free to silently drop whatever it finds predictable.
+
 Context, formally, is the span of surrounding tokens a system considers
 when interpreting or predicting a given token. A model doesn't process
 "bank" in isolation — it processes the entire surrounding sequence, and
@@ -105,11 +132,11 @@ consequential form, when we cover context windows and memory in Part IV.
 
 ### *"Compressing language means losing quality or meaning, like a blurry, low-resolution photo."*
 
-**Why it's wrong:** Good compression specifically targets redundant, predictable content — the exact opposite of the parts of a message that carry meaning.
+**Why it's wrong:** Lossless compression — Morse code, or the tokenizer from Chapter 3 — never actually removes anything; it represents predictable content more compactly, and the original is always fully recoverable. Ellipsis like "brb" is a different, lossier move: words really are dropped, and recovering them depends on the reader guessing right from context.
 
-**Correct intuition:** Compression removes what could be reconstructed anyway; what's left is precisely the informative core of the message.
+**Correct intuition:** Good lossless compression represents redundant, predictable content more compactly without discarding it. That exact recoverability is what distinguishes it from an editing choice like ellipsis, where content is genuinely gone unless the reader can reconstruct it correctly.
 
-**Analogy:** Removing the words "I will be" from "I will be arriving Tuesday" loses nothing a reader couldn't reconstruct — unlike smudging out a photo's details, which are never recoverable.
+**Analogy:** Morse code's short dot for "E" doesn't erase any information about "E" — it's still perfectly recoverable. Removing "I will be" from "I will be arriving Tuesday" is a different move: those words are actually gone, recoverable only because both sides share enough convention to guess them back correctly.
 
 ### *"Context just means 'the general topic' being discussed."*
 
@@ -140,7 +167,7 @@ material a human would have used.
 - This is the same principle behind Morse code letter-lengths and behind subword tokenization — both compress by favoring common patterns.
 - Context is the specific surrounding sequence of tokens that disambiguates meaning, not a vague notion of "topic."
 - A word like "bank" has no fixed meaning on its own — context selects among its possible meanings.
-- Predictability and compressibility are the same property: a system good at predicting what's next is automatically good at compressing.
+- Predictability and compressibility are the same property in the strict, lossless sense: a system that predicts well can, in principle, use those probabilities to build a genuinely reversible code.
 - Insufficient context produces vague or wrong outputs because the disambiguating material simply isn't available — not because of laziness.
 
 ## Further Reading

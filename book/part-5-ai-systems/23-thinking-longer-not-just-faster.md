@@ -116,7 +116,12 @@ across width (many attempts) or backtracking (checked, revisable paths)
 rather than length. None of these require a readable chain of steps at
 all — which is exactly why "test-time compute" is the more durable term
 for the underlying idea, and "reasoning model" names one popular way of
-spending it.
+spending it. All three patterns described here still cash out through
+generated tokens, visible or not; some research also explores spending
+extra test-time computation in ways that aren't token-mediated at all —
+additional internal computation before any token is produced — though
+that's a less mature, less widely deployed approach than the
+token-based patterns this chapter focuses on.
 
 It's worth being precise about what hasn't changed in any of these. A
 reasoning model isn't running some different decoding primitive behind

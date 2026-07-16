@@ -74,7 +74,10 @@ of people, and millions of "members" instead of a handful.
 
 Those adjustable importances are called **parameters** (also called
 weights): a number attached to every connection in the network, controlling
-how much that particular input matters to that particular unit. A modern
+how much that particular input matters to that particular unit — though a
+network also has a handful of other kinds of adjustable numbers besides
+connection weights, playing supporting roles rather than changing this
+basic picture. A modern
 language model can have many billions of these parameters. None of them is
 individually meaningful or hand-designed — there is no parameter that
 means "cat" or "past tense." The network's entire capability lives in the
@@ -90,7 +93,15 @@ output layer (which produces the next-token probability distribution from
 Chapter 6). Each unit in a layer receives the outputs of units in the
 previous layer, multiplies each one by its own weight, adds them together,
 and applies a simple fixed transformation before passing the result
-forward. Stacking many such layers lets the network build up increasingly
+forward. That transformation isn't just a matter of scaling the combined
+signal up or down — it bends it, the way a dimmer switch bends light
+output at the low end of its range instead of tracking the dial in a
+perfectly straight line. That bending step is what actually lets
+stacking add real power: combine and pass along a purely proportional
+signal, layer after layer, and no matter how many layers you stack, the
+whole thing behaves exactly like one layer would — the bending at each
+step is what keeps each additional layer from collapsing into the ones
+before it. Stacking many such layers lets the network build up increasingly
 elaborate combinations — a hidden layer can respond to combinations of
 patterns detected by the layer before it, letting the network represent
 far more intricate relationships than any single layer could alone.

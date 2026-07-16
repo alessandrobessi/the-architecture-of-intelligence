@@ -64,18 +64,26 @@ catch regressions, and decide whether it's ready to deploy. A model can
 score well on its own while the complete system still fails a user, if
 something surrounding it is broken — retrieval returning the wrong
 passage, a tool interface behaving unsafely — so evaluation has to reach
-the whole thing, not stop at the model at its core. Benchmarks, human
-judgment, and using another model as a judge are three different tools
-for approximating "how good is this," each useful, and each with its own
+the whole thing, not stop at the model at its core. "How good is this
+system" also isn't one single question — it splits into several distinct
+ones: raw capability on the task, factual reliability, robustness to
+unusual or adversarial input, fairness across different users, latency
+and cost, and security, among others. Benchmarks, human judgment, and
+using another model as a judge are three different tools for
+approximating "how good is this," each useful, and each with its own
 specific blind spots a reader needs to know about before trusting a
 number produced by any one of them alone.
 
 ## Technical Explanation
 
-**Benchmarks** are fixed sets of test questions or tasks with known
-correct answers, scored automatically — fast, cheap, and repeatable,
-which is exactly why they're used for quick comparison between models.
-They carry two specific failure modes worth naming directly. The first is
+**Benchmarks** are fixed sets of test questions or tasks, most often with
+a single known correct answer that can be scored automatically — fast,
+cheap, and repeatable, which is exactly why they're used for quick
+comparison between models. (Some benchmarks instead cover open-ended
+tasks — summarization, creative writing, preference comparisons — where
+there's no single correct answer, and scoring relies on a rubric or
+comparative judgment instead of automatic matching.) They carry two
+specific failure modes worth naming directly. The first is
 **contamination**: the exact test questions leaking into a model's
 training data (Chapter 9), inflating its score without reflecting genuine
 improvement on the underlying skill. The second is the dynamic the
@@ -96,9 +104,10 @@ expensive to run at scale besides.
 **LLM-as-judge** evaluation uses a separate model — often a larger or
 otherwise trusted one — to score or compare outputs against a rubric,
 instead of a human doing it directly. It's dramatically cheaper and
-faster than exhaustive human evaluation, and in many settings its
-judgments correlate reasonably well with what human raters would say.
-But a judge model inherits its own blind spots: it can hallucinate a
+faster than exhaustive human evaluation, and — with a strong judge model
+and a well-specified rubric — its judgments can correlate reasonably well
+with what human raters would say in many settings. But a judge model
+inherits its own blind spots: it can hallucinate a
 justification for a wrong verdict the same way Chapter 15 described for
 any other generated claim, and outputs can be specifically styled to
 appeal to that particular judge's known preferences rather than

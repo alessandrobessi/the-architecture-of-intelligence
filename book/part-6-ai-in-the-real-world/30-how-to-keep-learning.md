@@ -46,9 +46,9 @@ and is it comparable to anything she's seen contaminated before (Chapter
 26)?
 
 By the end of one paragraph, she's placed the unfamiliar term inside the
-mental model this book built — not because she looked up a definition,
-but because she's carrying the surrounding structure that definition
-would have to fit into. That's the actual skill this book has been
+mental model this book built — not just because she looked up a
+definition, but because she's carrying the surrounding structure that
+definition has to fit into. That's the actual skill this book has been
 aiming to build the whole way through: not a fixed list of terms, but a
 structure sturdy enough to absorb new ones.
 
@@ -121,7 +121,7 @@ is precisely what Parts I through III were built to be.
 
 ## Practical Implications
 
-Concretely, going forward: read primary technical announcements directly, applying Chapter 29's five questions as a habit rather than a one-time exercise. When an unfamiliar term appears, place it against the mental model this book built — tokens, embeddings, attention, training, inference, and the specific additions layered on top of them — before reaching for an outside explainer. Explain a concept from this book to someone else periodically; that act of teaching, not passive recognition while reading, is the real test the book's own Feynman-test teaching philosophy has relied on since Chapter 1. And revisit earlier chapters' misconception sections occasionally — misconceptions are exactly the details that fade fastest from memory, even once the underlying concept itself feels solid.
+Concretely, going forward: read primary technical announcements directly, applying Chapter 29's five questions as a habit rather than a one-time exercise. Not every source deserves equal weight: a model or system card and the primary paper behind a claim are the most reliable place to start, followed by official technical documentation and published benchmark results; source code and independent replications or critiques come next; vendor announcements and secondary commentary — blog posts, social media threads, news coverage — are the least reliable and worth treating as a pointer toward a primary source, not a substitute for one. When an unfamiliar term appears, place it against the mental model this book built — tokens, embeddings, attention, training, inference, and the specific additions layered on top of them — before reaching for an outside explainer. Explain a concept from this book to someone else periodically; that act of teaching, not passive recognition while reading, is the real test the book's own Feynman-test teaching philosophy has relied on since Chapter 1. And revisit earlier chapters' misconception sections occasionally — misconceptions are exactly the details that fade fastest from memory, even once the underlying concept itself feels solid.
 
 ## Key Takeaway
 

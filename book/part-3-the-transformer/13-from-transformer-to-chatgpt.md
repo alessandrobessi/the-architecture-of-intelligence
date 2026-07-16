@@ -79,6 +79,14 @@ additional training can shift more than surface style, sometimes touching
 the model's factual associations and specific capabilities too, not just
 how it's been pointed toward using what it already knew.
 
+These three ingredients explain the model itself — the specific gap this
+chapter's story and worked example are pointing at. A deployed product
+like ChatGPT layers still more on top: a system prompt setting its
+behavior for that specific product, safety and moderation checks,
+sometimes retrieval or tool access (Chapters 17–18, 21). None of that
+changes the underlying model this chapter describes; it's additional
+scaffolding built around it.
+
 ## Technical Explanation
 
 Precisely: **pretraining** is the massive, generic phase covered since

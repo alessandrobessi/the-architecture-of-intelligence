@@ -50,11 +50,13 @@ responses trend toward the style humans rated more highly.
 
 **Fine-tuning** is continuing the training process (Chapter 9) on a new,
 typically smaller and more specifically curated dataset, after the
-large-scale pretraining phase is already complete. It reuses the exact
-same predict/measure-error/adjust loop — nothing about the underlying
-mechanism changes — only now it's aimed at a narrower goal, like following
-instructions reliably, answering directly, or matching a particular
-style, instead of generic text continuation.
+large-scale pretraining phase is already complete. It reuses the same
+general predict/measure-error/adjust shape as pretraining, now aimed at a
+narrower goal — like following instructions reliably, answering directly,
+or matching a particular style, instead of generic text continuation —
+though, as the Technical Explanation below covers, what actually counts
+as "error" can itself change depending on the specific fine-tuning
+method used.
 
 **Alignment** is the broader goal fine-tuning (and related techniques) is
 used to pursue: making a model's behavior actually match some set of

@@ -23,7 +23,7 @@ doing something much narrower: given everything you've typed so far, it's
 ranking every word it knows by how likely that word is to come next, and
 showing you the top few.
 
-A modern language model does exactly this — just far more capably, and not
+A modern language model does the same basic move — just far more capably, and not
 just for the next word, but for the word after that, and the word after
 that, one at a time, each new prediction taking into account everything
 generated so far, including its own previous guesses. A full paragraph
@@ -101,9 +101,9 @@ when discussing how reasoning models try to work around it.
 
 ### *"The model plans out the entire sentence in advance, then writes it down."*
 
-**Why it's wrong:** The basic generation mechanism doesn't begin with a hidden, fully-written draft sitting somewhere and being read off token by token — each token is predicted using only what's been generated so far. A model can still produce something that looks like a plan (an outline, "step 1, step 2...") — but if it does, that plan is itself just earlier tokens, generated the same way as everything else, not consulted from some separate pre-formed source.
+**Why it's wrong:** The basic generation mechanism doesn't consult a separately-stored, already-complete draft sitting somewhere and read it off token by token — decoding proceeds one step at a time, and by construction, a step can't read a token that hasn't been generated yet. A model can still produce something that looks like a plan (an outline, "step 1, step 2...") — but if it does, that plan is itself just earlier tokens, generated the same way as everything else, not fetched from some separate pre-formed source.
 
-**Correct intuition:** Coherence emerges from consistently good next-token predictions; any "plan" the model appears to follow had to be developed through the visible context, not fetched from an upfront outline written before the first token.
+**Correct intuition:** Coherence mostly emerges from consistently good next-token predictions, developed through the visible context rather than fetched from an upfront outline written before the first token — though this doesn't rule out the model's internal computation anticipating something about where a sentence is heading before every word of it has been generated; that's different from consulting a hidden, already-finished draft.
 
 **Analogy:** A jazz musician improvising a solo doesn't have the whole solo pre-written — each note is chosen in light of everything played so far, and the result can still sound coherent, even if the musician settles into a recognizable pattern partway through.
 
@@ -134,7 +134,7 @@ can matter disproportionately to how the rest of the response unfolds.
 - Prediction means assigning a probability to every token in the vocabulary, given everything before it.
 - Text generation is autoregressive: predict, choose, append, repeat — one token at a time.
 - Predictions are computed from the current context using the model's learned parameters, starting from the geometry of embeddings (Chapter 5) — not retrieved from a table of stored answers, though specific facts can still be memorized (Chapter 9).
-- No step has access to a hidden, pre-formed plan written before the first token — any plan the model follows had to be developed through the visible context, the same way as everything else.
+- No step consults a separately-stored, already-complete draft written before the first token — any plan the model appears to follow had to be developed through the visible context, the same way as everything else.
 - This explains why models can contradict themselves mid-response, and why "thinking step by step" tends to help on harder problems.
 
 ## Further Reading

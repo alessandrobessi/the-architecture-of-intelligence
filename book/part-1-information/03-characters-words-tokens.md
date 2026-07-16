@@ -46,8 +46,8 @@ at all if that exact word was common enough, during vocabulary-building,
 to earn its own dedicated slot. Most words in any language never clear
 that bar.
 
-As subword tokens, the middle ground every modern tokenizer actually
-uses: "un" + "believ" + "able" — three pieces, each one a common,
+As subword tokens, the middle ground most modern tokenizers actually
+use: "un" + "believ" + "able" — three pieces, each one a common,
 reusable fragment that shows up across hundreds of other words too
 ("unhappy," "believing," "comfortable"). The vocabulary never needed a
 separate entry for "unbelievable" itself; it just needed these three

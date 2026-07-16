@@ -47,11 +47,16 @@ comparing meaning, not vocabulary.
 
 ## Core Intuition
 
-**Retrieval** is the process of finding, from a large collection of
-documents or passages, the ones most relevant to a given query — using
-semantic similarity (Chapter 5) rather than exact keyword matching. It's
-the librarian-by-meaning from the story, done computationally, at a scale
-of millions or billions of passages.
+**Retrieval** is the general problem of finding, from a large collection
+of documents or passages, the ones most relevant to a given query. This
+chapter focuses on retrieval by meaning — comparing semantic similarity
+(Chapter 5) instead of matching keywords directly — because that's what
+lets a system find relevant material even when the wording is completely
+different, the way the librarian-by-meaning does in the story, done
+computationally at a scale of millions or billions of passages.
+Keyword-based retrieval remains a real, widely-used approach in its own
+right, especially for exact-term lookups; many production systems
+combine both, a pattern usually called hybrid retrieval.
 
 **Vector databases** are specialized storage systems built specifically
 to hold enormous numbers of these passage embeddings and quickly find the
@@ -83,13 +88,13 @@ fast, without checking every point individually.
 
 ## Common Misconceptions
 
-### *"Retrieval works by searching for matching keywords, just with some extra intelligence layered on."*
+### *"Semantic retrieval works by searching for matching keywords, just with some extra intelligence layered on."*
 
-**Why it's wrong:** Semantic retrieval finds meaning-level matches even when zero words are shared between the query and the result, exactly as in the refund/reimbursement example — it isn't keyword search with improvements, it's a different underlying operation entirely.
+**Why it's wrong:** Semantic retrieval finds meaning-level matches even when zero words are shared between the query and the result, exactly as in the refund/reimbursement example — it isn't keyword search with a minor improvement bolted on, it's a genuinely different operation, comparing meaning instead of vocabulary. That doesn't mean keyword search is obsolete: it's still a real, widely-used technique, particularly good at exact-term precision, and many production systems run both together (hybrid retrieval) rather than replacing one with the other.
 
-**Correct intuition:** Retrieval compares locations in Chapter 5's meaning-space, not overlapping vocabulary.
+**Correct intuition:** Semantic retrieval compares locations in Chapter 5's meaning-space, not overlapping vocabulary — a different mechanism from keyword search, not an enhanced version of it, and the two are often used together rather than as competitors.
 
-**Analogy:** The librarian-by-meaning finds you the right book by what it's about, not by whether its title happens to share words with your question.
+**Analogy:** The librarian-by-meaning finds you the right book by what it's about, not by whether its title happens to share words with your question — a different skill from a librarian who's excellent at finding books by exact title, not a replacement for one.
 
 ### *"A vector database is just a regular database with a search feature added."*
 
@@ -107,8 +112,9 @@ documents get split into passages before embedding — as a real, practical
 design decision that directly affects how relevant the retrieved results
 end up being. It also gives you a concrete way to evaluate a product
 claiming "search by meaning": is it actually comparing embeddings in a
-space like Chapter 5's, or is it still keyword matching with extra
-branding.
+space like Chapter 5's, is it keyword matching, or is it a hybrid of
+both — each is a legitimate design choice with its own tradeoffs, not
+one being a lesser version of the other.
 
 ## Key Takeaway
 
@@ -116,7 +122,7 @@ branding.
 
 ## What to Remember
 
-- Retrieval finds relevant documents or passages using semantic similarity (Chapter 5), not exact keyword matching.
+- Retrieval is the general problem of finding relevant documents or passages from a large collection; this chapter focuses on doing that using semantic similarity (Chapter 5) rather than exact keyword matching, though keyword-based and hybrid approaches remain real, widely-used alternatives.
 - Vector databases store enormous numbers of passage embeddings and quickly find the ones nearest to a query's embedding.
 - The pipeline: chunk documents, embed each chunk in advance, embed the query the same way, then search for nearby stored embeddings.
 - Fast nearest-neighbor search at scale requires specialized indexing, not checking every stored vector individually.

@@ -28,9 +28,9 @@ correct angles. The correction signal was never "here is the right answer"
 to adjust."
 
 Training a neural network is this same loop, industrialized: try, measure
-the error precisely, nudge every adjustable parameter a tiny bit in the
-direction that would have reduced that error, and repeat — not thousands
-of times, but billions.
+the error precisely, nudge the parameters that contributed to that error a
+tiny bit in the direction that would have reduced it, and repeat — not
+thousands of times, but billions.
 
 ## Worked Example
 
@@ -42,7 +42,12 @@ fifth pass, the model's prediction on this specific example is nearly
 exact, and further nudges from it are tiny.
 
 Now multiply this by billions of different examples, each contributing
-its own small pull in its own direction. The net result is a set of
+its own small pull in its own direction — and these pulls don't all point
+the same way. A nudge that helps this specific example can, in the same
+training run, make a different example slightly worse; loss on any one
+example doesn't reliably drop on every single pass through training the
+way it does in this isolated five-repeat demo. The net result, across
+enough examples, is a set of
 parameters that works reasonably well across all of them at once — not
 perfectly tuned to any single example, but reliably good on the whole
 enormous collection.
@@ -57,10 +62,10 @@ gets a precise, quantified measure of its error on every single example it
 sees.
 
 **Training** is the repeated process of showing the network an example,
-computing its loss, and then adjusting every one of its parameters a tiny
-amount in whichever direction would have reduced that loss, had it been
-applied beforehand. This happens not once, but across enormous datasets,
-over and over.
+computing its loss, and then adjusting the parameters that contributed to
+that loss a tiny amount in whichever direction would have reduced it, had
+it been applied beforehand. This happens not once, but across enormous
+datasets, over and over.
 
 **Learning** is the name for the overall outcome of this repeated process:
 the gradual, emergent discovery of useful patterns — including the very
@@ -90,10 +95,14 @@ loss; a prediction that confidently predicts the wrong token produces high
 loss.
 
 After computing the loss for an example, a procedure calculates, for every
-single parameter in the network, which direction of adjustment would have
-reduced that loss, and by how much. Every parameter — potentially billions
-of them — is then nudged a small step in its own improving direction. This
-whole cycle (predict, measure loss, nudge every parameter) is repeated for
+parameter the loss actually depends on, which direction of adjustment
+would have reduced it, and by how much — for a language model this is
+typically most of the network's parameters on any given example, but not
+literally all of them; an embedding table entry for a token that didn't
+appear in this example, for instance, gets no nudge at all this round.
+Each of those parameters is then nudged a small step in its own improving
+direction. This whole cycle (predict, measure loss, nudge the affected
+parameters) is repeated for
 an enormous number of examples, often the same examples multiple times,
 until the network's predictions reliably carry low loss across a huge,
 varied body of text — not because anyone told it the rules of language, but
@@ -115,7 +124,7 @@ avoided.
 
 **Why it's wrong:** Loss measures how well the model fits its specific training objective (next-token prediction on its training data) — improving at that objective correlates with many useful capabilities, but it's a specific, measurable quantity, not a direct measure of general intelligence.
 
-**Correct intuition:** Treat loss as a precise fitness score for one specific task, useful and informative, but distinct from the broader, harder question of evaluating a system's overall capability — which Chapter 27 addresses directly.
+**Correct intuition:** Treat loss as a precise fitness score for one specific task, useful and informative, but distinct from the broader, harder question of evaluating a system's overall capability — which Chapter 26 addresses directly.
 
 **Analogy:** A student's score on one specific exam is real, useful information about their preparation for that exam — but it isn't the same thing as a complete measure of their intelligence.
 
@@ -132,16 +141,16 @@ and again.
 
 ## Key Takeaway
 
-**Training is a loop — predict, measure loss, nudge every parameter — repeated billions of times; learning is the name for whatever pattern emerges from it.**
+**Training is a loop — predict, measure loss, nudge whichever parameters contributed to it — repeated billions of times; learning is the name for whatever pattern emerges from it.**
 
 ## What to Remember
 
 - Loss is a precise number measuring how wrong a single prediction was.
-- Training is the repeated loop of predicting, measuring loss, and nudging every parameter toward reducing it.
+- Training is the repeated loop of predicting, measuring loss, and nudging whichever parameters contributed to it toward reducing it.
 - Learning is the name for the useful patterns that emerge from this loop — nobody designs them directly.
 - A language model's training examples are simply real text with the next token hidden and then compared against the prediction.
 - Well-trained models generalize rather than memorize, though memorization can occur under specific conditions (Chapter 15).
-- Loss measures fit to a specific objective, not general intelligence — a distinction Chapter 27 (Evaluating AI Systems) revisits.
+- Loss measures fit to a specific objective, not general intelligence — a distinction Chapter 26 (Evaluating AI Systems) revisits.
 
 ## Further Reading
 

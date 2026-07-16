@@ -134,6 +134,15 @@ about some other, separately-earned capability? The two are related but
 not identical, and conflating them is one of the more common ways AI
 announcements oversell.
 
+One more scoping note: this chapter's scaling laws are specifically about
+pretraining — data, parameters, and compute spent before a model is ever
+deployed. "Scaling" as an industry term has since grown to cover other
+axes too: spending more computation at inference time on a hard problem
+(Chapter 23), additional post-training after the base model is done
+(Chapter 19), and giving a model more relevant information to work with
+through retrieval (Chapter 18) all also improve results in a scale-like
+way, without being the specific pretraining relationship described here.
+
 ## Key Takeaway
 
 **Scaling laws let researchers predict a large model's loss from smaller experiments — a real, reliable, but diminishing-returns pattern, not an unlimited or unconditional guarantee.**

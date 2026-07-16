@@ -69,12 +69,16 @@ into it.
 ## Core Intuition
 
 **Attention** is a mechanism that lets a model, while processing any given
-token, look back across every earlier token in the sequence — never later
-ones — and assign each one a weight reflecting how relevant it is right
+token, weigh every other token in the sequence by how relevant it is right
 now — a direct, computable version of Chapter 4's "context": instead of
 just saying "surrounding tokens disambiguate meaning," attention is the
 machinery that actually computes, numerically, how much each surrounding
-token matters for this particular word at this particular moment.
+token matters for this particular word at this particular moment. This
+book, being about generative models like the ones behind ChatGPT, focuses
+specifically on the *causal* form of attention described below — restricted
+to look back across earlier tokens only, never later ones; other forms
+(bidirectional attention, or attention across two different sequences)
+exist and are used elsewhere, but aren't this chapter's concern.
 
 That "earlier, never later" restriction has a name: **causal masking**.
 It isn't a limitation of what attention could technically do — comparing

@@ -97,7 +97,8 @@ Precisely: modern AI language systems are trained using *self-supervised
 learning* — they are shown enormous quantities of ordinary text and given
 one repeated task: predict the next piece of that text, given everything
 before it. No human has to label this data as "correct" or "incorrect" the
-way older AI systems required; the text itself supplies the answer key,
+way older supervised systems (spam filters, image classifiers, and the
+like) required; the text itself supplies the answer key,
 since you can always check the next piece against what actually came next.
 
 This is a much older idea than 2022 — statistical methods for predicting

@@ -85,10 +85,20 @@ that even the entire indexed internet doesn't contain enough text to have
 seen more than a sliver of them. A counting table's coverage gets thinner,
 not thicker, the longer the context it tries to consider.
 
-The second problem is a failure to generalize. A counting-based model has
-no internal representation of similarity between words — "cat" and
-"kitten" are, to it, as unrelated as "cat" and "spreadsheet." This is
-precisely the gap embeddings were built to close: by placing tokens as
+The second problem is a failure to generalize. The simplest counting
+table — the kind Mark V. Shaney used — has no internal representation of
+similarity between words at all: "cat" and "kitten" are, to it, as
+unrelated as "cat" and "spreadsheet." Classical statistical language
+modeling didn't stop at raw counting like this, either — techniques like
+smoothing and backoff redistributed some probability toward sequences
+never directly observed, and class-based models clustered words that
+shared similar surrounding contexts specifically to share statistics
+between them, a cruder ancestor of exactly the similarity notion
+embeddings provide. These refinements measurably helped, but none of
+them escaped the underlying ceiling: they still worked by manipulating
+counts and hand-built word groupings, not by learning a rich,
+general-purpose geometric representation of meaning. This is precisely
+the gap embeddings were built to close: by placing tokens as
 points in a space where closeness reflects similarity of meaning and use
 (Chapter 5), a system can make a reasonable prediction even for a sequence
 it has never seen exactly, by reasoning from nearby points it has seen.

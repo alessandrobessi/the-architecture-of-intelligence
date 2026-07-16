@@ -69,8 +69,12 @@ happened at all and confirms the fix worked.
 logging what it actually did, tracing multi-step tool-call and agent
 sequences (Chapters 21–22) step by step, and tracking metrics like
 latency, cost, and error rate — so a team can see what's really happening
-in production and diagnose failures after the fact, not just how the
-system performed on a fixed evaluation set before launch. **AI
+in production, both after the fact (reconstructing what happened once a
+problem is already reported) and in real time (alerting when a metric
+crosses a threshold, tracking whether the system is meeting its
+reliability targets, catching an anomaly as it develops, or triggering a
+controlled rollback) — not just how the system performed on a fixed
+evaluation set before launch. **AI
 engineering** is the broader discipline of actually building and
 operating production systems on top of foundation models — combining
 retrieval (Chapters 17–18), tool calling and agents (Chapters 21–22),
@@ -102,6 +106,18 @@ continuously over time — latency, cost per request (Chapter 14, Chapter
 (Chapter 26's LLM-as-judge approach applied continuously to a sample of
 live traffic, not just a fixed test set) — to catch quality regressions
 that only surface under real usage patterns nobody wrote a test case for.
+
+Production systems also need to track which version of each moving part
+was in effect for any given request: the model, the prompt template, the
+retrieval index, the embedding model, any reranker, and the available
+tools all change independently over time, and a regression is often
+caused by one of these shifting — a new prompt version, an updated
+retrieval index, a swapped embedding model — rather than by the
+underlying model itself (Chapter 26's contamination and regression
+concerns apply just as easily to these surrounding components as to the
+model). Without that version record, a team investigating a sudden drop
+in quality has no way to narrow down which recent change actually caused
+it.
 
 None of this changes anything about the model itself; training (Chapter
 9) is entirely untouched. It's entirely about the surrounding system's
