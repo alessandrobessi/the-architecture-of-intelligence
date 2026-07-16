@@ -56,9 +56,14 @@ format:
   html:
     theme: cosmo
     toc: true
+    toc-depth: 1
     number-sections: false
   typst:
     toc: true
+    toc-depth: 1
     number-sections: false
+    include-before-body:
+      - part-style.typ
   epub:
     toc: true
+    toc-depth: 1
