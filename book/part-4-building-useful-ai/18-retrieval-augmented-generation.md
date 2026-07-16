@@ -10,11 +10,11 @@
 
 ---
 
-## 1. Opening Question
+## Opening Question
 
 *Once relevant documents can be retrieved this way, how does a model actually combine that with its own generation process to produce a grounded answer?*
 
-## 2. Real-World Story
+## Real-World Story
 
 Remember Chapter 14's exam analogy: years of studying (training) followed
 by a closed-book exam (inference), where the student can only apply what
@@ -29,7 +29,7 @@ memory — they have the actual source material in front of them, right
 when they need it. That's the entire idea behind giving a model retrieved
 documents before it answers.
 
-## 3. Worked Example
+## Worked Example
 
 A customer-support chatbot is asked about a company's return policy.
 Before generating any response, the system first retrieves (Chapter 17)
@@ -46,7 +46,7 @@ sense of "typical return policies" it picked up during training. If the
 policy changed last week, the retrieved passage reflects that change,
 even though the model's trained parameters know nothing about it.
 
-## 4. Core Intuition
+## Core Intuition
 
 **RAG** (Retrieval-Augmented Generation) is a system design that combines
 retrieval (Chapter 17) with generation (Chapter 6): before generating a
@@ -60,7 +60,7 @@ the retrieving, but it's an implementation choice, not part of RAG's
 definition — the defining idea is generation conditioned on retrieved
 external information, whatever mechanism finds that information.
 
-## 5. Technical Explanation
+## Technical Explanation
 
 In the simplest and most common deployment pattern, RAG requires no
 update to the model's parameters (Chapter 8) at query time — it's
@@ -85,7 +85,7 @@ misread or contradict retrieved text, blend it incorrectly with prior
 trained-in knowledge, or produce a fluent answer when the retrieval step
 itself failed to find the genuinely relevant passage.
 
-## 6. Common Misconceptions
+## Common Misconceptions
 
 ### *"RAG means the model has been retrained on the retrieved documents."*
 
@@ -103,7 +103,7 @@ itself failed to find the genuinely relevant passage.
 
 **Analogy:** An open-book exam reduces guessing, but a student can still misread the reference page or cite the wrong passage.
 
-## 7. Practical Implications
+## Practical Implications
 
 This is exactly why companies rely heavily on RAG for internal
 knowledge-base assistants: updating the underlying documents is far
@@ -114,11 +114,11 @@ sources for its answers, or does it just generate fluent-sounding text
 without anything underneath it — the exact distinction this chapter and
 Chapter 15 together equip you to spot.
 
-## 8. Key Takeaway
+## Key Takeaway
 
 **RAG grounds a model's answer in passages retrieved from an external source and placed directly in its context window at query time — expanding what it can draw on, in the simplest and most common pattern without changing a single trained parameter.**
 
-## 9. One-Page Summary
+## One-Page Summary
 
 - RAG combines retrieval (Chapter 17) with generation (Chapter 6): retrieve relevant passages from some external source first, then generate an answer using them.
 - Semantic search over a vector database is the most common retrieval mechanism, but RAG's definition doesn't require it — keyword search, direct database queries, or web search can fill the same role.
@@ -127,11 +127,11 @@ Chapter 15 together equip you to spot.
 - RAG is bounded by what's in the retrieval store and by the context window's capacity, and it substantially reduces but doesn't eliminate hallucination.
 - Updating a RAG system's knowledge typically means updating its documents, not retraining the model — a major practical advantage.
 
-## 10. Further Reading
+## Further Reading
 
 - Search for "retrieval-augmented generation" (the term originates from a 2020 research paper) for the formal technical source behind this chapter.
 
-## 11. The Next Obvious Question
+## The Next Obvious Question
 
 *If a model's knowledge and behavior can be shaped after pretraining without retrieval, purely through additional training, how does that actually work — and how does a model get pointed toward being safe and aligned with the goals its designers set for it?*
 

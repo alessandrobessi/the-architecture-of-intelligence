@@ -10,11 +10,11 @@
 
 ---
 
-## 1. Opening Question
+## Opening Question
 
 *Why can a short sentence carry so much meaning, and how do computers exploit that?*
 
-## 2. Real-World Story
+## Real-World Story
 
 In the era of the telegram, you paid by the word. This produced a strange,
 clipped dialect: "ARRIVE TUESDAY STOP NEED CAR STOP" instead of "I will be
@@ -32,7 +32,7 @@ message shorter for its own sake. It's about identifying which parts of a
 message are predictable — and therefore cheap to omit or shrink — and which
 parts genuinely carry new information and must be preserved in full.
 
-## 3. Worked Example
+## Worked Example
 
 Text messages compress the same way telegrams did. "I will be right back"
 becomes "brb" — four words vanish ("I," "will," "be," "right") because any
@@ -48,7 +48,7 @@ compressed to "brb" — because that clause is exactly the part the reader
 has no way to predict in advance. The predictable half of the sentence
 still shrinks; the unpredictable half doesn't, and can't.
 
-## 4. Core Intuition
+## Core Intuition
 
 **Compression** is the process of representing information using fewer
 symbols by exploiting redundancy — the parts of a message that are
@@ -77,7 +77,7 @@ what comes next, given context, is automatically good at compression —
 because "predictable" and "compressible" are the same property viewed from
 two different angles.
 
-## 5. Technical Explanation
+## Technical Explanation
 
 Formally, compression schemes exploit statistical redundancy in a
 sequence: symbols or sequences that occur frequently (and are therefore
@@ -101,7 +101,7 @@ instance. The richer and more relevant the available context, the sharper
 this narrowing becomes — a theme that will resurface, in a much more
 consequential form, when we cover context windows and memory in Part IV.
 
-## 6. Common Misconceptions
+## Common Misconceptions
 
 ### *"Compressing language means losing quality or meaning, like a blurry, low-resolution photo."*
 
@@ -119,7 +119,7 @@ consequential form, when we cover context windows and memory in Part IV.
 
 **Analogy:** Knowing the "topic" of a conversation is a river — but knowing the *exact previous sentence* is what tells you whether "bank" means the water's edge or the building down the street.
 
-## 7. Practical Implications
+## Practical Implications
 
 Once you understand compression-as-redundancy-removal, engineering
 discussions about "efficient tokenizers" and "context compression"
@@ -130,11 +130,11 @@ giving an AI system too little surrounding context produces vague or wrong
 answers — it isn't being lazy, it genuinely lacks the disambiguating
 material a human would have used.
 
-## 8. Key Takeaway
+## Key Takeaway
 
 **Context is the span of surrounding tokens a model uses to resolve ambiguity — and the same predictability that resolves meaning is what makes language compressible.**
 
-## 9. One-Page Summary
+## One-Page Summary
 
 - Compression exploits redundancy: predictable content is cheap to represent; unpredictable content must be preserved in full.
 - This is the same principle behind Morse code letter-lengths and behind subword tokenization — both compress by favoring common patterns.
@@ -143,11 +143,11 @@ material a human would have used.
 - Predictability and compressibility are the same property: a system good at predicting what's next is automatically good at compressing.
 - Insufficient context produces vague or wrong outputs because the disambiguating material simply isn't available — not because of laziness.
 
-## 10. Further Reading
+## Further Reading
 
 - Look into classic text-compression algorithms (e.g. Huffman coding) for a concrete, historical example of assigning shorter codes to more frequent symbols.
 
-## 11. The Next Obvious Question
+## The Next Obvious Question
 
 *If meaning depends so heavily on context and surrounding tokens, how can a computer represent "meaning" itself in a form it can actually compute with?*
 

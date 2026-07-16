@@ -10,11 +10,11 @@
 
 ---
 
-## 1. Opening Question
+## Opening Question
 
 *How does a computer break language into pieces it can actually work with?*
 
-## 2. Real-World Story
+## Real-World Story
 
 Try to teach a child to read, and you don't start with whole words. You
 start with letters, then blend them into syllables, then into words. But a
@@ -33,7 +33,7 @@ invent new words constantly, people misspell things, and a system that only
 knows a fixed list of whole words breaks the instant it meets one that isn't
 on the list.
 
-## 3. Worked Example
+## Worked Example
 
 Take the word "unbelievable" and split it three different ways, to see
 exactly what's at stake in each choice.
@@ -53,7 +53,7 @@ reusable fragment that shows up across hundreds of other words too
 separate entry for "unbelievable" itself; it just needed these three
 smaller, far more frequently reused pieces.
 
-## 4. Core Intuition
+## Core Intuition
 
 A **character** is the smallest unit of written text — a single letter,
 digit, or punctuation mark. A **word** is a familiar, larger unit — but
@@ -74,7 +74,7 @@ familiar sub-pieces ("un" + "believ" + "able"). This way, the model never
 encounters a word it has literally no way to represent — it can always fall
 back to smaller, familiar pieces.
 
-## 5. Technical Explanation
+## Technical Explanation
 
 Most modern language models use some form of subword or byte-level
 tokenization — a family of approaches that all solve the same basic
@@ -111,7 +111,7 @@ week. This is the design working as intended: the tokenizer never fails
 outright on something unfamiliar, it just falls back to smaller, more
 common pieces it already has tokens for.
 
-## 6. Common Misconceptions
+## Common Misconceptions
 
 ### *"The model reads text one letter at a time, like sounding out a word."*
 
@@ -129,7 +129,7 @@ common pieces it already has tokens for.
 
 **Analogy:** Postal abbreviations aren't one-per-word either — common words get short codes ("St.," "Ave.") while unusual street names are spelled out in full.
 
-## 7. Practical Implications
+## Practical Implications
 
 This is why AI providers bill by "tokens," not by words or characters — and
 why the same sentence can cost a different amount depending on the
@@ -140,11 +140,11 @@ letter-by-letter, and it can stumble — because it isn't actually seeing
 individual letters, it's seeing tokens, and a token doesn't expose its own
 internal letters to the model in an obvious way.
 
-## 8. Key Takeaway
+## Key Takeaway
 
 **A language model doesn't receive text as human-recognized words — it receives a sequence of token IDs produced by tokenization, some whole words, some fragments, occasionally a single character.**
 
-## 9. One-Page Summary
+## One-Page Summary
 
 - Characters are the smallest text units; words are a familiar but computationally slippery unit; tokens are the actual chunks a model uses.
 - Tokenization builds a fixed vocabulary (tens of thousands of tokens) where common sequences become single tokens and rare ones stay split into pieces.
@@ -153,11 +153,11 @@ internal letters to the model in an obvious way.
 - This design guarantees any input text can be represented, even words the model has never seen whole.
 - Token-based billing and letter-counting failures both trace back directly to this chapter's ideas.
 
-## 10. Further Reading
+## Further Reading
 
 - Search for an interactive "tokenizer visualizer" or "tokenizer playground" from any major AI lab — several publish free web tools that show exactly how a sentence you type gets split into tokens and their numeric IDs, which makes this chapter's core idea concrete in under a minute.
 
-## 11. The Next Obvious Question
+## The Next Obvious Question
 
 *If text becomes a long sequence of small tokens, how does a model deal with the fact that meaning is spread out and repeated across that sequence — and can that sequence be represented more efficiently?*
 

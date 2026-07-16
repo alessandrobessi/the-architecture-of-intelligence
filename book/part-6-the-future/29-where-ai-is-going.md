@@ -10,11 +10,11 @@
 
 ---
 
-## 1. Opening Question
+## Opening Question
 
 *This book has now covered, in careful detail, how today's AI systems are built, used, evaluated, and protected. Given everything covered so far, where does this technology actually go from here?*
 
-## 2. Real-World Story
+## Real-World Story
 
 In the same week, a reader encounters two pieces of AI news. The first is
 a breathless press release: a bold claim of a fundamentally new kind of
@@ -33,7 +33,7 @@ checkable evaluation evidence behind it? Which one is honest about its
 tradeoffs? The answers, not the marketing, are what tell her which
 announcement deserves her attention.
 
-## 3. Worked Example
+## Worked Example
 
 Return to Chapter 1's own opening story: AI seemed to suddenly get much
 better around 2022. At the time, that chapter could only promise an
@@ -54,7 +54,7 @@ vague story about a model "getting smarter" — it's a precise, checkable
 answer, and it's the same shape of answer this chapter argues is worth
 demanding of whatever comes next.
 
-## 4. Core Intuition
+## Core Intuition
 
 The specific tools, benchmarks, and product names covered in this book
 will keep changing — that's guaranteed, and no chapter here has promised
@@ -72,7 +72,7 @@ given tools or agency, what are the security and safety implications
 this book's actual promise fulfilled, whatever specific technology
 prompted the headline.
 
-## 5. Technical Explanation
+## Technical Explanation
 
 Look back across Parts III through VI and a consistent shape emerges.
 Nearly every capability introduced past the core transformer (Chapters
@@ -104,7 +104,7 @@ breakthroughs are identifiable by the same standard as incremental ones:
 a specific, articulable mechanism solving a specific, articulable
 limitation, not a vague claim of generalized improvement.
 
-## 6. Common Misconceptions
+## Common Misconceptions
 
 ### *"Because AI has improved so quickly and consistently, that trend is guaranteed to continue at the same pace indefinitely."*
 
@@ -130,15 +130,15 @@ limitation, not a vague claim of generalized improvement.
 
 **Analogy:** Specific car models come and go every year, but the underlying mechanics of an internal combustion engine explained the vehicles on the road for a century — understanding the mechanism outlasts any specific model name built on top of it.
 
-## 7. Practical Implications
+## Practical Implications
 
 This chapter's five questions form a reusable checklist for reading any future AI news story or product launch, one that stays useful well past this book's own shelf life: what's the mechanism, what's actually driving the improvement, what's the real evaluation evidence, what's the cost tradeoff, and what are the security and safety implications if tools or agency are involved. This is the book's promise from its very first page, made concrete and reusable: distinguishing a genuine advance from marketing hype, not by having every future model memorized, but by knowing exactly what questions to ask of any of them.
 
-## 8. Key Takeaway
+## Key Takeaway
 
 **Specific tools and benchmarks will keep changing — what doesn't is the durable question worth asking of any new AI development: what specific gap does it close, and by what specific, deliberate mechanism, not by a vague appeal to "the model got smarter."**
 
-## 9. One-Page Summary
+## One-Page Summary
 
 - The specific tools, benchmarks, and product names in this book will keep changing; the underlying mechanisms and the pattern of how capabilities get added to them change far more slowly.
 - Every major capability since Chapter 13 followed the same shape: an existing mechanism, plus one specific, deliberately built addition closing one specific gap.
@@ -148,12 +148,12 @@ This chapter's five questions form a reusable checklist for reading any future A
 - Past improvement trends are real evidence, not a guarantee of continued pace (Chapter 10's diminishing returns).
 - This chapter's questions are this book's core promise made concrete: distinguishing genuine advances from hype.
 
-## 10. Further Reading
+## Further Reading
 
 - Revisit Chapter 1's opening story and Chapter 10's scaling laws alongside this chapter — together they show the same evaluation pattern applied to the book's own founding example.
 - When reading any new AI announcement, apply §4's five questions directly as a practical exercise.
 
-## 11. The Next Obvious Question
+## The Next Obvious Question
 
 *This book has built one complete, durable mental model of how modern AI works, chapter by chapter. Now that the model exists, how does a reader actually keep it current as the field keeps moving?*
 

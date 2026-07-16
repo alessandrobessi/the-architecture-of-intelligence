@@ -2,6 +2,27 @@
 
 ## 2026-07-16
 
+- **Removed paragraph first-line indent from the PDF.** `@preview/orange-
+  book`'s `book()` defaults to `first-line-indent: true`, indenting every
+  paragraph after the first in a block — Quarto's own copy of
+  `typst-show.typ` never exposed this parameter at all, so there was no
+  way to turn it off without overriding the partial (already done for the
+  cover). Confirmed via rendered PDF pages, before and after, that every
+  paragraph now starts flush left. Checked the EPUB's CSS too — it
+  already sets `text-indent: 0` explicitly, so this was PDF-only.
+- Updated `templates/chapter-template.md` again: dropped the numeric
+  prefix from all 11 section headers (`## 1. Opening Question` →
+  `## Opening Question`). Mechanically applied to all 30 chapters.
+  Updated `concept-graph.yaml`'s `key_takeaway` anchors (`#8-key-takeaway`
+  → `#key-takeaway`, `#3-worked-example` → `#worked-example` — the only
+  two anchor patterns in use) and one matching link in the root
+  `README.md`; regenerated `concept-graph.md`. As a side effect this also
+  fixed a pre-existing double-numbering artifact in the PDF/EPUB output
+  (running headers and the front-matter TOC previously showed e.g.
+  "5.10 10. Further Reading" — Typst's own auto-numbering plus the
+  template's literal text prefix; now just "5.10 Further Reading").
+  Verified by rendering and inspecting actual PDF pages, not just the
+  source Markdown.
 - Updated `templates/chapter-template.md` again: merged `### Misconception`
   + `*[...]*` into a single `### *[...]*` heading. Mechanically applied to
   all 30 chapters (73 misconception blocks); each one now renders as its

@@ -10,11 +10,11 @@
 
 ---
 
-## 1. Opening Question
+## Opening Question
 
 *Once a model has all this training baked in, what actually happens, step by step, when it generates a response to your prompt?*
 
-## 2. Real-World Story
+## Real-World Story
 
 A medical student spends years in school: studying, practicing, getting
 things wrong, being corrected, adjusting — precisely the training loop
@@ -32,7 +32,7 @@ language model works the same way once training ends: its parameters are
 frozen, and every response is that fixed knowledge being applied, fresh,
 to whatever specific prompt just arrived.
 
-## 3. Worked Example
+## Worked Example
 
 Take the prompt "The weather today is" and run it through a trained
 model three separate times. Chapter 6 already established that the model
@@ -50,7 +50,7 @@ probability — so the three runs might produce "sunny," "cold," and
 "perfect for a walk." None of these is wrong. They're three different,
 individually reasonable draws from the same underlying distribution.
 
-## 4. Core Intuition
+## Core Intuition
 
 **Inference** is the process of actually running a trained model to
 produce output, using its fixed, already-learned parameters — as opposed
@@ -71,7 +71,7 @@ practical sampling methods don't just choose from the model's raw
 predicted probabilities unmodified; they first reshape that distribution
 before drawing from it.
 
-## 5. Technical Explanation
+## Technical Explanation
 
 Precisely: none of these controls change the model's parameters, and none
 of them rerun training — that much is fixed the moment inference begins.
@@ -100,7 +100,7 @@ never changes. What temperature, top-k, and nucleus sampling change is
 the distribution actually used for sampling at each step, computed *from*
 the model's raw output, not identical to it.
 
-## 6. Common Misconceptions
+## Common Misconceptions
 
 ### *"The model is still learning or improving while I chat with it."*
 
@@ -118,7 +118,7 @@ the model's raw output, not identical to it.
 
 **Analogy:** Asking three different (equally excellent) writers to finish the same sentence naturally produces three different, all-reasonable endings.
 
-## 7. Practical Implications
+## Practical Implications
 
 This is exactly what a "temperature" slider or setting in an AI tool or
 API controls directly. It also explains a genuine, recurring business and
@@ -129,11 +129,11 @@ in discussions of AI infrastructure costs, and one that becomes
 especially important once Chapter 20 covers making inference cheaper and
 faster.
 
-## 8. Key Takeaway
+## Key Takeaway
 
 **Inference is running a trained, frozen model to produce output; sampling is the deliberately controllable randomness in how a specific token gets chosen from the model's predicted probabilities.**
 
-## 9. One-Page Summary
+## One-Page Summary
 
 - Inference is using a trained model's fixed parameters to produce output — as opposed to training, where parameters are still being adjusted.
 - Sampling is the method for choosing one actual token from the model's predicted probability distribution at each step.
@@ -142,11 +142,11 @@ faster.
 - Identical prompts can produce different, equally valid outputs by design, because of this controlled randomness.
 - Training is a large, mostly one-time cost; inference is a smaller, recurring cost paid every time the model is used.
 
-## 10. Further Reading
+## Further Reading
 
 - Search for "temperature sampling" and "nucleus sampling" (top-p sampling) for the formal names of the techniques described in this chapter.
 
-## 11. The Next Obvious Question
+## The Next Obvious Question
 
 *If the model is just sampling plausible-sounding tokens, what happens when "plausible-sounding" and "actually true" come apart?*
 

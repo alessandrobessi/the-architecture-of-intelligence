@@ -32,6 +32,12 @@ $if(lang)$
   lang: "$lang$",
 $endif$
   main-color: brand-color.at("primary", default: blue),
+  // book()'s own default is true, which indents the first line of every
+  // paragraph after the first in a block (visually reads like a tab
+  // after the newline) — Quarto's own copy of this partial never
+  // exposes this parameter at all, so there's no way to turn it off
+  // without this override.
+  first-line-indent: false,
   logo: {
     let logo-info = brand-logo.at("medium", default: none)
     if logo-info != none { image(logo-info.path, alt: logo-info.at("alt", default: none)) }

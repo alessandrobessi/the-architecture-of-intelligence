@@ -10,11 +10,11 @@
 
 ---
 
-## 1. Opening Question
+## Opening Question
 
 *How does additional training after pretraining actually work, and how does a model get pointed toward being safe and aligned with the goals its designers set for it?*
 
-## 2. Real-World Story
+## Real-World Story
 
 A doctor completes medical school — years of broad, general training,
 covering an enormous range of conditions and cases. Then they enter a
@@ -31,7 +31,7 @@ residency: the same underlying learning mechanism, applied afterward to a
 smaller, much more specifically curated set of examples, aimed at a
 particular goal.
 
-## 3. Worked Example
+## Worked Example
 
 Suppose a model is shown two candidate responses to a sensitive user
 request, and a human rater is asked which one they prefer — perhaps one
@@ -46,7 +46,7 @@ data is used to further adjust the model's parameters — using the exact
 same predict/measure-error/nudge loop from Chapter 9 — so that future
 responses trend toward the style humans rated more highly.
 
-## 4. Core Intuition
+## Core Intuition
 
 **Fine-tuning** is continuing the training process (Chapter 9) on a new,
 typically smaller and more specifically curated dataset, after the
@@ -67,7 +67,7 @@ policies, and those can conflict with each other or with what any given
 user wants in the moment — "aligned" is not a single, universally-agreed
 target.
 
-## 5. Technical Explanation
+## Technical Explanation
 
 Several broad techniques are widely used, often in combination.
 **Supervised fine-tuning** trains directly on example input/output pairs
@@ -112,7 +112,7 @@ effort rather than a solved, one-time fix — a model can still behave in
 subtly misaligned ways after this process, which is part of why Chapter
 28 revisits safety directly.
 
-## 6. Common Misconceptions
+## Common Misconceptions
 
 ### *"Fine-tuning and pretraining are fundamentally different kinds of processes."*
 
@@ -130,7 +130,7 @@ subtly misaligned ways after this process, which is part of why Chapter
 
 **Analogy:** A well-trained customer service employee can reliably follow a company's values in every interaction without that proving they personally hold those values — the training shapes behavior either way.
 
-## 7. Practical Implications
+## Practical Implications
 
 This is exactly what "fine-tuned," "instruction-tuned," and "RLHF" mean
 in AI product announcements, and it explains why a single company often
@@ -141,11 +141,11 @@ been "fully aligned" or is "guaranteed safe" — alignment techniques are
 genuinely useful and improving, but they remain an ongoing, imperfect
 effort, not a completed guarantee.
 
-## 8. Key Takeaway
+## Key Takeaway
 
 **Fine-tuning is Chapter 9's training loop applied again after pretraining, on a narrower goal; alignment is the broader aim that loop is pointed at — matching a model's behavior to some set of intended goals, not just what's statistically plausible.**
 
-## 9. One-Page Summary
+## One-Page Summary
 
 - Fine-tuning reuses Chapter 9's core training loop on a smaller, more specifically curated dataset, after pretraining is complete.
 - Alignment is the broader goal fine-tuning serves — matching model behavior to particular designers'/evaluators' intended goals, which can themselves conflict, not just statistically plausible continuations.
@@ -154,11 +154,11 @@ effort, not a completed guarantee.
 - Alignment adjusts output tendencies, not necessarily genuine understanding or agreement — a distinction worth holding onto rather than resolving.
 - Alignment is an ongoing, imperfect, actively researched effort, not a one-time, completed fix.
 
-## 10. Further Reading
+## Further Reading
 
 - Search for "InstructGPT" and "RLHF" for the research that formalized much of the fine-tuning and alignment approach described in this chapter, and "Direct Preference Optimization" (DPO) for a widely-used alternative that skips the separate reward model.
 
-## 11. The Next Obvious Question
+## The Next Obvious Question
 
 *If a model can be fine-tuned to behave better, can it also be adjusted to run cheaper and faster, without retraining it from scratch or changing what it fundamentally knows?*
 

@@ -10,11 +10,11 @@
 
 ---
 
-## 1. Opening Question
+## Opening Question
 
 *So far, every model in this book has read and written nothing but text. How does a model built entirely around predicting the next token learn to also make sense of an image or a sound?*
 
-## 2. Real-World Story
+## Real-World Story
 
 A tourist is lost in a foreign city and doesn't speak the language. Rather
 than struggling to describe the street she's looking for in words she
@@ -34,7 +34,7 @@ sentence about that photograph into a form the model can actually
 connect — and, as this chapter covers, real systems build that bridge in
 more than one way.
 
-## 3. Worked Example
+## Worked Example
 
 Here's one concrete way a bridge like this gets built — not the only
 way, but a common and easy-to-follow one, in two stages. Recall Chapter
@@ -70,7 +70,7 @@ finer-grained, per-patch features instead of collapsing them into one
 vector, and training a separate small network to translate those patch
 features into the language model's own token space.
 
-## 4. Core Intuition
+## Core Intuition
 
 **Multimodality** is a model's ability to make sense of — and, with
 additional components, produce — more than one kind of data: text,
@@ -86,7 +86,7 @@ from the very start. Different real systems pick different bridges;
 knowing that there are several real patterns, not one, is more useful
 than assuming every multimodal model works the same way underneath.
 
-## 5. Technical Explanation
+## Technical Explanation
 
 Three broad patterns cover most real multimodal systems, though the exact
 engineering varies system to system.
@@ -161,7 +161,7 @@ understanding images without generating any at all, and vice versa;
 "multimodal" alone doesn't specify which direction, or both, a given
 system actually supports.
 
-## 6. Common Misconceptions
+## Common Misconceptions
 
 ### *"A multimodal model is really two separate models — one for vision, one for language — glued together, only exchanging a final summary."*
 
@@ -195,15 +195,15 @@ system actually supports.
 
 **Analogy:** Learning to recognize a friend's face doesn't automatically teach you to recognize their voice on the phone — that's a separate skill, even though both eventually feed into the same understanding of who you're talking to.
 
-## 7. Practical Implications
+## Practical Implications
 
 This is why multimodal AI products list specific supported input types — images, audio, PDFs, video — as a discrete, deliberately trained set rather than an open-ended "handles anything" claim: each one needed its own bridge and its own training data, whichever pattern that bridge uses. It's also why "multimodal" alone doesn't tell you everything about a product: whether it understands images, generates them, or both are separate questions (§5), and which architectural pattern a system uses can affect real, practical things — how directly text and image can influence each other, and how easily a new modality can be added later. And because the underlying generation mechanism hasn't changed in any of these patterns, a model can still "hallucinate" about image or audio content the same way Chapter 15 described for text — confidently describing something in an image that isn't actually there.
 
-## 8. Key Takeaway
+## Key Takeaway
 
 **A multimodal model doesn't have one universal architecture — it bridges different formats through a projector, a cross-attention channel, or a shared token vocabulary, and knowing which bridge a system actually uses matters more than assuming every multimodal model works the same way underneath.**
 
-## 9. One-Page Summary
+## One-Page Summary
 
 - Multimodality is a model's ability to make sense of — and, with additional components, produce — more than one kind of data: text, images, audio.
 - There's no single universal architecture: three broad real patterns are encoder-plus-projector, a cross-attention bridge, and unified early-fusion tokens (§5).
@@ -214,14 +214,14 @@ This is why multimodal AI products list specific supported input types — image
 - Supporting a new modality requires real additional training in any pattern; it isn't a free extension of the existing architecture.
 - Hallucination (Chapter 15) applies to non-text modalities too, since the underlying generation mechanism is unchanged.
 
-## 10. Further Reading
+## Further Reading
 
 - Search for "CLIP" or "contrastive image-text pretraining" for the whole-image/whole-caption alignment technique behind §3's worked example's first stage.
 - Search for "LLaVA" or "visual instruction tuning" for a concrete encoder-plus-projector system — the second stage of §3's worked example and §5's first pattern.
 - Search for "vision transformer" or "ViT" for more on patch-based image tokenization, used in more than one of §5's patterns.
 - Search for "Flamingo" for a concrete cross-attention-bridge system, and "Chameleon" or "early fusion multimodal" for a concrete unified-token system — both described conceptually in §5.
 
-## 11. The Next Obvious Question
+## The Next Obvious Question
 
 *So far, every model in this book runs its full set of parameters on every single input, regardless of how simple or complex that input is. Is there a way to build an enormous model without paying the full computational cost of using all of it on every request?*
 

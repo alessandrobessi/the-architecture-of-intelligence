@@ -10,11 +10,11 @@
 
 ---
 
-## 1. Opening Question
+## Opening Question
 
 *How can a computer represent the meaning of a word, not just the word itself?*
 
-## 2. Real-World Story
+## Real-World Story
 
 Imagine redrawing a map of the world's cities — not by geography, but by
 culture and economy. Paris and Rome end up near each other, not because
@@ -44,7 +44,7 @@ chapter, and of Chapter 11). The map metaphor is the same; the resident
 has just moved from "words" to "tokens," and turns out not to stay in one
 place.
 
-## 3. Worked Example
+## Worked Example
 
 Picture placing six words on this map: "cat," "kitten," "dog," "puppy,"
 "car," "truck." Because "cat" and "kitten" show up in almost identical
@@ -57,7 +57,7 @@ process ever explicitly told the system "animals are different from
 vehicles." That separation is entirely a byproduct of how differently the
 two groups of words are actually used in real text.
 
-## 4. Core Intuition
+## Core Intuition
 
 An **embedding** is a location — a point — assigned to a word (or a token)
 in a space with many dimensions, chosen so that words used in similar
@@ -85,7 +85,7 @@ distances — in this space. The relationship "capital of" tends to point in
 roughly the same direction wherever it appears: from "France" to "Paris"
 and from "Japan" to "Tokyo" alike.
 
-## 5. Technical Explanation
+## Technical Explanation
 
 An embedding is, precisely, a list of numbers — a vector — associated with
 each token in the vocabulary built in Chapter 3. These numbers aren't
@@ -128,7 +128,7 @@ this chapter's map. That revision process is called attention, and it's the
 subject of Chapter 11. Everything in this chapter describes a token's
 initial position, not its final, in-context one.
 
-## 6. Common Misconceptions
+## Common Misconceptions
 
 ### *The model stores dictionary definitions.*
 
@@ -156,7 +156,7 @@ initial position, not its final, in-context one.
 
 **Analogy:** A person's home address is a fixed, general-purpose location — but where they actually are right now, in context, changes throughout the day. This chapter describes the home address; Chapter 11 describes where the token actually is right now.
 
-## 7. Practical Implications
+## Practical Implications
 
 The same geometric idea extends beyond single tokens. Specialized
 embedding models can turn an entire sentence, query, or document passage
@@ -172,11 +172,11 @@ in all three cases, "find relevant information" is implemented,
 underneath, as "find nearby points in this space," just at the passage
 level rather than the single-token level this chapter has focused on.
 
-## 8. Key Takeaway
+## Key Takeaway
 
 **Embeddings place tokens as points in a high-dimensional space, where nearby points often reflect similar usage, and some recurring relationships can appear as geometric directions.**
 
-## 9. One-Page Summary
+## One-Page Summary
 
 - An embedding is a location (a vector — a list of numbers) assigned to each token in a high-dimensional space.
 - Words with similar meanings and contexts end up at nearby points, learned automatically from patterns of use, not assigned by hand.
@@ -186,11 +186,11 @@ level rather than the single-token level this chapter has focused on.
 - Common misconception: the model does not store definitions — it stores locations, learned from context of use.
 - The same geometric idea extends from single tokens to whole sentences or documents, via specialized embedding models — this passage-level version underlies semantic search, vector databases, and retrieval-augmented generation, covered later in the book.
 
-## 10. Further Reading
+## Further Reading
 
 - Search for visualizations of "word2vec" or embedding-space projections (e.g. via t-SNE or UMAP) to see real high-dimensional embeddings projected down to two dimensions for viewing.
 
-## 11. The Next Obvious Question
+## The Next Obvious Question
 
 *Now that a computer can represent the meaning of a word as a location in space, how can it learn to predict what word is likely to come next in a sentence?*
 

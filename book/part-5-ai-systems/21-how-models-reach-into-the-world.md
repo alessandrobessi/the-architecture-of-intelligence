@@ -10,11 +10,11 @@
 
 ---
 
-## 1. Opening Question
+## Opening Question
 
 *So far, every capability this book has covered has kept the model's own job the same: read context, produce text. Even Chapter 18's retrieval, which genuinely happens outside the model, only ever hands the model more text to read — it isn't something the model itself does. How does a model actually reach outside itself and take an action in the real world?*
 
-## 2. Real-World Story
+## Real-World Story
 
 A financial analyst is finishing a report and needs one more number: today's
 price for a particular stock. She doesn't have it memorized — and even if
@@ -39,7 +39,7 @@ they can run exact computation, or take an action with a real side
 effect, like sending a message or updating a record, that has no
 equivalent in simply retrieving a passage.
 
-## 3. Worked Example
+## Worked Example
 
 Ask a language model to multiply 847 by 2,193 using nothing but its own
 next-token prediction (Chapter 6), and it will often get a large
@@ -66,7 +66,7 @@ and the model reads it and reports it back to the user. The model didn't
 every time, instead of predicting a plausible-looking answer that's
 usually — but not reliably — correct.
 
-## 4. Core Intuition
+## Core Intuition
 
 **Tool calling** is a model producing a structured request — naming a
 specific available capability and the exact arguments it needs — instead
@@ -78,7 +78,7 @@ continues generating from, using the exact same generation mechanism
 of ability. It gains a new kind of thing it's allowed to write, and a
 system on the other end that knows what to do when it writes that.
 
-## 5. Technical Explanation
+## Technical Explanation
 
 A tool call rests on a division of labor that's easy to blur if you only
 see the finished product. The model is responsible for exactly one thing:
@@ -131,7 +131,7 @@ increasingly adopted open standard for *how the connection itself gets
 standardized*, which is why this chapter teaches it as a concrete instance
 of the durable idea, not as a separate mechanism.
 
-## 6. Common Misconceptions
+## Common Misconceptions
 
 ### *"When a model 'uses a tool,' it's directly running code or reaching out onto the internet itself."*
 
@@ -157,15 +157,15 @@ of the durable idea, not as a separate mechanism.
 
 **Analogy:** A standardized electrical outlet doesn't make any appliance more powerful — it just means any compliant appliance can plug into any compliant socket without a custom adapter built for that one pairing.
 
-## 7. Practical Implications
+## Practical Implications
 
 This is what sits underneath the labels "function calling," "tools," "plugins," and "connectors" across different AI products — different names for the same underlying pattern this chapter just walked through. It's also the direct answer to something Chapters 16 and 18 already raised: a model's trained knowledge has a fixed cutoff, and while RAG can reach live sources too, tool calling is the broader interface — retrieval is one kind of tool call, alongside exact computation and actions with a real-world effect (sending a message, updating a record) that don't reduce to fetching a passage at all. And because the available tools are always an explicit, predefined catalog, evaluating any AI product that claims to "use tools" or "connect via MCP" comes down to one practical question: exactly which tools were exposed to it, and by whom — not some open-ended claim about what the model can reach.
 
-## 8. Key Takeaway
+## Key Takeaway
 
 **A model doesn't reach into the world itself — it emits a precise, structured request naming a predefined tool and its arguments, and a separate system executes that request and hands the result back as new context for the model to keep reasoning from.**
 
-## 9. One-Page Summary
+## One-Page Summary
 
 - Tool calling is a model producing a structured request (a tool name plus arguments) instead of, or alongside, ordinary prose — using the same generation mechanism as always.
 - The model never executes anything itself. A surrounding orchestration layer parses the request, runs the real function, and inserts the result back into the context window as new text.
@@ -174,12 +174,12 @@ This is what sits underneath the labels "function calling," "tools," "plugins," 
 - The Model Context Protocol (MCP) standardizes the communication protocol between tools/data sources and model-serving applications, reducing custom, one-off protocol glue — real deployments still need their own configuration, authentication, and permissions, and MCP doesn't add any new reasoning capability.
 - Producing well-formed, correctly-targeted tool requests is itself a trained behavior (Chapter 19), not a free guarantee of the architecture.
 
-## 10. Further Reading
+## Further Reading
 
 - Search for "function calling" or "tool use" from any major model provider for concrete, current examples of the schema and request format described in §5.
 - Search for "Model Context Protocol" or "MCP" for the open standard described in §5 and its growing ecosystem of tool servers.
 
-## 11. The Next Obvious Question
+## The Next Obvious Question
 
 *Once a model can request a single tool and read back a single result, what happens when it's allowed to chain many such requests together on its own — deciding, after each result, what to do next — in order to accomplish a goal that takes more than one step?*
 

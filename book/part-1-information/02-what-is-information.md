@@ -10,11 +10,11 @@
 
 ---
 
-## 1. Opening Question
+## Opening Question
 
 *What does it actually mean for a computer to "know" or "read" something?*
 
-## 2. Real-World Story
+## Real-World Story
 
 In the 1830s, Samuel Morse faced a problem: a telegraph wire could only
 send one thing — pulses of electricity, short or long, present or absent.
@@ -36,7 +36,7 @@ states (a voltage is present, or it isn't). Everything a computer "reads,"
 of those two states — exactly like Morse's dots and dashes, just with far
 more layers stacked on top.
 
-## 3. Worked Example
+## Worked Example
 
 Trace what Morse's code does to one specific word: "FLEE." F is a
 moderately common letter (dot-dot-dash-dot). L is common too
@@ -52,7 +52,7 @@ E being the most probable letter in English and therefore carrying the
 least information every time it shows up — exactly the relationship the
 rest of this chapter makes precise.
 
-## 4. Core Intuition
+## Core Intuition
 
 Four ideas, in the order you need them:
 
@@ -86,7 +86,7 @@ precisely why Morse gave "E" the shortest code and "Q" the longest: he was,
 without using this language, matching code length to how much information
 each letter actually carried.
 
-## 5. Technical Explanation
+## Technical Explanation
 
 Formally, information theory (developed by Claude Shannon in 1948) defines
 the information content of an event as a function of how unlikely that
@@ -124,7 +124,7 @@ they've seen so far, and often making a deliberately randomized choice
 among the likely candidates rather than always picking the single most
 probable one (a mechanism Chapter 14 covers in detail).
 
-## 6. Common Misconceptions
+## Common Misconceptions
 
 ### *"A computer that processes information understands what that information means."*
 
@@ -142,7 +142,7 @@ probable one (a mechanism Chapter 14 covers in detail).
 
 **Analogy:** A weather forecast that just says "it will be exactly like every other day this month" can be a hundred pages long and still tell you almost nothing you didn't already expect.
 
-## 7. Practical Implications
+## Practical Implications
 
 You'll repeatedly encounter the words "entropy," "surprise," and
 "probability" in explanations of how AI models work — including
@@ -151,11 +151,11 @@ topic in Chapter 15). Recognizing that these are precise, quantifiable
 ideas, not vague metaphors, will make those explanations click into place
 rather than feeling hand-wavy.
 
-## 8. Key Takeaway
+## Key Takeaway
 
 **Information is not the symbols themselves or the act of processing them — it's the reduction in uncertainty that a probable or improbable symbol carries.**
 
-## 9. One-Page Summary
+## One-Page Summary
 
 - A symbol stands for something else purely by agreement, not by resemblance.
 - Computation is mechanical, rule-based symbol manipulation — it requires no understanding of what the symbols mean.
@@ -165,11 +165,11 @@ rather than feeling hand-wavy.
 - Modern AI systems are, at their foundation, probability machines operating over symbols — this framing will recur throughout the book.
 - None of this requires or implies that a computer "understands" anything — that question is separate and addressed later.
 
-## 10. Further Reading
+## Further Reading
 
 - Claude Shannon's 1948 paper "A Mathematical Theory of Communication" is the original source for the formal definition of information described here.
 
-## 11. The Next Obvious Question
+## The Next Obvious Question
 
 *If computers only handle information as symbols, how does something as messy and irregular as human language get turned into symbols a computer can actually work with?*
 

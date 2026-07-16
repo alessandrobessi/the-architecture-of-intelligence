@@ -10,11 +10,11 @@
 
 ---
 
-## 1. Opening Question
+## Opening Question
 
 *Now that a computer can represent meaning as a location in space, how can it use that to predict what comes next?*
 
-## 2. Real-World Story
+## Real-World Story
 
 Type the start of a text message on almost any phone, and a small row of
 suggested words appears above the keyboard: "I'll be there in about..." and
@@ -31,7 +31,7 @@ isn't planned in advance and then written down. It's built one token at a
 time, the same small act — "what's the most likely next piece?" — repeated
 until a stopping point is reached.
 
-## 3. Worked Example
+## Worked Example
 
 Take the sequence "The capital of France is ___." A model ranks every
 token in its vocabulary by how likely it is to fill that blank. "Paris"
@@ -49,7 +49,7 @@ can end up memorized during training, a nuance Chapter 9 returns to — but
 the computation itself is still performed fresh over the current
 sequence every time, not looked up whole.
 
-## 4. Core Intuition
+## Core Intuition
 
 **Prediction**, in this technical sense, means assigning a probability to
 every token in the vocabulary (built back in Chapter 3), representing how
@@ -74,7 +74,7 @@ you just did is exactly the kind of judgment a model makes at every single
 step — just spread across its entire vocabulary instead of three options,
 and computed freshly rather than felt intuitively.
 
-## 5. Technical Explanation
+## Technical Explanation
 
 Formally, a language model computes a probability distribution over its
 entire token vocabulary, conditioned on the sequence of tokens seen so far.
@@ -97,7 +97,7 @@ itself into an inconsistent corner mid-response, since no single step has
 a view of the entire planned answer — a limitation Chapter 23 revisits
 when discussing how reasoning models try to work around it.
 
-## 6. Common Misconceptions
+## Common Misconceptions
 
 ### *"The model plans out the entire sentence in advance, then writes it down."*
 
@@ -115,7 +115,7 @@ when discussing how reasoning models try to work around it.
 
 **Analogy:** A weather forecaster doesn't look up "what happened on a day exactly like this one" in a logbook — they compute a forecast from current conditions using a general-purpose model of the atmosphere.
 
-## 7. Practical Implications
+## Practical Implications
 
 Recognizing that generation happens one token at a time, using only what's
 already been produced, explains a lot of real, observable model behavior:
@@ -125,11 +125,11 @@ problems (it gives the model intermediate tokens to condition on before
 committing to a final answer), and why the very first token of a response
 can matter disproportionately to how the rest of the response unfolds.
 
-## 8. Key Takeaway
+## Key Takeaway
 
 **Text is generated one token at a time — predict a distribution, choose a token, append it, and predict again with the longer sequence as new context.**
 
-## 9. One-Page Summary
+## One-Page Summary
 
 - Prediction means assigning a probability to every token in the vocabulary, given everything before it.
 - Text generation is autoregressive: predict, choose, append, repeat — one token at a time.
@@ -137,11 +137,11 @@ can matter disproportionately to how the rest of the response unfolds.
 - No step has access to a hidden, pre-formed plan written before the first token — any plan the model follows had to be developed through the visible context, the same way as everything else.
 - This explains why models can contradict themselves mid-response, and why "thinking step by step" tends to help on harder problems.
 
-## 10. Further Reading
+## Further Reading
 
 - Search for "autoregressive language model" for the formal name of the generation process described here.
 
-## 11. The Next Obvious Question
+## The Next Obvious Question
 
 *Why not just count how often one word follows another in a giant table, instead of building something as complicated as this — isn't that simpler?*
 

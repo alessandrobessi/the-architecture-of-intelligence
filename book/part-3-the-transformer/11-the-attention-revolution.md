@@ -10,11 +10,11 @@
 
 ---
 
-## 1. Opening Question
+## Opening Question
 
 *How does a model decide which earlier words matter most when predicting the next one?*
 
-## 2. Real-World Story
+## Real-World Story
 
 Read this sentence: "The trophy doesn't fit in the brown suitcase because
 it is too big." Now read this one: "The trophy doesn't fit in the brown
@@ -33,7 +33,7 @@ depending on the specific case at hand, is exactly the ability a model
 needs — and exactly what was missing from every idea covered so far in
 this book.
 
-## 3. Worked Example
+## Worked Example
 
 Trace what has to happen, mechanically, once a model has read all the way
 through "big": "The trophy doesn't fit in the brown suitcase because it is
@@ -66,7 +66,7 @@ and, in doing so, effectively resolves the reference at that later point.
 The resolution moves forward with the sequence; it never travels backward
 into it.
 
-## 4. Core Intuition
+## Core Intuition
 
 **Attention** is a mechanism that lets a model, while processing any given
 token, look back across every earlier token in the sequence — never later
@@ -95,7 +95,7 @@ Positional encoding tags each token with information about its position in
 the sequence, so the model can tell not just *which* tokens are present,
 but *where* each one sits relative to the others.
 
-## 5. Technical Explanation
+## Technical Explanation
 
 Formally, for each token being processed, attention computes three
 things: a **query** (what this token is looking for), and, for every
@@ -144,7 +144,7 @@ as a separate signature — the specific method varies across models and
 has evolved since 2017, but the underlying need (order has to be supplied
 somehow, since attention itself carries none) hasn't changed.
 
-## 6. Common Misconceptions
+## Common Misconceptions
 
 ### *"Attention means the model reads one word at a time, left to right, like a person reading a sentence."*
 
@@ -170,7 +170,7 @@ somehow, since attention itself carries none) hasn't changed.
 
 **Analogy:** Numbering the pages of a shuffled manuscript tells you the correct order — it doesn't, by itself, tell you what the story means.
 
-## 7. Practical Implications
+## Practical Implications
 
 Understanding attention explains a genuinely important practical fact:
 because standard attention computes a relevance score between every pair
@@ -184,11 +184,11 @@ engineering constraint, not an arbitrary limit. It also explains
 "attention visualization" tools some AI researchers use to inspect which
 earlier words a model weighted heavily when producing a given output.
 
-## 8. Key Takeaway
+## Key Takeaway
 
 **Attention lets a model weigh its own and every earlier token's relevance when interpreting or predicting from any given token — never later ones, by design — and positional encoding is what lets it also know where each token sits in the sequence.**
 
-## 9. One-Page Summary
+## One-Page Summary
 
 - Attention computes, for each token, a weight reflecting how relevant it itself and every *earlier* token is to it right now — a direct, numerical version of Chapter 4's "context."
 - This weighing happens in parallel across the whole sequence during training, not as a sequential left-to-right scan — but it is restricted to earlier tokens only.
@@ -199,12 +199,12 @@ earlier words a model weighted heavily when producing a given output.
 - This is the mechanism Chapter 5 deferred: it's what revises a token's starting embedding into a context-specific one.
 - Standard attention's cost grows faster than sequence length, which is a real, practical reason context windows (Chapter 16) have size limits.
 
-## 10. Further Reading
+## Further Reading
 
 - Look up "Attention Is All You Need" (Vaswani et al., 2017) for the original technical source behind this chapter, first previewed informally in Chapter 1 — including its description of masked ("causal") self-attention specifically for generative decoding.
 - Search for "self-attention," "query key value," "multi-head attention," and "causal masking" for more formal treatments of the mechanisms described here.
 
-## 11. The Next Obvious Question
+## The Next Obvious Question
 
 *Once a model can weigh relevance across an entire passage, how do you actually assemble that mechanism into a full working system that can be trained end to end?*
 

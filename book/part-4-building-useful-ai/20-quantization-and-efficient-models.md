@@ -10,11 +10,11 @@
 
 ---
 
-## 1. Opening Question
+## Opening Question
 
 *Can a trained model be made to run cheaper and faster, without retraining it from scratch or changing what it fundamentally knows?*
 
-## 2. Real-World Story
+## Real-World Story
 
 A professional camera captures a photo in RAW format: an enormous amount
 of precise brightness and color data for every single pixel, far more
@@ -29,7 +29,7 @@ in any way a viewer would notice; it's simply been stored with just
 enough precision to look right, instead of far more precision than
 anyone could use.
 
-## 3. Worked Example
+## Worked Example
 
 Take a single parameter from one of Chapter 8's neural network
 connections. Stored at full precision, it might carry many decimal digits
@@ -52,7 +52,7 @@ actually afford it. Done well, the result uses a fraction of the memory
 and computation to store and run, while leaving overall behavior nearly
 as accurate as before.
 
-## 4. Core Intuition
+## Core Intuition
 
 **Quantization** is reducing the numerical precision used to store a
 model's parameters (Chapter 8) — from a high-precision representation
@@ -65,7 +65,7 @@ quantization, aimed at making inference (Chapter 14) faster and cheaper
 without retraining the model from scratch or fundamentally changing what
 it has learned.
 
-## 5. Technical Explanation
+## Technical Explanation
 
 This works, at a basic level, because of exactly the property Chapter 8
 established: a neural network's capability is distributed across the
@@ -102,7 +102,7 @@ of these techniques repeat the training process (Chapter 9) — they aim to
 execute an approximation of the already-learned function more efficiently
 at inference time, not to relearn it.
 
-## 6. Common Misconceptions
+## Common Misconceptions
 
 ### *"Quantization makes a model noticeably dumber, in a way any user would clearly notice."*
 
@@ -120,7 +120,7 @@ at inference time, not to relearn it.
 
 **Analogy:** A compressed photo and its RAW original show the same scene, even though the compressed file's actual pixel values are different from the original's — compressing the file didn't send a different photographer back to reshoot it smaller.
 
-## 7. Practical Implications
+## Practical Implications
 
 This is a direct, practical reason some AI models can run on a personal
 laptop or phone despite having been trained with the enormous compute
@@ -133,11 +133,11 @@ bigger, more capable models created by scaling are precisely what makes
 efficient-inference techniques like quantization commercially essential,
 not optional.
 
-## 8. Key Takeaway
+## Key Takeaway
 
 **Quantization shrinks a model's memory and compute needs by storing its parameters more coarsely — exploiting the fact that a network's behavior lives in the overall pattern of billions of weights, not in any single weight's exact precision.**
 
-## 9. One-Page Summary
+## One-Page Summary
 
 - Quantization approximates a model's stored parameters at lower numerical precision, shrinking memory and compute needs — the values change, but the architecture and (as closely as possible) the behavior are preserved.
 - This works partly because network behavior lives in the overall pattern of parameters (Chapter 8), not any single weight's exact value; the best methods also calibrate rounding against real data rather than relying purely on independent errors washing out.
@@ -146,12 +146,12 @@ not optional.
 - Efficient inference is the broader category including quantization, KV/prefix caching, and specialized hardware/software — none of which retrain or fundamentally change what the model learned.
 - This is why some models can run on ordinary consumer devices despite requiring enormous compute to train.
 
-## 10. Further Reading
+## Further Reading
 
 - Search for "post-training quantization," "GPTQ," and "4-bit/8-bit inference" for concrete, current examples of calibrated quantization techniques described in this chapter.
 - Search for "KV cache" and "prefix caching" for more on the central inference-efficiency technique described in §5.
 
-## 11. The Next Obvious Question
+## The Next Obvious Question
 
 *So far, everything this book has covered happens entirely inside the model's own reasoning — reading, predicting, retrieving, remembering. How does a model actually reach outside itself and take an action in the real world?*
 

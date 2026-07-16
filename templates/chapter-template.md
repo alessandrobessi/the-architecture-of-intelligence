@@ -10,15 +10,15 @@
 
 ---
 
-## 1. Opening Question
+## Opening Question
 
 *[The one question this chapter exists to answer, in plain language — no jargon.]*
 
-## 2. Real-World Story
+## Real-World Story
 
 [A concrete, non-technical scenario that motivates the question, before any terminology appears.]
 
-## 3. Worked Example
+## Worked Example
 
 [A second, fully-written-out concrete example that reinforces the same core idea from a
 different angle than the story above — never a recap of it, and never a diagram (see
@@ -26,15 +26,15 @@ style-guide.md §1 and blueprint.md's "No Diagrams" section). Walk through it st
 prose, the way you'd explain it out loud to someone: introduce the specific case, trace what
 happens, and land on the same insight the story already pointed at, now doubly grounded.]
 
-## 4. Core Intuition
+## Core Intuition
 
 [Plain-language explanation — one new idea only, grounded in the story/example above.]
 
-## 5. Technical Explanation
+## Technical Explanation
 
 [Precise, technically correct explanation — rigor without implementation detail. No code, no math/formulas.]
 
-## 6. Common Misconceptions
+## Common Misconceptions
 
 ### *[...]*
 
@@ -46,26 +46,26 @@ happens, and land on the same insight the story already pointed at, now doubly g
 
 [Repeat block for each misconception covered. Mirror each as one row in misconceptions.md.]
 
-## 7. Practical Implications
+## Practical Implications
 
 [Why this matters when the reader encounters this concept in a product announcement,
 engineering blog, or conversation.]
 
-## 8. Key Takeaway
+## Key Takeaway
 
 **[One bolded, memorable sentence — the single idea a reader should carry out of this
 chapter if they remember nothing else. Not a paragraph, not a diagram — the chapter's one
 load-bearing sentence.]**
 
-## 9. One-Page Summary
+## One-Page Summary
 
 - [Bullet recap, 5–8 bullets max]
 
-## 10. Further Reading
+## Further Reading
 
 - [Optional external references]
 
-## 11. The Next Obvious Question
+## The Next Obvious Question
 
 *[The question this chapter's answer naturally provokes — becomes the next chapter's Opening Question.]*
 

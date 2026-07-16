@@ -10,11 +10,11 @@
 
 ---
 
-## 1. Opening Question
+## Opening Question
 
 *Once a model can weigh relevance across an entire passage, how do you actually assemble that mechanism into a full working system?*
 
-## 2. Real-World Story
+## Real-World Story
 
 Picture a manuscript passed through twenty-four rounds of editing, but
 with a constraint: at every point, an editor may only weigh a passage
@@ -34,7 +34,7 @@ coherent than any one editor could have produced alone. The transformer
 architecture builds a token's understanding of its own context the same
 way: not in one shot, but through many repeated rounds of refinement.
 
-## 3. Worked Example
+## Worked Example
 
 Trace what happens once the model reaches the position of "big" itself,
 in Chapter 11's trophy sentence. In the first round, an attention step
@@ -55,7 +55,7 @@ building on the last, and the representation at this position — still
 only ever looking backward — ends up carrying a rich, specific
 understanding of exactly what "big" is doing in this exact sentence.
 
-## 4. Core Intuition
+## Core Intuition
 
 A **transformer block** combines two sub-steps, applied one after the
 other: an attention step (Chapter 11), where every token gathers relevant
@@ -74,7 +74,7 @@ more local patterns; later blocks into more abstract ones) — though, as
 with everything in this book so far, nobody designs this division of
 labor directly. It emerges from what reduces loss most reliably.
 
-## 5. Technical Explanation
+## Technical Explanation
 
 Two additional design details make stacking dozens of blocks actually
 work in practice, without each round of refinement washing out or
@@ -94,7 +94,7 @@ probability-distribution calculation described there, just computed from
 representations that have now been repeatedly refined by attention and
 feed-forward processing, rather than from raw, unrefined embeddings.
 
-## 6. Common Misconceptions
+## Common Misconceptions
 
 ### *"Every layer in a transformer does the same thing — it's the same computation repeated identically."*
 
@@ -112,7 +112,7 @@ feed-forward processing, rather than from raw, unrefined embeddings.
 
 **Analogy:** Twenty-four rounds of editing don't just take longer than one round — they produce a qualitatively more polished manuscript than one editor working twenty-four times as long alone.
 
-## 7. Practical Implications
+## Practical Implications
 
 This is why model "depth" (the number of stacked blocks) shows up as a
 headline architectural detail alongside parameter count (Chapter 8) — it's
@@ -122,11 +122,11 @@ described: depth combined with attention gives a network many flexible,
 independently-useful places to put additional parameters, rather than
 just making one computation bigger.
 
-## 8. Key Takeaway
+## Key Takeaway
 
 **A transformer is many stacked blocks, each combining attention and individual refinement — depth is what turns one weighing step into a rich, layered understanding.**
 
-## 9. One-Page Summary
+## One-Page Summary
 
 - A transformer block combines an attention step (gathering relevant context from itself and every earlier token) with a feed-forward step (refining each token's representation individually).
 - A transformer stacks many such blocks, each with its own independently learned parameters, each refining the output of the one before it.
@@ -135,11 +135,11 @@ just making one computation bigger.
 - The final, repeatedly-refined representations feed into the next-token prediction step from Chapter 6.
 - Depth (number of blocks) is a distinct architectural lever from parameter count, and a real contributor to why transformers scale so productively.
 
-## 10. Further Reading
+## Further Reading
 
 - Look up "residual connections" and "layer normalization" for the formal names of the two stabilizing techniques described in this chapter.
 
-## 11. The Next Obvious Question
+## The Next Obvious Question
 
 *Given this machinery existed conceptually for a while, what specifically made it good enough to power something like ChatGPT?*
 

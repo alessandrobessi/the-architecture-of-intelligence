@@ -10,11 +10,11 @@
 
 ---
 
-## 1. Opening Question
+## Opening Question
 
 *Once a model can request a single tool and read back a single result, what happens when it's allowed to chain many such requests together on its own — deciding, after each result, what to do next — in order to accomplish a goal that takes more than one step?*
 
-## 2. Real-World Story
+## Real-World Story
 
 A manager asks a new employee to "get the numbers ready for the board
 meeting." That's the entire instruction. The employee isn't handed a
@@ -32,7 +32,7 @@ wasn't more knowledge or a smarter employee. It was the freedom to decide
 the next step herself, based on what she'd just found, and to keep going
 until the goal — not any single predetermined step — was actually met.
 
-## 3. Worked Example
+## Worked Example
 
 Consider a coding assistant asked to fix a failing test. Step one: it
 requests the test suite be run (a tool call, Chapter 21) and reads back a
@@ -54,7 +54,7 @@ separate, disconnected tool calls a human had to manually chain together
 one at a time. With it, you have something that looks like it's pursuing
 a goal.
 
-## 4. Core Intuition
+## Core Intuition
 
 This book uses **AI agent** for a model operating inside a loop: read the
 current context (including the results of any tool calls made so far) →
@@ -76,7 +76,7 @@ for systems built around a fixed planner, an external controller, or a
 verifier standing outside the model — this chapter's definition is the
 specific, mechanism-level case that pattern most commonly takes.)
 
-## 5. Technical Explanation
+## Technical Explanation
 
 The mechanism underneath an agent is exactly Chapter 21's tool-calling
 loop, run more than once without a human manually re-prompting in
@@ -117,7 +117,7 @@ specifically that the model picks its own next step without a human
 re-prompting between steps — not that it has goals, preferences, or
 persistence beyond the task and context it was given.
 
-## 6. Common Misconceptions
+## Common Misconceptions
 
 ### *"An agent is a fundamentally different, more advanced kind of AI model."*
 
@@ -143,15 +143,15 @@ persistence beyond the task and context it was given.
 
 **Analogy:** Giving the new employee more time to keep working unsupervised can lead to a better report — or to her confidently going further down the wrong path, unless someone checks in before it goes too far.
 
-## 7. Practical Implications
+## Practical Implications
 
 This is the mechanism behind "AI agent," "agentic workflow," and "autonomous coding agent" branding across current products — all names for the loop this chapter just described, wrapped around Chapter 21's tool calling. It's also why agent products are typically shipped with visible safeguards: a maximum number of steps, a spending cap, or an explicit approval gate before a consequential action — because nothing about the mechanism itself guarantees the loop stays on track or stops at the right time. And it explains why an agent given a vague goal can take a wildly different path than a person would have expected: it's genuinely deciding its own sequence of steps, not following a script anyone reviewed in advance.
 
-## 8. Key Takeaway
+## Key Takeaway
 
 **An AI agent isn't a smarter model — it's the same inference-and-tool-calling loop from Chapter 21, run repeatedly, with the model deciding after each result what to do next, until the loop's stopping condition — its own judgment, a separate verifier, or a hard limit — says otherwise.**
 
-## 9. One-Page Summary
+## One-Page Summary
 
 - An AI agent is a model operating inside a loop: read context, decide the next action, execute it (often a tool call), append the result, repeat.
 - The mechanism is identical to Chapter 21's single tool call — what's new is that the model itself decides whether another step is needed, without a human re-prompting in between.
@@ -161,12 +161,12 @@ This is the mechanism behind "AI agent," "agentic workflow," and "autonomous cod
 - "Autonomous" means the loop makes its own sequential decisions without human intervention between steps — not independent goals or persistent desires.
 - Looping doesn't guarantee correctness; each step is still generated the same fallible way, and errors can compound across steps as easily as they can get caught.
 
-## 10. Further Reading
+## Further Reading
 
 - Search for "AI agents" or "agentic workflows" from any major model provider for concrete, current examples of the loop described in §5.
 - Search for "ReAct" (reason + act) for an early, influential description of interleaving a model's own reasoning with tool calls in a loop.
 
-## 11. The Next Obvious Question
+## The Next Obvious Question
 
 *So far, a model produces one predicted step at a time, whether working alone or looping through an agent. What happens when a model is specifically trained to spend more of its own generated text working through a problem before committing to a final answer?*
 

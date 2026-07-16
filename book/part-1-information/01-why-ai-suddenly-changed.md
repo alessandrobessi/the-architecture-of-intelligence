@@ -10,11 +10,11 @@
 
 ---
 
-## 1. Opening Question
+## Opening Question
 
 *Why did AI suddenly get so good, seemingly overnight?*
 
-## 2. Real-World Story
+## Real-World Story
 
 In 2016, if you needed to reset a password online, you probably talked to a
 chatbot first. It asked you to pick from a menu: "Billing," "Technical
@@ -35,7 +35,7 @@ particular system's ability to handle *language you hadn't rehearsed*, on
 *any topic*, without being explicitly programmed for it. That shift, from
 narrow and scripted to broad and improvised, is what this book is about.
 
-## 3. Worked Example
+## Worked Example
 
 A quick thought experiment makes the "why now" question concrete, using
 just two ingredients for now — the rest of this chapter explains the
@@ -60,7 +60,7 @@ still wasn't the whole story — which is exactly why "just add more data"
 or "just use a bigger chip" announcements, taken in isolation, tend to
 overpromise.
 
-## 4. Core Intuition
+## Core Intuition
 
 Progress in AI did not arrive as a single breakthrough. It arrived as
 three long-running trends quietly crossing a threshold at the same time —
@@ -91,7 +91,7 @@ became available together — and the resulting systems crossed a threshold
 where their output stopped looking like "autocomplete" and started looking
 like understanding.
 
-## 5. Technical Explanation
+## Technical Explanation
 
 Precisely: modern AI language systems are trained using *self-supervised
 learning* — they are shown enormous quantities of ordinary text and given
@@ -121,7 +121,7 @@ smooth improvement on another. We'll return to this debate when we cover
 evaluation in Part VI; for now, treat "emergent abilities" as a real and
 useful observation, not a fully settled explanation.
 
-## 6. Common Misconceptions
+## Common Misconceptions
 
 ### *"AI suddenly became conscious or started truly understanding language overnight."*
 
@@ -139,7 +139,7 @@ useful observation, not a fully settled explanation.
 
 **Analogy:** A phrasebook can only handle sentences someone already translated for you. A fluent speaker can handle a sentence they've never heard before.
 
-## 7. Practical Implications
+## Practical Implications
 
 When you read an AI company's announcement, watch for which of the three
 ingredients it's claiming credit for. "We trained on more data," "we used
@@ -149,11 +149,11 @@ improvement is. Recognizing this distinction is the first step toward
 telling a genuine advance apart from a marketing headline — a skill this
 book aims to give you throughout.
 
-## 8. Key Takeaway
+## Key Takeaway
 
 **Modern AI is what you get when internet-scale data, parallel compute, and a new kind of architecture arrive together — not a single sudden invention.**
 
-## 9. One-Page Summary
+## One-Page Summary
 
 - What the public experienced as a sudden leap was the convergence of three long-running trends: data, compute, and a new architecture.
 - Internet-scale text gave systems enough examples of language patterns to learn from.
@@ -164,12 +164,12 @@ book aims to give you throughout.
 - At sufficient scale, systems perform tasks they were never explicitly trained for — a side effect of getting very good at prediction.
 - None of this implies the system is conscious or "understands" the way a human does; it implies a threshold of usefulness was crossed.
 
-## 10. Further Reading
+## Further Reading
 
 - Look up the 2017 paper that introduced the transformer architecture ("Attention Is All You Need") for the original technical source, once you've reached Chapter 11.
 - Search engineering blogs from major AI labs for their public "scaling laws" writeups, which document the data/compute/performance relationship described here.
 
-## 11. The Next Obvious Question
+## The Next Obvious Question
 
 *If all of this depends on a computer processing "information," what does it actually mean for a computer to read, know, or compute with information in the first place?*
 

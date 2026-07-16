@@ -10,11 +10,11 @@
 
 ---
 
-## 1. Opening Question
+## Opening Question
 
 *This book has built one complete, durable mental model of how modern AI works, chapter by chapter. Now that the model exists, how does a reader actually keep it current as the field keeps moving?*
 
-## 2. Real-World Story
+## Real-World Story
 
 A year after finishing this book, a reader sees a headline naming an AI
 technique she's never heard of. A year earlier, that unfamiliar name
@@ -31,7 +31,7 @@ a small number of durable mechanisms and a habit of asking where any new
 thing fits against them, and that habit doesn't expire when the specific
 vocabulary changes.
 
-## 3. Worked Example
+## Worked Example
 
 Picture that same reader opening an unfamiliar technical blog post for
 the first time since finishing this book. It uses a term she's never
@@ -52,7 +52,7 @@ would have to fit into. That's the actual skill this book has been
 aiming to build the whole way through: not a fixed list of terms, but a
 structure sturdy enough to absorb new ones.
 
-## 4. Core Intuition
+## Core Intuition
 
 Keeping this book's mental model current isn't about consuming more AI
 content faster. It's a small number of durable habits: read primary
@@ -67,7 +67,7 @@ concept from this book to someone else, since that act — not just
 recognizing an idea while reading about it — is the real test of whether
 understanding has actually stuck.
 
-## 5. Technical Explanation
+## Technical Explanation
 
 Be precise about what this book did and didn't do. It did not teach
 every AI technique that will ever exist — that was never possible, and
@@ -93,7 +93,7 @@ technique attaches near Chapter 28. The map doesn't need a new chapter
 for every new leaf; it only needs to be sturdy enough at the trunk, which
 is precisely what Parts I through III were built to be.
 
-## 6. Common Misconceptions
+## Common Misconceptions
 
 ### *"Now that I've finished this book, I know everything I need to know about AI."*
 
@@ -119,15 +119,15 @@ is precisely what Parts I through III were built to be.
 
 **Analogy:** Learning to read sheet music doesn't require becoming a professional composer — it requires learning what the symbols mean, which is precisely the kind of thing this book spent thirty chapters doing for AI's own vocabulary.
 
-## 7. Practical Implications
+## Practical Implications
 
 Concretely, going forward: read primary technical announcements directly, applying Chapter 29's five questions as a habit rather than a one-time exercise. When an unfamiliar term appears, place it against the mental model this book built — tokens, embeddings, attention, training, inference, and the specific additions layered on top of them — before reaching for an outside explainer. Explain a concept from this book to someone else periodically; that act of teaching, not passive recognition while reading, is the real test the book's own Feynman-test teaching philosophy has relied on since Chapter 1. And revisit earlier chapters' misconception sections occasionally — misconceptions are exactly the details that fade fastest from memory, even once the underlying concept itself feels solid.
 
-## 8. Key Takeaway
+## Key Takeaway
 
 **This book didn't hand you a fixed snapshot of today's AI — it built you a mental model durable enough to make sense of whatever specific technique, benchmark, or headline comes next.**
 
-## 9. One-Page Summary
+## One-Page Summary
 
 - This book built a durable set of mechanisms — tokens, embeddings, attention, training, and the recurring pattern of specific additions closing specific gaps — not an exhaustive, final inventory of every AI technique.
 - The useful ongoing question for something new isn't "which chapter covers this," but "which existing part of this mental model does this attach to."
@@ -137,12 +137,12 @@ Concretely, going forward: read primary technical announcements directly, applyi
 - Revisiting earlier chapters' misconception sections periodically helps, since misconceptions fade faster than the core concepts they correct.
 - Finishing this book without needing math or code at any point is a reasonable basis for expecting primary AI sources to be more within reach — worth testing directly, not just assuming.
 
-## 10. Further Reading
+## Further Reading
 
 - Revisit `blueprint.md`'s Concept Dependency Graph directly as a map — not a list of chapters already read, but a structure to keep attaching new developments to.
 - Revisit Chapter 29's five questions the next time an unfamiliar AI announcement appears, as direct practice rather than review.
 
-## 11. The Next Obvious Question
+## The Next Obvious Question
 
 *This book began by asking why AI suddenly seemed to change so quickly. That question now has a real, mechanism-level answer, built piece by piece across thirty chapters. The question that's left isn't in this book anymore — it's whatever you choose to build, evaluate, or question next, now that you have the tools to do it rigorously.*
 

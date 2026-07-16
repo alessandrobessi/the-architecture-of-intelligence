@@ -10,11 +10,11 @@
 
 ---
 
-## 1. Opening Question
+## Opening Question
 
 *Is there a predictable relationship between how big a model is and how good it becomes — and does scaling ever stop paying off?*
 
-## 2. Real-World Story
+## Real-World Story
 
 Chapter 1 described three ingredients converging: more data, more compute,
 and a new architecture. What it didn't explain is something researchers
@@ -32,7 +32,7 @@ model ten or a hundred times larger will be, before ever training it.
 Predictability at this scale, in a field this young, was not something
 researchers expected to find.
 
-## 3. Worked Example
+## Worked Example
 
 Train four models of increasing size — say, roughly ten times more
 compute each time — and plot their loss. The jump from the smallest to
@@ -47,7 +47,7 @@ precisely how AI labs decide whether a massive training run is likely to
 be worth its cost before committing hundreds of millions of dollars to
 find out.
 
-## 4. Core Intuition
+## Core Intuition
 
 A **scaling law**, in this context, is an empirical finding: as you
 increase training data, parameters, and compute together, a language
@@ -73,7 +73,7 @@ helping at all. Scaling a language model follows the same general pattern
 that shows up whenever you keep adding more of one input to a process that
 has other, non-scaling constraints in the background.
 
-## 5. Technical Explanation
+## Technical Explanation
 
 Scaling laws describe loss decreasing roughly as a power-law function of
 compute, parameters, and data — meaning each additional order of magnitude
@@ -105,7 +105,7 @@ smaller loss improvement, and practical ceilings exist too — the amount of
 high-quality training text available, the cost of the compute itself, and
 the energy required to produce it.
 
-## 6. Common Misconceptions
+## Common Misconceptions
 
 ### *"Scaling laws mean you can scale forever with no real limit."*
 
@@ -123,7 +123,7 @@ the energy required to produce it.
 
 **Analogy:** A commercial airliner is a better choice than a small plane for a transatlantic flight, and a much worse choice for a quick hop between two nearby small towns — bigger isn't better in some absolute sense, it's better for a particular job.
 
-## 7. Practical Implications
+## Practical Implications
 
 This is why AI lab announcements so often lead with parameter counts and
 training compute figures — they're citing exactly the quantities scaling
@@ -134,11 +134,11 @@ about some other, separately-earned capability? The two are related but
 not identical, and conflating them is one of the more common ways AI
 announcements oversell.
 
-## 8. Key Takeaway
+## Key Takeaway
 
 **Scaling laws let researchers predict a large model's loss from smaller experiments — a real, reliable, but diminishing-returns pattern, not an unlimited or unconditional guarantee.**
 
-## 9. One-Page Summary
+## One-Page Summary
 
 - Scaling laws are an empirical finding: loss falls in a smooth, forecastable way as data, parameters, and compute increase together — visible as a straight line once both axes are stretched into equal ratios (×10, ×100, ×1000), which is what reveals the underlying power-law relationship.
 - A small remaining part of loss ("irreducible loss") doesn't shrink with scale alone — the power-law description applies to the part that does.
@@ -147,11 +147,11 @@ announcements oversell.
 - Returns diminish with scale, and practical ceilings exist: available high-quality data, compute cost, and energy.
 - Scaling laws predict loss on the training objective specifically — not every downstream capability, and not an unconditional case for "bigger is always better."
 
-## 10. Further Reading
+## Further Reading
 
 - Search for "neural scaling laws" (Kaplan et al., 2020) and the "Chinchilla" paper (Hoffmann et al., 2022) for the original research behind this chapter.
 
-## 11. The Next Obvious Question
+## The Next Obvious Question
 
 *Now that a model can learn enormous numbers of parameters and improve predictably with scale, how does it actually decide which earlier words matter most when predicting the next one?*
 

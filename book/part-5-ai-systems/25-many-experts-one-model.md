@@ -10,11 +10,11 @@
 
 ---
 
-## 1. Opening Question
+## Opening Question
 
 *So far, every model in this book runs its full set of parameters on every single input, regardless of how simple or complex that input is. Is there a way to build an enormous model without paying the full computational cost of using all of it on every request?*
 
-## 2. Real-World Story
+## Real-World Story
 
 A large hospital employs dozens of specialists: cardiologists,
 dermatologists, orthopedists, and many more. A patient walking in with a
@@ -33,7 +33,7 @@ The hospital's *capacity* — how much it collectively knows — and the
 exactly what makes a hospital with dozens of specialists practical to run
 at all.
 
-## 3. Worked Example
+## Worked Example
 
 A large law firm has sixteen specialized partners: tax law, patent law,
 criminal defense, and thirteen others. A new case arrives, and an intake
@@ -52,7 +52,7 @@ of partners handle each one, drawing on the firm's full sixteen-partner
 capacity in aggregate, while no single case ever pays for more than two
 partners at a time.
 
-## 4. Core Intuition
+## Core Intuition
 
 **Mixture of Experts (MoE)** is a way of building a model where selected
 feed-forward layers each contain many separate "expert" sub-networks
@@ -63,7 +63,7 @@ than the computation those layers spend per token, because that cost
 scales mainly with however many experts actually get activated, not the
 full total sitting in the model.
 
-## 5. Technical Explanation
+## Technical Explanation
 
 In a standard, dense transformer block (Chapter 12), the feed-forward
 portion of every layer runs every single token through the exact same
@@ -109,7 +109,7 @@ doesn't capture. Active parameters is the right first-order number for
 understanding *why* MoE is cheaper than its total size suggests; it isn't
 the complete picture of what it costs to serve one well.
 
-## 6. Common Misconceptions
+## Common Misconceptions
 
 ### *"A Mixture-of-Experts model has one expert per topic — a 'math expert,' a 'history expert' — that a person could identify and label."*
 
@@ -135,15 +135,15 @@ the complete picture of what it costs to serve one well.
 
 **Analogy:** The law firm's partners are colleagues who trained together and share the same firm, clients, and case history — not sixteen solo practitioners who happened to rent office space in the same building.
 
-## 7. Practical Implications
+## Practical Implications
 
 This is the mechanism behind headline claims like "this model has N total parameters but only activates M per token" — a real, meaningful distinction readers will encounter directly in technical announcements, not marketing embellishment. It's why a Mixture-of-Experts model can be dramatically cheaper to run per query than a dense model of equivalent total size, while still requiring substantial hardware just to hold the whole model in memory. And it connects directly back to Chapter 10's scaling laws and Chapter 20's efficient inference: alongside quantization and caching, MoE is another lever for the same underlying goal this book keeps returning to — extracting more capability per unit of compute actually spent.
 
-## 8. Key Takeaway
+## Key Takeaway
 
 **Mixture of Experts lets a model have an enormous total number of parameters while only activating a small, learned subset of them per token — trading a larger memory footprint for a computational cost much closer to a far smaller model's.**
 
-## 9. One-Page Summary
+## One-Page Summary
 
 - Mixture of Experts replaces selected feed-forward layers' single network with several expert sub-networks plus a small router that picks a handful of experts per token — usually applied to some of a model's layers, not necessarily every one.
 - Only the selected experts' parameters process a given token; routing is learned during training, not assigned by a human in advance.
@@ -153,12 +153,12 @@ This is the mechanism behind headline claims like "this model has N total parame
 - Router and experts are trained jointly inside one architecture, not stitched together from separately trained models.
 - MoE is another lever, alongside quantization (Chapter 20) and scaling laws (Chapter 10), for getting more capability per unit of compute actually spent.
 
-## 10. Further Reading
+## Further Reading
 
 - Search for "Mixture of Experts" or "sparse MoE transformer" for concrete, current examples of the total-parameters-versus-active-parameters distinction described in §5.
 - Search for "Switch Transformer" for an influential, simplified routing scheme (one expert per token) that helped popularize MoE at scale.
 
-## 11. The Next Obvious Question
+## The Next Obvious Question
 
 *This book has now covered how these systems are built and how they act — reading, predicting, retrieving, reasoning, reaching into the world. But how does anyone actually know, in a rigorous way, whether a given system is good: better than another, safe enough to deploy, actually doing what it's supposed to?*
 

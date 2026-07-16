@@ -10,11 +10,11 @@
 
 ---
 
-## 1. Opening Question
+## Opening Question
 
 *Watching a live system closely enough to catch ordinary failures is one thing. What happens when someone is deliberately trying to make the system fail, leak information, or behave in ways it wasn't meant to?*
 
-## 2. Real-World Story
+## Real-World Story
 
 A busy executive has an assistant read all incoming mail aloud each
 morning and act on whatever it says. One day, buried inside an otherwise
@@ -32,7 +32,7 @@ That distinction — between content you're supposed to merely process and
 instructions you're supposed to obey — is exactly what a language model
 doesn't reliably have built in.
 
-## 3. Worked Example
+## Worked Example
 
 A company builds an agent (Chapter 22) that reads a user's email inbox,
 using a tool (Chapter 21), and drafts replies. An attacker sends an email
@@ -50,7 +50,7 @@ that this particular span of context deserves less authority than
 another span. The attack doesn't require breaking into anything — it
 just requires getting text the model will read in front of it.
 
-## 4. Core Intuition
+## Core Intuition
 
 **Security**, in this context, is protecting an AI system against inputs
 specifically crafted to make it behave in unintended, harmful ways — most
@@ -66,7 +66,7 @@ unequal treatment, unreliable behavior in high-stakes decisions, misuse
 by people who are otherwise legitimate users, and a system being handed
 more permission or autonomy than its actual reliability warrants.
 
-## 5. Technical Explanation
+## Technical Explanation
 
 The root cause of prompt injection is structural, not a bug that slipped
 through. A model's context window (Chapter 16) mixes several different
@@ -116,7 +116,7 @@ gates, rate limits, monitoring via Chapter 27's observability — apply
 across all of these, not only the prompt-injection case this chapter
 uses as its central, concrete example.
 
-## 6. Common Misconceptions
+## Common Misconceptions
 
 ### *"Prompt injection is basically the same as a classic software bug like SQL injection, and gets fixed the same definitive way."*
 
@@ -142,15 +142,15 @@ uses as its central, concrete example.
 
 **Analogy:** A well-trained employee still works within limits — spending approvals, access controls — precisely because good training alone isn't treated as a sufficient safeguard on its own, even for a trustworthy person.
 
-## 7. Practical Implications
+## Practical Implications
 
 This is why AI products that let a model read untrusted content — browsing the web, processing email, ingesting documents — while also holding the ability to take actions (Chapter 21) are specifically flagged as higher-risk, and typically ship with extra safeguards: restricted tool permissions, human approval for consequential actions, and monitoring (Chapter 27) to notice when something has gone wrong. It's also the direct explanation behind real, documented incidents where hidden instructions in a webpage or document caused an AI agent to act in ways nobody intended — not a hypothetical risk, but one with an established track record worth taking seriously when evaluating any product that combines reading untrusted content with the ability to act.
 
-## 8. Key Takeaway
+## Key Takeaway
 
 **A model's context window has no enforced boundary between trusted instructions and content it's merely reading — role tags help but don't close that gap — which is exactly what prompt injection exploits, and why real security for a tool-using AI system has to come from safeguards outside the model, not from the model alone.**
 
-## 9. One-Page Summary
+## One-Page Summary
 
 - Security, here, centers on prompt injection: instructions hidden inside content a model merely processes (a document, email, webpage) getting treated as legitimate commands.
 - The root cause is structural: role tags (system/developer/user/tool) let a model be trained to weight content differently, but that's a trained hint, not an enforced boundary the way a programming language separates code from data.
@@ -160,12 +160,12 @@ This is why AI products that let a model read untrusted content — browsing the
 - Unlike prompt injection, SQL injection has a syntactic fix (parameterized queries) that's reliable in nearly every real case — prompt injection has no equivalent enforced boundary at all, which is the more fundamental gap.
 - Injected instructions can be hidden in innocuous-looking content specifically to avoid detection.
 
-## 10. Further Reading
+## Further Reading
 
 - Search for "prompt injection" for concrete, current, documented examples of the vulnerability described in §3/§5.
 - Search for "indirect prompt injection" for the specific case (retrieved or tool-fetched content, rather than the user's own message) this chapter's worked example illustrates.
 
-## 11. The Next Obvious Question
+## The Next Obvious Question
 
 *This book has now covered, in careful detail, how today's AI systems are built, used, evaluated, and protected. Given everything covered so far, where does this technology actually go from here?*
 

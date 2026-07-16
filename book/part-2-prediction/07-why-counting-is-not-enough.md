@@ -10,11 +10,11 @@
 
 ---
 
-## 1. Opening Question
+## Opening Question
 
 *Why not just count how often one word follows another in a giant table, instead of building something as complicated as a neural network?*
 
-## 2. Real-World Story
+## Real-World Story
 
 In the 1980s, a Usenet poster calling himself "Mark V. Shaney" became
 locally famous for posts that were grammatically fluent but subtly,
@@ -32,7 +32,7 @@ words. It had no way to remember what the sentence had been about ten words
 earlier, and no way to handle a combination of words it hadn't seen during
 counting. This is the ceiling every purely count-based approach runs into.
 
-## 3. Worked Example
+## Worked Example
 
 Imagine the counting table has seen "the cat sat" 412 times, so it
 confidently predicts what comes next. Now ask it about "the kitten
@@ -46,7 +46,7 @@ word similarity at all — only exact-match history. A sentence that means
 almost the same thing produces a completely different, and completely
 empty, lookup.
 
-## 4. Core Intuition
+## Core Intuition
 
 Counting how often word B follows word A (or word A, B follows word C) is
 the simplest imaginable way to predict text, and for very short, very
@@ -66,7 +66,7 @@ no notion, the way Chapter 5's embeddings do, that "cat" and "kitten" are
 similar — so it can't use what it learned about one to make a good guess
 about the other. It can only report exact matches.
 
-## 5. Technical Explanation
+## Technical Explanation
 
 This first problem — the explosive growth of possible sequences — is
 sometimes called the curse of dimensionality: as you consider longer
@@ -96,7 +96,7 @@ What's still missing is a mechanism that can actually learn and use that
 geometric structure to make predictions — which is exactly what a neural
 network provides.
 
-## 6. Common Misconceptions
+## Common Misconceptions
 
 ### *"A big enough counting table would eventually solve this — it's just a matter of collecting more data."*
 
@@ -114,7 +114,7 @@ network provides.
 
 **Analogy:** A phrasebook that's ten times longer is still just a phrasebook — it still can't handle a sentence nobody thought to include.
 
-## 7. Practical Implications
+## Practical Implications
 
 This history explains why "more data" was never, by itself, the answer to
 better language models — it took a change in mechanism (neural networks
@@ -124,11 +124,11 @@ reading about any AI approach: ask whether it can generalize to genuinely
 new inputs, or whether it's fundamentally just matching against what it's
 already seen.
 
-## 8. Key Takeaway
+## Key Takeaway
 
 **A counting table can only report what it's already seen; a system built on geometric similarity can generalize to what it hasn't.**
 
-## 9. One-Page Summary
+## One-Page Summary
 
 - Counting how often one word follows another is the simplest possible prediction method, and it fails at scale for two structural reasons.
 - The number of possible word sequences grows explosively with length, so most sequences a system must handle were never observed during counting.
@@ -136,11 +136,11 @@ already seen.
 - More data alone doesn't fix this; it took a different mechanism — one that could learn and exploit geometric similarity — to make real progress.
 - This mechanism is the neural network, covered starting in Chapter 8.
 
-## 10. Further Reading
+## Further Reading
 
 - Search for "n-gram language model" for the formal name of the counting-based approach described here, and "curse of dimensionality" for the general problem of sequence-space explosion.
 
-## 11. The Next Obvious Question
+## The Next Obvious Question
 
 *If we need something that can generalize using geometry rather than simply counting exact matches, what is the actual mechanism that learns this geometry and makes predictions from it?*
 

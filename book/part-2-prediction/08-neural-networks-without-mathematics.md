@@ -10,11 +10,11 @@
 
 ---
 
-## 1. Opening Question
+## Opening Question
 
 *What is a neural network, actually — without the math?*
 
-## 2. Real-World Story
+## Real-World Story
 
 Picture a huge factory floor covered in simple valves. Each valve does one
 tiny job: it takes in some water pressure from a few pipes behind it,
@@ -36,7 +36,7 @@ in any single valve's behavior.
 A neural network works on exactly this principle, just with numbers
 instead of water.
 
-## 3. Worked Example
+## Worked Example
 
 Picture one single unit with three incoming connections, weighted "high
 importance," "medium importance," and "barely matters." Feed it three
@@ -53,7 +53,7 @@ adjustable connections and parameters spread across the whole network:
 nudging weights so that the network's outputs get steadily closer to
 what's actually wanted.
 
-## 4. Core Intuition
+## Core Intuition
 
 A **neural network** is a system built from enormous numbers of extremely
 simple units, loosely inspired by (but not a simulation of) biological
@@ -82,7 +82,7 @@ overall pattern formed by all of these numbers together, the same way the
 building's pressure curve lived in the overall pattern of millions of valve
 settings, not in any single valve.
 
-## 5. Technical Explanation
+## Technical Explanation
 
 A neural network is organized into layers: an input layer (which receives
 the token embeddings from Chapter 5), one or more hidden layers, and an
@@ -116,7 +116,7 @@ ones. That arrangement is the subject of Part III. Treat this chapter as
 the load-bearing foundation the transformer is built on top of, not as a
 literal blueprint of one.
 
-## 6. Common Misconceptions
+## Common Misconceptions
 
 ### *"A neural network is basically a simulation of a human brain."*
 
@@ -134,7 +134,7 @@ literal blueprint of one.
 
 **Analogy:** A car with a bigger engine isn't automatically faster if the rest of the car — transmission, weight, aerodynamics — isn't built to use that power well.
 
-## 7. Practical Implications
+## Practical Implications
 
 Once you see a neural network as "millions of simple, adjustable valves,"
 headlines about model sizes ("70 billion parameters," "1.8 trillion
@@ -145,11 +145,11 @@ of those billions of numbers, but no individual number tells you, on its
 own, what the network "knows" — the knowledge is distributed across the
 whole pattern, not localized in any single readable place.
 
-## 8. Key Takeaway
+## Key Takeaway
 
 **A neural network is layers of simple units connected by adjustable weights — its entire capability lives in the pattern of those weights, not in any single unit.**
 
-## 9. One-Page Summary
+## One-Page Summary
 
 - A neural network is built from many simple units, loosely inspired by (not simulating) biological neurons.
 - Each connection between units has its own adjustable weight — a parameter — controlling how much that input matters.
@@ -158,11 +158,11 @@ whole pattern, not localized in any single readable place.
 - Parameters aren't hand-coded; they emerge from training (Chapter 9), starting from near-random values.
 - Neural networks are "black boxes" not because they're hidden, but because no individual parameter is independently interpretable.
 
-## 10. Further Reading
+## Further Reading
 
 - Search for "multilayer perceptron" for the classic, simplest formal name for the layered structure described here.
 
-## 11. The Next Obvious Question
+## The Next Obvious Question
 
 *If a network's entire behavior lives in these adjustable numbers, how do those numbers actually get set to the right values?*
 

@@ -10,11 +10,11 @@
 
 ---
 
-## 1. Opening Question
+## Opening Question
 
 *If a model's own trained-in knowledge can run out or go stale, how can it be given a bigger, more reliable memory to draw from?*
 
-## 2. Real-World Story
+## Real-World Story
 
 Imagine a research assistant with an outstanding general education —
 years of broad, thorough training, exactly like Chapter 9's training loop
@@ -32,7 +32,7 @@ misplaced or degraded. The information you gave them on page one simply
 isn't part of what's currently visible, because the desk has a fixed,
 finite amount of room.
 
-## 3. Worked Example
+## Worked Example
 
 Trace a long conversation with an assistant that has exactly this kind of
 limit. Early on, you mention you're allergic to peanuts. Many exchanges
@@ -53,7 +53,7 @@ recovering a lost original, but making sure the important part survives
 in some form (even compressed or restated) before it would otherwise fall
 off the desk.
 
-## 4. Core Intuition
+## Core Intuition
 
 A **context window** is the maximum number of tokens (Chapter 3) a model
 can consider at once — the hard size limit on everything currently "in
@@ -78,7 +78,7 @@ buried in the middle, even when every token is technically present the
 whole time. Presence in the window is the floor, not a guarantee of equal
 use.
 
-## 5. Technical Explanation
+## Technical Explanation
 
 Context window size is a genuine architectural property, not an arbitrary
 policy choice: because standard, dense attention (Chapter 11) computes a
@@ -103,7 +103,7 @@ entirely, and deliberately reinserts it into the window only when it
 becomes relevant again, which is a direct preview of the retrieval
 mechanism covered in Chapter 17.
 
-## 6. Common Misconceptions
+## Common Misconceptions
 
 ### *"The context window is the same thing as the model's trained knowledge or long-term memory."*
 
@@ -121,7 +121,7 @@ mechanism covered in Chapter 17.
 
 **Analogy:** A photocopier either has a page in the tray or it doesn't — but even with every page present, a reader skimming a thick stack may still absorb the first and last pages more reliably than page two hundred.
 
-## 7. Practical Implications
+## Practical Implications
 
 This is exactly what "context window size" figures in model
 announcements refer to — a genuine, load-bearing spec, not a marketing
@@ -132,11 +132,11 @@ to "forget" something said earlier, which is not a bug in the emotional
 sense but a direct, predictable consequence of a fixed-size window. This
 sets up exactly why retrieval systems (Chapters 17–18) matter in practice.
 
-## 8. Key Takeaway
+## Key Takeaway
 
 **A context window is the fixed-size input budget a model can see at any one moment; memory systems are strategies for managing what stays inside that budget as a conversation grows, not an expansion of the window itself.**
 
-## 9. One-Page Summary
+## One-Page Summary
 
 - A context window is the maximum number of tokens a model can consider at once — everything beyond it simply isn't visible to the model.
 - Context window size is bounded by standard attention's computational cost, which grows faster than sequence length itself.
@@ -145,11 +145,11 @@ sets up exactly why retrieval systems (Chapters 17–18) matter in practice.
 - Raw information is either present in the current input or it isn't — no fuzzy in-between — but being present doesn't guarantee equally reliable use; information in the middle of a long input can still be underused.
 - This chapter's limitation directly motivates retrieval-augmented approaches, covered next.
 
-## 10. Further Reading
+## Further Reading
 
 - Search for "context length" or "context window size" comparisons across major model releases to see how this figure has grown, and what tradeoffs providers describe when discussing it.
 
-## 11. The Next Obvious Question
+## The Next Obvious Question
 
 *If a context window can't hold everything, how can a model still pull in specific relevant information — like documents it was never trained on — exactly when it's needed?*
 

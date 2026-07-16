@@ -10,11 +10,11 @@
 
 ---
 
-## 1. Opening Question
+## Opening Question
 
 *How does a neural network actually learn the right values for its billions of adjustable parameters?*
 
-## 2. Real-World Story
+## Real-World Story
 
 Think about learning to throw free throws in basketball. Nobody hands you
 a formula for the correct arm angle, wrist snap, and knee bend. Instead,
@@ -32,7 +32,7 @@ the error precisely, nudge every adjustable parameter a tiny bit in the
 direction that would have reduced that error, and repeat — not thousands
 of times, but billions.
 
-## 3. Worked Example
+## Worked Example
 
 Imagine training on the same single example five times in a row. First
 pass: the model's prediction is wildly off; loss is high; every parameter
@@ -47,7 +47,7 @@ parameters that works reasonably well across all of them at once — not
 perfectly tuned to any single example, but reliably good on the whole
 enormous collection.
 
-## 4. Core Intuition
+## Core Intuition
 
 **Loss** is a single number that measures exactly how wrong a network's
 prediction was for one example — a large loss means "very wrong," a loss
@@ -79,7 +79,7 @@ formula for correctness in advance. Training a neural network is this same
 taste-adjust-repeat loop, automated and run billions of times instead of a
 few dozen.
 
-## 5. Technical Explanation
+## Technical Explanation
 
 For language models, a single training example is simple: take a real
 passage of text, hide the next token, and ask the network to predict it.
@@ -101,7 +101,7 @@ because parameters that produce low loss on real text were kept and
 reinforced, over and over, while directions that increased loss were
 avoided.
 
-## 6. Common Misconceptions
+## Common Misconceptions
 
 ### *"Training makes the model memorize its training examples, like a database of stored sentences."*
 
@@ -119,7 +119,7 @@ avoided.
 
 **Analogy:** A student's score on one specific exam is real, useful information about their preparation for that exam — but it isn't the same thing as a complete measure of their intelligence.
 
-## 7. Practical Implications
+## Practical Implications
 
 This is the machinery behind phrases like "training run," "loss curve," and
 "epoch" that show up constantly in AI engineering writing — a loss curve
@@ -130,11 +130,11 @@ a large model requires so much computation: billions of parameters, each
 needing its own small adjustment, repeated across enormous datasets, again
 and again.
 
-## 8. Key Takeaway
+## Key Takeaway
 
 **Training is a loop — predict, measure loss, nudge every parameter — repeated billions of times; learning is the name for whatever pattern emerges from it.**
 
-## 9. One-Page Summary
+## One-Page Summary
 
 - Loss is a precise number measuring how wrong a single prediction was.
 - Training is the repeated loop of predicting, measuring loss, and nudging every parameter toward reducing it.
@@ -143,11 +143,11 @@ and again.
 - Well-trained models generalize rather than memorize, though memorization can occur under specific conditions (Chapter 15).
 - Loss measures fit to a specific objective, not general intelligence — a distinction Chapter 27 (Evaluating AI Systems) revisits.
 
-## 10. Further Reading
+## Further Reading
 
 - Search for "gradient descent" and "backpropagation" for the formal names of the parameter-adjustment procedure described conceptually here.
 
-## 11. The Next Obvious Question
+## The Next Obvious Question
 
 *If throwing more examples and more parameters at this training loop keeps improving performance, is there a predictable pattern to how much better it gets — and are there limits?*
 

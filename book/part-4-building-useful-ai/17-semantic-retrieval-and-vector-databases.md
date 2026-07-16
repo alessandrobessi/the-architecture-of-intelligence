@@ -10,11 +10,11 @@
 
 ---
 
-## 1. Opening Question
+## Opening Question
 
 *If a context window can't hold everything, how can a model still pull in specific relevant information exactly when it's needed?*
 
-## 2. Real-World Story
+## Real-World Story
 
 Recall Chapter 5's redrawn map — cities placed not by geography but by
 similarity, so that alike things end up near each other regardless of
@@ -29,7 +29,7 @@ library that matches what your question is actually *about*, and pull the
 books that live there — even if not one of your words appears anywhere in
 those books' titles.
 
-## 3. Worked Example
+## Worked Example
 
 A customer types: "How do I get a refund for a late package?" A company's
 help documentation says: "Requesting reimbursement for delayed
@@ -45,7 +45,7 @@ same thing across enormous amounts of text. A semantic search finds the
 right document despite the completely different wording, because it's
 comparing meaning, not vocabulary.
 
-## 4. Core Intuition
+## Core Intuition
 
 **Retrieval** is the process of finding, from a large collection of
 documents or passages, the ones most relevant to a given query — using
@@ -59,7 +59,7 @@ ones nearest to any new query's embedding — a scale and speed ordinary
 databases, built for exact-match lookups and filtering, aren't designed
 for.
 
-## 5. Technical Explanation
+## Technical Explanation
 
 A retrieval pipeline works in stages. First, a large document collection
 is broken into passages or chunks — a paragraph, a section, a fixed-size
@@ -81,7 +81,7 @@ active engineering field in their own right, but the underlying goal is
 always the same: find the nearest points in Chapter 5's geometric space,
 fast, without checking every point individually.
 
-## 6. Common Misconceptions
+## Common Misconceptions
 
 ### *"Retrieval works by searching for matching keywords, just with some extra intelligence layered on."*
 
@@ -99,7 +99,7 @@ fast, without checking every point individually.
 
 **Analogy:** A library organized by meaning and a library organized alphabetically are solving different problems, even though both are technically "libraries."
 
-## 7. Practical Implications
+## Practical Implications
 
 This is why vector databases became a prominent, distinct category of AI
 infrastructure, and why engineers discuss "chunking strategy" — how
@@ -110,11 +110,11 @@ claiming "search by meaning": is it actually comparing embeddings in a
 space like Chapter 5's, or is it still keyword matching with extra
 branding.
 
-## 8. Key Takeaway
+## Key Takeaway
 
 **Retrieval finds relevant passages by meaning, not exact words, by comparing passage-level embeddings in a vector database built for fast nearest-neighbor search at huge scale.**
 
-## 9. One-Page Summary
+## One-Page Summary
 
 - Retrieval finds relevant documents or passages using semantic similarity (Chapter 5), not exact keyword matching.
 - Vector databases store enormous numbers of passage embeddings and quickly find the ones nearest to a query's embedding.
@@ -123,11 +123,11 @@ branding.
 - "Chunking strategy" — how documents get split before embedding — is a real, practical design choice affecting retrieval quality.
 - This mechanism directly sets up retrieval-augmented generation, covered next.
 
-## 10. Further Reading
+## Further Reading
 
 - Search for "approximate nearest neighbor search" and "embedding-based retrieval" for more formal treatments of the mechanisms described in this chapter.
 
-## 11. The Next Obvious Question
+## The Next Obvious Question
 
 *Once relevant documents can be retrieved this way, how does a model actually combine that retrieved information with its own generation process to produce a grounded answer?*
 
