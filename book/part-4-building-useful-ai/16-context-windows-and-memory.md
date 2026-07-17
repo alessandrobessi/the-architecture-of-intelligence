@@ -88,9 +88,12 @@ much more than the window's length alone would suggest, which is a major
 reason context windows have practical size limits, a tradeoff Chapter 20
 returns to directly. (Generating new tokens one at a time afterward is
 cheaper than this suggests, since a well-built system reuses each earlier
-token's already-computed relevance scores instead of recomputing them —
-Chapter 20 covers this too — but the up-front cost of taking in a long
-window in the first place still grows faster than the window's length.
+token's already-computed key and value vectors instead of recomputing
+them — a new token still has to compute a fresh relevance score against
+each of those cached keys, but the keys and values themselves don't need
+to be recomputed; Chapter 20 covers this too — but the up-front cost of
+taking in a long window in the first place still grows faster than the
+window's length.
 Some newer architectures restructure attention to reduce this cost, but
 standard dense attention is still the dominant baseline this book
 describes.) Context window sizes have grown substantially across
