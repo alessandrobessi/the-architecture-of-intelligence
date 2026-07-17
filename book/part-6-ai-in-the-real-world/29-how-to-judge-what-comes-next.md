@@ -96,8 +96,10 @@ Tool schemas and an orchestration layer closed the gap between generating
 text and taking a real action (Chapter 21). A loop closed the gap between
 one action and a multi-step goal (Chapter 22). Reinforcement learning on
 reasoning trajectories narrowed the gap between a single guess and a
-reliable multi-step answer (Chapter 23). Matched-pair training narrowed
-the gap between text-only and multiple modalities (Chapter 24). Sparse
+reliable multi-step answer (Chapter 23). Modality-specific encoders,
+cross-modal alignment, and trained bridges such as projectors,
+cross-attention layers, or unified token representations narrowed the
+gap between text-only models and multimodal systems (Chapter 24). Sparse
 routing closed the gap between total capacity and per-token compute cost
 (Chapter 25).
 

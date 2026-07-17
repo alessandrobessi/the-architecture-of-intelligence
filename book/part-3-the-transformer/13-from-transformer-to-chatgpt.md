@@ -93,18 +93,25 @@ Precisely: **pretraining** is the massive, generic phase covered since
 Chapter 9 — learning to predict the next token across enormous, broad
 swaths of text, with no specific behavioral goal beyond raw predictive
 accuracy. **Fine-tuning** is additional training performed afterward, on a
-much smaller, deliberately chosen dataset, reusing the identical mechanism
-(Chapter 9) but now aimed at a specific target style of behavior rather
-than generic text continuation.
+much smaller, deliberately chosen dataset, using the same broad
+gradient-based optimization machinery as Chapter 9 but now aimed at a
+specific target style of behavior rather than generic text continuation —
+though, as the next paragraph and Chapter 19 cover in full, what actually
+counts as "error" during this stage can itself look quite different from
+Chapter 9's original loop.
 
 A widely used technique for the human-feedback step is Reinforcement
 Learning from Human Feedback (RLHF): humans rank pairs of candidate model
 outputs by preference; that ranking data trains a separate model — a
 "reward model" — to predict which of two responses a human would prefer.
-The original language model is then further adjusted, again using
-Chapter 9's core loss-reduction mechanism, but now using the reward
-model's predicted preference as the error signal instead of raw
-next-token accuracy. (RLHF isn't the only way to use preference data —
+The original language model is then further adjusted using reinforcement
+learning: it generates responses, the reward model scores them, and the
+language model is nudged toward whatever tends to earn higher scores —
+usually while being kept close to a reference version of itself, so it
+doesn't drift into degenerate behavior that chases the reward signal
+without actually being helpful. That's a meaningfully different training
+procedure from Chapter 9's original loop, not just the same loop with a
+different number plugged in for "error." (RLHF isn't the only way to use preference data —
 Chapter 19 covers a newer alternative that skips the separate reward
 model entirely.) The same basic architecture usually keeps doing the
 predicting throughout this process — though some fine-tuning methods add

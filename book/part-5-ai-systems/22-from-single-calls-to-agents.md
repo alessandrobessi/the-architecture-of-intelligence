@@ -129,7 +129,7 @@ persistence beyond the task and context it was given.
 
 ### *"An agent has genuine autonomy or goals of its own, independent of what it was asked to do."*
 
-**Why it's wrong:** At each step, the model is still doing exactly what it always does: predicting the most useful next output given everything currently in its context — including the original task. It has no persistent desires that outlive that context, and nothing resembling a goal it holds onto between separate sessions.
+**Why it's wrong:** At each step, the model is still doing exactly what it always does: predicting the most useful next output given everything currently in its context — including the original task. It has no independently generated, persistent desire of its own that outlives that context. A surrounding agent system, though, can still store a supplied goal and task state externally and resume work on it across separate calls or sessions — that's a property of the system holding the goal, not evidence the model itself is carrying one between sessions.
 
 **Correct intuition:** "Autonomous" describes the loop making its own sequential decisions without a human re-prompting between steps — not independent will or self-generated objectives that exist apart from the task it was given.
 

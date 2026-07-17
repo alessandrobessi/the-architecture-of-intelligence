@@ -42,9 +42,12 @@ This single preference judgment, multiplied across a huge number of
 paired comparisons, becomes training data of a new kind: not "what token
 comes next in this training text" (Chapter 9's original signal), but
 "which of these two responses do humans actually prefer." That preference
-data is used to further adjust the model's parameters — using the exact
-same predict/measure-error/nudge loop from Chapter 9 — so that future
-responses trend toward the style humans rated more highly.
+data is used to further adjust the model — reusing the same broad shape
+as Chapter 9's predict/measure-error/nudge loop, though, as the Technical
+Explanation below covers, the actual mechanism for turning a human
+preference into a parameter update can differ meaningfully from Chapter
+9's original loop — so that future responses trend toward the style
+humans rated more highly.
 
 ## Core Intuition
 
@@ -126,7 +129,7 @@ subtly misaligned ways after this process, which is part of why Chapter
 
 **Why it's wrong:** Fine-tuning reuses the same broad shape as Chapter 9's loop — a forward pass, an error signal, a backward parameter update — but what actually counts as "error," which parameters are trainable, and whether the process involves reinforcement learning against a separate reward model can genuinely differ by method, not just the dataset and goal.
 
-**Correct intuition:** Fine-tuning is the same training process, applied again, to a different and usually smaller set of examples.
+**Correct intuition:** Fine-tuning is the same broad training approach — forward pass, error signal, backward parameter update — applied again to a different and usually smaller set of examples, though the specific error signal and training procedure can differ meaningfully by method.
 
 **Analogy:** A medical residency uses the same underlying learning process as medical school — observe, get corrected, adjust — just applied to a narrower set of cases.
 

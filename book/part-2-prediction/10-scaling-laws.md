@@ -89,9 +89,10 @@ like once *both* axes are stretched into equal ratios (marked off ×10,
 ×100, ×1000, rather than +10, +20, +30) — it's a way of revealing that
 underlying relationship, not a claim that loss falls in a straight line on
 an ordinary chart. Researchers also typically separate loss into a part that
-keeps shrinking with scale and a small remaining part that scale alone
-doesn't remove (sometimes called irreducible loss) — the power-law
-description applies to the shrinking part.
+keeps shrinking with scale and a remaining irreducible component that scale
+alone doesn't remove (sometimes called irreducible loss, and not
+necessarily small — its size depends on the inherent unpredictability of
+the data itself) — the power-law description applies to the shrinking part.
 
 This relationship was first characterized clearly around 2020, and refined in
 2022 by research (widely known by the name of the model that demonstrated
@@ -156,7 +157,7 @@ way, without being the specific pretraining relationship described here.
 ## What to Remember
 
 - Scaling laws are an empirical finding: loss falls in a smooth, forecastable way as data, parameters, and compute increase together — visible as a straight line once both axes are stretched into equal ratios (×10, ×100, ×1000), which is what reveals the underlying power-law relationship.
-- A small remaining part of loss ("irreducible loss") doesn't shrink with scale alone — the power-law description applies to the part that does.
+- A remaining irreducible component of loss ("irreducible loss," not necessarily small) doesn't shrink with scale alone — the power-law description applies to the part that does.
 - This predictability lets researchers extrapolate from small, cheap experiments to justify training much larger, more expensive models.
 - Data and parameters must be scaled together in the right ratio — a model can be undertrained if it has more parameters than its data justifies.
 - Returns diminish with scale, and practical ceilings exist: available high-quality data, compute cost, and energy.

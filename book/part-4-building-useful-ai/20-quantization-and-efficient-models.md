@@ -167,7 +167,7 @@ not optional.
 - This works partly because network behavior lives in the overall pattern of parameters (Chapter 8), not any single weight's exact value; the best methods also calibrate rounding against real data rather than relying purely on independent errors washing out.
 - Very aggressive quantization is a real tradeoff and can noticeably degrade quality; moderate quantization usually isn't noticeable.
 - The KV cache — reusing each token's already-computed key and value instead of recomputing the whole sequence's attention at every step — is the central efficient-inference technique for autoregressive generation.
-- Efficient inference is the broader category including quantization, KV/prefix caching, and specialized hardware/software — none of which retrain or fundamentally change what the model learned.
+- Efficient inference is the broader category including quantization, KV/prefix caching, and specialized hardware/software. KV/prefix caching and specialized hardware never retrain the model; quantization is usually applied after training too (post-training quantization), but quantization-aware training is a real exception that folds precision reduction into training itself.
 - This is why some models can run on ordinary consumer devices despite requiring enormous compute to train.
 
 ## Further Reading

@@ -60,11 +60,11 @@ of a single unbroken leap from the full question to a final number.
 time — beyond a single, one-shot prediction — to improve the odds of a
 correct answer on a hard problem, trading more time and cost (Chapter 14,
 Chapter 20) for more reliability. **Reasoning models** are the most
-visible current way of doing this: models that generate explicit
-intermediate reasoning text before a final answer, often specifically
-trained to make good, extensive use of that reasoning space on genuinely
-hard problems, rather than merely producing it because a prompt asked
-nicely. Writing a longer chain of steps is one way to spend that extra
+visible current way of doing this: models that generate intermediate
+reasoning as actual token text — sometimes shown to the user, sometimes
+kept hidden — before a final answer, often specifically trained to make
+good, extensive use of that reasoning space on genuinely hard problems,
+rather than merely producing it because a prompt asked nicely. Writing a longer chain of steps is one way to spend that extra
 computation, but not the only one — generating several independent
 attempts and checking them, or searching through alternative solution
 paths, spend the same kind of extra computation in a different shape.
