@@ -335,7 +335,11 @@
 <section class="slide slide--intuition" data-part="1" data-chapter="01" id="s-c01-7">
   <p class="slide-eyebrow">Part I &middot; Information — Ch. 1 <span class="kicker">CORE INTUITION</span></p>
   <div class="slide-body">
-    <p class="slide-prose">Progress in AI did not arrive as a single breakthrough. It arrived as three long-running trends quietly crossing a threshold at the same time &mdash; and each one, alone, was not enough.</p>
+    <ul class="slide-list">
+      <li>Progress in AI did not arrive as a single breakthrough.</li>
+      <li>It arrived as three long-running trends quietly crossing a threshold at the same time.</li>
+      <li>Each one, alone, was not enough.</li>
+    </ul>
   </div>
 </section>
 
@@ -511,7 +515,9 @@
 <section class="slide slide--intuition" data-part="1" data-chapter="02" id="s-c02-6">
   <p class="slide-eyebrow">Part I &middot; Information — Ch. 2 <span class="kicker">CORE INTUITION</span></p>
   <div class="slide-body">
-    <p class="slide-prose">Four ideas, in the order you need them.</p>
+    <ul class="slide-list">
+      <li>Four ideas, in the order you need them.</li>
+    </ul>
   </div>
 </section>
 
@@ -708,9 +714,14 @@
 <section class="slide slide--intuition" data-part="1" data-chapter="03" id="s-c03-7">
   <p class="slide-eyebrow">Part I &middot; Information — Ch. 3 <span class="kicker">CORE INTUITION</span></p>
   <div class="slide-body">
-    <p class="slide-prose">A <em>character</em> is, for this book's purposes, the smallest unit of written text &mdash; a single letter, digit, or punctuation mark. A <em>word</em> is a familiar, larger unit &mdash; but &ldquo;word&rdquo; turns out to be a slippery concept computationally, since new words appear constantly and different languages don't even agree on where one word ends and another begins.</p>
-    <p class="slide-prose">A <em>token</em> is the actual unit a language model works with &mdash; a chunk of text that might be a whole word, a piece of a word, a single character, or even a punctuation mark, chosen by a process called <em>tokenization</em> that looks at enormous amounts of text in advance and decides which chunks are common enough to deserve their own reusable piece.</p>
-    <p class="slide-prose">The key design insight: build a fixed-size set of a few tens of thousands of these chunks, so that common words get their own single token (&ldquo;the,&rdquo; &ldquo;is,&rdquo; &ldquo;cat&rdquo;) while rare or unfamiliar words get broken into familiar sub-pieces (&ldquo;un&rdquo; + &ldquo;believ&rdquo; + &ldquo;able&rdquo;). This way, the model never encounters a word it has literally no way to represent &mdash; it can always fall back to smaller, familiar pieces.</p>
+    <ul class="slide-list">
+      <li>A <em>character</em> is the smallest unit of written text &mdash; a single letter, digit, or punctuation mark.</li>
+      <li>A <em>word</em> is a familiar, larger unit &mdash; but &ldquo;word&rdquo; is a slippery concept computationally: new words appear constantly, and languages don't agree on where one word ends and another begins.</li>
+      <li>A <em>token</em> is the actual unit a language model works with &mdash; a chunk of text that might be a whole word, a piece of a word, a single character, or punctuation, chosen by <em>tokenization</em>.</li>
+      <li>Tokenization looks at enormous amounts of text in advance and decides which chunks are common enough to deserve their own reusable piece.</li>
+      <li>Design insight: a fixed-size set of a few tens of thousands of chunks lets common words keep their own token (&ldquo;the,&rdquo; &ldquo;is,&rdquo; &ldquo;cat&rdquo;) while rare words break into familiar sub-pieces (&ldquo;un&rdquo; + &ldquo;believ&rdquo; + &ldquo;able&rdquo;).</li>
+      <li>The model never encounters a word it has literally no way to represent &mdash; it can always fall back to smaller, familiar pieces.</li>
+    </ul>
   </div>
 </section>
 
@@ -859,10 +870,14 @@
 <section class="slide slide--intuition" data-part="1" data-chapter="04" id="s-c04-6">
   <p class="slide-eyebrow">Part I &middot; Information — Ch. 4 <span class="kicker">CORE INTUITION</span></p>
   <div class="slide-body">
-    <p class="slide-prose"><em>Compression</em> is the general idea of representing information using fewer symbols by exploiting redundancy &mdash; the predictable parts of a message. This follows directly from Chapter 2's idea of information as surprise: predictable content carries little information, so it takes few symbols to represent; unpredictable content carries a lot of information and needs more.</p>
-    <p class="slide-prose">That general idea shows up in two different, easily confused forms. A lossless code &mdash; like Morse's single dot for &ldquo;E&rdquo; &mdash; never actually throws anything away: every letter is still there, just represented more compactly, and the original can always be reconstructed exactly. Ellipsis like &ldquo;brb&rdquo; works differently: words are genuinely <em>omitted</em>, not just shortened, and recovering them depends on the reader correctly guessing what was left out from shared context &mdash; a real gamble, not a guarantee.</p>
-    <p class="slide-prose"><em>Context</em> is the surrounding material that makes language predictable &mdash; or that resolves which of several possible meanings a word has. &ldquo;Bank&rdquo; means something completely different in &ldquo;I sat by the river bank&rdquo; versus &ldquo;I deposited a check at the bank&rdquo;; only the tokens around it tell you which. &ldquo;This concert was sick&rdquo; and &ldquo;this flu is making me sick&rdquo; make the same point with nearly opposite meanings for the identical word &mdash; only &ldquo;concert&rdquo; versus &ldquo;flu&rdquo; resolves it.</p>
-    <p class="slide-prose">The two ideas are deeply connected: a system that assigns accurate probabilities to what comes next, given context, can in principle use those probabilities to build a reversible code that represents likely continuations with fewer symbols than unlikely ones &mdash; predictable and compressible are the same property viewed from two angles.</p>
+    <ul class="slide-list">
+      <li><em>Compression</em>: representing information using fewer symbols by exploiting redundancy &mdash; the predictable parts of a message.</li>
+      <li>Follows from Chapter 2's idea of information as surprise: predictable content carries little information (few symbols needed); unpredictable content carries a lot (needs more).</li>
+      <li>A lossless code &mdash; like Morse's single dot for &ldquo;E&rdquo; &mdash; never throws anything away: every letter is still there, just more compact, and the original can always be reconstructed exactly.</li>
+      <li>Ellipsis like &ldquo;brb&rdquo; works differently: words are genuinely <em>omitted</em>, not just shortened &mdash; recovering them is a real gamble on the reader guessing from shared context, not a guarantee.</li>
+      <li><em>Context</em> is the surrounding material that makes language predictable or resolves which meaning a word has (&ldquo;bank&rdquo; by the river vs. at the bank; &ldquo;sick&rdquo; meaning great vs. ill, resolved only by &ldquo;concert&rdquo; vs. &ldquo;flu&rdquo;).</li>
+      <li>The two ideas are deeply connected: accurate next-token probabilities can in principle build a reversible code &mdash; predictable and compressible are the same property viewed from two angles.</li>
+    </ul>
   </div>
 </section>
 
@@ -1014,10 +1029,14 @@
 <section class="slide slide--intuition" data-part="1" data-chapter="05" id="s-c05-6">
   <p class="slide-eyebrow">Part I &middot; Information — Ch. 5 <span class="kicker">CORE INTUITION</span></p>
   <div class="slide-body">
-    <p class="slide-prose">An <em>embedding</em> is a location &mdash; a point &mdash; assigned to a word (or a token) in a space with many dimensions, chosen so that words used in similar contexts end up at nearby points. &ldquo;Cat&rdquo; and &ldquo;kitten&rdquo; end up close together; &ldquo;cat&rdquo; and &ldquo;stock market&rdquo; end up far apart. Usually this tracks similar meaning too &mdash; but as the misconceptions ahead show, &ldquo;used similarly&rdquo; and &ldquo;means the same thing&rdquo; aren't quite the same test.</p>
-    <p class="slide-prose">This space is called a <em>vector space</em>: instead of two dimensions like a paper map, it typically has hundreds of dimensions &mdash; far more than we can visualize directly, but the same basic idea applies: a location is described by a list of numbers (its coordinates), just a much longer list than &ldquo;latitude, longitude.&rdquo;</p>
-    <p class="slide-prose"><em>Similarity</em> between two words is measured by how close their points are in this space, typically using a measure like cosine similarity or Euclidean distance &mdash; the specific choice of measure is a real design decision, not just an implementation detail, and different measures don't always rank the same pairs as equally close. Closeness is not decided by hand &mdash; it emerges automatically from how the words are actually used across enormous amounts of text: words that tend to appear in similar surrounding contexts end up placed near each other.</p>
-    <p class="slide-prose"><em>Semantic geometry</em> is the idea that meaningful relationships between words correspond to consistent geometric patterns &mdash; directions and distances &mdash; in this space. The relationship &ldquo;capital of&rdquo; tends to point in roughly the same direction wherever it appears: from &ldquo;France&rdquo; to &ldquo;Paris&rdquo; and from &ldquo;Japan&rdquo; to &ldquo;Tokyo&rdquo; alike.</p>
+    <ul class="slide-list">
+      <li>An <em>embedding</em> is a location &mdash; a point &mdash; assigned to a word (or token) in a many-dimensional space, chosen so words used in similar contexts end up nearby: &ldquo;cat&rdquo; and &ldquo;kitten&rdquo; close, &ldquo;cat&rdquo; and &ldquo;stock market&rdquo; far apart.</li>
+      <li>Usually tracks similar meaning too &mdash; but &ldquo;used similarly&rdquo; and &ldquo;means the same thing&rdquo; aren't quite the same test.</li>
+      <li>Called a <em>vector space</em>: like a paper map but with hundreds of dimensions instead of two &mdash; a location is just a much longer list of coordinates.</li>
+      <li><em>Similarity</em> is measured by closeness in this space, typically cosine similarity or Euclidean distance &mdash; the choice of measure is a real design decision, and different measures don't always rank the same pairs as equally close.</li>
+      <li>Closeness isn't decided by hand &mdash; it emerges automatically from how words are actually used across enormous amounts of text.</li>
+      <li><em>Semantic geometry</em>: meaningful relationships correspond to consistent directions and distances in this space &mdash; &ldquo;capital of&rdquo; points the same way from &ldquo;France&rdquo; to &ldquo;Paris&rdquo; as from &ldquo;Japan&rdquo; to &ldquo;Tokyo.&rdquo;</li>
+    </ul>
   </div>
 </section>
 
@@ -1203,9 +1222,13 @@
 <section class="slide slide--intuition" data-part="2" data-chapter="06" id="s-c06-5">
   <p class="slide-eyebrow">Part II &middot; Prediction — Ch. 6 <span class="kicker">CORE INTUITION</span></p>
   <div class="slide-body">
-    <p class="slide-prose"><em>Prediction</em>, in this technical sense, means assigning a probability to every token in the vocabulary (built back in Chapter 3), representing how likely that token is to come next given everything before it. The model doesn't pick one &ldquo;correct&rdquo; next word out of certainty &mdash; it produces an entire ranked distribution, most of it close to zero probability, with a handful of genuinely plausible candidates near the top.</p>
-    <p class="slide-prose">Generating text is then just this single step, repeated: predict a distribution over the next token, choose one (the highest-probability option, or something close to it &mdash; the precise choice mechanism is covered in Chapter 14), append it to the sequence, and predict again &mdash; now with one more token of context than before. A whole essay is built this way, one narrow decision at a time, each decision informed by everything decided before it.</p>
-    <p class="slide-prose"><em>Try it yourself:</em> given &ldquo;The opposite of hot is ___,&rdquo; rank in your head which continuation feels most likely before reading on &mdash; &ldquo;cold,&rdquo; &ldquo;freezing,&rdquo; or &ldquo;a banana&rdquo;? Almost everyone ranks &ldquo;cold&rdquo; first, &ldquo;freezing&rdquo; a distant second, and &ldquo;a banana&rdquo; at essentially zero. That instant ranking you just did is exactly the kind of judgment a model makes at every single step &mdash; just spread across its entire vocabulary instead of three options, and computed freshly rather than felt intuitively.</p>
+    <ul class="slide-list">
+      <li><em>Prediction</em> means assigning a probability to every token in the vocabulary, representing how likely it is to come next given everything before it.</li>
+      <li>The model doesn't pick one &ldquo;correct&rdquo; word out of certainty &mdash; it produces a full ranked distribution, mostly near-zero, with a handful of plausible candidates near the top.</li>
+      <li>Generating text is this single step repeated: predict a distribution, choose one token (mechanism covered in Chapter 14), append it, predict again with one more token of context.</li>
+      <li>A whole essay is built this way &mdash; one narrow decision at a time.</li>
+      <li>Try it yourself: &ldquo;The opposite of hot is ___&rdquo; &mdash; most people rank &ldquo;cold&rdquo; first, &ldquo;freezing&rdquo; a distant second, &ldquo;a banana&rdquo; near zero. That instant ranking is exactly the judgment a model makes at every step, just spread across its whole vocabulary and computed rather than felt.</li>
+    </ul>
   </div>
 </section>
 
@@ -1346,9 +1369,12 @@
 <section class="slide slide--intuition" data-part="2" data-chapter="07" id="s-c07-6">
   <p class="slide-eyebrow">Part II &middot; Prediction — Ch. 7 <span class="kicker">CORE INTUITION</span></p>
   <div class="slide-body">
-    <p class="slide-prose">Counting how often word B follows word A (or word A, B follows word C) is the simplest imaginable way to predict text, and for very short, very common patterns, it actually works reasonably well. The approach fails for two related reasons, both structural, not just a matter of not counting enough.</p>
-    <p class="slide-prose">First: the number of distinct possible word sequences grows explosively with length. Even a modest vocabulary produces more possible five-word sequences than could ever be observed, let alone counted, in all the text humanity has ever written. Any sequence you actually need to predict is overwhelmingly likely to be one the table has never seen.</p>
-    <p class="slide-prose">Second, and more fundamental: a counting table treats every word as a completely separate symbol with no relationship to any other word. It has no notion, the way Chapter 5's embeddings do, that &ldquo;cat&rdquo; and &ldquo;kitten&rdquo; are similar &mdash; so it can't use what it learned about one to make a good guess about the other. It can only report exact matches.</p>
+    <ul class="slide-list">
+      <li>Counting how often word B follows word A is the simplest way to predict text &mdash; works reasonably well for very short, very common patterns.</li>
+      <li>Fails for two structural reasons, not just insufficient counting.</li>
+      <li>First: the number of possible word sequences grows explosively with length &mdash; more possible five-word sequences exist than could ever be observed in all the text humanity has written.</li>
+      <li>Second, more fundamental: a counting table treats every word as a separate symbol with no relationship to any other &mdash; unlike Chapter 5's embeddings, it has no notion that &ldquo;cat&rdquo; and &ldquo;kitten&rdquo; are similar, so it can't generalize from one to the other.</li>
+    </ul>
   </div>
 </section>
 
@@ -1503,9 +1529,13 @@
 <section class="slide slide--intuition" data-part="2" data-chapter="08" id="s-c08-6">
   <p class="slide-eyebrow">Part II &middot; Prediction — Ch. 8 <span class="kicker">CORE INTUITION</span></p>
   <div class="slide-body">
-    <p class="slide-prose">A <em>neural network</em> is a system built from enormous numbers of extremely simple units, loosely inspired by (but not a simulation of) biological neurons. Each unit takes in several incoming numbers, combines them &mdash; each input weighted by its own adjustable importance &mdash; and passes a single resulting number onward to the next layer of units. Individually, a unit's job is almost trivially simple.</p>
-    <p class="slide-prose">A different angle on the same idea: imagine a hiring committee where every member weighs the same facts about a candidate &mdash; years of experience, a portfolio, an interview impression &mdash; but each member privately assigns different importance to each factor. One member's vote leans heavily on the portfolio; another's mostly on the interview. The committee's final decision emerges from combining all of these individually-weighted judgments, even though no single member's opinion is &ldquo;the&rdquo; answer on its own. A neural network's units work the same way, just with numbers instead of people, and millions of &ldquo;members&rdquo; instead of a handful.</p>
-    <p class="slide-prose">Those adjustable importances are called <em>parameters</em> (also called weights): a number attached to every connection in the network, controlling how much that particular input matters to that particular unit &mdash; though a network also has a handful of other kinds of adjustable numbers besides connection weights, playing supporting roles rather than changing this basic picture. A modern language model can have many billions of these parameters. None of them is individually meaningful or hand-designed &mdash; there is no parameter that means &ldquo;cat&rdquo; or &ldquo;past tense.&rdquo; The network's entire capability lives in the overall pattern formed by all of these numbers together, the same way the building's pressure curve lived in the overall pattern of millions of valve settings, not in any single valve.</p>
+    <ul class="slide-list">
+      <li>A <em>neural network</em> is built from enormous numbers of extremely simple units, loosely inspired by (but not a simulation of) biological neurons.</li>
+      <li>Each unit takes in several incoming numbers, combines them &mdash; each input weighted by its own adjustable importance &mdash; and passes one resulting number onward.</li>
+      <li>Hiring-committee analogy: every member weighs the same facts (experience, portfolio, interview) but assigns different importance to each &mdash; the final decision emerges from combining these individually-weighted judgments, just with numbers and millions of &ldquo;members&rdquo; instead of people.</li>
+      <li>Those adjustable importances are <em>parameters</em> (weights) &mdash; a number on every connection, controlling how much that input matters to that unit (plus a handful of other adjustable numbers in supporting roles).</li>
+      <li>A modern language model can have billions of these; none is individually meaningful or hand-designed &mdash; capability lives in the overall pattern, the same way a building's pressure curve lived in the pattern of millions of valve settings, not any single valve.</li>
+    </ul>
   </div>
 </section>
 
@@ -1807,9 +1837,13 @@
 <section class="slide slide--intuition" data-part="2" data-chapter="10" id="s-c10-6">
   <p class="slide-eyebrow">Part II &middot; Prediction — Ch. 10 <span class="kicker">CORE INTUITION</span></p>
   <div class="slide-body">
-    <p class="slide-prose">A <em>scaling law</em>, in this context, is an empirical finding: as you increase training data, parameters, and compute together, a language model's loss (Chapter 9) decreases in a smooth, forecastable way &mdash; not a guarantee for any single architecture forever, but a remarkably consistent pattern that has held across many model families and years of research.</p>
-    <p class="slide-prose">This predictability is exactly why AI labs invest so heavily in scale: it isn't blind faith that &ldquo;bigger is better&rdquo; &mdash; it's a measured, repeatable relationship, verified on cheaper, smaller models before committing to the enormous expense of training a very large one. It's also why researchers discovered that data and parameters need to be scaled together in the right balance: a model with far more parameters than its training data can support ends up undertrained relative to its own size &mdash; bigger, but not correspondingly better, because it never saw enough examples to make good use of all those parameters.</p>
-    <p class="slide-prose">This diminishing-returns shape is much older than machine learning. Economists have described exactly this curve for centuries: adding fertilizer to a field increases crop yield sharply at first, then less and less with each additional bag, until at some point adding more stops helping at all. Scaling a language model follows the same general pattern that shows up whenever you keep adding more of one input to a process that has other, non-scaling constraints in the background.</p>
+    <ul class="slide-list">
+      <li>A <em>scaling law</em>: as you increase training data, parameters, and compute together, a model's loss decreases smoothly and forecastably &mdash; not a guarantee forever, but a consistent pattern across many model families and years.</li>
+      <li>This predictability is why AI labs invest heavily in scale &mdash; a measured, repeatable relationship, verified on cheaper models before committing to a very large one.</li>
+      <li>Data and parameters need to scale together in the right balance &mdash; far more parameters than training data can support leaves a model undertrained relative to its size.</li>
+      <li>Diminishing-returns shape is much older than machine learning &mdash; economists have described the same curve for centuries: fertilizer and crop yield rise sharply at first, then less and less, until more stops helping.</li>
+      <li>Scaling a model follows the same general pattern that shows up whenever you keep adding one input to a process with other, non-scaling constraints.</li>
+    </ul>
   </div>
 </section>
 
@@ -1989,9 +2023,12 @@
 <section class="slide slide--intuition" data-part="3" data-chapter="11" id="s-c11-7">
   <p class="slide-eyebrow">Part III &middot; The Transformer — Ch. 11 <span class="kicker">CORE INTUITION</span></p>
   <div class="slide-body">
-    <p class="slide-prose">Attention is a mechanism that lets a model, while processing any given token, weigh every earlier token in the sequence &mdash; itself included &mdash; by how relevant it is right now, never looking ahead to tokens that haven&rsquo;t been generated yet. This book focuses on this causal form of attention, the kind used by generative models like the ones behind ChatGPT.</p>
-    <p class="slide-prose">That &ldquo;earlier, never later&rdquo; restriction has a name: causal masking. It&rsquo;s a deliberate rule, enforced because next-token prediction requires it &mdash; if a model&rsquo;s calculation could see the token it&rsquo;s about to predict, prediction would collapse into copying an answer already in view.</p>
-    <p class="slide-prose">Positional encoding solves a different problem attention creates on its own: attention weighs tokens by relevance but has no built-in sense of order. Positional encoding tags each token with its position, so the model can tell not just which tokens are present, but where each one sits relative to the others.</p>
+    <ul class="slide-list">
+      <li>Attention lets a model, while processing any token, weigh every earlier token (itself included) by relevance right now &mdash; never looking ahead to tokens not yet generated.</li>
+      <li>This book focuses on this causal form, the kind used by generative models like the ones behind ChatGPT.</li>
+      <li>That &ldquo;earlier, never later&rdquo; restriction is causal masking &mdash; enforced because next-token prediction requires it: if the model could see the token it's about to predict, prediction would collapse into copying.</li>
+      <li>Positional encoding solves a different problem: attention weighs by relevance but has no built-in sense of order, so encoding tags each token with its position.</li>
+    </ul>
   </div>
 </section>
 
@@ -2175,8 +2212,12 @@
 <section class="slide slide--intuition" data-part="3" data-chapter="12" id="s-c12-7">
   <p class="slide-eyebrow">Part III &middot; The Transformer — Ch. 12 <span class="kicker">CORE INTUITION</span></p>
   <div class="slide-body">
-    <p class="slide-prose">A transformer block combines two sub-steps, applied one after the other: an attention step, where every token gathers relevant information from itself and every earlier token, and a feed-forward step, where a simple neural network further transforms each token&rsquo;s representation individually and independently of the others &mdash; bending and reshaping it, not just scaling it up or down. A transformer is what you get by stacking many of these blocks &mdash; modern models use dozens &mdash; each one refining the output of the block before it, the same way each editor in the story refined the previous editor&rsquo;s draft.</p>
-    <p class="slide-prose">Crucially, each block has its own independently learned parameters &mdash; later blocks are not just repeating what earlier blocks did. Across training, different blocks tend to end up specializing in different kinds of refinement (earlier blocks often settle into simpler, more local patterns; later blocks into more abstract ones) &mdash; though nobody designs this division of labor directly. It emerges from what reduces loss most reliably.</p>
+    <ul class="slide-list">
+      <li>A transformer block combines two sub-steps: an attention step (every token gathers relevant info from itself and earlier tokens) and a feed-forward step (a simple network transforms each token's representation individually).</li>
+      <li>A transformer is many of these blocks stacked &mdash; modern models use dozens &mdash; each refining the output of the block before it, like each editor refining the previous editor's draft.</li>
+      <li>Each block has its own independently learned parameters &mdash; later blocks aren't just repeating earlier ones.</li>
+      <li>Different blocks tend to specialize (earlier blocks often simpler, local patterns; later blocks more abstract) &mdash; though nobody designs this division directly; it emerges from what reduces loss.</li>
+    </ul>
   </div>
 </section>
 
@@ -2314,7 +2355,10 @@
 <section class="slide slide--intuition" data-part="3" data-chapter="13" id="s-c13-6">
   <p class="slide-eyebrow">Part III &middot; The Transformer — Ch. 13 <span class="kicker">CORE INTUITION</span></p>
   <div class="slide-body">
-    <p class="slide-prose">Three more ingredients turn a raw, pretrained transformer into something like ChatGPT &mdash; none of which change the underlying architecture from Chapters 11&ndash;12.</p>
+    <ul class="slide-list">
+      <li>Three more ingredients turn a raw, pretrained transformer into something like ChatGPT.</li>
+      <li>None of them change the underlying architecture from Chapters 11&ndash;12.</li>
+    </ul>
   </div>
 </section>
 
@@ -2456,8 +2500,12 @@
 <section class="slide slide--intuition" data-part="3" data-chapter="14" id="s-c14-5">
   <p class="slide-eyebrow">Part III &middot; The Transformer — Ch. 14 <span class="kicker">CORE INTUITION</span></p>
   <div class="slide-body">
-    <p class="slide-prose">Inference is the process of actually running a trained model to produce output, using its fixed, already-learned parameters &mdash; as opposed to training, where those parameters are still being adjusted. Once training ends, the parameters are frozen; inference is simply computing forward through the network &mdash; embeddings, attention and refinement through transformer blocks, and a next-token probability distribution &mdash; using those fixed values, one token at a time.</p>
-    <p class="slide-prose">Sampling is the specific method used to actually pick one token, starting from the model&rsquo;s predicted probabilities at each step. The options range from always taking the single most likely token (deterministic, and often repetitive) to sampling more broadly among likely candidates (more varied and natural-feeling, at some risk of an occasional odd choice).</p>
+    <ul class="slide-list">
+      <li>Inference is running a trained model to produce output, using fixed, already-learned parameters &mdash; as opposed to training, where parameters are still being adjusted.</li>
+      <li>Once training ends, parameters are frozen; inference is computing forward through the network (embeddings, attention, transformer blocks, next-token distribution) using those fixed values, one token at a time.</li>
+      <li>Sampling is the method used to pick one token from the model's predicted probabilities.</li>
+      <li>Options range from always taking the most likely token (deterministic, often repetitive) to sampling more broadly among likely candidates (more varied, some risk of an odd choice).</li>
+    </ul>
   </div>
 </section>
 
@@ -2610,7 +2658,12 @@
 <section class="slide slide--intuition" data-part="3" data-chapter="15" id="s-c15-6">
   <p class="slide-eyebrow">Part III &middot; The Transformer — Ch. 15 <span class="kicker">CORE INTUITION</span></p>
   <div class="slide-body">
-    <p class="slide-prose">A hallucination is generated output that is factually wrong or unsupported &mdash; fabricated, misremembered, or simply unconnected to any real source &mdash; regardless of how confidently it&rsquo;s phrased. Confident, fluent delivery is the most attention-grabbing case, but a model can hallucinate while sounding tentative too; confidence of phrasing and accuracy of content are produced by the same process and aren&rsquo;t reliably linked. Explaining this behavior doesn&rsquo;t require assuming deception: next-token prediction optimizes for statistical plausibility given training-data patterns, and the generation process has no reliably exposed, independent record of factual belief that it consults &mdash; no separate fact-checking step weighing &ldquo;is this actually true&rdquo; against the outside world &mdash; before producing each claim.</p>
+    <ul class="slide-list">
+      <li>A hallucination is generated output that's factually wrong or unsupported &mdash; fabricated, misremembered, or unconnected to any real source &mdash; regardless of how confidently it's phrased.</li>
+      <li>Confident, fluent delivery is the most attention-grabbing case, but a model can hallucinate while sounding tentative too &mdash; confidence of phrasing and accuracy of content aren't reliably linked.</li>
+      <li>Doesn't require assuming deception: next-token prediction optimizes for statistical plausibility given training-data patterns.</li>
+      <li>The generation process has no reliably exposed, independent record of factual belief it consults &mdash; no separate fact-checking step weighing &ldquo;is this actually true&rdquo; before producing each claim.</li>
+    </ul>
   </div>
 </section>
 
@@ -2771,9 +2824,12 @@
 <section class="slide slide--intuition" data-part="4" data-chapter="16" id="s-c16-7">
   <p class="slide-eyebrow">Part IV &middot; Building Useful AI — Ch. 16 <span class="kicker">CORE INTUITION</span></p>
   <div class="slide-body">
-    <p class="slide-prose">A context window is the maximum number of tokens a model can consider at once &mdash; the hard size limit on everything currently in view: system instructions, prior conversation, any retrieved documents, and the current message. Anything beyond this window simply doesn't exist for the model at that moment, no matter how recently or clearly it was stated earlier in the same conversation.</p>
-    <p class="slide-prose">Memory, in the sense this chapter introduces, is not the context window itself &mdash; it's the set of strategies for managing what stays available despite the window's fixed size as a conversation or task grows longer than the window can directly hold. Memory doesn't expand the window; it decides, deliberately, what earns a place inside it.</p>
-    <p class="slide-prose">Being inside the window is necessary for a model to use something, but it isn't sufficient for the model to use it well. Information outside the window is unavailable unless something deliberately reintroduces it &mdash; that part is genuinely binary. But information sitting inside a long window is available only in principle: models often draw on information near the beginning or end of a long input more reliably than information buried in the middle. Presence in the window is the floor, not a guarantee of equal use.</p>
+    <ul class="slide-list">
+      <li>A context window is the maximum number of tokens a model can consider at once &mdash; the hard limit on everything currently in view (system instructions, prior conversation, retrieved documents, current message).</li>
+      <li>Anything beyond the window simply doesn't exist for the model at that moment, no matter how recently it was stated.</li>
+      <li>Memory is not the context window itself &mdash; it's the set of strategies for managing what stays available as a conversation grows longer than the window can hold; it decides what earns a place inside the window.</li>
+      <li>Being inside the window is necessary to use something, but not sufficient to use it well &mdash; information outside is unavailable unless reintroduced (binary), but information inside a long window is available only in principle: models draw more reliably on material near the beginning or end than material buried in the middle.</li>
+    </ul>
   </div>
 </section>
 
@@ -2900,8 +2956,12 @@
 <section class="slide slide--intuition" data-part="4" data-chapter="17" id="s-c17-5">
   <p class="slide-eyebrow">Part IV &middot; Building Useful AI — Ch. 17 <span class="kicker">CORE INTUITION</span></p>
   <div class="slide-body">
-    <p class="slide-prose">Retrieval is the general problem of finding, from a large collection of documents or passages, the ones most relevant to a given query. This chapter focuses on retrieval by meaning &mdash; comparing semantic similarity instead of matching keywords directly &mdash; because that's what lets a system find relevant material even when the wording is completely different, the way the librarian-by-meaning does, done computationally at a scale of millions or billions of passages. Keyword-based retrieval remains a real, widely-used approach in its own right, especially for exact-term lookups; many production systems combine both, a pattern usually called hybrid retrieval.</p>
-    <p class="slide-prose">Vector databases are specialized storage systems built specifically to hold enormous numbers of these passage embeddings and quickly find the ones nearest to any new query's embedding &mdash; a scale and speed ordinary databases, built for exact-match lookups and filtering, aren't designed for.</p>
+    <ul class="slide-list">
+      <li>Retrieval: finding, from a large collection of documents or passages, the ones most relevant to a query.</li>
+      <li>This chapter focuses on retrieval by meaning &mdash; semantic similarity instead of keyword matching &mdash; because it finds relevant material even when wording differs, like the librarian-by-meaning, at a scale of millions or billions of passages.</li>
+      <li>Keyword-based retrieval remains real and widely used, especially for exact-term lookups; many production systems combine both (hybrid retrieval).</li>
+      <li>Vector databases are specialized storage systems built to hold enormous numbers of passage embeddings and quickly find the ones nearest a query's embedding &mdash; a scale and speed ordinary databases aren't designed for.</li>
+    </ul>
   </div>
 </section>
 
@@ -3030,7 +3090,11 @@
 <section class="slide slide--intuition" data-part="4" data-chapter="18" id="s-c18-5">
   <p class="slide-eyebrow">Part IV &middot; Building Useful AI — Ch. 18 <span class="kicker">CORE INTUITION</span></p>
   <div class="slide-body">
-    <p class="slide-prose">RAG (Retrieval-Augmented Generation) is a system design that combines retrieval with generation: before generating a response, first retrieve passages relevant to the query from some external source of information, insert them into the context window, and only then let the model generate its answer &mdash; now with that specific material directly available to draw on, rather than relying solely on whatever got baked into its parameters during training. Chapter 17's semantic search over a vector database is the most common way to do the retrieving, but it's an implementation choice, not part of RAG's definition &mdash; the defining idea is generation conditioned on retrieved external information, whatever mechanism finds that information.</p>
+    <ul class="slide-list">
+      <li>RAG (Retrieval-Augmented Generation): before generating a response, first retrieve passages relevant to the query from an external source, insert them into the context window, then let the model generate &mdash; now with that material directly available, not relying solely on what's baked into its parameters.</li>
+      <li>Chapter 17's semantic search over a vector database is the most common way to retrieve, but it's an implementation choice, not part of RAG's definition.</li>
+      <li>The defining idea is generation conditioned on retrieved external information, whatever mechanism finds that information.</li>
+    </ul>
   </div>
 </section>
 
@@ -3169,8 +3233,12 @@
 <section class="slide slide--intuition" data-part="4" data-chapter="19" id="s-c19-5">
   <p class="slide-eyebrow">Part IV &middot; Building Useful AI — Ch. 19 <span class="kicker">CORE INTUITION</span></p>
   <div class="slide-body">
-    <p class="slide-prose">Fine-tuning is continuing the training process on a new, typically smaller and more specifically curated dataset, after the large-scale pretraining phase is already complete. It reuses the same general predict/measure-error/adjust shape as pretraining, now aimed at a narrower goal &mdash; like following instructions reliably, answering directly, or matching a particular style, instead of generic text continuation.</p>
-    <p class="slide-prose">Alignment is the broader goal fine-tuning is used to pursue: making a model's behavior actually match some set of intended goals &mdash; helpful, honest, careful &mdash; rather than merely statistically plausible given training text. Alignment is always relative to particular objectives set by particular designers, evaluators, or policies, and those can conflict with each other or with what any given user wants in the moment &mdash; &ldquo;aligned&rdquo; is not a single, universally-agreed target.</p>
+    <ul class="slide-list">
+      <li>Fine-tuning: continuing training on a new, typically smaller, more specifically curated dataset after pretraining is complete.</li>
+      <li>Reuses the same predict/measure-error/adjust shape as pretraining, now aimed at a narrower goal (following instructions, answering directly, matching a style) instead of generic text continuation.</li>
+      <li>Alignment is the broader goal fine-tuning pursues: making a model's behavior actually match intended goals (helpful, honest, careful), not just statistically plausible.</li>
+      <li>Alignment is always relative to particular objectives set by particular designers, evaluators, or policies, which can conflict with each other or with what a given user wants &mdash; &ldquo;aligned&rdquo; isn't one universally-agreed target.</li>
+    </ul>
   </div>
 </section>
 
@@ -3342,8 +3410,11 @@
 <section class="slide slide--intuition" data-part="4" data-chapter="20" id="s-c20-7">
   <p class="slide-eyebrow">Part IV &middot; Building Useful AI — Ch. 20 <span class="kicker">CORE INTUITION</span></p>
   <div class="slide-body">
-    <p class="slide-prose">Quantization is reducing the numerical precision used to store a model's parameters &mdash; from a high-precision representation down to a much coarser one &mdash; shrinking the model's memory footprint, and often the computation needed to use it too, in exchange for a small, usually tolerable amount of accuracy loss. The memory savings are close to unconditional; the compute speedup is not &mdash; it depends on the deployment hardware and software actually supporting the lower-precision format.</p>
-    <p class="slide-prose">Efficient inference is the broader category of techniques, including quantization, aimed at making inference faster and cheaper without retraining the model from scratch or fundamentally changing what it has learned.</p>
+    <ul class="slide-list">
+      <li>Quantization: reducing the numerical precision used to store a model's parameters &mdash; from high precision down to a coarser one &mdash; shrinking memory footprint and often compute, for a small, usually tolerable accuracy loss.</li>
+      <li>Memory savings are close to unconditional; compute speedup isn't &mdash; it depends on the deployment hardware/software actually supporting the lower-precision format.</li>
+      <li>Efficient inference is the broader category of techniques, including quantization, for making inference faster and cheaper without retraining from scratch or changing what the model has learned.</li>
+    </ul>
   </div>
 </section>
 
@@ -3521,7 +3592,12 @@
 <section class="slide slide--intuition" data-part="5" data-chapter="21" id="s-c21-7">
   <p class="slide-eyebrow">Part V &middot; AI Systems — Ch. 21 <span class="kicker">CORE INTUITION</span></p>
   <div class="slide-body">
-    <p class="slide-prose">Tool calling is a model producing a structured request &mdash; naming a specific available capability and the exact arguments it needs &mdash; instead of, or in addition to, producing ordinary prose. That request is executed by software outside the model itself; the result eventually reaches the model as new context it reads and continues generating from, using the exact same generation mechanism it always uses &mdash; though the raw result isn't always already text, and the surrounding system commonly has to convert or summarize it into something the model can actually read. The model doesn't gain a new kind of ability. It gains a new kind of thing it's allowed to write, and a system on the other end that knows what to do when it writes that.</p>
+    <ul class="slide-list">
+      <li>Tool calling: a model produces a structured request &mdash; naming a specific available capability and the exact arguments it needs &mdash; instead of, or alongside, ordinary prose.</li>
+      <li>The request is executed by software outside the model; the result reaches the model as new context it reads and continues generating from, using the same generation mechanism it always uses.</li>
+      <li>The raw result isn't always already text &mdash; the surrounding system often has to convert or summarize it into something the model can read.</li>
+      <li>The model doesn't gain a new kind of ability &mdash; it gains a new kind of thing it's allowed to write, and a system on the other end that knows what to do with it.</li>
+    </ul>
   </div>
 </section>
 
@@ -3683,7 +3759,13 @@
 <section class="slide slide--intuition" data-part="5" data-chapter="22" id="s-c22-6">
   <p class="slide-eyebrow">Part V &middot; AI Systems — Ch. 22 <span class="kicker">CORE INTUITION</span></p>
   <div class="slide-body">
-    <p class="slide-prose">This book uses AI agent for a model operating inside a loop: read the current context (including the results of any tool calls made so far) &rarr; decide the single next action, which may be another tool call or a final answer &rarr; execute it &rarr; append the result back into context &rarr; repeat &mdash; continuing until the loop's stopping condition is met, whether that's the model itself judging the goal satisfied, a separate verifier or controller making that call, or an external limit stopping things regardless. Nothing about the model has to change between &ldquo;a model making one tool call&rdquo; and &ldquo;a model acting as an agent&rdquo; &mdash; the same model can do both. Real agent systems sometimes use a model specifically fine-tuned for this kind of extended, tool-using behavior, but that's an optional refinement, not a requirement of the mechanism itself. What changes at minimum is that the deciding-what-to-do-next step, normally done once, now happens repeatedly, each time conditioned on everything that's happened so far in that loop. (The word &ldquo;agent&rdquo; is used more loosely elsewhere &mdash; sometimes for systems built around a fixed planner, an external controller, or a verifier standing outside the model &mdash; this chapter's definition is the specific, mechanism-level case that pattern most commonly takes.)</p>
+    <ul class="slide-list">
+      <li>This book uses &ldquo;AI agent&rdquo; for a model operating inside a loop: read the current context (including prior tool-call results) &rarr; decide the single next action (another tool call or a final answer) &rarr; execute it &rarr; append the result back into context &rarr; repeat.</li>
+      <li>Continues until a stopping condition is met &mdash; the model itself judging the goal satisfied, a separate verifier or controller deciding, or an external limit stopping things regardless.</li>
+      <li>Nothing about the model has to change between making one tool call and acting as an agent &mdash; the same model can do both; a model fine-tuned for extended tool-use is an optional refinement, not a requirement.</li>
+      <li>What changes at minimum: the deciding-what-to-do-next step, normally done once, now happens repeatedly, each time conditioned on everything that's happened so far.</li>
+      <li>The word &ldquo;agent&rdquo; is used more loosely elsewhere (a fixed planner, an external controller, a verifier outside the model) &mdash; this chapter's definition is the specific, mechanism-level case that pattern most commonly takes.</li>
+    </ul>
   </div>
 </section>
 
@@ -3864,7 +3946,12 @@
 <section class="slide slide--intuition" data-part="5" data-chapter="23" id="s-c23-7">
   <p class="slide-eyebrow">Part V &middot; AI Systems — Ch. 23 <span class="kicker">CORE INTUITION</span></p>
   <div class="slide-body">
-    <p class="slide-prose">Test-time compute is spending additional computation at inference time &mdash; beyond a single, one-shot prediction &mdash; to improve the odds of a correct answer on a hard problem, trading more time and cost for more reliability. Reasoning models are the most visible current way of doing this: models that generate intermediate reasoning as actual token text &mdash; sometimes shown to the user, sometimes kept hidden &mdash; before a final answer, often specifically trained to make good, extensive use of that reasoning space on genuinely hard problems, rather than merely producing it because a prompt asked nicely. Writing a longer chain of steps is one way to spend that extra computation, but not the only one &mdash; generating several independent attempts and checking them, or searching through alternative solution paths, spend the same kind of extra computation in a different shape. This chapter focuses on written, trained reasoning because it's currently the most common and most product-visible instance of the broader idea, not because it's the only one.</p>
+    <ul class="slide-list">
+      <li>Test-time compute: spending additional computation at inference time, beyond a single one-shot prediction, to improve the odds of a correct answer on a hard problem &mdash; trading more time and cost for more reliability.</li>
+      <li>Reasoning models are the most visible current way of doing this: models that generate intermediate reasoning as actual token text (sometimes shown, sometimes hidden) before a final answer, often trained specifically to use that reasoning space well on hard problems.</li>
+      <li>Writing a longer chain of steps is one way to spend that extra computation, not the only one &mdash; generating several independent attempts and checking them, or searching alternative solution paths, spend the same kind of computation differently.</li>
+      <li>This chapter focuses on written, trained reasoning because it's currently the most common, most product-visible instance &mdash; not because it's the only one.</li>
+    </ul>
   </div>
 </section>
 
@@ -4064,7 +4151,12 @@
 <section class="slide slide--intuition" data-part="5" data-chapter="24" id="s-c24-7">
   <p class="slide-eyebrow">Part V &middot; AI Systems — Ch. 24 <span class="kicker">CORE INTUITION</span></p>
   <div class="slide-body">
-    <p class="slide-prose">Multimodality is a model's ability to make sense of &mdash; and, with additional components, produce &mdash; more than one kind of data: text, images, audio. Every approach has to solve the same problem the tourist's photo did: bridging different formats so a shared model can actually use them together. But there's no single universal way to build that bridge. It might be a small learned network that translates one modality's features into the language model's own embedding space, a set of dedicated attention layers that let the language model consult the other modality without merging it into one shared sequence, or a single shared vocabulary that represents every modality as tokens from the very start. Different real systems pick different bridges; knowing that there are several real patterns, not one, is more useful than assuming every multimodal model works the same way underneath.</p>
+    <ul class="slide-list">
+      <li>Multimodality: a model's ability to make sense of &mdash; and, with additional components, produce &mdash; more than one kind of data (text, images, audio).</li>
+      <li>Every approach solves the same problem the tourist's photo did: bridging different formats so a shared model can use them together.</li>
+      <li>No single universal way to build that bridge: a small learned network translating one modality's features into the language model's embedding space; dedicated attention layers letting the language model consult the other modality without merging it into one sequence; or a single shared vocabulary representing every modality as tokens from the start.</li>
+      <li>Different real systems pick different bridges &mdash; knowing there are several real patterns, not one, is more useful than assuming every multimodal model works the same way underneath.</li>
+    </ul>
   </div>
 </section>
 
@@ -4269,7 +4361,11 @@
 <section class="slide slide--intuition" data-part="5" data-chapter="25" id="s-c25-7">
   <p class="slide-eyebrow">Part V &middot; AI Systems — Ch. 25 <span class="kicker">CORE INTUITION</span></p>
   <div class="slide-body">
-    <p class="slide-prose">Mixture of Experts (MoE) is a way of building a model where selected feed-forward layers each contain many separate &ldquo;expert&rdquo; sub-networks instead of one, and a small router decides, for each individual token, which small subset of those experts actually processes it. The model's total parameter count &mdash; its total learned capacity &mdash; can be far larger than the computation those layers spend per token, because that cost scales mainly with however many experts actually get activated, not the full total sitting in the model.</p>
+    <ul class="slide-list">
+      <li>Mixture of Experts (MoE): selected feed-forward layers each contain many separate &ldquo;expert&rdquo; sub-networks instead of one, and a small router decides, per token, which small subset of experts actually processes it.</li>
+      <li>The model's total parameter count (learned capacity) can be far larger than the computation those layers spend per token.</li>
+      <li>Cost scales mainly with however many experts actually get activated, not the full total sitting in the model.</li>
+    </ul>
   </div>
 </section>
 
@@ -4463,8 +4559,12 @@
 <section class="slide slide--intuition" data-part="6" data-chapter="26" id="s-c26-7">
   <p class="slide-eyebrow">Part VI &middot; AI in the Real World — Ch. 26 <span class="kicker">CORE INTUITION</span></p>
   <div class="slide-body">
-    <p class="slide-prose">Evaluation is the general problem of measuring whether an AI system &mdash; not just the underlying model in isolation, but the model together with whatever retrieval, tools, and orchestration surround it &mdash; actually performs its intended task well under realistic conditions, in a way trustworthy enough to compare versions, catch regressions, and decide whether it's ready to deploy. A model can score well on its own while the complete system still fails a user, if something surrounding it is broken &mdash; retrieval returning the wrong passage, a tool interface behaving unsafely &mdash; so evaluation has to reach the whole thing, not stop at the model at its core.</p>
-    <p class="slide-prose">&ldquo;How good is this system&rdquo; also isn't one single question &mdash; it splits into several: raw capability on the task, factual reliability, faithfulness (is an answer actually grounded in its cited source), calibration (does the model's stated confidence match its real accuracy), robustness to unusual or adversarial input, fairness across different users, latency and cost, and security, among others. Benchmarks, human judgment, and using another model as a judge are three different tools for approximating &ldquo;how good is this,&rdquo; each useful, and each with its own specific blind spots a reader needs to know about before trusting a number produced by any one of them alone.</p>
+    <ul class="slide-list">
+      <li>Evaluation: measuring whether an AI system &mdash; the model plus whatever retrieval, tools, and orchestration surround it &mdash; actually performs its task well under realistic conditions, trustworthy enough to compare versions, catch regressions, and decide deployment readiness.</li>
+      <li>A model can score well on its own while the complete system still fails a user, if something surrounding it is broken (wrong retrieval, an unsafe tool interface) &mdash; evaluation has to reach the whole system, not stop at the model alone.</li>
+      <li>&ldquo;How good is this system&rdquo; splits into several questions: raw capability, factual reliability, faithfulness to cited sources, calibration (confidence vs. real accuracy), robustness, fairness, latency and cost, security.</li>
+      <li>Benchmarks, human judgment, and LLM-as-judge are three different tools for approximating &ldquo;how good is this,&rdquo; each useful, each with its own blind spots.</li>
+    </ul>
   </div>
 </section>
 
@@ -4636,8 +4736,12 @@
 <section class="slide slide--intuition" data-part="6" data-chapter="27" id="s-c27-6">
   <p class="slide-eyebrow">Part VI &middot; AI in the Real World — Ch. 27 <span class="kicker">CORE INTUITION</span></p>
   <div class="slide-body">
-    <p class="slide-prose">Observability is the practice of instrumenting a live AI system &mdash; logging what it actually did, tracing multi-step tool-call and agent sequences step by step, and tracking metrics like latency, cost, and error rate &mdash; so a team can see what's really happening in production, both after the fact (reconstructing what happened once a problem is already reported) and in real time (alerting when a metric crosses a threshold, tracking whether the system is meeting its reliability targets, catching an anomaly as it develops, or triggering a controlled rollback) &mdash; not just how the system performed on a fixed evaluation set before launch.</p>
-    <p class="slide-prose">AI engineering is the broader discipline of actually building and operating production systems on top of foundation models &mdash; combining retrieval, tool calling and agents, evaluation, and observability into ongoing practical work &mdash; distinct from the comparatively rare specialty of training a foundation model from scratch.</p>
+    <ul class="slide-list">
+      <li>Observability: instrumenting a live AI system &mdash; logging what it did, tracing multi-step tool-call and agent sequences, tracking latency/cost/error rate &mdash; to see what's really happening in production.</li>
+      <li>Covers both after-the-fact reconstruction and real time (alerting on thresholds, tracking reliability targets, catching anomalies, triggering rollbacks) &mdash; not just performance on a fixed pre-launch evaluation set.</li>
+      <li>AI engineering is the broader discipline of building and operating production systems on foundation models &mdash; retrieval, tool calling and agents, evaluation, and observability combined into ongoing practical work.</li>
+      <li>Distinct from the comparatively rare specialty of training a foundation model from scratch.</li>
+    </ul>
   </div>
 </section>
 
@@ -4795,8 +4899,11 @@
 <section class="slide slide--intuition" data-part="6" data-chapter="28" id="s-c28-5">
   <p class="slide-eyebrow">Part VI &middot; AI in the Real World — Ch. 28 <span class="kicker">CORE INTUITION</span></p>
   <div class="slide-body">
-    <p class="slide-prose">Security, in this context, is protecting an AI system against inputs specifically crafted to make it behave in unintended, harmful ways &mdash; most notably prompt injection, where instructions hidden inside content a model merely processes get treated as if they were legitimate commands.</p>
-    <p class="slide-prose">Safety is the broader goal of ensuring a system's behavior &mdash; including whatever real-world actions its tools and agency let it take &mdash; actually matches human intent and doesn't cause harm. That includes extending alignment to systems where a misaligned or successfully attacked response can now do something in the world, but it reaches further still: privacy and data exposure, biased or unequal treatment, unreliable behavior in high-stakes decisions, misuse by people who are otherwise legitimate users, and a system being handed more permission or autonomy than its actual reliability warrants.</p>
+    <ul class="slide-list">
+      <li>Security: protecting an AI system against inputs crafted to make it behave in unintended, harmful ways &mdash; most notably prompt injection, where hidden instructions in processed content get treated as legitimate commands.</li>
+      <li>Safety is the broader goal: a system's behavior &mdash; including whatever real-world actions its tools and agency let it take &mdash; actually matches human intent and doesn't cause harm.</li>
+      <li>Includes extending alignment to systems where a misaligned or attacked response can now act in the world, but reaches further: privacy and data exposure, biased treatment, unreliable high-stakes decisions, misuse by legitimate users, and a system given more permission or autonomy than its reliability warrants.</li>
+    </ul>
   </div>
 </section>
 
@@ -4972,7 +5079,15 @@
 <section class="slide slide--intuition" data-part="6" data-chapter="29" id="s-c29-6">
   <p class="slide-eyebrow">Part VI &middot; AI in the Real World — Ch. 29 <span class="kicker">CORE INTUITION</span></p>
   <div class="slide-body">
-    <p class="slide-prose">The specific tools, benchmarks, and product names covered in this book will keep changing &mdash; that's guaranteed, and no chapter here has promised otherwise. What doesn't change nearly as fast is a small set of durable questions this book has now equipped the reader to ask of any new AI development: What's the underlying mechanism, and is it genuinely new or an application of something already covered? What's actually driving the improvement &mdash; more scale, a new architecture, or a new, specific, deliberately trained addition targeting one gap? What's the real evaluation evidence behind the claim, and could it be contaminated or gamed? What's the cost and efficiency tradeoff, and is it actually deployable or a research demo &mdash; not just technically, but given the hardware and energy it needs, whether the data it depends on is actually available and usable, and the regulatory and organizational work required to actually integrate it? And, if it's given tools or agency, what are the security and safety implications? A reader who can ask these of any headline has this book's actual promise fulfilled, whatever specific technology prompted the headline.</p>
+    <ul class="slide-list">
+      <li>Specific tools, benchmarks, and product names covered in this book will keep changing &mdash; that's guaranteed.</li>
+      <li>What doesn't change nearly as fast: a small set of durable questions this book has equipped the reader to ask of any new AI development.</li>
+      <li>What's the underlying mechanism &mdash; genuinely new, or an application of something already covered?</li>
+      <li>What's actually driving the improvement &mdash; more scale, a new architecture, or a specific, deliberately trained addition targeting one gap?</li>
+      <li>What's the real evaluation evidence behind the claim, and could it be contaminated or gamed?</li>
+      <li>What's the cost and efficiency tradeoff &mdash; actually deployable, or a research demo, given the hardware/energy it needs, data availability, and regulatory/organizational work?</li>
+      <li>If it's given tools or agency, what are the security and safety implications?</li>
+    </ul>
   </div>
 </section>
 
@@ -5133,7 +5248,13 @@
 <section class="slide slide--intuition" data-part="6" data-chapter="30" id="s-c30-6">
   <p class="slide-eyebrow">Part VI &middot; AI in the Real World — Ch. 30 <span class="kicker">CORE INTUITION</span></p>
   <div class="slide-body">
-    <p class="slide-prose">Keeping this book's mental model current isn't about consuming more AI content faster. It's a small number of durable habits: read primary technical sources directly &mdash; you should now be better equipped to follow the plain-language portions of technical blog posts, system cards, and engineering reports than before this book, even where some mathematical detail sits outside its scope; apply this book's five durable questions as a standing habit, not a one-time exercise; when an unfamiliar term appears, first ask which of the concepts already covered it extends or combines, before reaching for an outside explanation; and periodically explain a concept from this book to someone else, since that act &mdash; not just recognizing an idea while reading about it &mdash; is the real test of whether understanding has actually stuck.</p>
+    <ul class="slide-list">
+      <li>Keeping this book's mental model current isn't about consuming more AI content faster &mdash; it's a small number of durable habits.</li>
+      <li>Read primary technical sources directly &mdash; you should now be better equipped to follow the plain-language portions of technical blog posts, system cards, and engineering reports, even where some mathematical detail sits outside this book's scope.</li>
+      <li>Apply this book's durable questions as a standing habit, not a one-time exercise.</li>
+      <li>When an unfamiliar term appears, first ask which already-covered concept it extends or combines, before reaching for an outside explanation.</li>
+      <li>Periodically explain a concept from this book to someone else &mdash; that act, not just recognizing an idea while reading, is the real test of whether understanding actually stuck.</li>
+    </ul>
   </div>
 </section>
 
